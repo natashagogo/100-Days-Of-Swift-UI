@@ -8,11 +8,6 @@
 
 import SwiftUI
 
-// New Information:
-    // HStack - aligns views horizontally
-    // VStack - aligns views vertically
-    // .font() - a modifier that changes font size
-    // Toggle() - a toggle button
 
 struct ContentView: View {
     @State private var airplaneMode = true
@@ -24,10 +19,9 @@ struct ContentView: View {
                 Section {
                     HStack {
                         
-                       Image(systemName: "person.crop.circle.fill") // SF Symbol
-                        .font(.largeTitle) // SF Symbols can be used like regular fonts
+                       Image(systemName: "person.crop.circle.fill") 
+                        .font(.largeTitle)
                         VStack(alignment: .leading) {
-                            // Users can change the value of name
                             TextField("Enter Name", text: $name)
                             .font(.title)
                            Text("Apple ID, iCloud, iTunes, & App Store")
@@ -39,7 +33,7 @@ struct ContentView: View {
                     HStack {
                         Image(systemName: "airplane")
                         Text("Airplane Mode")
-                        Spacer() // pushes the button to the far right
+                        Spacer()
                         Toggle(isOn: $airplaneMode) {
                             Text("Tap Me")
                         }.labelsHidden()
@@ -83,7 +77,7 @@ struct ContentView: View {
                 }
                 
             }
-                .navigationBarTitle("Settings") // Adds a title to the navigation bar
+                .navigationBarTitle("Settings")
         }
     }
 }
