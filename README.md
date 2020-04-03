@@ -1,7 +1,7 @@
 # 100-Days-Of-Swift-UI
  Notes, projects, and challenges from Hacking With Swift's 100 Days of Swift UI course.
 
-# Projects
+# Course Projects
 
 ## WeSplit (Days 16-18)
 A basic check-sharing app that divides a bill by the number of people and shows how much everyone needs to pay, with tip. 
