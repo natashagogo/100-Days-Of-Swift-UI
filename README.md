@@ -15,7 +15,7 @@ A basic check-sharing app that divides a bill by the number of people and shows 
 - Use loops to create multiple views
 
 ### Links 
-- Code 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/01%20-%20WeSplit">Code</a> 
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
@@ -29,16 +29,16 @@ Attempted to recreate Apple's Settings app to practice creating forms with secti
 - Create a Toggle button 
 
 ### Links 
-- Code 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20Clone">Code</a> 
 
 ## Vacation Spot Picker (Day 16)
 Practiced two-way data binding by creating a single-page app that allows users to choose their next vacation spot
 
 ### Links 
-- Code 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/02%20-%20Vacation%20Spot%20Picker">Code</a> 
 
 ## Symptom Tracker (Day 17)
 Explored how pickers work in more detail by creating a form that allows patients to enter details about their symptoms
 
 ### Links
-- Code 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
