@@ -1,5 +1,5 @@
 # 100-Days-Of-Swift-UI
- Notes, projects, and challenges from Hacking With Swift's 100 Days of Swift UI course.
+ Projects from Hacking With Swift's 100 Days of SwiftUI course.
 
 # Course Projects
 
@@ -16,6 +16,18 @@ A basic check-sharing app that divides a bill by the number of people and shows 
 
 ### Links 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/01%20-%20WeSplit">Code</a> 
+
+
+## Unit Converter (Day 19)
+Built an app that converts different amounts (milligrams, micrograms, etc.) to review concepts from the first project. 
+
+### Practiced 
+- Creating forms with titles and sections
+- Accepting and converting user input
+- Creating segmented controls 
+
+### Links 
+- Code
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
