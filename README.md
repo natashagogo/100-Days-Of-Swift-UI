@@ -27,7 +27,7 @@ Built an app that converts different amounts (milligrams, micrograms, etc.) to r
 - Creating segmented controls 
 
 ### Links 
-- Code
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/02%20-%20Unit%20Converter/Unit-Converter/Unit-Converter">Code</a>
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
