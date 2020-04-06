@@ -29,6 +29,17 @@ Built an app that converts different amounts (milligrams, micrograms, etc.) to r
 ### Links 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/02%20-%20Unit%20Converter/Unit-Converter/Unit-Converter">Code</a>
 
+## Guess The Flag (Days 20-22)
+Built a multiple-choice game that quizzes users on their knowledge of country flags. 
+
+### Can-Dos
+- Create a row of buttons
+- Show the value of a variable in an alert
+- Style a button (shape, border, shadow)
+
+### Links 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/03%20-%20Guess%20The%20Flag">Code</a>
+
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
 
