@@ -22,10 +22,12 @@ struct ContentView: View {
         "UK",
         "US"
     ].shuffled()
+    
     @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var showingScore = false
     @State private var alertTitle = ""
+    @State private var alertMessage = ""
     @State private var score = 0
     
     var body: some View {
@@ -34,6 +36,16 @@ struct ContentView: View {
             LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
             
             VStack(spacing: 30) {
+                HStack {
+                    Spacer()
+                    Text("Points: ")
+                        .foregroundColor(.white)
+                        .font(.callout)
+                    Text("\(score)")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                }.padding(.trailing, 50)
                 VStack {
                     Text("Tap the flag of...")
                         .foregroundColor(.white)
@@ -58,7 +70,7 @@ struct ContentView: View {
                 }
             }
         }.alert(isPresented: $showingScore) {
-            Alert(title: Text(alertTitle), message: Text("You've earned \(score) point(s)."), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
             })
         }
@@ -66,10 +78,12 @@ struct ContentView: View {
     
     func flagTapped(_ index: Int) {
         if index == correctAnswer {
-            alertTitle = "Nice work! You earned one point."
+            alertTitle = "Nice work! Keep it up!"
+            alertMessage = "You earned a point."
             score += 1
         } else {
-            alertTitle = "Nope! Better luck next time!"
+            alertTitle = "Nope! That's \(countries[index])'s flag."
+            alertMessage = "You lost a point."
             score -= 1
         }
         
