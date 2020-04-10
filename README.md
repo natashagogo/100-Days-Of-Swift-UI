@@ -40,6 +40,23 @@ Built a multiple-choice game that quizzes users on their knowledge of country fl
 ### Links 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/03%20-%20Guess%20The%20Flag">Code</a>
 
+## Views and Modifiers (Days 23-24)
+Learned how SwiftUI works under the hood by exploring views and modifiers in depth. 
+
+### Can-Dos
+- Answer these questions:
+    - Why does SwiftUI use structs for views?
+    - What is behind the main SwiftUI view?
+    - Why does modifier order matter?
+    - Why does SwiftUI use “some View” for its view type?
+- Use conditional and environmental modifiers
+- Use Views as properties
+- Explain View composition
+- Create custom modifiers and containers
+
+### Links 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/03%20-%20Guess%20The%20Flag">Code</a>
+
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
 
