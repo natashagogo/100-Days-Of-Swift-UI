@@ -27,7 +27,7 @@ Built an app that converts different amounts (milligrams, micrograms, etc.) to r
 - Creating segmented controls 
 
 ### Links 
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/02%20-%20Unit%20Converter/Unit-Converter/Unit-Converter">Code</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/02%20-%20Unit%20Converter">Code</a>
 
 ## Guess The Flag (Days 20-22)
 Built a multiple-choice game that quizzes users on their knowledge of country flags. 
@@ -55,7 +55,7 @@ Learned how SwiftUI works under the hood by exploring views and modifiers in dep
 - Create custom modifiers and containers
 
 ### Links 
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/03%20-%20Guess%20The%20Flag">Code</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/04-%20Views%20and%20Modifiers/Views%20and%20Modifiers">Code</a>
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
