@@ -51,6 +51,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Grand Total")) {
                     Text("$\(totalPerPerson[0], specifier: "%.2f")") // Formats the value to 2 decimal places
+                        .foregroundColor(tipPercentage == 4 ? Color.red : Color.black) // if the user has selected 0% tip, make the grand total text red.
                 }
                 
                 Section(header: Text("Amount Per Person")) {
