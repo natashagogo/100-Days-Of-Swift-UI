@@ -61,7 +61,7 @@ Learned how SwiftUI works under the hood by exploring views and modifiers in dep
 Small, throwaway apps I built to make sense of concepts covered in the course. 
 
 ## Settings UI (Day 16)
-Attempted to recreate Apple's Settings app to practice creating forms with sections and buttons. 
+Attempted to recreate the UI for Apple's Settings app to practice creating forms with sections and buttons. 
 
 ### Learned how to ... 
 - Create more complex layouts with HStack and VStack 
@@ -82,3 +82,9 @@ Explored how pickers work in more detail by creating a form that allows patients
 
 ### Links
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
+
+## Message Stacks (Days 23-24)
+Created a basic UI for a messaging app to practice creating layouts and custom views.  
+
+### Links
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20Stacks">Code</a> 

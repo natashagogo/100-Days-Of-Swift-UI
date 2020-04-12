@@ -38,8 +38,8 @@ struct Message: View {
 struct MessageHistory: View {
     var body: some View {
         VStack {
-            Message(profilePic: "person.fill", message: "Hello, World!", isUser: true)
-            Message(profilePic: "globe", message: "Hello, Natasha!", isUser: false)
+            Message(profilePic: "globe", message: "Hello, Natasha!", isUser: true)
+            Message(profilePic: "person.fill", message: "Hello, World!", isUser: false)
             Spacer()
         }
     }
