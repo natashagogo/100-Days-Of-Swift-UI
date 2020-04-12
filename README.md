@@ -69,7 +69,7 @@ Attempted to recreate the UI for Apple's Settings app to practice creating forms
 - Create a Toggle button 
 
 ### Links 
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20Clone">Code</a> 
+- <a href=https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20UI>Code</a> 
 
 ## Vacation Spot Picker (Day 16)
 Practiced two-way data binding by creating a single-page app that allows users to choose their next vacation spot
@@ -83,8 +83,8 @@ Explored how pickers work in more detail by creating a form that allows patients
 ### Links
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
 
-## Message Stacks (Days 23-24)
+## Message History (Days 23-24)
 Created a basic UI for a messaging app to practice creating layouts and custom views.  
 
 ### Links
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20Stacks">Code</a> 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20History">Code</a> 
