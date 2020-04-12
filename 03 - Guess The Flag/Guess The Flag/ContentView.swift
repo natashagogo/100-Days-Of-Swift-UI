@@ -8,6 +8,18 @@
 
 import SwiftUI
 
+// Creates a custom view for the flags
+struct FlagImage: View {
+    var image: String
+    var body: some View {
+        Image(image)
+         .renderingMode(.original)
+         .clipShape(Capsule())
+         .overlay(Capsule().stroke(Color.gray, lineWidth: 0.5))
+         .shadow(color: .black, radius: 2, x: 2, y: 3)
+    }
+}
+
 struct ContentView: View {
     @State private var countries = [
         "Estonia",
@@ -60,12 +72,9 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(index)
                     }) {
-                        Image(self.countries[index])
-                            .renderingMode(.original) // tells SwiftUI to render the original image (instead of recoloring them as a button)
+                        FlagImage(image: self.countries[index])
                     }
-                    .clipShape(Capsule())
-                    .overlay(Capsule().stroke(Color.gray, lineWidth: 0.5))
-                    .shadow(color: .black, radius: 2, x: 2, y: 3)
+                  
                     
                 }
             }
