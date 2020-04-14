@@ -9,49 +9,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    let value1 = 80
+    let value2 = 20
+    let value3 = 40
+    let value4 = 70
+    let maxValue = 100
+    let containerWidth: CGFloat = 300
+    let containerHeight: CGFloat = 300
+    
     var body: some View {
-        ZStack(alignment: .trailing) {
-            Circle() // container
+        ZStack {
+            Circle()
+             .fill(Color.black)
+             .frame(width: containerWidth, height: containerHeight)
             
-            HStack {
-                VStack {
-                    Circle()
-                     .frame(width: 100, height: 100)
-                     .foregroundColor(.pink)
-                    HStack {
-                        Circle()
-                         .frame(width: 50, height: 50)
-                         .foregroundColor(.pink)
-                        Circle()
-                         .frame(width: 25, height: 25)
-                         .foregroundColor(.pink)
-                        Circle()
-                         .frame(width: 30, height: 30)
-                         .foregroundColor(.pink)
-                    }
-                    Circle()
-                     .frame(width: 150, height: 150)
-                     .foregroundColor(.pink)
-                }
-                
+            GeometryReader { geometry in
                 ZStack {
                     Circle()
-                     .frame(width: 200, height: 200)
-                     .foregroundColor(.white)
-                    HStack {
+                      .fill(Color.white)
+                      .frame(width: CGFloat(self.value1) / CGFloat(self.maxValue) * self.containerWidth, height: CGFloat(self.value1) / CGFloat(self.maxValue) * self.containerHeight)
+                    
+                    GeometryReader { geometry in
                         Circle()
-                         .frame(width: 50, height: 50)
-                         .foregroundColor(.pink)
+                         .fill(Color.pink)
+                            .frame(width: CGFloat(self.value2) / CGFloat(self.maxValue) * self.containerWidth, height: CGFloat(self.value2) / CGFloat(self.value1) * geometry.size.height)
+                        
                         Circle()
-                         .frame(width: 30, height: 30)
-                         .foregroundColor(.pink)
+                        .fill(Color.pink)
+                            .frame(width: CGFloat(self.value3) / CGFloat(self.maxValue) * self.containerWidth, height: CGFloat(self.value3) / CGFloat(self.value1) * geometry.size.height)
+                        
                         Circle()
-                         .frame(width: 45, height: 45)
-                         .foregroundColor(.pink)
+                         .fill(Color.pink)
+                            .frame(width: CGFloat(self.value4) / CGFloat(self.maxValue) * self.containerWidth, height: CGFloat(self.value4) / CGFloat(self.value1) * geometry.size.height)
                     }
                 }
-            }
-
+                
+             }
+            
         }
     }
 }
