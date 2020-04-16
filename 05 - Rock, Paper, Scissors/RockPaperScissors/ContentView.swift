@@ -12,6 +12,11 @@ struct ContentView: View {
     @State private var computerMove = Int.random(in: 0...2)
     @State private var shouldWin = Bool.random()
     @State private var score = 0
+    @State private var round = 1
+    @State private var question = 0
+    @State private var giveFeedback = false
+    @State private var feedbackTitle = ""
+    @State private var feedbackMessage = ""
     
     let moves = [
         "rock",
@@ -39,6 +44,11 @@ struct ContentView: View {
                     Text("\(score)")
                         .font(.headline)
                         .foregroundColor(.blue)
+                    Text("Round:")
+                       .font(.caption)
+                    Text("\(round)")
+                        .font(.headline)
+                        .foregroundColor(.blue)
                 }
                 Group {
                     Text("The computer chose:")
@@ -52,7 +62,7 @@ struct ContentView: View {
                 ForEach(0..<moves.count) { move in
                     Button(action: {
                         self.calculateScore(selection: move)
-                        self.resetGame()
+                        self.next()
                     }) {
                         Text("\(self.moves[move].uppercased())")
                     }
@@ -62,6 +72,10 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 }
             }
+        }.alert(isPresented: $giveFeedback) {
+            return Alert(title: Text("\(feedbackTitle)"), message: Text("\(feedbackMessage)"), dismissButton: .default(Text("OK")) {
+                  self.next()
+          })
         }
     }
     
@@ -98,24 +112,44 @@ struct ContentView: View {
             }
         }
         
+        giveFeedback = true
+        
         if userChoice == correctAnswer {
             score += 1
+            feedbackTitle = "Nice work!"
+            feedbackMessage = "You earned a point."
         } else if userChoice == computerChoice {
             score += 0
+            feedbackTitle = "Don't copycat!"
+            feedbackMessage = "Pick a different answer."
         } else {
             score -= 1
+            feedbackTitle = "Nope!"
+            feedbackMessage = "You lost a point"
         }
         
         if score < 0 {
             score = 0
         }
         
+        question += 1
+        
+        if question >= 10 {
+            round += 1
+            score = 0
+            question = 0
+            computerMove = Int.random(in: 0...2)
+            shouldWin = Bool.random()
+            
+            feedbackTitle = "That's it!"
+            feedbackMessage = "How about another round?"
+        }
+        
     }
     
-    func resetGame() {
+    func next() {
         computerMove = Int.random(in: 0...2)
         shouldWin = Bool.random()
-        score = 0
     }
 }
 
