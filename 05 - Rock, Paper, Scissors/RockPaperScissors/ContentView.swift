@@ -11,12 +11,13 @@ import SwiftUI
 struct ContentView: View {
     @State private var computerMove = Int.random(in: 0...2)
     @State private var shouldWin = Bool.random()
+    
     @State private var score = 0
-    @State private var round = 1
-    @State private var question = 0
+    @State private var roundNumber = 1
+    @State private var questionNumber = 0
+    
     @State private var giveFeedback = false
-    @State private var feedbackTitle = ""
-    @State private var feedbackMessage = ""
+    @State private var feedback = (title: "", content: "")
     
     let moves = [
         "rock",
@@ -25,8 +26,8 @@ struct ContentView: View {
     ]
     
     var getInstructions: String {
-        let win = "Win the game"
-        let lose = "Lose the game"
+        let win = "Win the game."
+        let lose = "Lose the game."
 
         if shouldWin == true {
             return win
@@ -39,30 +40,39 @@ struct ContentView: View {
         VStack {
             VStack(spacing: 10) {
                 HStack {
-                    Text("Points:")
-                       .font(.caption)
-                    Text("\(score)")
-                        .font(.headline)
-                        .foregroundColor(.blue)
-                    Text("Round:")
-                       .font(.caption)
-                    Text("\(round)")
-                        .font(.headline)
-                        .foregroundColor(.blue)
+                    Group {
+                        Text("Points:")
+                           .font(.callout)
+                        Text("\(score)")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                    }
+                    Spacer()
+                    Group {
+                        Text("Round:")
+                           .font(.callout)
+                        Text("\(roundNumber)")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                    }
                 }
+                .frame(width: 250, height: 50)
+                
                 Group {
                     Text("The computer chose:")
                       .font(.callout)
                     Text("\(moves[computerMove].uppercased())")
-                      .font(.title)
+                      .font(.largeTitle)
                       .foregroundColor(.blue)
                     Text("\(getInstructions)")
                 }
                 
                 ForEach(0..<moves.count) { move in
                     Button(action: {
-                        self.calculateScore(selection: move)
-                        self.next()
+                        self.checkAnswer(selection: move)
+                        self.giveFeedback = true
+                        self.questionNumber += 1
+                        self.nextQuestion()
                     }) {
                         Text("\(self.moves[move].uppercased())")
                     }
@@ -70,16 +80,23 @@ struct ContentView: View {
                     .background(Color.blue)
                     .clipShape(Capsule())
                     .foregroundColor(.white)
+                    .padding(5)
                 }
             }
         }.alert(isPresented: $giveFeedback) {
-            return Alert(title: Text("\(feedbackTitle)"), message: Text("\(feedbackMessage)"), dismissButton: .default(Text("OK")) {
-                  self.next()
-          })
+            if questionNumber == 10 {
+                return Alert(title: Text("That's the end of round \(roundNumber)."), message: Text("You earned \(score) points in this round."), dismissButton: .default(Text("Play Again")) {
+                    self.resetGame()
+                })
+            } else {
+                return Alert(title: Text("\(feedback.title)"), message: Text("\(feedback.content)"), dismissButton: .default(Text("Keep Going")) {
+                    self.nextQuestion()
+              })
+            }
         }
     }
     
-    func calculateScore(selection: Int) {
+    func checkAnswer(selection: Int) {
         let computerChoice = moves[computerMove]
         let userChoice = moves[selection]
         var correctAnswer: String = ""
@@ -112,44 +129,46 @@ struct ContentView: View {
             }
         }
         
-        giveFeedback = true
-        
         if userChoice == correctAnswer {
             score += 1
-            feedbackTitle = "Nice work!"
-            feedbackMessage = "You earned a point."
+            feedback.title = "Nice work!"
+            
+            switch score {
+              case 0:
+                feedback.content = "No points for you!"
+              case 1:
+                feedback.content = "You earned \(score) point."
+              default:
+                feedback.content = "You earned \(score) points."
+            }
+            
         } else if userChoice == computerChoice {
             score += 0
-            feedbackTitle = "Don't copycat!"
-            feedbackMessage = "Pick a different answer."
+            feedback.title = "Don't copycat!"
+            feedback.content = "Pick a different answer."
         } else {
             score -= 1
-            feedbackTitle = "Nope!"
-            feedbackMessage = "You lost a point"
+            feedback.title = "Nope!"
+            feedback.content = "You lost a point. Better luck next time!"
         }
         
         if score < 0 {
             score = 0
         }
-        
-        question += 1
-        
-        if question >= 10 {
-            round += 1
-            score = 0
-            question = 0
-            computerMove = Int.random(in: 0...2)
-            shouldWin = Bool.random()
-            
-            feedbackTitle = "That's it!"
-            feedbackMessage = "How about another round?"
-        }
-        
     }
     
-    func next() {
+    func nextQuestion() {
         computerMove = Int.random(in: 0...2)
         shouldWin = Bool.random()
+    }
+    
+    func resetGame() {
+        computerMove = Int.random(in: 0...2)
+        shouldWin = Bool.random()
+
+        score = 0
+        questionNumber = 0
+        roundNumber += 1
     }
 }
 
