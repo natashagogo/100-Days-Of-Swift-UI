@@ -8,22 +8,52 @@
 
 import SwiftUI
 
+// DONE:
+// 1. Improved UX by adding a progress bar.
+// 2. Improve UI design by adding emojis to choices.
+// 3. Created custom views and modifiers.
+
+// TO DO - LATER
+// 1. Make the game harder by creating an "emoji round" or "mixed emoji/text round".
+
+struct ProgressBar: View {
+    @Binding var value: Float
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle().frame(width: geometry.size.width, height: geometry.size.height)
+                    .opacity(0.3)
+                    .foregroundColor(.blue)
+                
+                Rectangle().frame(width: min(CGFloat(self.value) * geometry.size.width, geometry.size.width), height: geometry.size.height)
+                    .foregroundColor(.blue)
+                    .animation(.linear)
+                
+            }
+            .cornerRadius(45.0)
+        }
+    }
+}
+
 struct ContentView: View {
     @State private var computerMove = Int.random(in: 0...2)
     @State private var shouldWin = Bool.random()
     
     @State private var score = 0
     @State private var roundNumber = 1
-    @State private var questionNumber = 0
+    @State private var progressValue: Float = 0.0
     
     @State private var giveFeedback = false
     @State private var feedback = (title: "", content: "")
     
     let moves = [
-        "rock",
-        "paper",
-        "scissors"
+        "👊 rock",
+        "✋ paper",
+        "✌️ scissors"
     ]
+    
+    let numberOfQuestions: Float = 10
     
     var getInstructions: String {
         let win = "Win the game."
@@ -39,24 +69,29 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack(spacing: 10) {
-                HStack {
-                    Group {
-                        Text("Points:")
-                           .font(.callout)
-                        Text("\(score)")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                    }
-                    Spacer()
-                    Group {
-                        Text("Round:")
-                           .font(.callout)
-                        Text("\(roundNumber)")
-                            .font(.title)
-                            .foregroundColor(.blue)
+                VStack {
+                    ProgressBar(value: $progressValue)
+                        .frame(height: 20)
+                    HStack {
+                        Group {
+                            Text("Points:")
+                               .font(.callout)
+                            Text("\(score)")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
+                        Spacer()
+                        Group {
+                            Text("Round:")
+                               .font(.callout)
+                            Text("\(roundNumber)")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
-                .frame(width: 250, height: 50)
+                .frame(width: 280, height: 50)
+                .padding()
                 
                 Group {
                     Text("The computer chose:")
@@ -71,12 +106,12 @@ struct ContentView: View {
                     Button(action: {
                         self.checkAnswer(selection: move)
                         self.giveFeedback = true
-                        self.questionNumber += 1
+                        self.updateProgress()
                         self.nextQuestion()
                     }) {
                         Text("\(self.moves[move].uppercased())")
                     }
-                    .frame(width: 160, height: 40)
+                    .frame(width: 220, height: 50)
                     .background(Color.blue)
                     .clipShape(Capsule())
                     .foregroundColor(.white)
@@ -84,7 +119,19 @@ struct ContentView: View {
                 }
             }
         }.alert(isPresented: $giveFeedback) {
-            if questionNumber == 10 {
+            // The progress bar goes from 0.0 to 1.0000001
+            // This is because floats are evil:
+                // 0.1
+                // 0.2
+                // 0.3
+                // 0.4
+                // 0.5
+                // 0.6
+                // 0.70000005
+                // 0.8000001
+                // 0.9000001
+                // 1.0000001
+            if progressValue == 1.0000001 {
                 return Alert(title: Text("That's the end of round \(roundNumber)."), message: Text("You earned \(score) points in this round."), dismissButton: .default(Text("Play Again")) {
                     self.resetGame()
                 })
@@ -101,11 +148,11 @@ struct ContentView: View {
         let userChoice = moves[selection]
         var correctAnswer: String = ""
         
-        let rock = "rock"
-        let paper = "paper"
-        let scissors = "scissors"
+        let rock = moves[0]
+        let paper = moves[1]
+        let scissors = moves[2]
         
-        if shouldWin {
+        if shouldWin == true {
             switch computerChoice {
               case rock:
                 correctAnswer = paper
@@ -157,6 +204,11 @@ struct ContentView: View {
         }
     }
     
+    func updateProgress() {
+        let progressPerQuestion = numberOfQuestions / 100
+        self.progressValue += progressPerQuestion
+    }
+    
     func nextQuestion() {
         computerMove = Int.random(in: 0...2)
         shouldWin = Bool.random()
@@ -167,7 +219,7 @@ struct ContentView: View {
         shouldWin = Bool.random()
 
         score = 0
-        questionNumber = 0
+        progressValue = 0.0
         roundNumber += 1
     }
 }
