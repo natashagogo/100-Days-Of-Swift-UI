@@ -10,11 +10,11 @@ import SwiftUI
 
 // DONE:
 // 1. Improved UX by adding a progress bar.
-// 2. Improve UI design by adding emojis to choices.
-// 3. Created custom views and modifiers.
+// 2. Improved UI design by adding emojis to choices.
 
-// TO DO - LATER
-// 1. Make the game harder by creating an "emoji round" or "mixed emoji/text round".
+// TO DO
+// 1. Create custom views and modifiers to clean up code.
+// 2. Make the game harder by creating an "emoji round" or "mixed emoji/text round".
 
 struct ProgressBar: View {
     @Binding var value: Float
