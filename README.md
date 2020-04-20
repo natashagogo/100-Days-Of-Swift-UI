@@ -33,7 +33,7 @@ Built an app that converts different amounts (milligrams, micrograms, etc.) to r
 Built a multiple-choice game that quizzes users on their knowledge of country flags. 
 
 ### Can-Dos
-- Create a row of buttons
+- Use `ForEach` to create multiple buttons 
 - Show the value of a variable in an alert
 - Style a button (shape, border, shadow)
 
@@ -48,7 +48,7 @@ Learned how SwiftUI works under the hood by exploring views and modifiers in dep
     - Why does SwiftUI use structs for views?
     - What is behind the main SwiftUI view?
     - Why does modifier order matter?
-    - Why does SwiftUI use “some View” for its view type?
+    - Why does SwiftUI use `some View` for its view type?
 - Use conditional and environmental modifiers
 - Use Views as properties
 - Explain View composition
@@ -56,6 +56,33 @@ Learned how SwiftUI works under the hood by exploring views and modifiers in dep
 
 ### Links 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/04-%20Views%20and%20Modifiers/Views%20and%20Modifiers">Code</a>
+
+## Rock, Paper, Scissors (Day 25)
+Built a more challenging version of the classic game Rock, Paper, Scissors. The app generates a random move and prompts users to respond with the winning or losing one.  
+
+### Can-Dos 
+- Create a progress bar using `GeometryReader` 
+
+### Practiced 
+- Dynamically creating buttons with `ForEach`  
+- Showing the value of a variable in an alert
+- Displaying different alerts according to the value of a variable 
+- Styling text and UI elements
+
+### Links 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/05%20-%20Rock%2C%20Paper%2C%20Scissors">Code</a>
+
+## BetterRest (Days 26-28)
+Built an app that predicts when users need to go to bed based on their estimated sleep, actual sleep, and caffeine intake. 
+
+### Can-Dos 
+- Adjust numbers with `Stepper`
+- Select dates and times with `DatePicker`
+- Explain how dates work in Swift
+- Explain, at a very high level, how to train a model with CreateML
+
+### Links 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/06%20-%20BetterRest">Code</a>
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
@@ -84,7 +111,7 @@ Explored how pickers work in more detail by creating a form that allows patients
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
 
 ## Message History (Days 23-24)
-Created a basic UI for a messaging app to practice creating layouts and custom views.  
+Created UI for a messaging app to practice creating layouts and custom views.  
 
 ### Links
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20History">Code</a> 
