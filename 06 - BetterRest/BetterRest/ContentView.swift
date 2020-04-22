@@ -55,8 +55,8 @@ struct ContentView: View {
             })
             
         }.alert(isPresented: $showingAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-        }
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK"))
+        )}
     }
     func calculateBedTime() {
         let model = SleepCalculator()

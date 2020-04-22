@@ -10,22 +10,28 @@ import SwiftUI
 
 
 struct ContentView: View {
-    var vacationSpots = ["Tokyo", "Taipei", "Maui", "Malmö"]
+    var vacationSpots = [
+        "Tokyo",
+        "Osaka",
+        "Maui"
+    ]
+    
     @State private var selectedDestination = 0
+    @State private var selectedDate = Date()
    
     var body: some View {
-        VStack {
-            Text("Where do you wanna go next?")
-                .font(.headline)
-            Picker("Where do you want to go?", selection: $selectedDestination) {
-                ForEach(0 ..< vacationSpots.count) {
-                    Text(self.vacationSpots[$0])
+        NavigationView {
+            Form {
+                Section(header: Text("Next Destination")) {
+                    Picker("Where do you want to go?", selection: $selectedDestination) {
+                        ForEach(0 ..< vacationSpots.count) {
+                          Text((self.vacationSpots[$0]))
+                       }
+                     }.labelsHidden()
+                    
+                    DatePicker("Departure", selection: $selectedDate, in: Date()...)
                 }
-            }.labelsHidden()
-            Text("You chose: ")
-            Text("\(vacationSpots[selectedDestination].uppercased())")
-                .foregroundColor(.blue)
-                .padding()
+            }.navigationBarTitle("Trip Picker")
         }
     }
 }
