@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC35582E24539AB30055AA04 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC35582D24539AB30055AA04 /* start.txt */; };
 		BCA4DBD524523461005C10F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4DBD424523461005C10F0 /* AppDelegate.swift */; };
 		BCA4DBD724523461005C10F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4DBD624523461005C10F0 /* SceneDelegate.swift */; };
 		BCA4DBD924523461005C10F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4DBD824523461005C10F0 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC35582D24539AB30055AA04 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = SOURCE_ROOT; };
 		BCA4DBD124523461005C10F0 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA4DBD424523461005C10F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCA4DBD624523461005C10F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				BCA4DBDA24523463005C10F0 /* Assets.xcassets */,
 				BCA4DBDF24523463005C10F0 /* LaunchScreen.storyboard */,
 				BCA4DBE224523463005C10F0 /* Info.plist */,
+				BC35582D24539AB30055AA04 /* start.txt */,
 				BCA4DBDC24523463005C10F0 /* Preview Content */,
 			);
 			path = WordScramble;
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA4DBE124523463005C10F0 /* LaunchScreen.storyboard in Resources */,
+				BC35582E24539AB30055AA04 /* start.txt in Resources */,
 				BCA4DBDE24523463005C10F0 /* Preview Assets.xcassets in Resources */,
 				BCA4DBDB24523463005C10F0 /* Assets.xcassets in Resources */,
 			);
