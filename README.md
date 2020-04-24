@@ -84,6 +84,20 @@ Built an app that predicts when users need to go to bed based on their estimated
 ### Links 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/06%20-%20BetterRest">Code</a>
 
+## WordScramble (Days 29-31)
+Built a word game that presents users with a random 8-letter word and asks them to create words with it.   
+
+### Can-dos
+- Create a `List`
+- Write a function that adds a word to a list
+- Load files from `Bundle` into an app
+- Use `fatalError()` to deliberately crash the app when a file can't be loaded 
+- Run code when the app launches with `onAppear()`
+- Locate spelling mistakes with `UITextChecker`
+
+### Links 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/07%20-%20WordScramble">Code</a>
+
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
 
