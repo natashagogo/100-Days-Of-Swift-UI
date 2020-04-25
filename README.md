@@ -14,7 +14,7 @@ A basic check-sharing app that divides a bill by the number of people and shows 
 - Bind state to UI
 - Use loops to create multiple views
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/01%20-%20WeSplit">Code</a> 
 
 
@@ -26,7 +26,7 @@ Built an app that converts different amounts (milligrams, micrograms, etc.) to r
 - Accepting and converting user input
 - Creating segmented controls 
 
-### Links 
+### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/02%20-%20Unit%20Converter">Code</a>
 
 ## Guess The Flag (Days 20-22)
@@ -37,7 +37,7 @@ Built a multiple-choice game that quizzes users on their knowledge of country fl
 - Show the value of a variable in an alert
 - Style a button (shape, border, shadow)
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/03%20-%20Guess%20The%20Flag">Code</a>
 
 ## Views and Modifiers (Days 23-24)
@@ -54,7 +54,7 @@ Learned how SwiftUI works under the hood by exploring views and modifiers in dep
 - Explain View composition
 - Create custom modifiers and containers
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/04-%20Views%20and%20Modifiers/Views%20and%20Modifiers">Code</a>
 
 ## Rock, Paper, Scissors (Day 25)
@@ -69,7 +69,7 @@ Built a more challenging version of the classic game Rock, Paper, Scissors. The 
 - Displaying different alerts according to the value of a variable 
 - Styling text and UI elements
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/05%20-%20Rock%2C%20Paper%2C%20Scissors">Code</a>
 
 ## BetterRest (Days 26-28)
@@ -81,7 +81,7 @@ Built an app that predicts when users need to go to bed based on their estimated
 - Explain how dates work in Swift
 - Explain, at a very high level, how to train a model with CreateML
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/06%20-%20BetterRest">Code</a>
 
 ## WordScramble (Days 29-31)
@@ -95,8 +95,24 @@ Built a word game that presents users with a random 8-letter word and asks them 
 - Run code when the app launches with `onAppear()`
 - Locate spelling mistakes with `UITextChecker`
 
-### Links 
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/07%20-%20WordScramble">Code</a>
+## Animations (Days 32-34)
+Explored how animations work in depth. 
+
+### Can-Dos
+- Create implicit animations 
+- Customize animations in SwiftUI
+- Animate bindings
+- Create explicit animations
+
+### Code Snippets
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/implicit-animation.playground/Contents.swift">Implicit animation</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/implicit-custom-animation.playground/Contents.swift">Customized implicit animation</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/animated-bindings.playground/Contents.swift">Animated bindings</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/explicit-animations.playground/Contents.swift">Explicit animation</a> 
+
+### Link 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations">Code</a>
+
 
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
@@ -113,7 +129,7 @@ Attempted to recreate the UI for Apple's Settings app.
 - Add icons via SF Symbols 
 - Create a Toggle button 
 
-### Links 
+### Link 
 - <a href=https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20UI>Code</a> 
 
 ## Vacation Picker (Day 16)
@@ -123,7 +139,7 @@ Created a single-page app that allows users to plan their next vacation.
 - Two-way data binding
 - Working with dates
 
-### Links 
+### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/02%20-%20Vacation%20Spot%20Picker">Code</a> 
 
 ## Symptom Tracker (Day 17)
@@ -134,7 +150,7 @@ Explored how pickers work in more detail by creating a form that allows patients
 - Picker styles: `SegmentedPicker`, `WheelPicker`, etc.
 - Button types: `Toggle`
 
-### Links
+### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
 
 ## Message History (Days 23-24)
@@ -145,5 +161,5 @@ _ Layouts
 - Custom views
 - Custom modifiers 
 
-### Links
+### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20History">Code</a> 
