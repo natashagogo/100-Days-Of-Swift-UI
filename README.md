@@ -103,12 +103,19 @@ Explored how animations work in depth.
 - Customize animations in SwiftUI
 - Animate bindings
 - Create explicit animations
+- Control the animation stack
+- Animate gestures like drag or tap
+- Show and hide views with transitions
+- Build custom transitions with `ViewModifier`
 
 ### Code Snippets
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/implicit-animation.playground/Contents.swift">Implicit animation</a>
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/implicit-custom-animation.playground/Contents.swift">Customized implicit animation</a>
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/animated-bindings.playground/Contents.swift">Animated bindings</a>
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/blob/master/08%20-%20Animations/00%20-%20Examples/explicit-animations.playground/Contents.swift">Explicit animation</a> 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations/00%20-%20Examples/animation-stack.playground">Multiple animations</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations/00%20-%20Examples/drag-animation.playground">Gesture animation</a>
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations/00%20-%20Examples/letters-animation.playground">Text animation</a> 
 
 ### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations">Code</a>
