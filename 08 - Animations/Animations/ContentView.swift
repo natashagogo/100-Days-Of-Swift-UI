@@ -9,17 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var scale: CGFloat = 1
+    @State private var isShowing = false
+    @State private var count = 0
     var body: some View {
-        Button("Tap Me") {
-            self.scale += 1
+        VStack {
+            Button(isShowing ? "Close" : "Tap") {
+                withAnimation {
+                    self.isShowing.toggle()
+                }
+            }
+            
+            if isShowing {
+                Button("\(count)") {
+                    self.count += 1
+                }
+                .frame(width: 200, height: 200)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .font(.largeTitle)
+                .clipShape(Rectangle())
+                .transition(.scale)
+                
+            }
         }
-        .padding(40)
-        .background(Color.blue)
-        .foregroundColor(.white)
-        .clipShape(Circle())
-        .scaleEffect(scale)
-        .animation(.interpolatingSpring(stiffness: 50, damping: 2))
     }
 }
 
