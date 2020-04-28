@@ -8,61 +8,66 @@
 
 import SwiftUI
 
-struct Settings: View {
-    @State private var tableSelected = 3
-    @State private var numberOfQuestions = 0
-    
-    let questions: [String] = [
-           "5",
-           "10",
-           "15",
-           "20",
-           "All"
-    ]
-    
-    var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Which tables do you wanna practice?")) {
-                    Stepper(value: $tableSelected, in: 1...12) {
-                      Text("\(tableSelected)")
-                    }
-                }
-                Section(header: Text("How many questions?")) {
-                    Picker("", selection: $numberOfQuestions) {
-                        ForEach(0 ..< questions.count) {
-                            Text("\(self.questions[$0])")
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-            }
-            .navigationBarTitle("Settings")
-            .navigationBarItems(trailing: Button("Let's Play!") {
-                // add code
-                
-            })
-        }
-    }
-}
-
-struct Game: View {
-    var body: some View {
-        Text("Game")
-    }
-}
+// TO DO:
+// 1. Add a TextField, so the user can enter an answer
+// 2. Create a function to check whether the answer is correct.
+// 3. Add a score
+// 4. Clean up code
+        // Create two custom views for the game and settings
+        // Make sure questions are presented one at a time.
 
 struct ContentView: View {
-    @State private var isActive = false
+   @State private var isActive = false
+   @State private var tableSelected = 3
+   @State private var levelSelected = 0
+
+    let questionOptions: [Int] = [
+            5,
+            10,
+            15,
+            20,
+     ]
     
-    let settings = Settings()
-    let game = Game()
-    
-    var body: some View {
-        Group {
-            settings
-        }
+    var getQuestion: String {
+        let table = 1...tableSelected
+        let randomNumber = Int.random(in: table)
+        let randomQuestion = "What is \(randomNumber) x \(tableSelected)?"
+        
+        return randomQuestion
     }
-   
+     
+     var body: some View {
+         NavigationView {
+             Form {
+                if !isActive {
+                    Section(header: Text("Which tables do you wanna practice?")) {
+                        Stepper(value: $tableSelected, in: 1...12) {
+                          Text("\(tableSelected)")
+                        }
+                    }
+                    Section(header: Text("How many questions?")) {
+                        Picker("", selection: $levelSelected) {
+                            ForEach(0 ..< questionOptions.count) {
+                                Text("\(self.questionOptions[$0])")
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                }
+                
+                if isActive {
+                    Section(header: Text("Questions")) {
+                        ForEach(0..<self.questionOptions[self.levelSelected], id: \.self) {_ in
+                            Text("\(self.getQuestion)")
+                        }
+                    }
+                }
+            }
+             .navigationBarTitle("Multiply This!")
+             .navigationBarItems(trailing: Button(isActive ? "Change Settings" : "Let's Play") {
+                 self.isActive.toggle()
+             })
+         }
+     }
 }
 
 struct ContentView_Previews: PreviewProvider {
