@@ -42,8 +42,9 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var score = 0
     
-    @State private var rotation = 0.0
-    @State private var isCorrectFlag = false
+    // Set the rotation and opacity for each button
+    @State private var rotation = [0.0, 0.0, 0.0]
+    @State private var opacity = [1.0, 1.0, 1.0]
     
     var body: some View {
         ZStack {
@@ -73,14 +74,30 @@ struct ContentView: View {
                 
                 ForEach(0..<3) { index in
                     Button(action: {
-                        withAnimation {
-                            self.flagTapped(index)
+                        self.flagTapped(index)
+                        withAnimation(.easeOut(duration: 1)) {
+                            if index == self.correctAnswer {
+                                self.rotation[index] += 360
+                                switch index {
+                                  case 0:
+                                    self.opacity[1] = 0.75
+                                    self.opacity[2] = 0.75
+                                  case 1:
+                                    self.opacity[0] = 0.75
+                                    self.opacity[2] = 0.75
+                                  default:
+                                    self.opacity[0] = 0.75
+                                    self.opacity[1] = 0.75
+                                }
+                            }
                         }
                         
                     }) {
                         FlagImage(image: self.countries[index])
+                            .rotation3DEffect(.degrees(self.rotation[index]), axis: (x: 0, y: 1, z: 0))
+                            .opacity(self.opacity[index])
                     }
-                }.rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0))
+                }
             }
         }.alert(isPresented: $showingScore) {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Continue")) {
@@ -94,12 +111,10 @@ struct ContentView: View {
             alertTitle = "Nice work! Keep it up!"
             alertMessage = "You earned a point."
             score += 1
-            rotation += 360
         } else {
             alertTitle = "Nope! That's \(countries[index])'s flag."
             alertMessage = "You lost a point."
             score -= 1
-            rotation = 0
         }
         
         if score < 0 {
@@ -111,7 +126,9 @@ struct ContentView: View {
     
     // Reset the game
     func askQuestion() {
-        countries.shuffle()
+        opacity = [1.0, 1.0, 1.0]
+        rotation = [0.0, 0.0, 0.0]
+        countries = countries.shuffled()
         correctAnswer = Int.random(in: 0...2)
     }
 }
