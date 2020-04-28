@@ -42,6 +42,9 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var score = 0
     
+    @State private var rotation = 0.0
+    @State private var isCorrectFlag = false
+    
     var body: some View {
         ZStack {
             // Background
@@ -70,13 +73,14 @@ struct ContentView: View {
                 
                 ForEach(0..<3) { index in
                     Button(action: {
-                        self.flagTapped(index)
+                        withAnimation {
+                            self.flagTapped(index)
+                        }
+                        
                     }) {
                         FlagImage(image: self.countries[index])
                     }
-                  
-                    
-                }
+                }.rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0))
             }
         }.alert(isPresented: $showingScore) {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Continue")) {
@@ -90,10 +94,12 @@ struct ContentView: View {
             alertTitle = "Nice work! Keep it up!"
             alertMessage = "You earned a point."
             score += 1
+            rotation += 360
         } else {
             alertTitle = "Nope! That's \(countries[index])'s flag."
             alertMessage = "You lost a point."
             score -= 1
+            rotation = 0
         }
         
         if score < 0 {
