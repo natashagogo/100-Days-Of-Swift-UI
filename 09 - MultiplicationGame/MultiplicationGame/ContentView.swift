@@ -20,6 +20,7 @@ struct ContentView: View {
    @State private var isActive = false
    @State private var tableSelected = 3
    @State private var levelSelected = 0
+   @State private var answer = ""
 
     let questionOptions: [Int] = [
             5,
@@ -56,13 +57,13 @@ struct ContentView: View {
                 
                 if isActive {
                     Section(header: Text("Questions")) {
-                        ForEach(0..<self.questionOptions[self.levelSelected], id: \.self) {_ in
-                            Text("\(self.getQuestion)")
+                        List(0..<self.questionOptions[self.levelSelected], id: \.self) {_ in
+                             Text("\(self.getQuestion)")
                         }
                     }
                 }
             }
-             .navigationBarTitle("Multiply This!")
+             .navigationBarTitle(isActive ? "Multiply This!" : "Settings")
              .navigationBarItems(trailing: Button(isActive ? "Change Settings" : "Let's Play") {
                  self.isActive.toggle()
              })
