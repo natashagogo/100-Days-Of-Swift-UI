@@ -2,23 +2,21 @@
 //  AddView.swift
 //  iExpense
 //
-//  Created by Natasha Godwin on 5/2/20.
+//  Created by Natasha Godwin on 5/4/20.
 //  Copyright © 2020 Natasha Godwin. All rights reserved.
 //
 
 import SwiftUI
 
 struct AddView: View {
-    @ObservedObject var expenses: Expenses
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
-    @Environment(\.presentationMode) var presentationMode
     
-    static let types = [
-        "Business",
-        "Personal"
-    ]
+    static let types = ["Business", "Personal"]
+    
+    @ObservedObject var expenses: Expenses
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -30,18 +28,17 @@ struct AddView: View {
                     }
                 }
                 TextField("Amount", text: $amount)
-                    .keyboardType(.decimalPad)
+                    .keyboardType(.numberPad)
             }
-            .navigationBarTitle("Add new expense")
+            .navigationBarTitle("New Expense")
             .navigationBarItems(trailing: Button("Save") {
-                if let actualAmount = Double(self.amount) {
+                if let actualAmount = Int(self.amount) {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
                 }
             })
         }
-        
     }
 }
 
