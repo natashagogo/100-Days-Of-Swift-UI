@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+// TO DO: 
+// 1. Add categories. Allow users to add categories or tags to expenses
+// 2. Add dates. Let users select the date for the expense or use the current date as a default.
+// 3. Allow users to tap on a row to edit entries, in case they misspell something.
+
 struct ContentView: View {
     @ObservedObject var expenses = Expenses()
     @State private var showingAddExpense = false
@@ -26,13 +31,13 @@ struct ContentView: View {
                        }
 
                        Spacer()
-                       Text("$\(item.amount)")
+                       Text("$\(item.amount, specifier: "%.2f")")
                    }
                 }
                 .onDelete(perform: removeItems) // deletes items
             }
             .navigationBarTitle("iExpense")
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                 self.showingAddExpense = true
             }) {
                 Image(systemName: "plus")

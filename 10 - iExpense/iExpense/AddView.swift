@@ -16,7 +16,12 @@ struct AddView: View {
     static let types = ["Business", "Personal"]
     
     @ObservedObject var expenses: Expenses
+    
     @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showingAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     
     var body: some View {
         NavigationView {
@@ -28,16 +33,24 @@ struct AddView: View {
                     }
                 }
                 TextField("Amount", text: $amount)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
             }
             .navigationBarTitle("New Expense")
             .navigationBarItems(trailing: Button("Save") {
-                if let actualAmount = Int(self.amount) {
+                if let actualAmount = Double(self.amount) {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
                 }
+                else {
+                    self.showingAlert.toggle()
+                    self.alertTitle = "Numbers Only"
+                    self.alertMessage = "Oops! You can only use numbers."
+                }
             })
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }
