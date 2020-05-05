@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC38A66D2462198600145F69 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38A66C2462198600145F69 /* Symptom.swift */; };
+		BC38A66F246219A500145F69 /* SymptomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38A66E246219A500145F69 /* SymptomList.swift */; };
+		BC38A671246219ED00145F69 /* AddSymptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38A670246219ED00145F69 /* AddSymptom.swift */; };
 		BC5CF0272436A238000DD94F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF0262436A238000DD94F /* AppDelegate.swift */; };
 		BC5CF0292436A238000DD94F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF0282436A238000DD94F /* SceneDelegate.swift */; };
 		BC5CF02B2436A238000DD94F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF02A2436A238000DD94F /* ContentView.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC38A66C2462198600145F69 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		BC38A66E246219A500145F69 /* SymptomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomList.swift; sourceTree = "<group>"; };
+		BC38A670246219ED00145F69 /* AddSymptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptom.swift; sourceTree = "<group>"; };
 		BC5CF0232436A238000DD94F /* Symptom Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Symptom Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5CF0262436A238000DD94F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC5CF0282436A238000DD94F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +64,10 @@
 			children = (
 				BC5CF0262436A238000DD94F /* AppDelegate.swift */,
 				BC5CF0282436A238000DD94F /* SceneDelegate.swift */,
+				BC38A66C2462198600145F69 /* Symptom.swift */,
+				BC38A66E246219A500145F69 /* SymptomList.swift */,
 				BC5CF02A2436A238000DD94F /* ContentView.swift */,
+				BC38A670246219ED00145F69 /* AddSymptom.swift */,
 				BC5CF02C2436A23B000DD94F /* Assets.xcassets */,
 				BC5CF0312436A23B000DD94F /* LaunchScreen.storyboard */,
 				BC5CF0342436A23B000DD94F /* Info.plist */,
@@ -147,7 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5CF0272436A238000DD94F /* AppDelegate.swift in Sources */,
+				BC38A66D2462198600145F69 /* Symptom.swift in Sources */,
 				BC5CF0292436A238000DD94F /* SceneDelegate.swift in Sources */,
+				BC38A671246219ED00145F69 /* AddSymptom.swift in Sources */,
+				BC38A66F246219A500145F69 /* SymptomList.swift in Sources */,
 				BC5CF02B2436A238000DD94F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
