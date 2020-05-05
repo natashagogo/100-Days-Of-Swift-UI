@@ -121,10 +121,31 @@ Explored how animations work in depth.
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/08%20-%20Animations">Code</a>
 
 
+## Multiplication Game (Days 35)
+Built another multiple-choice quiz app that tests users on multiplication tables 
+
+### Link
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/09%20-%20MultiplicationGame">Code</a>
+
+## Expense Tracker (Days 36-38)
+Created a multi-view app that allows users to add and remove expenses from a list. 
+
+### Can-Dos
+- Explain why `@State` only works with structs
+- Share SwiftUI state with `@ObservedObject`
+- Show and hide views
+- Delete items using `onDelete()`
+- Store user settings with `UserDefaults`
+- Archive and unarchive Swift objects with `Codable`
+
+### Link
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/10%20-%20iExpense/iExpense">Code</a>
+
+
 # Practice Projects 
 Small, throwaway apps I built to make sense of concepts covered in the course. 
 
-## Settings UI (Day 16)
+## Settings UI 
 Attempted to recreate the UI for Apple's Settings app.
 
 ### Practiced
@@ -139,7 +160,7 @@ Attempted to recreate the UI for Apple's Settings app.
 ### Link 
 - <a href=https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20UI>Code</a> 
 
-## Vacation Picker (Day 16)
+## Vacation Picker 
 Created a single-page app that allows users to plan their next vacation.
 
 ### Practiced 
@@ -149,13 +170,14 @@ Created a single-page app that allows users to plan their next vacation.
 ### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/02%20-%20Vacation%20Spot%20Picker">Code</a> 
 
-## Symptom Tracker (Day 17)
-Explored how pickers work in more detail by creating a form that allows patients to enter details about their symptoms. 
+## Symptom Tracker 
+Created a multi-view application that allows users to add and delete their symptoms. 
 
 ### Practiced
-- Two-way data binding
-- Picker styles: `SegmentedPicker`, `WheelPicker`, etc.
-- Button types: `Toggle`
+- Sharing data across multiple views with `@ObservedObject`
+- Creating an editable list with `ForEach` and `.onDelete()`
+- Showing a second view with `.sheet()`
+- Saving user data with `Codable` and `UserDefaults`
 
 ### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
