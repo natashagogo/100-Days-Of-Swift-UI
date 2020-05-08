@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ContentView: View {
-    // Since we're using generics in this project, you have to specify the type for each file
+    // The data type for each constant has to be specified, since the method in the Bundle extension uses generics
     let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     
