@@ -25,8 +25,14 @@ struct MissionView: View {
                     Image(self.mission.image)
                      .resizable()
                      .scaledToFit()
-                     .frame(maxWidth: geometry.size.width * 0.7) // 70% the size of original
+                     .frame(maxWidth: geometry.size.width * 0.5) // 70% the size of original
                      .padding(.top)
+                    
+                    Text(self.mission.displayName)
+                        .font(.largeTitle)
+                    Text(self.mission.formattedLaunchDate)
+                        .font(.title)
+                        .foregroundColor(.secondary)
                     
                     Text(self.mission.description)
                      .padding()
@@ -79,6 +85,6 @@ struct MissionView_Previews: PreviewProvider {
     static let missions: [Mission] = Bundle.main.decode("missions.json")
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[3], astronauts: astronauts)
     }
 }

@@ -20,7 +20,7 @@ struct Mission: Codable, Identifiable {
     let description: String
     
     var displayName: String {
-        "Apollo\(id)"
+        "Apollo \(id)"
     }
     
     var image: String {
@@ -33,7 +33,7 @@ struct Mission: Codable, Identifiable {
             formatter.dateStyle = .long
             return formatter.string(from: launchDate)
         } else {
-            return "N/A"
+            return "No Date"
         }
     }
 }
