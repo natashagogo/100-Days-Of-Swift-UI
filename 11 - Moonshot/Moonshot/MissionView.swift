@@ -25,7 +25,7 @@ struct MissionView: View {
                     Image(self.mission.image)
                      .resizable()
                      .scaledToFit()
-                     .frame(maxWidth: geometry.size.width * 0.5) // 70% the size of original
+                     .frame(maxWidth: geometry.size.width * 0.5) // 50% the size of original
                      .padding(.top)
                     
                     Text(self.mission.displayName)
