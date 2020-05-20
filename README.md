@@ -161,11 +161,13 @@ Attempted to recreate the UI for Apple's Settings app.
 - <a href=https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/01%20-%20Settings%20UI>Code</a> 
 
 ## Vacation Picker 
-Created a single-page app that allows users to plan their next vacation.
+Created a multi-view app that helps people choose their next vacation spot
 
 ### Practiced 
 - Two-way data binding
-- Working with dates
+- Creating lists with `List`
+- Pushing new views onto the stack with `NavigationLink`
+- Using `GeometryReader` to resize images to fit their container view
 
 ### Link 
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/02%20-%20Vacation%20Spot%20Picker">Code</a> 
