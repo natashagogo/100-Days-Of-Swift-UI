@@ -9,29 +9,39 @@
 import SwiftUI
 
 
+import SwiftUI
+
+struct DestinationView: View {
+    var name: String
+    var body: some View {
+        VStack {
+            GeometryReader { geometry in
+                Image(self.name)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width)
+          }
+            .frame(height: 300)
+         Spacer()
+       }
+    }
+}
+
 struct ContentView: View {
-    var vacationSpots = [
-        "Tokyo",
-        "Osaka",
-        "Maui"
+    let destinations = [
+        "tokyo",
+        "kyoto",
+        "osaka",
+        "hokkaido"
     ]
     
-    @State private var selectedDestination = 0
-    @State private var selectedDate = Date()
-   
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Next Destination")) {
-                    Picker("Where do you want to go?", selection: $selectedDestination) {
-                        ForEach(0 ..< vacationSpots.count) {
-                          Text((self.vacationSpots[$0]))
-                       }
-                     }.labelsHidden()
-                    
-                    DatePicker("Departure", selection: $selectedDate, in: Date()...)
+            List(destinations, id: \.self) { place in
+                NavigationLink(destination: DestinationView(name: "\(place)")) {
+                    Text("\(place.capitalized)")
                 }
-            }.navigationBarTitle("Trip Picker")
+            }.navigationBarTitle("Japan")
         }
     }
 }
@@ -41,3 +51,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
