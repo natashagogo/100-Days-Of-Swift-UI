@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-// UUIDs, or universally unique identifiers, are hexadecimal strings. They are typically used to identify items in a list. Each UUID has 31 digits, each of which can be one of 16 values. 
-
 struct ContentView: View {
     @ObservedObject var expenses = Expenses()
     @State private var showingAddExpense = false
