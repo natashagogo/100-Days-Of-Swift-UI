@@ -184,13 +184,18 @@ Created a multi-view application that allows users to add and delete their sympt
 ### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/03%20-%20Symptom%20Tracker">Code</a> 
 
-## Message History (Days 23-24)
-Created a basic UI for a messaging app. 
-
-### Practiced
-_ Layouts 
-- Custom views
-- Custom modifiers 
+## Progress Bar
+Figured out how to make a progress bar, using `GeometryReader`
 
 ### Link
-- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20Message%20History">Code</a> 
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/04%20-%20ProgressBar">Code</a> 
+
+## To-Do List
+Created a simple to-do list app
+
+### Practiced
+- Creating a dynamic list with deletable rows with `ForEach` and `.onDelete()`
+- Storing basic user data with `UserDefaults`
+
+### Link
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/05%20-%20ToDoList">Code</a> 
