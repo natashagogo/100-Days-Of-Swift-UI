@@ -43,6 +43,12 @@ struct AddView: View {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.amountError(title: "Oops!", message: "Please enter a number for the amount.")
+                }
+                
+                if let actualAmount = Int(self.amount) {
+                    self.amountError(title: "Add Cents", message: "Please add the exact amount.")
                 }
                 
             })

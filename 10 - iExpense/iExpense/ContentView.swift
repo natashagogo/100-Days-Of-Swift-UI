@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+// TO DO
+// 1. Put the totals for each category at the top.
+// 2. Add a DatePicker to AddView, with the default set to the current date.
+// 4. Add filters for each category.
+// 5. Add charts.
+// 6. Let users create their own tags for each item.
+
 struct ContentView: View {
     @ObservedObject var expenses = Expenses()
     @State private var showingAddExpense = false
