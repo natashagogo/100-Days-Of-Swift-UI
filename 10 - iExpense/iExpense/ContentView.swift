@@ -25,7 +25,8 @@ struct ContentView: View {
                         }
 
                         Spacer()
-                        Text("$\(item.amount)")
+                        Text("$\(item.amount, specifier: "%.2f")")
+                            .foregroundColor(item.amount > 100 ? .red : .black)
                     }
                 }
                 .onDelete(perform: removeItems)
