@@ -9,39 +9,46 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var newTask: String = ""
-    @State private var tasks = UserDefaults.standard.stringArray(forKey: "Tasks") ?? [String]()
+    @ObservedObject var list = TaskList()
+    @State private var showingAddTask = false
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Add To-Do Item", text: $newTask)
-                  .textFieldStyle(RoundedBorderTextFieldStyle())
-                  .padding()
-                Button("Add") {
-                    self.addTask(task: self.newTask)
-                    UserDefaults.standard.set(self.tasks, forKey: "Tasks")
-                }
-                List {
-                    ForEach(0..<tasks.count, id: \.self) {
-                        Text("\(self.tasks[$0])")
+            List {
+                ForEach(list.items) { item in
+                    HStack {
+                        VStack(alignment: .leading){
+                            Text("\(item.name)")
+                                .font(.headline)
+                            Text("\(item.project)")
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        Text("\(item.priority)")
+                            .font(.callout)
+                            .foregroundColor(.white)
+                            .frame(width: 70, height: 30)
+                            .background(item.priority == "High" ? Color.red : Color.blue)
                     }
-                    .onDelete(perform: removeTask)
                 }
-                
+                .onDelete(perform: deleteTask)
             }
             .navigationBarTitle("To-Do List")
-            .navigationBarItems(leading: EditButton())
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: Button(action: {
+                    self.showingAddTask = true
+            }) {
+                Image(systemName: "plus")
+            })
+        }
+        .sheet(isPresented: $showingAddTask) {
+            AddTask(list: self.list)
         }
     }
-    
-    func addTask(task: String) {
-        tasks.append(task)
-        newTask = ""
+    func deleteTask(at locations: IndexSet) {
+        list.items.remove(atOffsets: locations)
     }
     
-    func removeTask(at locations: IndexSet) {
-        tasks.remove(atOffsets: locations)
-    }
 }
 
 
