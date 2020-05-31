@@ -37,7 +37,11 @@ struct AddTask: View {
                 }.pickerStyle(SegmentedPickerStyle())
             }
             .navigationBarTitle("New Task")
-            .navigationBarItems(trailing: Button("Save") {
+            .navigationBarItems(
+                leading: Button("Cancel") {
+                  self.presentationMode.wrappedValue.dismiss()
+                },
+                trailing: Button("Save") {
                 self.addTask()
                 self.presentationMode.wrappedValue.dismiss()
             })
