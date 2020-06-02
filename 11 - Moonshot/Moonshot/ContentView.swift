@@ -8,9 +8,20 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            ScrollView(.vertical) {
+                VStack(spacing: 15) {
+                    ForEach(0..<100) {
+                        Text("\($0)")
+                            .font(.largeTitle)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+        }
     }
 }
 
