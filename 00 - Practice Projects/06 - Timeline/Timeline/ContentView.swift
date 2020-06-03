@@ -17,7 +17,7 @@ struct CustomView: View {
             ZStack {
                 Rectangle()
                  .fill(Color.gray)
-                 .frame(width: 300, height: 170)
+                 .frame(width: 310, height: 150)
                  .cornerRadius(10)
                 Text("Timeline Event")
                   .foregroundColor(.white)
@@ -32,7 +32,9 @@ struct ContentView: View {
             ScrollView(.vertical) {
                 VStack(spacing: 15) {
                     ForEach(0..<100) {_ in
-                        CustomView()
+                        NavigationLink(destination: Text("Event Detail View")) {
+                            CustomView()
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity)
