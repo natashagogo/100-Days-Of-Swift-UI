@@ -8,10 +8,8 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    // The types are specified here because decode method was written with generics
-    // Swift needs to know exactly what type each is
+    // The data types need to be specified here because the decode method in the Bundle extension was written with generics
     let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     var body: some View {
@@ -26,7 +24,7 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
                             .font(.headline)
-                        Text(mission.launchDate ?? "N/A")
+                        Text(mission.formattedLaunchDate)
                     }
                 }
             }
