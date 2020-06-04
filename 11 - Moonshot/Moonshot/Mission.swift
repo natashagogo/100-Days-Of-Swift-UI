@@ -37,6 +37,7 @@ struct Mission: Codable, Identifiable {
         }
     }
     
+    // Get the names of crew members and store them in a new array
     var crewMembers: [String] {
         var members = [String]()
         for member in crew {
