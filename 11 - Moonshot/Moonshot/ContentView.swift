@@ -25,6 +25,11 @@ struct ContentView: View {
                         Text(mission.displayName)
                             .font(.headline)
                         Text(mission.formattedLaunchDate)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        ForEach(mission.crewMembers, id: \.self) {
+                            Text("\($0)")
+                        }
                     }
                 }
             }
