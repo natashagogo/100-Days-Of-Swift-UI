@@ -10,6 +10,21 @@ import SwiftUI
 
 struct AstronautView: View {
     let astronaut: Astronaut
+    let missions: [Mission] = Bundle.main.decode("missions.json")
+    let missionsFlown: [String]
+    
+    init(astronaut: Astronaut) {
+        self.astronaut = astronaut
+        
+        var matches = [String]()
+        
+        for mission in missions {
+            if mission.crew.contains(where: { $0.name == astronaut.id }) {
+                matches.append("\(mission.displayName)")
+            }
+        }
+        self.missionsFlown = matches
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -19,10 +34,18 @@ struct AstronautView: View {
                        .resizable()
                        .scaledToFit()
                        .frame(width: geometry.size.width)
-                   Text(self.astronaut.description)
-                       .padding()
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(self.astronaut.description)
                        .layoutPriority(1) // makes sure text doesn't get cut off
+                    Text("Missions Flown")
+                        .font(.headline)
+                    ForEach(self.missionsFlown, id: \.self) { mission in
+                        Text("\(mission.description)")
+                         .font(.subheadline)
+                    }
                 }
+                 .padding()
+              }
             }
          }
         .navigationBarTitle(Text(astronaut.name), displayMode: .inline)
