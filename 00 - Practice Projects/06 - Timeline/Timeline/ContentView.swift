@@ -8,39 +8,29 @@
 
 import SwiftUI
 
-struct CustomView: View {
-    var body: some View {
-        HStack(alignment: .top) {
-            Image(systemName: "sun.min.fill")
-                .foregroundColor(.blue)
-                .frame(width: 20, height: 20)
-            ZStack {
-                Rectangle()
-                 .fill(Color.gray)
-                 .frame(width: 310, height: 150)
-                 .cornerRadius(10)
-                Text("Timeline Event")
-                  .foregroundColor(.white)
-            }
-        }
-    }
-}
-
 struct ContentView: View {
+    @ObservedObject var events = EventList()
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
-                VStack(spacing: 15) {
-                    ForEach(0..<100) {_ in
-                        NavigationLink(destination: Text("Event Detail View")) {
-                            CustomView()
-                        }
-                    }
+            List {
+                ForEach(events.list) { event in
+                    Text("\(event.name)")
                 }
-                .frame(maxWidth: .infinity)
+                .onDelete(perform: removeEvent)
             }
             .navigationBarTitle("Timeline")
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: Button(action:{
+                let newEvent = Event(name: "Test")
+                self.events.list.append(newEvent)
+            }) {
+                Image(systemName: "plus")
+            })
         }
+    }
+    func removeEvent(at locations: IndexSet) {
+        events.list.remove(atOffsets: locations)
     }
 }
 
