@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct Event: Identifiable {
+struct Event: Identifiable, Codable {
     let id = UUID()
     let name: String
-    //let description: String
-    //let date: Date
+    let description: String
+    let date: Date
     
-    
+    var formatDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter.string(from: date)
+    }
 }

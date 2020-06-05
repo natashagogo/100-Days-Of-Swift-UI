@@ -15,7 +15,14 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(events.list) { event in
-                    Text("\(event.name)")
+                    NavigationLink(destination: Text("Detail View")) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("\(event.name)")
+                                .foregroundColor(.primary)
+                            Text("\(event.formatDate)")
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
                 .onDelete(perform: removeEvent)
             }
@@ -32,6 +39,7 @@ struct ContentView: View {
             AddEvent(events: self.events)
         }
     }
+    
     func removeEvent(at locations: IndexSet) {
         events.list.remove(atOffsets: locations)
     }

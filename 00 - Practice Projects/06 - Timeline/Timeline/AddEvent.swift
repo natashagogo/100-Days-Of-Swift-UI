@@ -10,20 +10,31 @@ import SwiftUI
 
 struct AddEvent: View {
     @State private var name = ""
+    @State private var description = ""
+    @State private var date = Date()
+    
     @ObservedObject var events: EventList
     @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             Form {
                 TextField("Event Name", text: $name)
+                TextField("Description", text: $description)
+                DatePicker("Date", selection: $date, displayedComponents: .date)
+                .labelsHidden()
+                .datePickerStyle(WheelDatePickerStyle())
             }
            .navigationBarTitle("Add Event")
             .navigationBarItems(trailing: Button("Save") {
-                let item = Event(name: self.name)
-                self.events.list.append(item)
+                self.addEvent()
                 self.presentationMode.wrappedValue.dismiss()
             })
         }
+    }
+    func addEvent() {
+        let item = Event(name: self.name, description: self.description, date: self.date)
+        events.list.append(item)
     }
 }
 
