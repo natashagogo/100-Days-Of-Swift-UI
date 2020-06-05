@@ -13,4 +13,6 @@ struct Event: Identifiable {
     let name: String
     //let description: String
     //let date: Date
+    
+    
 }

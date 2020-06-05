@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var events = EventList()
+    @State private var showingAddEvent = false
     var body: some View {
         NavigationView {
             List {
@@ -22,11 +23,13 @@ struct ContentView: View {
             .navigationBarItems(
                 leading: EditButton(),
                 trailing: Button(action:{
-                let newEvent = Event(name: "Test")
-                self.events.list.append(newEvent)
+                    self.showingAddEvent = true
             }) {
                 Image(systemName: "plus")
             })
+        }
+        .sheet(isPresented: $showingAddEvent) {
+            AddEvent(events: self.events)
         }
     }
     func removeEvent(at locations: IndexSet) {

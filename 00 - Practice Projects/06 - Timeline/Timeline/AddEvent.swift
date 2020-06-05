@@ -10,13 +10,25 @@ import SwiftUI
 
 struct AddEvent: View {
     @State private var name = ""
+    @ObservedObject var events: EventList
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Form {
+                TextField("Event Name", text: $name)
+            }
+           .navigationBarTitle("Add Event")
+            .navigationBarItems(trailing: Button("Save") {
+                let item = Event(name: self.name)
+                self.events.list.append(item)
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        }
     }
 }
 
 struct AddEvent_Previews: PreviewProvider {
     static var previews: some View {
-        AddEvent()
+        AddEvent(events: EventList())
     }
 }
