@@ -13,6 +13,9 @@
 		BC04FBC0248D4CCA00FB8184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC04FBBF248D4CCA00FB8184 /* Assets.xcassets */; };
 		BC04FBC3248D4CCA00FB8184 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC04FBC2248D4CCA00FB8184 /* Preview Assets.xcassets */; };
 		BC04FBC6248D4CCA00FB8184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC04FBC4248D4CCA00FB8184 /* LaunchScreen.storyboard */; };
+		BC04FBD4248D80D600FB8184 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04FBD3248D80D600FB8184 /* TriangleView.swift */; };
+		BC04FBD6248D81AB00FB8184 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04FBD5248D81AB00FB8184 /* ArcView.swift */; };
+		BC04FBD8248D846F00FB8184 /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04FBD7248D846F00FB8184 /* FlowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		BC04FBC2248D4CCA00FB8184 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC04FBC5248D4CCA00FB8184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC04FBC7248D4CCA00FB8184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC04FBD3248D80D600FB8184 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriangleView.swift; path = ../TriangleView.swift; sourceTree = "<group>"; };
+		BC04FBD5248D81AB00FB8184 /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
+		BC04FBD7248D846F00FB8184 /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,12 @@
 		BC04FBB8248D4CC500FB8184 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				BC04FBD3248D80D600FB8184 /* TriangleView.swift */,
+				BC04FBD5248D81AB00FB8184 /* ArcView.swift */,
 				BC04FBB9248D4CC600FB8184 /* AppDelegate.swift */,
 				BC04FBBB248D4CC600FB8184 /* SceneDelegate.swift */,
 				BC04FBBD248D4CC600FB8184 /* ContentView.swift */,
+				BC04FBD7248D846F00FB8184 /* FlowerView.swift */,
 				BC04FBBF248D4CCA00FB8184 /* Assets.xcassets */,
 				BC04FBC4248D4CCA00FB8184 /* LaunchScreen.storyboard */,
 				BC04FBC7248D4CCA00FB8184 /* Info.plist */,
@@ -147,7 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC04FBBA248D4CC600FB8184 /* AppDelegate.swift in Sources */,
+				BC04FBD8248D846F00FB8184 /* FlowerView.swift in Sources */,
+				BC04FBD6248D81AB00FB8184 /* ArcView.swift in Sources */,
 				BC04FBBC248D4CC600FB8184 /* SceneDelegate.swift in Sources */,
+				BC04FBD4248D80D600FB8184 /* TriangleView.swift in Sources */,
 				BC04FBBE248D4CC600FB8184 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
