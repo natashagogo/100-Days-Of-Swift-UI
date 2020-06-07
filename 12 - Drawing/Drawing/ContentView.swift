@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World")
+        ZStack {
+            Text("Hello, World")
+              .foregroundColor(.purple)
+            Capsule()
+                .strokeBorder(ImagePaint(image: Image("pattern"), scale: 0.1), lineWidth: 20)
+              .frame(width: 300, height: 100)
+        }
     }
 }
 
