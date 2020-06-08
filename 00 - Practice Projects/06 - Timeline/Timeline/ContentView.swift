@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+// TO-DOS
+// Create custom views for the timeline and events.
+// Embed the timeline in a ScrollView
+// Figure out how to delete items from ScrollView
+// Let users sort events by date (ascending and descending)
+// Add tags to each event and ability to filter by category
+
 struct ContentView: View {
     @ObservedObject var events = EventList()
     @State private var showingAddEvent = false
@@ -15,7 +22,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(events.list) { event in
-                    NavigationLink(destination: Text("Detail View")) {
+                    NavigationLink(destination: Text("\(event.description)")) {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("\(event.name)")
                                 .foregroundColor(.primary)
