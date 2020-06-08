@@ -8,14 +8,46 @@
 
 import SwiftUI
 
-struct ContentView: View {
+// .drawingGroup()
+// A modifier that speeds up performance for complex custom views by telling SwiftUI to compose all of the views off-screen before rendering them as a single output on screen
+// Powered by Metal, Apple's framework for working directly with the GPU for fast graphics
+// Warning: This should only be used on complex views when there's a performance problem. On simple views, it will slow things down. 
+
+struct ColorCyclingCircle: View {
+    var amount = 0.0
+    var steps = 100
+    
     var body: some View {
         ZStack {
-            Text("Hello, World")
-              .foregroundColor(.purple)
-            Capsule()
-                .strokeBorder(ImagePaint(image: Image("pattern"), scale: 0.1), lineWidth: 20)
-              .frame(width: 300, height: 100)
+            ForEach(0..<steps) { value in
+                Circle()
+                    .inset(by: CGFloat(value))
+                    .strokeBorder(LinearGradient(gradient: Gradient(colors: [
+                        self.color(for: value, brightness: 1),
+                        self.color(for: value, brightness: 0.5)
+                    ]), startPoint: .top, endPoint: .bottom), lineWidth: 2)
+            }
+        }.drawingGroup()
+    }
+    
+    func color(for value: Int, brightness: Double) -> Color {
+        var targetHue = Double(value) / Double(self.steps) + self.amount
+        
+        if targetHue > 1 {
+            targetHue -= 1
+        }
+        return Color(hue: targetHue, saturation: 1, brightness: brightness)
+    }
+}
+
+struct ContentView: View {
+    @State private var colorCycle = 0.0
+    var body: some View {
+        VStack {
+            ColorCyclingCircle(amount: self.colorCycle)
+                .frame(width: 300, height: 300)
+            
+            Slider(value: $colorCycle)
         }
     }
 }
