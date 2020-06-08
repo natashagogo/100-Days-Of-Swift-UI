@@ -127,19 +127,36 @@ Built another multiple-choice quiz app that tests users on multiplication tables
 ### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/09%20-%20MultiplicationGame">Code</a>
 
-## Expense Tracker (Days 36-38)
-Created a multi-view app that allows users to add and remove expenses from a list. 
+## iExpense (Days 36-38)
+Created a multi-view app that lets users to track personal and business expenses. 
 
 ### Can-Dos
 - Explain why `@State` only works with structs
 - Share SwiftUI state with `@ObservedObject`
-- Show and hide views
-- Delete items using `onDelete()`
-- Store user settings with `UserDefaults`
+- Show and hide views with `.sheet()`
+- Delete items from a list using `onDelete()`
+- Store user data with `UserDefaults`
 - Archive and unarchive Swift objects with `Codable`
 
 ### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/10%20-%20iExpense/iExpense">Code</a>
+
+## Moonshot (Days 39-42)
+Built a multi-view app that displays a list of NASA missions, a detailed description of each one, and profiles of the astronauts involved. 
+
+### Can-Dos
+- Resize images to fit the screen using `GeometryReader`
+- Explain how `ScrollView` works
+- Push new views onto the stack using `NavigationLink`
+- Work with hierarchical `Codable` data
+- Use generics to load any kind of `Codable` data
+- Format a view
+- Show details with `ScrollView` and `GeometryReader`
+- Merge `Codable` structs using `first(where:)`
+- Fix problems with `buttonStyle()` and `layoutPriority()`
+
+### Link
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/11%20-%20Moonshot">Code</a>
 
 
 # Practice Projects 
@@ -199,3 +216,16 @@ Created a simple to-do list app
 
 ### Link
 - <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/05%20-%20ToDoList">Code</a> 
+
+## Timeline
+Created a simple timeline app 
+
+### Practiced
+- Sharing state across multiple views with `@ObservedObject`
+- Toggling another view with `.sheet()`
+- Displaying details with  `NavigationLink`
+- Archiving and unarchiving data with `Codable` and `UserDefaults`
+- Storing basic user data with `UserDefaults`
+
+### Link
+- <a href="https://github.com/designmedicine/100-Days-Of-Swift-UI/tree/master/00%20-%20Practice%20Projects/06%20-%20Timeline">Code</a> 
