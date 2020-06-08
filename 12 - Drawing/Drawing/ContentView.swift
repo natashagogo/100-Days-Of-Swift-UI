@@ -8,11 +8,6 @@
 
 import SwiftUI
 
-// .drawingGroup()
-// A modifier that speeds up performance for complex custom views by telling SwiftUI to compose all of the views off-screen before rendering them as a single output on screen
-// Powered by Metal, Apple's framework for working directly with the GPU for fast graphics
-// Warning: This should only be used on complex views when there's a performance problem. On simple views, it will slow things down. 
-
 struct ColorCyclingCircle: View {
     var amount = 0.0
     var steps = 100
