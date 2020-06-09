@@ -8,23 +8,9 @@
 
 import SwiftUI
 
-// .colorMultiply()
-
-
 struct ContentView: View {
-    @State private var amount: CGFloat = 0.0
     var body: some View {
-        VStack {
-            Image("pattern")
-             .resizable()
-             .scaledToFit()
-             .frame(width: 200, height: 200)
-             .saturation(Double(amount) * 2)
-             .blur(radius: (1 - amount) * 20)
-            
-            Slider(value: $amount)
-                .padding()
-        }
+        BlendModeView()
     }
 }
 
