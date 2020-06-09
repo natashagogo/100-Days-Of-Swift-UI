@@ -17,6 +17,7 @@
 		BC04FBD6248D81AB00FB8184 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04FBD5248D81AB00FB8184 /* ArcView.swift */; };
 		BC04FBD8248D846F00FB8184 /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04FBD7248D846F00FB8184 /* FlowerView.swift */; };
 		BC26795F248DB519004D1914 /* ImagePaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26795E248DB519004D1914 /* ImagePaintView.swift */; };
+		BC294B61248F10AF00726AC0 /* ColorCyclingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC294B60248F10AF00726AC0 /* ColorCyclingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BC04FBD5248D81AB00FB8184 /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
 		BC04FBD7248D846F00FB8184 /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
 		BC26795E248DB519004D1914 /* ImagePaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePaintView.swift; sourceTree = "<group>"; };
+		BC294B60248F10AF00726AC0 /* ColorCyclingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				BC04FBBB248D4CC600FB8184 /* SceneDelegate.swift */,
 				BC04FBBD248D4CC600FB8184 /* ContentView.swift */,
 				BC26795E248DB519004D1914 /* ImagePaintView.swift */,
+				BC294B60248F10AF00726AC0 /* ColorCyclingView.swift */,
 				BC04FBBF248D4CCA00FB8184 /* Assets.xcassets */,
 				BC04FBC4248D4CCA00FB8184 /* LaunchScreen.storyboard */,
 				BC04FBC7248D4CCA00FB8184 /* Info.plist */,
@@ -162,6 +165,7 @@
 				BC04FBD8248D846F00FB8184 /* FlowerView.swift in Sources */,
 				BC04FBD6248D81AB00FB8184 /* ArcView.swift in Sources */,
 				BC04FBBC248D4CC600FB8184 /* SceneDelegate.swift in Sources */,
+				BC294B61248F10AF00726AC0 /* ColorCyclingView.swift in Sources */,
 				BC26795F248DB519004D1914 /* ImagePaintView.swift in Sources */,
 				BC04FBD4248D80D600FB8184 /* TriangleView.swift in Sources */,
 				BC04FBBE248D4CC600FB8184 /* ContentView.swift in Sources */,
