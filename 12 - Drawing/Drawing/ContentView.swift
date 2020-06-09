@@ -8,15 +8,22 @@
 
 import SwiftUI
 
+// .colorMultiply()
+
 
 struct ContentView: View {
-    @State private var colorCycle = 0.0
+    @State private var amount: CGFloat = 0.0
     var body: some View {
         VStack {
-            ColorCyclingCircle(amount: self.colorCycle)
-                .frame(width: 300, height: 300)
+            Image("pattern")
+             .resizable()
+             .scaledToFit()
+             .frame(width: 200, height: 200)
+             .saturation(Double(amount) * 2)
+             .blur(radius: (1 - amount) * 20)
             
-            Slider(value: $colorCycle)
+            Slider(value: $amount)
+                .padding()
         }
     }
 }
