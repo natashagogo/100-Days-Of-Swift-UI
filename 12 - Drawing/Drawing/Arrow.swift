@@ -23,15 +23,26 @@ struct ArrowHead: Shape {
 }
 
 struct Arrow: View {
+    @State private var lineWidth:
+         CGFloat = 2
     var body: some View {
         HStack(spacing: 0) {
             Rectangle()
-                .fill(Color.blue)
-                .frame(height: 20)
+               .stroke(Color.blue, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
+               .frame(height: 20)
             ArrowHead()
-                .fill(Color.blue)
+                .stroke(Color.blue, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
         }
-        .frame(width: 150, height: 50)
+        .onTapGesture {
+            withAnimation {
+                self.lineWidth += 1
+                
+                if self.lineWidth > 10 {
+                    self.lineWidth = 2
+                }
+            }
+        }
+        .frame(width: 120, height: 50)
     }
 }
 
