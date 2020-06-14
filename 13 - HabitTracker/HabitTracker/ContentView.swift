@@ -10,15 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var list = Habits()
+    @State private var showingAddHabit = false
     var body: some View {
         NavigationView {
             List {
                 ForEach(list.items) { item in
-                    HStack {
-                        Text("\(item.name)")
-                        Spacer()
-                        Text("\(item.count)")
-                    }
+                    Text("\(item.name)")
                 }
               .onDelete(perform: removeItem)
             }
@@ -26,11 +23,13 @@ struct ContentView: View {
             .navigationBarItems(
                 leading: EditButton(),
                 trailing: Button(action: {
-                let habit = Habit(name: "Sketching", count: 1)
-                self.list.items.append(habit)
+                    self.showingAddHabit = true
             }){
                 Image(systemName: "plus")
             })
+        }
+        .sheet(isPresented: $showingAddHabit) {
+            AddHabit(habits: self.list)
         }
     }
     

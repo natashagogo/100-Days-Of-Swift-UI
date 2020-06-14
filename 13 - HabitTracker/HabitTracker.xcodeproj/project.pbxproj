@@ -15,6 +15,7 @@
 		BC14ABB42495B91D007FAB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC14ABB22495B91D007FAB8A /* LaunchScreen.storyboard */; };
 		BCC4C6772495BA7500B79755 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C6762495BA7500B79755 /* Habit.swift */; };
 		BCC4C6792495BADE00B79755 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C6782495BADE00B79755 /* Habits.swift */; };
+		BCC4C67B2495BE6800B79755 /* AddHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C67A2495BE6800B79755 /* AddHabit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BC14ABB52495B91D007FAB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC4C6762495BA7500B79755 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		BCC4C6782495BADE00B79755 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
+		BCC4C67A2495BE6800B79755 /* AddHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BC14ABA72495B918007FAB8A /* AppDelegate.swift */,
 				BC14ABA92495B918007FAB8A /* SceneDelegate.swift */,
 				BC14ABAB2495B918007FAB8A /* ContentView.swift */,
+				BCC4C67A2495BE6800B79755 /* AddHabit.swift */,
 				BCC4C6762495BA7500B79755 /* Habit.swift */,
 				BCC4C6782495BADE00B79755 /* Habits.swift */,
 				BC14ABAD2495B91D007FAB8A /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			files = (
 				BC14ABA82495B918007FAB8A /* AppDelegate.swift in Sources */,
 				BCC4C6792495BADE00B79755 /* Habits.swift in Sources */,
+				BCC4C67B2495BE6800B79755 /* AddHabit.swift in Sources */,
 				BC14ABAA2495B918007FAB8A /* SceneDelegate.swift in Sources */,
 				BCC4C6772495BA7500B79755 /* Habit.swift in Sources */,
 				BC14ABAC2495B918007FAB8A /* ContentView.swift in Sources */,
