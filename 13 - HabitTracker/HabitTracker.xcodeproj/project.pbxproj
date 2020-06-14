@@ -13,6 +13,8 @@
 		BC14ABAE2495B91D007FAB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC14ABAD2495B91D007FAB8A /* Assets.xcassets */; };
 		BC14ABB12495B91D007FAB8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC14ABB02495B91D007FAB8A /* Preview Assets.xcassets */; };
 		BC14ABB42495B91D007FAB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC14ABB22495B91D007FAB8A /* LaunchScreen.storyboard */; };
+		BCC4C6772495BA7500B79755 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C6762495BA7500B79755 /* Habit.swift */; };
+		BCC4C6792495BADE00B79755 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C6782495BADE00B79755 /* Habits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BC14ABB02495B91D007FAB8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC14ABB32495B91D007FAB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC14ABB52495B91D007FAB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC4C6762495BA7500B79755 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		BCC4C6782495BADE00B79755 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				BC14ABA72495B918007FAB8A /* AppDelegate.swift */,
 				BC14ABA92495B918007FAB8A /* SceneDelegate.swift */,
 				BC14ABAB2495B918007FAB8A /* ContentView.swift */,
+				BCC4C6762495BA7500B79755 /* Habit.swift */,
+				BCC4C6782495BADE00B79755 /* Habits.swift */,
 				BC14ABAD2495B91D007FAB8A /* Assets.xcassets */,
 				BC14ABB22495B91D007FAB8A /* LaunchScreen.storyboard */,
 				BC14ABB52495B91D007FAB8A /* Info.plist */,
@@ -147,7 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC14ABA82495B918007FAB8A /* AppDelegate.swift in Sources */,
+				BCC4C6792495BADE00B79755 /* Habits.swift in Sources */,
 				BC14ABAA2495B918007FAB8A /* SceneDelegate.swift in Sources */,
+				BCC4C6772495BA7500B79755 /* Habit.swift in Sources */,
 				BC14ABAC2495B918007FAB8A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
