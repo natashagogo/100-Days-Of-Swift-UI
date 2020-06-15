@@ -10,7 +10,6 @@ import SwiftUI
 
 struct AddHabit: View {
     @State private var name = ""
-    @State private var category = ""
     @State private var unit = "Count"
     @State private var goal = ""
     
@@ -23,14 +22,15 @@ struct AddHabit: View {
         NavigationView {
             Form {
                 TextField("Habit", text: $name)
-                TextField("Category", text: $category)
+                TextField("Goal", text: $goal)
+                    .keyboardType(.numberPad)
                 Picker("Unit", selection: $unit) {
                     ForEach(Self.units, id: \.self) {
                         Text($0)
                     }
                 }
-                TextField("Goal", text: $goal)
-                    .keyboardType(.numberPad)
+                .labelsHidden()
+                .pickerStyle(SegmentedPickerStyle())
             }
         .navigationBarTitle("Create New Habit")
             .navigationBarItems(trailing: Button("Save") {
@@ -41,7 +41,7 @@ struct AddHabit: View {
     }
     
     func addHabit() {
-        let habit = Habit(name: name, category: category, unit: unit, goal: goal)
+        let habit = Habit(name: name, goal: goal, unit: unit, count: 0)
         habits.items.append(habit)
     }
 }

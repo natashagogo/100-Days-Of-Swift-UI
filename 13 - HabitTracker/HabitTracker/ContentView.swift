@@ -15,7 +15,12 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(list.items) { item in
-                    Text("\(item.name)")
+                    NavigationLink(destination: HabitDetail(habit: item)) {
+                        HStack {
+                            Text("\(item.name)")
+                            Text("\(item.count)")
+                        }
+                    }
                 }
               .onDelete(perform: removeItem)
             }
@@ -31,6 +36,7 @@ struct ContentView: View {
         .sheet(isPresented: $showingAddHabit) {
             AddHabit(habits: self.list)
         }
+        .environmentObject(list)
     }
     
     func removeItem(at locations: IndexSet) {
