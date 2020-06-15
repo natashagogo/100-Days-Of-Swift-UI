@@ -15,10 +15,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(list.items) { item in
-                    NavigationLink(destination: HabitDetail(habit: item)) {
+                    NavigationLink(destination: HabitDetail(habits: self.list, habit: item)) {
                         HStack {
                             Text("\(item.name)")
-                            Text("\(item.count)")
+                            Text("\(item.completedTimes)")
                         }
                     }
                 }

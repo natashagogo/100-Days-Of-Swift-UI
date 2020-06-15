@@ -14,5 +14,5 @@ struct Habit: Identifiable {
     let name: String
     let goal: String
     let unit: String
-    var count: Int
+    var completedTimes: Int
 }

@@ -41,7 +41,7 @@ struct AddHabit: View {
     }
     
     func addHabit() {
-        let habit = Habit(name: name, goal: goal, unit: unit, count: 0)
+        let habit = Habit(name: name, goal: goal, unit: unit, completedTimes: 0)
         habits.items.append(habit)
     }
 }
