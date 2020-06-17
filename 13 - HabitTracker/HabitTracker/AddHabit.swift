@@ -12,8 +12,10 @@ struct AddHabit: View {
     @State private var name = ""
     @State private var unit = "Count"
     @State private var goal = ""
+    @State private var frequency = "Per Day"
     
     static let units = ["Count", "Minutes"]
+    static let frequencies = ["Per Day", "Per Week", "Per Month"]
     
     @ObservedObject var habits: Habits
     @Environment(\.presentationMode) var presentationMode
@@ -31,6 +33,13 @@ struct AddHabit: View {
                 }
                 .labelsHidden()
                 .pickerStyle(SegmentedPickerStyle())
+               Picker("Frequency", selection: $frequency) {
+                  ForEach(Self.frequencies, id: \.self) {
+                      Text($0)
+                  }
+              }
+              .labelsHidden()
+              .pickerStyle(SegmentedPickerStyle())
             }
         .navigationBarTitle("Create New Habit")
             .navigationBarItems(trailing: Button("Save") {
@@ -41,7 +50,7 @@ struct AddHabit: View {
     }
     
     func addHabit() {
-        let habit = Habit(name: name, goal: goal, unit: unit, completedTimes: 0)
+        let habit = Habit(name: name, goal: goal, unit: unit, frequency: frequency, completedTimes: 0)
         habits.items.append(habit)
     }
 }

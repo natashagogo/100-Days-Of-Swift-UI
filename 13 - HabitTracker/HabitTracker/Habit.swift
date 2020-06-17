@@ -9,10 +9,11 @@
 import Foundation
 
 
-struct Habit: Identifiable {
+struct Habit: Identifiable, Codable {
     let id = UUID()
     let name: String
     let goal: String
     let unit: String
+    let frequency: String
     var completedTimes: Int
 }

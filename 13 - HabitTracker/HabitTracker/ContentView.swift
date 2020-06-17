@@ -15,10 +15,19 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(list.items) { item in
-                    NavigationLink(destination: HabitDetail(habits: self.list, habit: item)) {
+                    NavigationLink(destination: HabitDetail(habits: self.list, habitId: item.id)) {
                         HStack {
-                            Text("\(item.name)")
+                            VStack(alignment: .leading) {
+                                Text("\(item.name)")
+                                    .font(.headline)
+                                Text("\(item.goal) \(item.unit) \(item.frequency)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
                             Text("\(item.completedTimes)")
+                                .font(.headline)
+                                .foregroundColor(item.completedTimes > 0 ? .blue : .red)
                         }
                     }
                 }

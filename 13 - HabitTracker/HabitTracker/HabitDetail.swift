@@ -10,26 +10,36 @@ import SwiftUI
 
 struct HabitDetail: View {
     @ObservedObject var habits: Habits
-    @State private var completedTimes = 0
-    var habit: Habit
+    @State var completedTimes: Int = 0
+    
+    var habitId: UUID
+    var habit: Habit {
+        habits.getHabit(id: habitId)
+    }
     
     var body: some View {
-        VStack {
+        Form {
             Text("\(habit.name)")
-                .font(.largeTitle)
-            Text("\(habit.goal) \(habit.unit)")
-                .font(.title)
-            Stepper(value: $completedTimes, step: 1) {
-                Text("\(self.completedTimes)")
-            }
-            .frame(width: 200, height: 50)
+            Text("\(habit.goal) \(habit.unit) \(habit.frequency)")
+            Stepper(
+                onIncrement: { self.updateHabit(by: 1)},
+                onDecrement: { self.updateHabit(by: -1)},
+                label: { Text("Completed \(habit.completedTimes) time(s)")}
+            )
         }
+        .navigationBarTitle("\(habit.name)")
+    }
+    
+    func updateHabit(by change: Int) {
+        var habit = self.habit
+        habit.completedTimes += change
+        self.habits.update(habit: habit)
     }
 }
 
 struct HabitDetail_Previews: PreviewProvider {
     static var previews: some View {
-        HabitDetail(habits: Habits(), habit: Habit(name: "Name", goal: "Goal", unit: "Count", completedTimes: 0))
+        HabitDetail(habits: Habits(), habitId: UUID())
     }
 }
 
