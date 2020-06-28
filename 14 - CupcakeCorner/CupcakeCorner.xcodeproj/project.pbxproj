@@ -42,7 +42,6 @@
 		BC533BCF24A594BA00A38485 = {
 			isa = PBXGroup;
 			children = (
-				BC38154B24A82C07001E4479 /* Order.swift */,
 				BC533BDA24A594BA00A38485 /* CupcakeCorner */,
 				BC533BD924A594BA00A38485 /* Products */,
 			);
@@ -59,6 +58,7 @@
 		BC533BDA24A594BA00A38485 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				BC38154B24A82C07001E4479 /* Order.swift */,
 				BC533BDB24A594BA00A38485 /* AppDelegate.swift */,
 				BC533BDD24A594BA00A38485 /* SceneDelegate.swift */,
 				BC533BDF24A594BA00A38485 /* ContentView.swift */,
