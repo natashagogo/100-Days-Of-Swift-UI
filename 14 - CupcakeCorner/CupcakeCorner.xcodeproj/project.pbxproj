@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC38154C24A82C07001E4479 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38154B24A82C07001E4479 /* Order.swift */; };
 		BC533BDC24A594BA00A38485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533BDB24A594BA00A38485 /* AppDelegate.swift */; };
 		BC533BDE24A594BA00A38485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533BDD24A594BA00A38485 /* SceneDelegate.swift */; };
 		BC533BE024A594BA00A38485 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533BDF24A594BA00A38485 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC38154B24A82C07001E4479 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		BC533BD824A594BA00A38485 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC533BDB24A594BA00A38485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC533BDD24A594BA00A38485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		BC533BCF24A594BA00A38485 = {
 			isa = PBXGroup;
 			children = (
+				BC38154B24A82C07001E4479 /* Order.swift */,
 				BC533BDA24A594BA00A38485 /* CupcakeCorner */,
 				BC533BD924A594BA00A38485 /* Products */,
 			);
@@ -148,6 +151,7 @@
 			files = (
 				BC533BDC24A594BA00A38485 /* AppDelegate.swift in Sources */,
 				BC533BDE24A594BA00A38485 /* SceneDelegate.swift in Sources */,
+				BC38154C24A82C07001E4479 /* Order.swift in Sources */,
 				BC533BE024A594BA00A38485 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
