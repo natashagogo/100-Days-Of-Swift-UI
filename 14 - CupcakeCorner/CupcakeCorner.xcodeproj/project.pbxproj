@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC3647B624A9870F00D957B4 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3647B524A9870F00D957B4 /* CheckoutView.swift */; };
 		BC38154C24A82C07001E4479 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38154B24A82C07001E4479 /* Order.swift */; };
 		BC38154E24A83021001E4479 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38154D24A83021001E4479 /* AddressView.swift */; };
 		BC533BDC24A594BA00A38485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533BDB24A594BA00A38485 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC3647B524A9870F00D957B4 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		BC38154B24A82C07001E4479 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		BC38154D24A83021001E4479 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		BC533BD824A594BA00A38485 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 				BC533BDD24A594BA00A38485 /* SceneDelegate.swift */,
 				BC533BDF24A594BA00A38485 /* ContentView.swift */,
 				BC38154D24A83021001E4479 /* AddressView.swift */,
+				BC3647B524A9870F00D957B4 /* CheckoutView.swift */,
 				BC533BE124A594BF00A38485 /* Assets.xcassets */,
 				BC533BE624A594BF00A38485 /* LaunchScreen.storyboard */,
 				BC533BE924A594BF00A38485 /* Info.plist */,
@@ -154,6 +157,7 @@
 			files = (
 				BC533BDC24A594BA00A38485 /* AppDelegate.swift in Sources */,
 				BC533BDE24A594BA00A38485 /* SceneDelegate.swift in Sources */,
+				BC3647B624A9870F00D957B4 /* CheckoutView.swift in Sources */,
 				BC38154C24A82C07001E4479 /* Order.swift in Sources */,
 				BC533BE024A594BA00A38485 /* ContentView.swift in Sources */,
 				BC38154E24A83021001E4479 /* AddressView.swift in Sources */,
