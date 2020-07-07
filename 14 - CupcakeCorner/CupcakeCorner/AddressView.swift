@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct AddressView: View {
+    @ObservedObject var order: Order
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("555 Your Street")
     }
 }
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView()
+        AddressView(order: Order())
     }
 }
