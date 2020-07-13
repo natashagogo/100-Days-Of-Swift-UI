@@ -8,7 +8,12 @@
 
 import SwiftUI
 
-class Order: ObservableObject {
+class Order: ObservableObject, Codable {
+    // Specifies properties that need to be saved
+    enum CodingKeys: CodingKey {
+        case selection, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
+    }
+    
     static let options = ["Vanilla", "Chocolate", "Lemon"]
     
     @Published var selection = 2
@@ -56,6 +61,44 @@ class Order: ObservableObject {
         }
         
         return cost
+    }
+    
+    // Creates a container using the enum above
+    // Write out all the properties attached to each key
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        // Since this method is marked with throws,
+        // there isn't a need for catch statements.
+        try container.encode(selection, forKey: .selection)
+        try container.encode(quantity, forKey: .quantity)
+        try container.encode(extraFrosting, forKey: .extraFrosting)
+        try container.encode(addSprinkles, forKey: .addSprinkles)
+        try container.encode(name, forKey: .name)
+        try container.encode(streetAddress, forKey: .streetAddress)
+        try container.encode(city, forKey: .city)
+        try container.encode(zip, forKey: .zip)
+    }
+    
+    // Decodes an instance of Order from some archived data
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        selection = try container.decode(Int.self, forKey: .selection)
+        quantity = try container.decode(Int.self, forKey: .quantity)
+        extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
+        addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
+
+        name = try container.decode(String.self, forKey: .name)
+        streetAddress = try container.decode(String.self, forKey: .streetAddress)
+        city = try container.decode(String.self, forKey: .city)
+        zip = try container.decode(String.self, forKey: .zip)
+    }
+    
+    // Allows a new order to be created without any data
+    // Without this extra initializer, the code won't compile 
+    init() {
+        
     }
 }
 
