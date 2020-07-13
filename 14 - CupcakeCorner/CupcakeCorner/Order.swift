@@ -97,9 +97,7 @@ class Order: ObservableObject, Codable {
     
     // Allows a new order to be created without any data
     // Without this extra initializer, the code won't compile 
-    init() {
-        
-    }
+    init() { }
 }
 
 struct Order_Previews: PreviewProvider {
