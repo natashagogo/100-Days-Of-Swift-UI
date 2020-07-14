@@ -38,9 +38,19 @@ class Order: ObservableObject, Codable {
     
     var hasValidAddress: Bool {
         // TO DO: Make sure name, streetAddress, and city are strings and zip is an integer
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        let missingName = name.trimmingCharacters(in: .whitespaces).isEmpty
+        let missingAddress = streetAddress.trimmingCharacters(in: .whitespaces).isEmpty
+        let missingCity = city.trimmingCharacters(in: .whitespaces).isEmpty
+        let missingZip = zip.trimmingCharacters(in: .whitespaces).isEmpty
+
+        if missingName || missingAddress || missingCity || missingZip {
             return false
         }
+        
+        if streetAddress.count < 2 || city.count < 2 || zip.count < 5 {
+            return false
+        }
+      
         return true
     }
     
