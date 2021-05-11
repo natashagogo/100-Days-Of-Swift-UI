@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-/*
- Int.random(in: ) - a method that generates a random number within a range
- 
- .renderingMode(.original) - a modifier that tells SwiftUI to render an image in a button with the original pixels rather the default blue for buttons in iOS
- */
-
 
 struct ContentView: View {
     @State private var countries = [
