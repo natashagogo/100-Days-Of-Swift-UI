@@ -27,18 +27,27 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 60) {
             ZStack {
-                Color.blue
+                LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
-                Text("\(currentItem)")
+                VStack {
+                    Spacer()
+                    Text("\(currentItem)")
+                        .foregroundColor(.white)
+                        .font(.callout)
+                        .frame(width: 300)
+                    Spacer()
+                    Button(action: {
+                        self.newItem()
+                    }) {
+                        Text("New Quote")
+                    }
+                    .frame(width: 250, height: 60)
+                    .foregroundColor(.blue)
+                    .background(Capsule())
                     .foregroundColor(.white)
-                    .font(.callout)
+                    .padding(50)
+                }
             }
-            Button(action: {
-                self.newItem()
-            }) {
-                Text("New Question")
-            }
-            .frame(width: 300, height: 60)
         }
         
     }
