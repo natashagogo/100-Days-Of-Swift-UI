@@ -23,8 +23,11 @@ struct ContentView: View {
         "US"
     ].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var userScore = 0
     @State private var showingScore = false
+    
     @State private var scoreTitle = ""
+    @State private var scoreMessage = ""
     
     @State private var showingAlert = false
     var body: some View {
@@ -32,6 +35,14 @@ struct ContentView: View {
             LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 30) {
+                HStack {
+                    Text("\(userScore)")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    Text("points")
+                        .foregroundColor(.white)
+                }
                 VStack {
                     Text("Tap the flag of:")
                         .foregroundColor(.white)
@@ -54,7 +65,7 @@ struct ContentView: View {
                 }
             }
         }.alert(isPresented: $showingScore) {
-            Alert(title: Text("\(scoreTitle)"), message: Text("Your score is ???"), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text("\(scoreTitle)"), message: Text("\(scoreMessage)"), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
             })
         }
@@ -62,9 +73,17 @@ struct ContentView: View {
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-            scoreTitle = "Correct"
+            scoreTitle = "Nice work!"
+            userScore += 1
+            
+            if userScore == 1 {
+                scoreMessage = "You've earned \(userScore) point."
+            } else {
+                scoreMessage = "You've earned \(userScore) points."
+            }
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Nope!"
+            scoreMessage = "That's \(countries[number]) flag."
         }
         showingScore = true
     }
