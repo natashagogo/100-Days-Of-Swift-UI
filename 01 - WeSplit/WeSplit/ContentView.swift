@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     @State private var amountOwed = "" // Text fields can only contain strings
     @State private var numberOfPeople = 2 // This is an index number, not the actual number of people
@@ -49,6 +48,7 @@ struct ContentView: View {
                 }
                 Section(header: Text("Grand Total")) {
                     Text("$\(getCheck.total, specifier: "%.2f")")
+                        .foregroundColor(tipPercentages[tipPercentage] == 0 ? .red : .black)
                 }
                 Section(header: Text("Amount Per Person")) {
                     Text("$\(getCheck.splitTotal, specifier: "%.2f")")
