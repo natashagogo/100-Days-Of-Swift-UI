@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+    var path: String
+    
+    var body: some View {
+        Image(path)
+            .renderingMode(.original)
+            .clipShape(Capsule()) // round the edges
+            .overlay(Capsule().stroke(Color.blue, lineWidth: 0.5)) // add a border
+            .shadow(color: .blue, radius: 2)
+    }
+}
+
 
 struct ContentView: View {
     @State private var countries = [
@@ -56,11 +68,7 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule()) // round the edges
-                            .overlay(Capsule().stroke(Color.blue, lineWidth: 0.5)) // add a border
-                            .shadow(color: .blue, radius: 2)
+                        FlagImage(path: self.countries[number])
                     }
                 }
             }
