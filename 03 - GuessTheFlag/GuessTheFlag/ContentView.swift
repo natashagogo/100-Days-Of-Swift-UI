@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FlagImage: View {
     var path: String
-    
     var body: some View {
         Image(path)
             .renderingMode(.original)
