@@ -39,7 +39,7 @@ import SwiftUI
  If you want to use data from an external file - JSON, TXT, CSV - there are more steps involved.
  
  Bundle
- All of the files for an iOS app are stored in one place: a bundle. It contains binary code (compiled Swift code), assets, extra files like JSON and TXT files, Info.plist, and more.
+ A single directory that contains an app's compiled code, Info.plist file, asset catalogue, and other files.
  
  URL
  A data type that can store the location of files.
@@ -101,31 +101,55 @@ import SwiftUI
  let zeroMistakes = misspelledRange.location == NSNotFound
  
  
+ Styling TextFields
+ 
+ .textFieldStyle(RoundedBorderTextFieldStyle())
+ This modifier will give a TextView a light gray border with rounded corners.
+ 
+ onCommit
+ 
+ A parameter in TextField that calls a closure whenever the user presses return
+ 
+ 
+ 
  
  
  */
 
 struct ContentView: View {
-    static let symptomsData =
-        """
-        brain fog
-        concentration problems
-        protruding neck veins
-        chest pain
-        muscle weakness
-        bone pain
-        """
-
-    let symptoms = symptomsData.components(separatedBy: "\n")
+    @State private var usedWords = [String]()
+    @State private var rootWord = ""
+    @State private var newWord = ""
     
     var body: some View {
-        List {
-            Section(header: Text("Symptoms")) {
-                ForEach(symptoms, id: \.self) { symptom in
-                    Text(symptom)
+        NavigationView {
+            VStack {
+                TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                    .autocapitalization(.none)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                List(usedWords, id: \.self) {
+                    Image(systemName: "\($0.count).circle") // use SF Symbols to show the length of each word
+                    Text($0)
                 }
             }
+            .navigationBarTitle(rootWord)
         }
+    }
+    
+    func addNewWord() {
+        // Lowercase and trim the word
+        let word = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Exit if the string is empty
+        guard word.count > 0 else {
+           return
+        }
+        
+        // Add word to usedWords array
+        usedWords.insert(word, at: 0)
+        newWord = ""
+        
     }
 }
 
