@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/*
+ TO DO:
+   Show the number of points the user got for each word.
+ */
+
 
 struct ContentView: View {
     @State private var usedWords = [String]()
@@ -17,20 +22,31 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var points = 0
+    
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 30) {
                 TextField("Enter your word", text: $newWord, onCommit: addNewWord)
                     .autocapitalization(.none)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                
+                Text("Score: \(points)")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+
                 List(usedWords, id: \.self) {
-                    Image(systemName: "\($0.count).circle") // use SF Symbols to show the length of each word
+                    Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                
             }
             .navigationBarTitle(rootWord)
             .onAppear(perform: startGame)
+            .navigationBarItems(trailing: Button(action: startGame) {
+                Text("Next")
+            })
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
@@ -65,28 +81,34 @@ struct ContentView: View {
         }
         
         guard isOriginal(word: answer) else {
-            wordError(title: "Try something new!", message: "You already used that word.")
+            wordError(title: "Use a different word!", message: "Don't repeat yourself or the prompt.")
             return
         }
         
         guard isPossible(word: answer) else {
-            wordError(title: "Say what?", message: "Are you sure that's a word?")
+            wordError(title: "Not quite!", message: "Make sure your letters exist in the starter word.")
             return
         }
         
-        guard isEnglish(word: answer) else {
-            wordError(title: "Not in this English", message: "That isn't a word in the English language.")
+        guard isReal(word: answer) else {
+            wordError(title: "Say what?", message: "Sorry, Shakespeare, you can't make up words!")
+            return
+        }
+        
+        guard isSufficient(word: answer) else {
+            wordError(title: "Too short!", message: "Choose a word that's at least three letters long.")
             return
         }
         
         // Add word to usedWords array
         usedWords.insert(answer, at: 0)
+        calculateScore(word: answer)
         newWord = ""
         
     }
     
     func isOriginal(word: String) -> Bool {
-        !usedWords.contains(word)
+        !usedWords.contains(word) && word != rootWord
     }
     
     func isPossible(word: String) -> Bool {
@@ -102,19 +124,38 @@ struct ContentView: View {
         return true
     }
     
-    func isEnglish(word: String) -> Bool {
+    
+    func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let errorFound = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return errorFound.location == NSNotFound
-        
+    }
+    
+    func isSufficient(word: String) -> Bool {
+        word.count >= 3
     }
     
     func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func calculateScore(word: String) {
+        let count = word.count
+        
+        switch count {
+          case 3...4:
+            points += 1
+          case 5...6:
+            points += 2
+          case 8...:
+            points += 3
+          default:
+            points += 1
+        }
     }
 }
 
