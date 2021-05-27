@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/*
+ Animation Stack
+ Since modifier order matters, you can animate different parts of a view by adding multiple .animation() modifiers. Anything that comes before each modifier will be animated.
+ 
+ */
+
 // Example 1
 struct AnimatedButton: View {
     @State private var animationAmount: CGFloat = 1
@@ -81,9 +87,32 @@ struct ExplicitAnimation: View {
     }
 }
 
+// Example 4
+struct AnimatedShape: View {
+    @State private var enabled = false
+    @State private var animationAmount: CGFloat = 1
+    var body: some View {
+        Button(enabled ? "Bounce": "Tap") {
+            self.enabled.toggle()
+            if animationAmount < 2 {
+                self.animationAmount += 1
+            } else {
+                self.animationAmount -= 1
+            }
+        }
+        .frame(width: 100, height: 100)
+        .background(enabled ? Color.blue : Color.gray)
+        .animation(.default)
+        .foregroundColor(.white)
+        .clipShape(RoundedRectangle(cornerRadius: enabled ? 60: 0))
+        .scaleEffect(animationAmount)
+        .animation(.interpolatingSpring(stiffness: 10, damping: 1))
+   }
+}
+
 struct ContentView: View {
     var body: some View {
-        ExplicitAnimation()
+       AnimatedShape()
     }
 }
 
