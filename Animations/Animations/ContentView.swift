@@ -202,6 +202,29 @@ struct ShowAndHide: View {
     }
 }
 
+// Example 8
+
+// You can attach this to any view using .transition(.pivot)
+
+struct CornerRotateModifier: ViewModifier {
+    let amount: Double
+    let anchor: UnitPoint
+    
+    func body(content: Content) -> some View {
+        // Rotate along the Z axis, but don't go outside the container
+        content.rotationEffect(.degrees(amount), anchor: anchor).clipped()
+    }
+}
+
+extension AnyTransition {
+    static var pivot: AnyTransition {
+        .modifier(
+            active: CornerRotateModifier(amount: -90, anchor: .topLeading),
+            identity: CornerRotateModifier(amount: 0, anchor: .topLeading)
+        )
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         ShowAndHide()
