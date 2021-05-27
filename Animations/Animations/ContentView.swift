@@ -8,6 +8,7 @@
 import SwiftUI
 
 /*
+ 
  Animation Stack
  Since modifier order matters, you can animate different parts of a view by adding multiple .animation() modifiers. Anything that comes before each modifier will be animated.
  
@@ -18,8 +19,16 @@ import SwiftUI
  2. Use the .offset() modifier to adjust the X and Y position of the view without affecting the others on the screen
  3. Add a .gesture() modifier to the view and attach DragGesture to the card. Then add the modifiers onChanged(), which runs a closure when a view is moved, and .onEnded(), which runs a closure where the user lifts their finger.
  
+ Transition
+ The transition() modifier specifies how a view should be animated when it is shown or hidden.
+ 
+ .transition(.scale)
+ 
  Tips
  You can turn the letters in a string into an array with Array()
+ Use the .asymmetric modifier to do one transition when a view is shown and another when it's disappearing.
+ 
+ .transition(.asymmetric(insertion: .opacity, removal: .scale))
  
  */
 
@@ -173,9 +182,29 @@ struct SnakeLetters: View {
     }
 }
 
+// Example 7
+struct ShowAndHide: View {
+    @State private var isShowing = false
+    var body: some View {
+        VStack {
+            Button("Tap Me") {
+                withAnimation {
+                    self.isShowing.toggle()
+                }
+            }
+            if isShowing {
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: 200, height: 200)
+                    .transition(.scale)
+            }
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-       SnakeLetters()
+        ShowAndHide()
     }
 }
 
