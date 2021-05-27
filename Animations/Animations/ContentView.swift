@@ -12,12 +12,14 @@ import SwiftUI
  Since modifier order matters, you can animate different parts of a view by adding multiple .animation() modifiers. Anything that comes before each modifier will be animated.
  
  Animating Gestures
- 
  To move an object around the screen and animate it:
  
  1. Create a state variable that stores the drag amount
  2. Use the .offset() modifier to adjust the X and Y position of the view without affecting the others on the screen
  3. Add a .gesture() modifier to the view and attach DragGesture to the card. Then add the modifiers onChanged(), which runs a closure when a view is moved, and .onEnded(), which runs a closure where the user lifts their finger.
+ 
+ Tips
+ You can turn the letters in a string into an array with Array()
  
  */
 
@@ -141,9 +143,39 @@ struct DragQueen: View {
     }
 }
 
+// Example 6
+struct SnakeLetters: View {
+    let message = Array("Hello SwiftUI")
+    @State private var enabled = false
+    @State private var dragAmount = CGSize.zero
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<message.count) { index in
+                Text(String(self.message[index]))
+                    .padding(2)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .background(self.enabled ? Color.red : Color.blue)
+                    .offset(self.dragAmount)
+                    .animation(Animation.default.delay(Double(index) / 20))
+                
+            }
+        }
+        .gesture(
+            DragGesture()
+                .onChanged { self.dragAmount = $0.translation }
+                .onEnded { _ in
+                    self.dragAmount = .zero
+                    self.enabled.toggle()
+                }
+        )
+        
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        DragQueen()
+       SnakeLetters()
     }
 }
 
