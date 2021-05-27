@@ -11,6 +11,14 @@ import SwiftUI
  Animation Stack
  Since modifier order matters, you can animate different parts of a view by adding multiple .animation() modifiers. Anything that comes before each modifier will be animated.
  
+ Animating Gestures
+ 
+ To move an object around the screen and animate it:
+ 
+ 1. Create a state variable that stores the drag amount
+ 2. Use the .offset() modifier to adjust the X and Y position of the view without affecting the others on the screen
+ 3. Add a .gesture() modifier to the view and attach DragGesture to the card. Then add the modifiers onChanged(), which runs a closure when a view is moved, and .onEnded(), which runs a closure where the user lifts their finger.
+ 
  */
 
 // Example 1
@@ -110,9 +118,32 @@ struct AnimatedShape: View {
    }
 }
 
+// Example 5
+struct DragQueen: View {
+    @State private var dragAmount = CGSize.zero
+    var body: some View {
+        VStack {
+            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .frame(width: 300, height: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .offset(dragAmount)
+                .gesture(
+                    DragGesture()
+                        .onChanged { self.dragAmount = $0.translation }
+                        // Animate on release
+                        .onEnded {_ in
+                            withAnimation(.spring()) {
+                                self.dragAmount = .zero
+                            }
+                        }
+                )
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-       AnimatedShape()
+        DragQueen()
     }
 }
 
