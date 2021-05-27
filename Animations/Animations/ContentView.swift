@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-/*
- 
- Animation Stack
- Since modifier order matters, you can animate different parts of a view by adding multiple .animation() modifiers. Anything that comes before each modifier will be animated.
- 
- Animating Gestures
- To move an object around the screen and animate it:
- 
- 1. Create a state variable that stores the drag amount
- 2. Use the .offset() modifier to adjust the X and Y position of the view without affecting the others on the screen
- 3. Add a .gesture() modifier to the view and attach DragGesture to the card. Then add the modifiers onChanged(), which runs a closure when a view is moved, and .onEnded(), which runs a closure where the user lifts their finger.
- 
- Transition
- The transition() modifier specifies how a view should be animated when it is shown or hidden.
- 
- .transition(.scale)
- 
- Tips
- You can turn the letters in a string into an array with Array()
- Use the .asymmetric modifier to do one transition when a view is shown and another when it's disappearing.
- 
- .transition(.asymmetric(insertion: .opacity, removal: .scale))
- 
- */
 
 // Example 1
 struct AnimatedButton: View {
@@ -203,7 +179,6 @@ struct ShowAndHide: View {
 }
 
 // Example 8
-
 // You can attach this to any view using .transition(.pivot)
 
 struct CornerRotateModifier: ViewModifier {
