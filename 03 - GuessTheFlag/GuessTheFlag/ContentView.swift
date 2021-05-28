@@ -40,6 +40,9 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var scoreMessage = ""
     
+    @State private var animationAmounts = [0.0, 0.0, 0.0]
+    @State private var animateOpacity = false
+    
     @State private var showingAlert = false
     var body: some View {
         ZStack {
@@ -64,11 +67,12 @@ struct ContentView: View {
                 }
                 
                 ForEach(0..<3) { number in
-                    Button(action: {
-                        self.flagTapped(number)
-                    }) {
-                        FlagImage(path: self.countries[number])
-                    }
+                    FlagImage(path: countries[number])
+                        .rotation3DEffect(.degrees(self.animationAmounts[number]), axis: (x: 0, y: 1, z: 0))
+                        .opacity(self.animateOpacity ? (number == self.correctAnswer ? 1 : 0.25) : 1)
+                        .onTapGesture {
+                            self.flagTapped(number)
+                        }
                 }
             }
         }.alert(isPresented: $showingScore) {
@@ -79,9 +83,18 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        
+        withAnimation {
+            self.animateOpacity = true
+        }
+        
         if number == correctAnswer {
             scoreTitle = "Nice work!"
             userScore += 1
+            
+            withAnimation {
+                self.animationAmounts[number] += 360
+            }
             
             if userScore == 1 {
                 scoreMessage = "You've earned \(userScore) point."
@@ -99,6 +112,7 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        animateOpacity = false
     }
 }
 
