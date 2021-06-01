@@ -16,6 +16,10 @@ struct AddView: View {
     @State private var type = "Personal"
     @State private var amount = ""
     
+    @State private var showingError = false
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    
     static let types = ["Business", "Personal"]
     
     // Store a reference to the view's presentation mode, so this view can be dismissed
@@ -31,7 +35,7 @@ struct AddView: View {
                     }
                 }
                 TextField("Amount", text: $amount)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
             }
             .navigationBarTitle("Add")
             .navigationBarItems(trailing: Button("Save") {
@@ -39,8 +43,15 @@ struct AddView: View {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.showingError = true
+                    errorTitle = "Oops!"
+                    errorMessage = "Please enter a number."
                 }
             })
+        }
+        .alert(isPresented: $showingError) {
+            Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
         }
     }
 }
