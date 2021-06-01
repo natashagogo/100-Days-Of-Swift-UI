@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+/*
+ To Do:
+ 1. Figure out how to select and edit individual items in the list.
+ */
+
 
 struct ContentView: View {
   @ObservedObject var expenses = Expenses()
   @State private var addExpense = false
+    
     var body: some View {
         NavigationView {
             List {
