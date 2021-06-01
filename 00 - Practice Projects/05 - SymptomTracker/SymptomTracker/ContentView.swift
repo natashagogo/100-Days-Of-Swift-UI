@@ -9,49 +9,92 @@ import SwiftUI
 
 /*
  TO DO:
-  Add start dates to each symptom
+  1. Get the app to save user entries with UserDefaults and Codable
+  2. Add form validation to AddSymptom
+  3. Styling
  */
 
-struct Symptom {
+struct Symptom: Identifiable {
     var id = UUID()
     var name: String
-    var start: Date
+    var date: String
+}
+
+class SymptomList: ObservableObject {
+    @Published var list = [Symptom]()
+}
+
+struct AddSymptom: View {
+    @ObservedObject var symptoms: SymptomList
+    @State private var name = ""
+    @State private var date = Date()
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("Symptom")) {
+                    TextField("Add new symptom", text: $name)
+                        .autocapitalization(.none)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                Section(header: Text("Start Date")) {
+                    DatePicker("Start Date", selection: $date, displayedComponents: .date)
+                        .labelsHidden()
+                }
+            }
+            .navigationBarItems(trailing: Button("Save") {
+                let item = Symptom(name: self.name, date: self.formatDate)
+                self.symptoms.list.append(item)
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        }
+    }
+    
+    var formatDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        let entry = formatter.string(from: date)
+        return entry
+    }
 }
 
 struct ContentView: View {
-    @State private var symptoms = [String]()
-    @State private var symptom = ""
-    
-    @State private var showingAlert = false
-    @State private var alertTitle = ""
-    @State private var alertMessage = ""
+    @ObservedObject var symptoms = SymptomList()
+    @State private var addingSymptom = false
     
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Add new symptom", text: $symptom, onCommit: addSymptom)
-                    .autocapitalization(.none)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
                 List {
-                    ForEach(symptoms, id: \.self) {
-                        Text($0)
+                    ForEach(symptoms.list) { symptom in
+                        VStack(alignment: .leading) {
+                            Text(symptom.name)
+                            Text("Start Date: \(symptom.date)")
+                        }
                     }
                     .onDelete(perform: delete)
                 }
 
             }
             .navigationBarTitle("Symptom Tracker")
-            .navigationBarItems(trailing: Button(action: importData) {
-                Text("Import")
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                self.addingSymptom = true
+            }) {
+                Image(systemName: "plus")
             })
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
+        }
+        .sheet(isPresented: $addingSymptom) {
+            AddSymptom(symptoms: self.symptoms)
         }
     }
     
-    func importData() {
+    func delete(at index: IndexSet) {
+        symptoms.list.remove(atOffsets: index)
+    }
+    
+    /* func importData() {
         // 1. Find the file
         if let dataURL = Bundle.main.url(forResource: "fake_symptoms", withExtension: "txt") {
             // 2. Convert the contents to a string
@@ -68,9 +111,9 @@ struct ContentView: View {
         }
         
         fatalError("Oops! There was an error uploading your data.")
-    }
+    } */
     
-    func addSymptom() {
+    /*func addSymptom() {
         let newSymptom = symptom.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard symptom.count > 0 else {
@@ -90,10 +133,9 @@ struct ContentView: View {
         symptoms.insert(newSymptom, at: 0)
         symptom = ""
     }
+     */
     
-    func delete(at index: IndexSet) {
-        symptoms.remove(atOffsets: index)
-    }
+    /*
     
     func preventDuplicates(name: String) -> Bool {
         !symptoms.contains(name)
@@ -112,6 +154,7 @@ struct ContentView: View {
         alertTitle = title
         alertMessage = message
     }
+   */
 }
 
 struct ContentView_Previews: PreviewProvider {
