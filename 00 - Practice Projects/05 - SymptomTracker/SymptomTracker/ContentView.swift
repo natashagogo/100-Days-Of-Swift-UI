@@ -12,6 +12,7 @@ import SwiftUI
   1. Sort symptoms by start date
   2. Allow users to select and edit items in the list.
   3. Create a detail view for each symptom.
+  4. Style the list into a timeline. 
  */
 
 struct ContentView: View {
