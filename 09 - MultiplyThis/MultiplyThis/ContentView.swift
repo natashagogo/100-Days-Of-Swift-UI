@@ -18,20 +18,22 @@ import SwiftUI
 
  */
 
-class Settings: ObservableObject {
-    @Published var table = 5
+
+
+class Game: ObservableObject {
+    @Published var level = 5
 }
 
 struct ContentView: View {
-    @ObservedObject var settings = Settings()
+    @ObservedObject var game = Game()
     @State private var isActive = false
     var body: some View {
         NavigationView {
             VStack {
                 if isActive {
-                    PlayGame(settings: self.settings)
+                    PlayGame(game: self.game)
                 } else {
-                    UpdateSettings(settings: self.settings)
+                    UpdateSettings(game: self.game)
                 }
             }
             .navigationBarTitle(isActive ? "Game": "Settings")
@@ -44,19 +46,21 @@ struct ContentView: View {
 }
 
 struct UpdateSettings: View {
-    @ObservedObject var settings: Settings
+    @ObservedObject var game: Game
     var body: some View {
         Form {
-            Stepper("\(settings.table) tables", value: $settings.table, in: 1...12)
+            Section(header: Text("Practice")) {
+                Stepper("\(game.level) tables", value: $game.level, in: 1...12)
+            }
         }
     }
 }
 
 struct PlayGame: View {
-    @ObservedObject var settings: Settings
+    @ObservedObject var game: Game
     var body: some View {
         VStack {
-            Text("We're going to practice the \(settings.table) tables!")
+            Text("We're going to practice the \(game.level) tables!")
         }
     }
 }
