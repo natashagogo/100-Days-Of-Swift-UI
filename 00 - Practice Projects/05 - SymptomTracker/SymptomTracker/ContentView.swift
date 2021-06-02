@@ -9,56 +9,10 @@ import SwiftUI
 
 /*
  TO DO:
-  1. Get the app to save user entries with UserDefaults and Codable
-  2. Add form validation to AddSymptom
-  3. Styling
+  1. Sort symptoms by start date
+  2. Allow users to select and edit items in the list.
+  3. Create a detail view for each symptom.
  */
-
-struct Symptom: Identifiable {
-    var id = UUID()
-    var name: String
-    var date: String
-}
-
-class SymptomList: ObservableObject {
-    @Published var list = [Symptom]()
-}
-
-struct AddSymptom: View {
-    @ObservedObject var symptoms: SymptomList
-    @State private var name = ""
-    @State private var date = Date()
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Symptom")) {
-                    TextField("Add new symptom", text: $name)
-                        .autocapitalization(.none)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                Section(header: Text("Start Date")) {
-                    DatePicker("Start Date", selection: $date, displayedComponents: .date)
-                        .labelsHidden()
-                }
-            }
-            .navigationBarItems(trailing: Button("Save") {
-                let item = Symptom(name: self.name, date: self.formatDate)
-                self.symptoms.list.append(item)
-                self.presentationMode.wrappedValue.dismiss()
-            })
-        }
-    }
-    
-    var formatDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        let entry = formatter.string(from: date)
-        return entry
-    }
-}
 
 struct ContentView: View {
     @ObservedObject var symptoms = SymptomList()
@@ -70,8 +24,11 @@ struct ContentView: View {
                 List {
                     ForEach(symptoms.list) { symptom in
                         VStack(alignment: .leading) {
-                            Text(symptom.name)
                             Text("Start Date: \(symptom.date)")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.gray)
+                            Text(symptom.name)
                         }
                     }
                     .onDelete(perform: delete)
@@ -112,49 +69,7 @@ struct ContentView: View {
         
         fatalError("Oops! There was an error uploading your data.")
     } */
-    
-    /*func addSymptom() {
-        let newSymptom = symptom.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard symptom.count > 0 else {
-            return
-        }
-        
-        guard checkSpelling(word: symptom) else {
-            showAlert(title: "Oops!", message: "Check your spelling.")
-            return
-        }
-        
-        guard preventDuplicates(name: symptom) else {
-            showAlert(title: "Already added", message: "You've already added this symptom")
-            return
-        }
-        
-        symptoms.insert(newSymptom, at: 0)
-        symptom = ""
-    }
-     */
-    
-    /*
-    
-    func preventDuplicates(name: String) -> Bool {
-        !symptoms.contains(name)
-    }
-    
-    func checkSpelling(word: String) -> Bool {
-        let checker = UITextChecker()
-        let range = NSRange(location: 0, length: word.utf16.count)
-        let errorFound = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
-        
-        return errorFound.location == NSNotFound
-    }
-    
-    func showAlert(title: String, message: String) {
-        showingAlert = true
-        alertTitle = title
-        alertMessage = message
-    }
-   */
+   
 }
 
 struct ContentView_Previews: PreviewProvider {
