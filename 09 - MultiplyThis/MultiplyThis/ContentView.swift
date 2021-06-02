@@ -18,55 +18,49 @@ import SwiftUI
 
  */
 
-struct Game: View {
-    var body: some View {
-        Text("Let's Play!")
-    }
-}
-
-struct Settings: View {
-    @State private var tableSelected = 2
-    @State private var questionNumber = 0 // index
-    
-    let numberOfQuestions = ["5", "10", "20", "All"]
-    var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Practice")) {
-                    Stepper("\(tableSelected) Tables", value: $tableSelected, in: 1...12)
-                }
-                Section(header: Text("Number of Questions")) {
-                    Picker("", selection: $questionNumber) {
-                        ForEach(0..<numberOfQuestions.count) { number in
-                            Text("\(numberOfQuestions[number])")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-            }
-            .navigationBarTitle("Settings")
-        }
-    }
+class Settings: ObservableObject {
+    @Published var table = 5
 }
 
 struct ContentView: View {
+    @ObservedObject var settings = Settings()
     @State private var isActive = false
     var body: some View {
-        VStack {
-            if isActive {
-                Game()
-            } else {
-                Settings()
+        NavigationView {
+            VStack {
+                if isActive {
+                    PlayGame(settings: self.settings)
+                } else {
+                    UpdateSettings(settings: self.settings)
+                }
             }
-            Button(action:  {
+            .navigationBarTitle(isActive ? "Game": "Settings")
+            .navigationBarItems(trailing: Button(isActive ? "Settings": "Play") {
                 self.isActive.toggle()
-            }) {
-                Text("\(isActive ? "Settings": "Play")")
-            }
+            })
         }
-        
+    }
+    
+}
+
+struct UpdateSettings: View {
+    @ObservedObject var settings: Settings
+    var body: some View {
+        Form {
+            Stepper("\(settings.table) tables", value: $settings.table, in: 1...12)
+        }
     }
 }
+
+struct PlayGame: View {
+    @ObservedObject var settings: Settings
+    var body: some View {
+        VStack {
+            Text("We're going to practice the \(settings.table) tables!")
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
