@@ -12,10 +12,14 @@ import Foundation
     1. Uses Bundle to find each file
     2. Loads it into an instance of Data
     3. Passes it through JSON Decoder
+ Here, we're leveraging generics, so we don't have to copy and tweak the same extension for different types.
  */
 
 extension Bundle {
-    func decode(_ file: String) -> [Astronaut] {
+    // <T> is short for <Type>. This is a placeholder for custom types.
+    // This code won't compile without <T:Codable> because ... 
+    // .decode() only works on types that conform to this protocol
+    func decode<T: Codable>(_ file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }
@@ -26,7 +30,7 @@ extension Bundle {
         
         let decoder = JSONDecoder()
         
-        guard let loaded = try? decoder.decode([Astronaut].self, from: data) else {
+        guard let loaded = try? decoder.decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle.")
         }
         
