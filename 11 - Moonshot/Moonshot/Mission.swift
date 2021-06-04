@@ -15,9 +15,31 @@ struct Mission: Codable, Identifiable {
     }
     
     let id: Int
-    let launchDate: String?
+    let launchDate: Date?
     let crew: [CrewRole]
     let description: String
+    
+    // Used to dynamically display mission names and badges
+    var displayName: String {
+        "Apollo \(id)"
+    }
+    
+    var image: String {
+        "apollo\(id)"
+    }
+    
+    // Convert the mission launch date to a string, if it exists
+    var formattedLaunchDate: String {
+        if let launchDate = launchDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter.string(from: launchDate)
+        } else {
+            return "Failed to Launch"
+        }
+    }
+    
+    
 }
 
 

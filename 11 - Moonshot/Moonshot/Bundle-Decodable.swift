@@ -30,6 +30,12 @@ extension Bundle {
         
         let decoder = JSONDecoder()
         
+        // Format dates using the dateDecodingStrategy property
+        // Dates will appear as year-month-day
+        let formatter = DateFormatter()
+        formatter.dateFormat = "y-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
         guard let loaded = try? decoder.decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle.")
         }
