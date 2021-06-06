@@ -12,8 +12,8 @@ struct Timeline: View {
     var body: some View {
         List {
             ForEach(events.list) { event in
-                NavigationLink(destination: Text("Details")) {
-                    VStack(alignment: .leading) {
+                NavigationLink(destination: DetailView(event: event)) {
+                    VStack(alignment: .leading, spacing: 5) {
                         Text(event.date)
                             .font(.caption)
                             .foregroundColor(.blue)

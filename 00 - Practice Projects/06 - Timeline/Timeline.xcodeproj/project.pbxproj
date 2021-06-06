@@ -15,6 +15,7 @@
 		BC5624CF2669AB29008C9519 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5624CE2669AB29008C9519 /* EventList.swift */; };
 		BC5624D12669AB4A008C9519 /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5624D02669AB4A008C9519 /* AddEvent.swift */; };
 		BC5624D32669ABC3008C9519 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5624D22669ABC3008C9519 /* Timeline.swift */; };
+		BC9E25C2266C5A3400039A3F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E25C1266C5A3400039A3F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BC5624CE2669AB29008C9519 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		BC5624D02669AB4A008C9519 /* AddEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
 		BC5624D22669ABC3008C9519 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		BC9E25C1266C5A3400039A3F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,12 @@
 		BC5624BC26698EC2008C9519 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				BC5624BF26698EC2008C9519 /* ContentView.swift */,
-				BC5624D22669ABC3008C9519 /* Timeline.swift */,
-				BC5624D02669AB4A008C9519 /* AddEvent.swift */,
 				BC5624CC2669AB13008C9519 /* Event.swift */,
 				BC5624CE2669AB29008C9519 /* EventList.swift */,
+				BC5624BF26698EC2008C9519 /* ContentView.swift */,
+				BC5624D02669AB4A008C9519 /* AddEvent.swift */,
+				BC5624D22669ABC3008C9519 /* Timeline.swift */,
+				BC9E25C1266C5A3400039A3F /* DetailView.swift */,
 				BC5624BD26698EC2008C9519 /* TimelineApp.swift */,
 				BC5624C126698EC6008C9519 /* Assets.xcassets */,
 				BC5624C626698EC6008C9519 /* Info.plist */,
@@ -153,6 +156,7 @@
 				BC5624D32669ABC3008C9519 /* Timeline.swift in Sources */,
 				BC5624CF2669AB29008C9519 /* EventList.swift in Sources */,
 				BC5624D12669AB4A008C9519 /* AddEvent.swift in Sources */,
+				BC9E25C2266C5A3400039A3F /* DetailView.swift in Sources */,
 				BC5624C026698EC2008C9519 /* ContentView.swift in Sources */,
 				BC5624CD2669AB13008C9519 /* Event.swift in Sources */,
 				BC5624BE26698EC2008C9519 /* TimelineApp.swift in Sources */,
