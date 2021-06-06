@@ -24,12 +24,14 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(symptoms.list) { symptom in
-                        VStack(alignment: .leading) {
-                            Text("Start Date: \(symptom.date)")
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                                .foregroundColor(.gray)
-                            Text(symptom.name)
+                        NavigationLink(destination: DetailView(symptom: symptom)) {
+                            VStack(alignment: .leading) {
+                                Text("Start Date: \(symptom.date)")
+                                    .font(.subheadline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.gray)
+                                Text(symptom.name)
+                            }
                         }
                     }
                     .onDelete(perform: delete)

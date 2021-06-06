@@ -10,6 +10,7 @@
 		BC42BE2B2667F8F100B52EF7 /* AddSymptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42BE2A2667F8F100B52EF7 /* AddSymptom.swift */; };
 		BC42BE2D2667F92900B52EF7 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42BE2C2667F92900B52EF7 /* Symptom.swift */; };
 		BC42BE2F2667F94500B52EF7 /* SymptomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42BE2E2667F94500B52EF7 /* SymptomList.swift */; };
+		BC9E25C4266C5F5800039A3F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E25C3266C5F5800039A3F /* DetailView.swift */; };
 		BCB0C351265DA8C000030324 /* SymptomTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB0C350265DA8C000030324 /* SymptomTrackerApp.swift */; };
 		BCB0C353265DA8C000030324 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB0C352265DA8C000030324 /* ContentView.swift */; };
 		BCB0C355265DA8C300030324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB0C354265DA8C300030324 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		BC42BE2A2667F8F100B52EF7 /* AddSymptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptom.swift; sourceTree = "<group>"; };
 		BC42BE2C2667F92900B52EF7 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
 		BC42BE2E2667F94500B52EF7 /* SymptomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomList.swift; sourceTree = "<group>"; };
+		BC9E25C3266C5F5800039A3F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BCB0C34D265DA8C000030324 /* SymptomTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SymptomTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB0C350265DA8C000030324 /* SymptomTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerApp.swift; sourceTree = "<group>"; };
 		BCB0C352265DA8C000030324 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				BCB0C350265DA8C000030324 /* SymptomTrackerApp.swift */,
 				BCB0C352265DA8C000030324 /* ContentView.swift */,
+				BC9E25C3266C5F5800039A3F /* DetailView.swift */,
 				BC42BE2A2667F8F100B52EF7 /* AddSymptom.swift */,
 				BC42BE2E2667F94500B52EF7 /* SymptomList.swift */,
 				BC42BE2C2667F92900B52EF7 /* Symptom.swift */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC42BE2B2667F8F100B52EF7 /* AddSymptom.swift in Sources */,
+				BC9E25C4266C5F5800039A3F /* DetailView.swift in Sources */,
 				BC42BE2D2667F92900B52EF7 /* Symptom.swift in Sources */,
 				BCB0C353265DA8C000030324 /* ContentView.swift in Sources */,
 				BC42BE2F2667F94500B52EF7 /* SymptomList.swift in Sources */,
