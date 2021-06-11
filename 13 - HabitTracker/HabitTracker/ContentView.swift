@@ -12,6 +12,11 @@ struct DetailView: View {
     
     var body: some View {
             VStack {
+                Text("\(habit.count) / \(habit.goal)")
+                    .font(.largeTitle)
+                Button("I did it!") {
+                    // TO DO: When the user taps this button, the habit count should be equal to the habit goal.
+                }
                 
             }
             .navigationBarTitle(Text(habit.name), displayMode: .inline)
