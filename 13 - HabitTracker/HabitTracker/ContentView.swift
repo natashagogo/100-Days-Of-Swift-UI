@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
-    var habit: Habit
-    
+    @State var habit: Habit
     var body: some View {
-            VStack {
-                Text("\(habit.count) / \(habit.goal)")
-                    .font(.largeTitle)
-                Button("I did it!") {
-                    // TO DO: When the user taps this button, the habit count should be equal to the habit goal.
-                }
-                
-            }
+        VStack {
+            Text("\(habit.count) / \(habit.goal)")
+               .font(.largeTitle)
+            Text("\(habit.unit)")
+                .font(.headline)
+                .foregroundColor(.gray)
+            Stepper("", value: $habit.count, in: 0...Int(habit.goal)!, step: Int(habit.goal) ?? 1)
+                .labelsHidden()
+          }
             .navigationBarTitle(Text(habit.name), displayMode: .inline)
     }
 }
@@ -26,7 +26,6 @@ struct DetailView: View {
 struct ContentView: View {
     @ObservedObject var habits = Habits()
     @State private var addingNewHabit = false
-    
     @State private var showingAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -36,7 +35,16 @@ struct ContentView: View {
             List {
                 ForEach(habits.list) { habit in
                     NavigationLink(destination: DetailView(habit: habit)) {
-                        Text("\(habit.name)")
+                        HStack {
+                            Text("\(habit.name)")
+                            Spacer()
+                            if habit.count == Int(habit.goal) {
+                                Text("Done!")
+                            } else {
+                                Text("\(habit.goal) \(habit.unit)")
+                                    .foregroundColor(.gray)
+                            }
+                        }
                     }
                 }
                 .onDelete(perform: delete)

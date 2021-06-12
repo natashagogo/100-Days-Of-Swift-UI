@@ -13,6 +13,7 @@ struct AddHabit: View {
     @State private var goal = ""
     @State private var unit = "count"
     @State private var frequency = "Daily"
+    @State private var count = 0
     
     static let units = ["count", "minutes"]
     static let options = [
@@ -56,7 +57,7 @@ struct AddHabit: View {
     }
     
     func addHabit() {
-        let item = Habit(name: self.name, goal: self.goal, unit: self.unit, frequency: self.frequency, count: 0)
+        let item = Habit(name: self.name, goal: self.goal, unit: self.unit, frequency: self.frequency, count: self.count)
         // TO DO: Add form validation
         habits.list.append(item)
     }

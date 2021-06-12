@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Habit: Identifiable {
+struct Habit: Identifiable, Codable {
     var id = UUID()
     var name: String
     var goal: String
@@ -18,6 +18,6 @@ struct Habit: Identifiable {
 
 struct Count: Identifiable {
     var id = UUID()
-    var count: Int
     var date: Date
+    var count: Int
 }
