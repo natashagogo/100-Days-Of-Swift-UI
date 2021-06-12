@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+/*
+ TO DO:
+ 
+ There are a few problems with this app so far:
+ 1. Changes that are made in DetailView aren't being saved. The count goes back to zero after returning to the main view.
+ 2. These changes aren't being shared with the main view, either.
+ 
+ Here's what I know:
+ 1. AddHabit is responsible for initializing each Habit object. So, it is the source of truth for the data.
+ 2. DetailView needs to be able to change that data.
+ 2. ContentView needs to display the data (and any changes made to it elsewhere)
+ 
+ Question:
+ I think I need to use @Binding in DetailView. But how?
+ 
+ */
+
 struct DetailView: View {
     @State var habit: Habit
     var body: some View {
