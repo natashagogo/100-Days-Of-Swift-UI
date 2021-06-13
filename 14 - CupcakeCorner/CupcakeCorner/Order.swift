@@ -5,7 +5,7 @@
 //  Created by Natasha Godwin on 6/13/21.
 //
 
-import SwiftUI
+import Foundation
 
 class Order: ObservableObject {
     static let types = [
@@ -28,5 +28,18 @@ class Order: ObservableObject {
     }
     @Published var extraFrosting = false
     @Published var addSprinkles = false
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    @Published var zip = ""
+    
+    var hasValidAddress: Bool {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+            return false
+        }
+        
+        return true
+    }
     
 }
