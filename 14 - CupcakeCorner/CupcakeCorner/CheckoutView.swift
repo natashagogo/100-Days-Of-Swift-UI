@@ -10,7 +10,23 @@ import SwiftUI
 struct CheckoutView: View {
     @ObservedObject var order: Order
     var body: some View {
-        Text("Ready to check out?")
+        GeometryReader { geo in
+            ScrollView(.vertical) {
+                VStack {
+                    Image("cupcakes")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geo.size.width)
+                    Text("Your total is $\(self.order.cost, specifier: "%.2f")")
+                        .font(.title)
+                    Button("Place Order") {
+                        
+                    }
+                    .padding()
+                }
+            }
+        }
+        .navigationBarTitle("Check out", displayMode: .inline)
     }
 }
 
