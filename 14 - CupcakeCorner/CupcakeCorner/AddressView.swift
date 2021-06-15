@@ -14,9 +14,13 @@ struct AddressView: View {
         Form {
             Section {
                 TextField("Name", text: $order.name)
+                    .keyboardType(.alphabet)
                 TextField("Street Address", text: $order.streetAddress)
+                    .keyboardType(.default)
                 TextField("City", text: $order.city)
+                    .keyboardType(.alphabet)
                 TextField("Zip", text: $order.zip)
+                    .keyboardType(.numberPad)
             }
             
             Section {
@@ -25,6 +29,7 @@ struct AddressView: View {
                 }
             }
             .disabled(order.hasValidAddress == false)
+            
         }
         .navigationBarTitle("Delivery details", displayMode: .inline)
     }

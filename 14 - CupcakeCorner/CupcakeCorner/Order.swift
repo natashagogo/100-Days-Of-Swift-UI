@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Order: ObservableObject, Codable {
     static let types = [
@@ -39,8 +40,12 @@ class Order: ObservableObject, Codable {
     @Published var zip = ""
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
-            return false
+        let properties = [name, streetAddress, city, zip]
+        
+        for property in properties {
+            if property.trimmingCharacters(in: .whitespacesAndNewlines) == "" || property.isEmpty {
+                return false
+            }
         }
         
         return true
@@ -65,6 +70,8 @@ class Order: ObservableObject, Codable {
         
         return cost
     }
+    
+    
     
     /*
      This method creates a container, using the CodingKeys enum.
@@ -118,4 +125,10 @@ class Order: ObservableObject, Codable {
     
     init() {}
     
+}
+
+struct Order_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }
