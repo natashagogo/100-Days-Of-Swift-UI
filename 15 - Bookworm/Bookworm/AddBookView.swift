@@ -25,7 +25,7 @@ struct AddBookView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section{
+                Section(header: Text("Basics")){
                     TextField("Title", text: $title)
                     TextField("Author", text: $author)
                     Picker("Genre", selection: $genre) {
@@ -35,16 +35,12 @@ struct AddBookView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                Section{
-                    Picker("Rating", selection: $rating) {
-                        ForEach(0..<6) {
-                           Text("\($0)")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    
-                    TextEditor(text: $review)
+                Section(header: Text("Rating")){
+                    RatingView(rating: $rating)
                 }
+                Section(header: Text("Review")) {
+                    TextEditor(text: $review)
+                 }
                 Section{
                     Button("Add") {
                         let newBook = Book(context: self.viewContext)
