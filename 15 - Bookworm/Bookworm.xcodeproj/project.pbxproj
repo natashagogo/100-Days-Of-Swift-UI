@@ -16,6 +16,7 @@
 		BC4BE93B267A7342000D7C28 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BE93A267A7342000D7C28 /* AddBookView.swift */; };
 		BC4BE93D267A7881000D7C28 /* BookwormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BE93C267A7881000D7C28 /* BookwormApp.swift */; };
 		BC4BE93F267A788D000D7C28 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BE93E267A788D000D7C28 /* Persistence.swift */; };
+		BC669632267BDD3000D31A3A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC669631267BDD3000D31A3A /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BC4BE93A267A7342000D7C28 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		BC4BE93C267A7881000D7C28 /* BookwormApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
 		BC4BE93E267A788D000D7C28 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BC669631267BDD3000D31A3A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				BC4BE93C267A7881000D7C28 /* BookwormApp.swift */,
 				BC4BE93E267A788D000D7C28 /* Persistence.swift */,
 				BC4BE926267A6F6B000D7C28 /* ContentView.swift */,
+				BC669631267BDD3000D31A3A /* DetailView.swift */,
 				BC130512267B9E07001E2D7D /* EmojiRatingView.swift */,
 				BC4BE93A267A7342000D7C28 /* AddBookView.swift */,
 				BC130510267B9884001E2D7D /* RatingView.swift */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4BE93D267A7881000D7C28 /* BookwormApp.swift in Sources */,
+				BC669632267BDD3000D31A3A /* DetailView.swift in Sources */,
 				BC4BE927267A6F6B000D7C28 /* ContentView.swift in Sources */,
 				BC130513267B9E07001E2D7D /* EmojiRatingView.swift in Sources */,
 				BC4BE93B267A7342000D7C28 /* AddBookView.swift in Sources */,
