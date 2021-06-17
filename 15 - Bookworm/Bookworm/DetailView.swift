@@ -10,6 +10,9 @@ import CoreData
 
 struct DetailView: View {
     let book: Book
+    @Environment(\.managedObjectContext) var viewContext // so item can be deleted
+    @Environment(\.presentationMode) var presentationMode // to return to ContextView when an item has been deleted
+    @State private var showingDeleteAlert = false
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -39,6 +42,22 @@ struct DetailView: View {
             }
         }
         .navigationBarTitle(Text(book.title ?? "Unknown Book"), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            self.showingDeleteAlert = true
+        }) {
+            Image(systemName: "trash")
+        })
+        .alert(isPresented: $showingDeleteAlert) {
+            Alert(title: Text("Delete book"), message: Text("Are you sure you want to delete this?"), primaryButton: .destructive(Text("Delete")) {
+                self.deleteBook()
+            }, secondaryButton: .cancel())
+        }
+    }
+    
+    func deleteBook() {
+        viewContext.delete(book) // delete the book
+        try? self.viewContext.save() // make the deletion permanent
+        presentationMode.wrappedValue.dismiss() // return to parent view
     }
 }
 
