@@ -5,12 +5,37 @@
 //  Created by Natasha Godwin on 6/16/21.
 //
 
+/*
+ 
+ Sorting Fetch Requests
+ 
+ NSSortDescriptor(keyPath: \Entity.attribute, ascending: true)
+ 
+ Note that you can specify more than one sort descriptor. They will be applied in the order they are added.
+ 
+ How to delete items from Core Data
+ 
+ Write a function that ...
+    Locates the requested object in the fetch request
+    Deletes it from the viewContext
+    Saves changes to the viewContext
+  
+ Attach .onDelete(perform: ) to ForEach and call the function
+ 
+ Questions
+ 
+ How would you add filters, so users can choose which sorting methods they prefer?
+ */
+
 import SwiftUI
 import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(entity: Book.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Book.title, ascending: true),
+        NSSortDescriptor(keyPath: \Book.author, ascending: true),
+    ]) var books: FetchedResults<Book>
     
     @State private var addingNewBook = false
     
@@ -30,9 +55,10 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
                .navigationBarTitle("Bookworm")
-               .navigationBarItems(trailing: Button(action: {
+               .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                    self.addingNewBook.toggle()
                }) {
                    Image(systemName: "plus")
@@ -41,6 +67,17 @@ struct ContentView: View {
                    AddBookView().environment(\.managedObjectContext, self.viewContext)
                }
           }
+    }
+    
+    func deleteBooks(at locations: IndexSet) {
+        for location in locations {
+            // Find the book in the fetch request
+            let book = books[location]
+            // Delete it from the viewContext
+            viewContext.delete(book)
+        }
+        // Save the context
+        try? viewContext.save()
     }
 
 }
