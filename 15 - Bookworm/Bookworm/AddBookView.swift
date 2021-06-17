@@ -41,8 +41,9 @@ struct AddBookView: View {
                            Text("\($0)")
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                     
-                    TextField("Write a review", text: $review)
+                    TextEditor(text: $review)
                 }
                 Section{
                     Button("Add") {
@@ -55,7 +56,7 @@ struct AddBookView: View {
 
                         try? self.viewContext.save()
                         
-                        presentationMode.wrappedValue.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                 }
             }

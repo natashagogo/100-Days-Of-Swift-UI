@@ -9,24 +9,24 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
     
     @State private var addingNewBook = false
     
     var body: some View {
         NavigationView {
-            Text("Count: \(books.count)")
-                .navigationBarTitle("Bookworm")
-                .navigationBarItems(trailing: Button(action: {
-                    self.addingNewBook.toggle()
-                }) {
+           Text("Count: \(books.count)")
+               .navigationBarTitle("Bookworm")
+               .navigationBarItems(trailing: Button(action: {
+                   self.addingNewBook.toggle()
+               }) {
                    Image(systemName: "plus")
-                })
-        }
-        .sheet(isPresented: $addingNewBook) {
-            AddBookView().environment(\.managedObjectContext, self.viewContext)
-        }
+               })
+               .sheet(isPresented: $addingNewBook) {
+                   AddBookView().environment(\.managedObjectContext, self.viewContext)
+               }
+          }
     }
 
 }
