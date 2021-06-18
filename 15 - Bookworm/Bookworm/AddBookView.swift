@@ -14,13 +14,24 @@ struct AddBookView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
+    @State private var genre = "Non-Fiction"
     @State private var review = ""
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    /*@State private var datesRead = formatDates*/
     
     let genres = [
         "Fiction",
         "Non-Fiction"
     ]
+    
+    /*static var formatDates: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        let date1 = formatter.string(from: startDate)
+        let date2 = formatter.string(from: endDate)
+        return "\(date1)-\(date2)"
+    }*/
     
     var body: some View {
         NavigationView {
@@ -34,6 +45,10 @@ struct AddBookView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                }
+                Section(header: Text("Dates Read")) {
+                    DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
+                    DatePicker("End Date", selection: $endDate, displayedComponents: .date)
                 }
                 Section(header: Text("Rating")){
                     RatingView(rating: $rating)
@@ -49,6 +64,8 @@ struct AddBookView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.startDate = self.startDate
+                        newBook.endDate = self.endDate
 
                         try? self.viewContext.save()
                         
