@@ -8,28 +8,30 @@
 import SwiftUI
 import CoreData
 
-/*
- Why does \.self work on ForEach?
- 
- When you use \.self for the identifier, Swift computes the hash value of the object.
- 
- A hash value is a way of representing complex data in fixed-size values.
- 
- Hashable
- A protocol that generates hash values for a given struct, making it possible to use \.self as an identifier
- 
- Note that Core Data classes automatically conform to Hashable.
- 
- Creating NSManagedObject subclasses
- 
- 
- */
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Wizard.entity(), sortDescriptors: []) var wizards: FetchedResults<Wizard>
 
     var body: some View {
-       Text("Hello, World!")
+        VStack {
+            List(wizards, id: \.self) { wizard in
+                Text(wizard.name ?? "Unknown")
+            }
+            
+            Button("Add") {
+                let wizard = Wizard(context: self.viewContext)
+                wizard.name = "Harry Potter"
+            }
+            
+            Button("Save") {
+                do {
+                    try self.viewContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
