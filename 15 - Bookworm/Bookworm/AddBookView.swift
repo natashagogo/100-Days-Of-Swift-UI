@@ -18,20 +18,25 @@ struct AddBookView: View {
     @State private var review = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
-    /*@State private var datesRead = formatDates*/
     
     let genres = [
         "Fiction",
         "Non-Fiction"
     ]
     
-    /*static var formatDates: String {
+    // Create one instance of DateFormatter
+    let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        let date1 = formatter.string(from: startDate)
-        let date2 = formatter.string(from: endDate)
-        return "\(date1)-\(date2)"
-    }*/
+        return formatter
+    }()
+
+    // Use that instance to format reading dates
+    var datesRead: String  {
+        let date1 = dateFormatter.string(from: startDate)
+        let date2 = dateFormatter.string(from: endDate)
+        return "\(date1)—\(date2)"
+    }
     
     var body: some View {
         NavigationView {
@@ -66,6 +71,7 @@ struct AddBookView: View {
                         newBook.review = self.review
                         newBook.startDate = self.startDate
                         newBook.endDate = self.endDate
+                        newBook.datesRead = self.datesRead
 
                         try? self.viewContext.save()
                         

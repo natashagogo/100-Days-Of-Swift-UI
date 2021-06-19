@@ -37,6 +37,8 @@ struct ContentView: View {
                                 .foregroundColor(book.rating == 1 ? Color.red: Color.black)
                             Text(book.author ?? "Unknown Author")
                                 .foregroundColor(.secondary)
+                            Text(book.datesRead ?? "no dates added")
+                                .font(.caption)
                         }
                     }
                 }
