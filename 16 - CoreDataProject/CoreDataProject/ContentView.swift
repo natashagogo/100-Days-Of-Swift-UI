@@ -8,33 +8,6 @@
 import SwiftUI
 import CoreData
 
-/*
- 
- NSPredicate
- 
- %@
- 
- Operators commonly used with predicates
-  IN - Checks whether it matches items in an array
- BEGINSWITH - Checks whether a string begins with a certain letter
- CONTAINS - Checks whether a string contains certain characters
- NOT - Checks the inverse of a predicate
- 
- Creating Generic Filtered Lists
- 
- @ViewBuilder
- @escaping
- %K
- 
- Creating Relationships
- 
- one-to-one: one entity maps to another (one industry for one country)
- one-to-many: one entity maps to many entities (one industry in multiple countries)
- many-to-one: many entities link to one entity (multiple industries in one country)
- Many-to-Many: many entities link to multiple entities (multiple industries in multiple countries)
- 
- */
-
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var viewContext
