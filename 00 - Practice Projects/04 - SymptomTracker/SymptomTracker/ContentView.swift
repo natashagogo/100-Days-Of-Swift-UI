@@ -6,72 +6,52 @@
 //
 
 import SwiftUI
+import CoreData
 
 /*
  TO DO:
   1. Sort symptoms by start date
   2. Allow users to select and edit items in the list.
   3. Create a detail view for each symptom.
-  4. Style the list into a timeline. 
+  4. Style the list.
  */
 
 struct ContentView: View {
-    @ObservedObject var symptoms = SymptomList()
-    @State private var addingSymptom = false
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: Symptom.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Symptom.startDate, ascending: true)
+    ]) var symptoms: FetchedResults<Symptom>
+    @State private var addingNewSymptom = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(symptoms.list) { symptom in
-                        NavigationLink(destination: DetailView(symptom: symptom)) {
-                            VStack(alignment: .leading) {
-                                Text("Start Date: \(symptom.date)")
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.gray)
-                                Text(symptom.name)
-                            }
-                        }
+            List {
+                ForEach(symptoms, id: \.self) { symptom in
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(symptom.formattedDate)
+                        Text(symptom.unwrappedName)
                     }
-                    .onDelete(perform: delete)
                 }
-
+                .onDelete(perform: delete)
             }
             .navigationBarTitle("Symptom Tracker")
-            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                self.addingSymptom = true
-            }) {
-                Image(systemName: "plus")
+            .navigationBarItems(leading: EditButton(), trailing: Button("Add") {
+                self.addingNewSymptom.toggle()
             })
         }
-        .sheet(isPresented: $addingSymptom) {
-            AddSymptom(symptoms: self.symptoms)
+        .sheet(isPresented: $addingNewSymptom) {
+            AddSymptom()
+                .environment(\.managedObjectContext, self.viewContext)
         }
     }
     
-    func delete(at index: IndexSet) {
-        symptoms.list.remove(atOffsets: index)
-    }
-    
-    /* func importData() {
-        // 1. Find the file
-        if let dataURL = Bundle.main.url(forResource: "fake_symptoms", withExtension: "txt") {
-            // 2. Convert the contents to a string
-            if let contents = try? String(contentsOf: dataURL) {
-                // 3. Split the string into an array of strings
-                let list = contents.components(separatedBy: "\n")
-                // 4. Add items to the symptom list
-                for item in list {
-                    let symptom = item.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-                    symptoms.insert(symptom, at: 0)
-                }
-                return
-            }
+    func delete (at locations: IndexSet) {
+        for location in locations {
+            let symptom = symptoms[location]
+            viewContext.delete(symptom)
         }
-        
-        fatalError("Oops! There was an error uploading your data.")
-    } */
+        try? viewContext.save()
+    }
    
 }
 
