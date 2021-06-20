@@ -15,6 +15,10 @@
 		BC3C61C1267E3A0E0037F870 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC3C61BF267E3A0E0037F870 /* CoreDataProject.xcdatamodeld */; };
 		BC3C61CA267E52290037F870 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C61C8267E52290037F870 /* Movie+CoreDataClass.swift */; };
 		BC3C61CB267E52290037F870 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C61C9267E52290037F870 /* Movie+CoreDataProperties.swift */; };
+		BC628C1C267F8BA9005F8555 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C1A267F8BA9005F8555 /* Singer+CoreDataClass.swift */; };
+		BC628C1D267F8BA9005F8555 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C1B267F8BA9005F8555 /* Singer+CoreDataProperties.swift */; };
+		BC628C1F267F8D95005F8555 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C1E267F8D95005F8555 /* FilteredList.swift */; };
+		BC628C21267F926E005F8555 /* ShipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C20267F926E005F8555 /* ShipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		BC3C61C2267E3A0E0037F870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3C61C8267E52290037F870 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BC3C61C9267E52290037F870 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC628C1A267F8BA9005F8555 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BC628C1B267F8BA9005F8555 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC628C1E267F8D95005F8555 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
+		BC628C20267F926E005F8555 /* ShipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +68,14 @@
 		BC3C61B3267E3A0B0037F870 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				BC628C1A267F8BA9005F8555 /* Singer+CoreDataClass.swift */,
+				BC628C1B267F8BA9005F8555 /* Singer+CoreDataProperties.swift */,
 				BC3C61C8267E52290037F870 /* Movie+CoreDataClass.swift */,
 				BC3C61C9267E52290037F870 /* Movie+CoreDataProperties.swift */,
 				BC3C61B4267E3A0B0037F870 /* CoreDataProjectApp.swift */,
 				BC3C61B6267E3A0B0037F870 /* ContentView.swift */,
+				BC628C1E267F8D95005F8555 /* FilteredList.swift */,
+				BC628C20267F926E005F8555 /* ShipsView.swift */,
 				BC3C61B8267E3A0E0037F870 /* Assets.xcassets */,
 				BC3C61BD267E3A0E0037F870 /* Persistence.swift */,
 				BC3C61C2267E3A0E0037F870 /* Info.plist */,
@@ -150,10 +162,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC628C21267F926E005F8555 /* ShipsView.swift in Sources */,
+				BC628C1C267F8BA9005F8555 /* Singer+CoreDataClass.swift in Sources */,
 				BC3C61BE267E3A0E0037F870 /* Persistence.swift in Sources */,
+				BC628C1F267F8D95005F8555 /* FilteredList.swift in Sources */,
 				BC3C61B7267E3A0B0037F870 /* ContentView.swift in Sources */,
 				BC3C61C1267E3A0E0037F870 /* CoreDataProject.xcdatamodeld in Sources */,
 				BC3C61CA267E52290037F870 /* Movie+CoreDataClass.swift in Sources */,
+				BC628C1D267F8BA9005F8555 /* Singer+CoreDataProperties.swift in Sources */,
 				BC3C61CB267E52290037F870 /* Movie+CoreDataProperties.swift in Sources */,
 				BC3C61B5267E3A0B0037F870 /* CoreDataProjectApp.swift in Sources */,
 			);

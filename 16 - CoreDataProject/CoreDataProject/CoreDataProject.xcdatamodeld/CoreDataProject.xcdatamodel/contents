@@ -9,6 +9,10 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="universe" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Singer" representedClassName="Singer" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Wizard" representedClassName="Wizard" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
@@ -19,7 +23,8 @@
     </entity>
     <elements>
         <element name="Movie" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="Wizard" positionX="-63" positionY="9" width="128" height="44"/>
         <element name="Ship" positionX="-63" positionY="9" width="128" height="59"/>
+        <element name="Wizard" positionX="-63" positionY="9" width="128" height="44"/>
+        <element name="Singer" positionX="-54" positionY="18" width="128" height="59"/>
     </elements>
 </model>
