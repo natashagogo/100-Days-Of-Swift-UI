@@ -29,7 +29,7 @@ struct ContentView: View {
                 self.addingEvent.toggle()
                 }) {
                 Image(systemName: "plus")
-                    .font(.title)
+                    .font(.headline)
             })
          }
         .sheet(isPresented: $addingEvent) {

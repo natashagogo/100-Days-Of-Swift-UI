@@ -24,16 +24,17 @@ import SwiftUI
  
  */
 
+
 struct DetailView: View {
     @State var habit: Habit
     var body: some View {
         VStack {
-            Text("\(habit.count) / \(habit.goal)")
+            Text("\(habit.progress) / \(habit.goal)")
                .font(.largeTitle)
             Text("\(habit.unit)")
                 .font(.headline)
                 .foregroundColor(.gray)
-            Stepper("", value: $habit.count, in: 0...Int(habit.goal)!, step: Int(habit.goal) ?? 1)
+            Stepper("", value: $habit.progress, in: 0...Int(habit.goal)!, step: Int(habit.goal) ?? 1)
                 .labelsHidden()
           }
             .navigationBarTitle(Text(habit.name), displayMode: .inline)
@@ -55,12 +56,7 @@ struct ContentView: View {
                         HStack {
                             Text("\(habit.name)")
                             Spacer()
-                            if habit.count == Int(habit.goal) {
-                                Text("Done!")
-                            } else {
-                                Text("\(habit.goal) \(habit.unit)")
-                                    .foregroundColor(.gray)
-                            }
+                            Text("\(habit.progress)")
                         }
                     }
                 }

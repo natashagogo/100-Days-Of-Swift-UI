@@ -13,7 +13,7 @@ struct Habit: Identifiable, Codable {
     var goal: String
     var unit: String
     var frequency: String
-    var count: Int
+    var progress: Int
 }
 
 struct Count: Identifiable {
