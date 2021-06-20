@@ -11,7 +11,7 @@ struct FilteredList: View {
     @Environment(\.managedObjectContext) var viewContext
     var fetchRequest: FetchRequest<Singer>
     
-    // Fetch the data after the filter has been selected
+    // Fetch data based on the filter selected
     init(filter: String) {
         fetchRequest = FetchRequest<Singer>(entity: Singer.entity(), sortDescriptors: [], predicate: NSPredicate(format: "lastName BEGINSWITH %@", filter))
     }
