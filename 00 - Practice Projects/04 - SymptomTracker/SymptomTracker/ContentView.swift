@@ -10,8 +10,10 @@ import CoreData
 
 /*
  TO DO:
-  1. Create a detail view for each symptom.
-  2. Allow users to put symptoms in categories
+ 
+ 1. Map the user flow.
+ 2. Add filter by date to DetailView.
+ 3. Add a chart to DetailView
  */
 
 struct ContentView: View {
@@ -34,7 +36,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: delete)
             }
-            .navigationBarTitle("Timeline")
+            .navigationBarTitle("Symptoms")
             .navigationBarItems(leading: EditButton(), trailing: Button("Add") {
                 self.addingNewSymptom.toggle()
             })

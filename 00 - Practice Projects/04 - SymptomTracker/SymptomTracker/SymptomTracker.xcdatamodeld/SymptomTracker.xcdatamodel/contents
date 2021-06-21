@@ -11,7 +11,7 @@
         <relationship name="entry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="symptom" inverseEntity="Entry"/>
     </entity>
     <elements>
-        <element name="Symptom" positionX="-27" positionY="18" width="128" height="74"/>
         <element name="Entry" positionX="18" positionY="81" width="128" height="74"/>
+        <element name="Symptom" positionX="-27" positionY="18" width="128" height="74"/>
     </elements>
 </model>

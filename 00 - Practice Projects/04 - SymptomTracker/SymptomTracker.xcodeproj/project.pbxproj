@@ -20,6 +20,7 @@
 		BCB0C355265DA8C300030324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB0C354265DA8C300030324 /* Assets.xcassets */; };
 		BCB0C358265DA8C300030324 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB0C357265DA8C300030324 /* Preview Assets.xcassets */; };
 		BCB0C360265DB2DB00030324 /* fake_symptoms.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCB0C35F265DB2DB00030324 /* fake_symptoms.txt */; };
+		BCD028C92681169200B11AE0 /* AddEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD028C82681169200B11AE0 /* AddEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BCB0C357265DA8C300030324 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCB0C359265DA8C300030324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB0C35F265DB2DB00030324 /* fake_symptoms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fake_symptoms.txt; sourceTree = "<group>"; };
+		BCD028C82681169200B11AE0 /* AddEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				BCB0C350265DA8C000030324 /* SymptomTrackerApp.swift */,
 				BCB0C352265DA8C000030324 /* ContentView.swift */,
 				BC628C542680DFDF005F8555 /* DetailView.swift */,
+				BCD028C82681169200B11AE0 /* AddEntry.swift */,
 				BC628C37267FD9A8005F8555 /* AddSymptom.swift */,
 				BC628C2E267FD1DD005F8555 /* SymptomTracker.xcdatamodeld */,
 				BC628C31267FD221005F8555 /* Persistence.swift */,
@@ -174,6 +177,7 @@
 				BC628C582680E323005F8555 /* Entry+CoreDataClass.swift in Sources */,
 				BC628C35267FD4A6005F8555 /* Symptom+CoreDataClass.swift in Sources */,
 				BC628C30267FD1DD005F8555 /* SymptomTracker.xcdatamodeld in Sources */,
+				BCD028C92681169200B11AE0 /* AddEntry.swift in Sources */,
 				BC628C36267FD4A6005F8555 /* Symptom+CoreDataProperties.swift in Sources */,
 				BCB0C351265DA8C000030324 /* SymptomTrackerApp.swift in Sources */,
 			);

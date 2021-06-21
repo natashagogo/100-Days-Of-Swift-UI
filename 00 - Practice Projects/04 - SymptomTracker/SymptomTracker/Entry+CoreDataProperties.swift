@@ -25,7 +25,7 @@ extension Entry {
     }
     
     public var unwrappedScore: String {
-        score ?? "Mild"
+        score?.lowercased() ?? "mild"
     }
     
     public var formattedDate: String {

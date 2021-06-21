@@ -35,8 +35,20 @@ extension Symptom {
         return date
     }
     
+    /*
+      NSSet is an Objective-C data type, so it won't work with SwiftUI.
+      Additionally, it isn't limited to a specific type.
+     
+      To fix this, we'll do three things:
+      1. Convert NSSet to Set<Entry>, a Swift type.
+      2. Converts Set<Entry> into an array, so it can be used with ForEach.
+      3. Sorts the entries by date.
+      
+     */
+    
     public var entryArray: [Entry] {
         let set = entry as? Set<Entry> ?? []
+        // Sorting a set automatically returns an array, but since we're using custom types, we need to specify how they should be sorted in a closure.
         return set.sorted {
             $0.unwrappedDate < $1.unwrappedDate
         }
