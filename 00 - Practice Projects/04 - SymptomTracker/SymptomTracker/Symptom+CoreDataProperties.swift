@@ -18,20 +18,28 @@ extension Symptom {
 
     @NSManaged public var name: String?
     @NSManaged public var startDate: Date?
+    @NSManaged public var entry: NSSet?
     
-    var unwrappedName: String {
+    public var unwrappedName: String {
         self.name?.lowercased() ?? "New Symptom"
     }
     
-    var unwrappedStartDate: Date {
+    public var unwrappedStartDate: Date {
         self.startDate ?? Date()
     }
     
-    var formattedDate: String {
+    public var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         let date = formatter.string(from: unwrappedStartDate)
         return date
+    }
+    
+    public var entryArray: [Entry] {
+        let set = entry as? Set<Entry> ?? []
+        return set.sorted {
+            $0.unwrappedDate < $1.unwrappedDate
+        }
     }
 
 }

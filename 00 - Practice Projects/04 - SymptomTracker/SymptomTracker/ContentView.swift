@@ -10,10 +10,8 @@ import CoreData
 
 /*
  TO DO:
-  1. Sort symptoms by start date
-  2. Allow users to select and edit items in the list.
-  3. Create a detail view for each symptom.
-  4. Style the list.
+  1. Create a detail view for each symptom.
+  2. Allow users to put symptoms in categories
  */
 
 struct ContentView: View {
@@ -27,14 +25,16 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(symptoms, id: \.self) { symptom in
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(symptom.formattedDate)
-                        Text(symptom.unwrappedName)
+                    NavigationLink(destination: DetailView(symptom: symptom)) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(symptom.formattedDate)
+                            Text(symptom.unwrappedName)
+                        }
                     }
                 }
                 .onDelete(perform: delete)
             }
-            .navigationBarTitle("Symptom Tracker")
+            .navigationBarTitle("Timeline")
             .navigationBarItems(leading: EditButton(), trailing: Button("Add") {
                 self.addingNewSymptom.toggle()
             })
