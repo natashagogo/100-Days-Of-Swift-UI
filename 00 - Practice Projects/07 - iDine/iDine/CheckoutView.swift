@@ -51,7 +51,11 @@ struct CheckoutView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
-            Section(header: Text("Total: \(totalPrice)")) {
+            Section(header:
+                Text("Total: \(totalPrice)")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                 ) {
                 Button("Confirm order") {
                     showingPaymentAlert.toggle()
                 }
@@ -59,7 +63,7 @@ struct CheckoutView: View {
         }
         .navigationBarTitle("Payment", displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert) {
-            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice) – thank you!"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice). Thank you!"), dismissButton: .default(Text("OK")))
         }
     }
 }
