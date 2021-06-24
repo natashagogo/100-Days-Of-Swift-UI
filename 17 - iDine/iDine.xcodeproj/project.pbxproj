@@ -20,6 +20,7 @@
 		BCD028F2268242D000B11AE0 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD028F1268242D000B11AE0 /* OrderView.swift */; };
 		BCD028F42683A6A800B11AE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD028F32683A6A700B11AE0 /* MainView.swift */; };
 		BCD028F62683AA2200B11AE0 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD028F52683AA2200B11AE0 /* CheckoutView.swift */; };
+		BCD028F82684E70900B11AE0 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD028F72684E70900B11AE0 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BCD028F1268242D000B11AE0 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		BCD028F32683A6A700B11AE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BCD028F52683AA2200B11AE0 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		BCD028F72684E70900B11AE0 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				BCD028F52683AA2200B11AE0 /* CheckoutView.swift */,
 				BCD028EF2682220100B11AE0 /* ItemDetail.swift */,
 				BCD028F1268242D000B11AE0 /* OrderView.swift */,
+				BCD028F72684E70900B11AE0 /* FavoritesView.swift */,
 				BCD028ED26821CD900B11AE0 /* ItemRow.swift */,
 				BCD028E5268216CF00B11AE0 /* Helper.swift */,
 				BCD028E7268216D700B11AE0 /* Menu.swift */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD028F82684E70900B11AE0 /* FavoritesView.swift in Sources */,
 				BCD028F02682220100B11AE0 /* ItemDetail.swift in Sources */,
 				BCD028F42683A6A800B11AE0 /* MainView.swift in Sources */,
 				BCD028F62683AA2200B11AE0 /* CheckoutView.swift in Sources */,

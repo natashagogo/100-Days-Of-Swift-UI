@@ -17,6 +17,7 @@ struct ItemRow: View {
         "S": .blue,
         "V": .green
     ]
+    
     var body: some View {
         HStack(alignment: .top) {
             Image(item.thumbnailImage)

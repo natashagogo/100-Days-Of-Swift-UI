@@ -11,6 +11,8 @@ struct ItemDetail: View {
     let item: MenuItem
     @EnvironmentObject var order: Order
     
+    @State private var isFavorite = false
+    
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
@@ -29,10 +31,32 @@ struct ItemDetail: View {
             Button("Add to Order") {
                 order.add(item: item)
             }
+            .frame(width: 290, height: 50)
+            .background(Color.red)
             .font(.headline)
+            .foregroundColor(.white)
+            .cornerRadius(10.0)
             Spacer()
         }
         .navigationBarTitle(item.name, displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+             self.isFavorite.toggle()
+            // TO DO
+            // When isFavorite is false, the item should be removed 
+             if isFavorite == true {
+                order.addToFavorites(item: item)
+             }
+        }) {
+            if isFavorite == true {
+                Image(systemName: "star.fill")
+                    .font(.title)
+                    .foregroundColor(.yellow)
+            } else {
+                Image(systemName: "star")
+                    .font(.title)
+                    .foregroundColor(.yellow)
+            }
+        })
     }
 }
 
