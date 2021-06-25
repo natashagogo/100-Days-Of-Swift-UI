@@ -8,6 +8,15 @@
 
 import SwiftUI
 
+/*
+ TO DOs:
+ 
+ 1. Prevent customers from selecting times outside of normal business hours in CheckoutView
+ 2. Figure out a way to send customers directly to the Order tab from ItemDetail (instead of displaying OrderView in a sheet)
+ 
+ 
+ */
+
 struct MainView: View {
     var body: some View {
         TabView {

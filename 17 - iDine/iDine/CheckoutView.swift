@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-/*
- Questions
- 
- How would you limit the time in a DatePicker, e.g. making customers unable to select times outside of business hours?
- 
- */
-
 struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
