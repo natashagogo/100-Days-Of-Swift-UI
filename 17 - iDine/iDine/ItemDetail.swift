@@ -11,7 +11,10 @@ struct ItemDetail: View {
     let item: MenuItem
     @EnvironmentObject var order: Order
     @Environment(\.presentationMode) var presentationMode
+    
     @State private var isFavorite = false
+    @State private var showingConfirmation = false
+    @State private var readyToOrder = false
     
     var body: some View {
         VStack {
@@ -30,8 +33,7 @@ struct ItemDetail: View {
                 .padding()
             Button("Add to Order") {
                 order.add(item: item)
-                // Go back to the main menu when an item is added
-                self.presentationMode.wrappedValue.dismiss()
+                self.showingConfirmation.toggle()
             }
             .frame(width: 290, height: 50)
             .background(Color.red)
@@ -43,10 +45,11 @@ struct ItemDetail: View {
         .navigationBarTitle(item.name, displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
              self.isFavorite.toggle()
-            // TO DO
-            // When isFavorite is false, the item should be removed 
+            // Add or remove item from favorites
              if isFavorite == true {
                 order.addToFavorites(item: item)
+             } else {
+                order.removeFromFavorites(item: item)
              }
         }) {
             if isFavorite == true {
@@ -59,6 +62,20 @@ struct ItemDetail: View {
                     .foregroundColor(.yellow)
             }
         })
+        .alert(isPresented: $showingConfirmation) {
+            Alert(title: Text("Added!"), message: Text("Are you ready to order?"), primaryButton: .default(Text("Order"), action: {
+                // Go to OrderView
+                self.readyToOrder.toggle()
+            }), secondaryButton: .cancel(Text("Back to Menu"), action: {
+                // Go back to the menu
+                self.presentationMode.wrappedValue.dismiss()
+            }))
+        }
+        .sheet(isPresented: $readyToOrder) {
+            OrderView()
+        }
+        
+        
     }
 }
 
