@@ -10,7 +10,7 @@ import SwiftUI
 struct ItemDetail: View {
     let item: MenuItem
     @EnvironmentObject var order: Order
-    
+    @Environment(\.presentationMode) var presentationMode
     @State private var isFavorite = false
     
     var body: some View {
@@ -30,6 +30,8 @@ struct ItemDetail: View {
                 .padding()
             Button("Add to Order") {
                 order.add(item: item)
+                // Go back to the main menu when an item is added
+                self.presentationMode.wrappedValue.dismiss()
             }
             .frame(width: 290, height: 50)
             .background(Color.red)
