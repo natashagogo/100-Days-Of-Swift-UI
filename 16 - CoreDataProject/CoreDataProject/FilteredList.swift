@@ -37,12 +37,12 @@ struct FilteredList: View {
         taylor.lastName = "Swift"
 
         let ed = Singer(context: self.viewContext)
-        ed.firstName = "Ed"
-        ed.lastName = "Sheeran"
+        ed.firstName = "Billie"
+        ed.lastName = "Eilish"
 
         let adele = Singer(context: self.viewContext)
-        adele.firstName = "Adele"
-        adele.lastName = "Adkins"
+        adele.firstName = "Lana"
+        adele.lastName = "Del Rey"
 
         try? self.viewContext.save()
     }

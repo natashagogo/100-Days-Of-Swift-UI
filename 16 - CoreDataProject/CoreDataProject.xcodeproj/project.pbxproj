@@ -24,6 +24,7 @@
 		BC628C2A267FB5E4005F8555 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C26267FB5E4005F8555 /* Country+CoreDataClass.swift */; };
 		BC628C2B267FB5E4005F8555 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C27267FB5E4005F8555 /* Country+CoreDataProperties.swift */; };
 		BC628C2D267FB71B005F8555 /* FilteredListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C2C267FB71B005F8555 /* FilteredListView.swift */; };
+		BCBE17F72688BE2D0016B088 /* CandyInventionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBE17F62688BE2D0016B088 /* CandyInventionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BC628C26267FB5E4005F8555 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BC628C27267FB5E4005F8555 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC628C2C267FB71B005F8555 /* FilteredListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListView.swift; sourceTree = "<group>"; };
+		BCBE17F62688BE2D0016B088 /* CandyInventionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyInventionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				BC3C61C9267E52290037F870 /* Movie+CoreDataProperties.swift */,
 				BC3C61B4267E3A0B0037F870 /* CoreDataProjectApp.swift */,
 				BC3C61B6267E3A0B0037F870 /* ContentView.swift */,
+				BCBE17F62688BE2D0016B088 /* CandyInventionsView.swift */,
 				BC628C2C267FB71B005F8555 /* FilteredListView.swift */,
 				BC628C1E267F8D95005F8555 /* FilteredList.swift */,
 				BC628C20267F926E005F8555 /* ShipsView.swift */,
@@ -188,6 +191,7 @@
 				BC628C2A267FB5E4005F8555 /* Country+CoreDataClass.swift in Sources */,
 				BC3C61B7267E3A0B0037F870 /* ContentView.swift in Sources */,
 				BC3C61C1267E3A0E0037F870 /* CoreDataProject.xcdatamodeld in Sources */,
+				BCBE17F72688BE2D0016B088 /* CandyInventionsView.swift in Sources */,
 				BC3C61CA267E52290037F870 /* Movie+CoreDataClass.swift in Sources */,
 				BC628C1D267F8BA9005F8555 /* Singer+CoreDataProperties.swift in Sources */,
 				BC3C61CB267E52290037F870 /* Movie+CoreDataProperties.swift in Sources */,
