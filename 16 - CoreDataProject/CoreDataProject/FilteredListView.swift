@@ -7,24 +7,38 @@
 
 import SwiftUI
 
+enum Genre: String {
+    case pop = "Pop"
+    case alternative = "Alternative"
+    case electronic = "Electronic"
+}
+
+let pop = Genre.pop.rawValue
+let alternative = Genre.alternative.rawValue
+let electronic = Genre.electronic.rawValue
+
+
 struct FilteredListView: View {
     @Environment(\.managedObjectContext) var viewContext
-    @State private var lastNameFilter = "A"
+    @State private var genreFilter = pop
 
     var body: some View {
         NavigationView {
             VStack {
                 HStack(spacing: 50) {
-                    Button("Show A") {
-                        self.lastNameFilter = "A"
+                    Button(pop) {
+                        self.genreFilter = pop
                     }
-                    Button("Show S") {
-                        self.lastNameFilter = "S"
+                    Button(alternative) {
+                        self.genreFilter = alternative
+                    }
+                    Button(electronic) {
+                        self.genreFilter = electronic
                     }
                 }
-                FilteredList(filter: lastNameFilter)
+                FilteredList(filter: genreFilter)
             }
-                .navigationBarTitle("Singers")
+                .navigationBarTitle("Albums")
                 .navigationBarItems(leading: EditButton())
         }
     }

@@ -24,6 +24,8 @@
 		BC628C2A267FB5E4005F8555 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C26267FB5E4005F8555 /* Country+CoreDataClass.swift */; };
 		BC628C2B267FB5E4005F8555 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C27267FB5E4005F8555 /* Country+CoreDataProperties.swift */; };
 		BC628C2D267FB71B005F8555 /* FilteredListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC628C2C267FB71B005F8555 /* FilteredListView.swift */; };
+		BC9BF1B52688C38C003B0274 /* Album+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9BF1B32688C38C003B0274 /* Album+CoreDataClass.swift */; };
+		BC9BF1B62688C38C003B0274 /* Album+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9BF1B42688C38C003B0274 /* Album+CoreDataProperties.swift */; };
 		BCBE17F72688BE2D0016B088 /* CandyInventionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBE17F62688BE2D0016B088 /* CandyInventionsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		BC628C26267FB5E4005F8555 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BC628C27267FB5E4005F8555 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC628C2C267FB71B005F8555 /* FilteredListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListView.swift; sourceTree = "<group>"; };
+		BC9BF1B32688C38C003B0274 /* Album+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Album+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BC9BF1B42688C38C003B0274 /* Album+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Album+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCBE17F62688BE2D0016B088 /* CandyInventionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyInventionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +84,8 @@
 		BC3C61B3267E3A0B0037F870 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				BC9BF1B32688C38C003B0274 /* Album+CoreDataClass.swift */,
+				BC9BF1B42688C38C003B0274 /* Album+CoreDataProperties.swift */,
 				BC628C24267FB5E4005F8555 /* Candy+CoreDataClass.swift */,
 				BC628C25267FB5E4005F8555 /* Candy+CoreDataProperties.swift */,
 				BC628C26267FB5E4005F8555 /* Country+CoreDataClass.swift */,
@@ -190,10 +196,12 @@
 				BC628C28267FB5E4005F8555 /* Candy+CoreDataClass.swift in Sources */,
 				BC628C2A267FB5E4005F8555 /* Country+CoreDataClass.swift in Sources */,
 				BC3C61B7267E3A0B0037F870 /* ContentView.swift in Sources */,
+				BC9BF1B52688C38C003B0274 /* Album+CoreDataClass.swift in Sources */,
 				BC3C61C1267E3A0E0037F870 /* CoreDataProject.xcdatamodeld in Sources */,
 				BCBE17F72688BE2D0016B088 /* CandyInventionsView.swift in Sources */,
 				BC3C61CA267E52290037F870 /* Movie+CoreDataClass.swift in Sources */,
 				BC628C1D267F8BA9005F8555 /* Singer+CoreDataProperties.swift in Sources */,
+				BC9BF1B62688C38C003B0274 /* Album+CoreDataProperties.swift in Sources */,
 				BC3C61CB267E52290037F870 /* Movie+CoreDataProperties.swift in Sources */,
 				BC3C61B5267E3A0B0037F870 /* CoreDataProjectApp.swift in Sources */,
 			);

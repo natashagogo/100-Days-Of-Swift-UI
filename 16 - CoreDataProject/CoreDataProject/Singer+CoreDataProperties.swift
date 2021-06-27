@@ -18,6 +18,8 @@ extension Singer {
 
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
+    @NSManaged public var genre: String?
+    @NSManaged public var albums: NSSet?
     
     var wrappedFirstName: String {
         firstName ?? "Unknown"
@@ -25,6 +27,17 @@ extension Singer {
 
     var wrappedLastName: String {
         lastName ?? "Unknown"
+    }
+    
+    var wrappedGenre: String {
+        genre ?? "Unknown"
+    }
+    
+    public var albumsArray: [Album] {
+        let set = albums as? Set<Album> ?? []
+        return set.sorted {
+            $0.year < $1.year
+        }
     }
 
 }

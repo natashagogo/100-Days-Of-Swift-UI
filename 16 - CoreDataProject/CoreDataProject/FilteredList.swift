@@ -9,22 +9,27 @@ import SwiftUI
 
 struct FilteredList: View {
     @Environment(\.managedObjectContext) var viewContext
-    var fetchRequest: FetchRequest<Singer>
+    var fetchRequest: FetchRequest<Album>
     
     // Fetch data based on the filter selected
     init(filter: String) {
-        fetchRequest = FetchRequest<Singer>(entity: Singer.entity(), sortDescriptors: [], predicate: NSPredicate(format: "lastName BEGINSWITH %@", filter))
+        fetchRequest = FetchRequest<Album>(entity: Album.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Album.year, ascending: true)], predicate: NSPredicate(format: "genre CONTAINS %@", filter))
     }
     
-    var singers: FetchedResults<Singer> {
+    var albums: FetchedResults<Album> {
+        // We need fetchRequest.wrappedValue here because we aren't using @FetchRequest
         fetchRequest.wrappedValue
     }
     
     var body: some View {
-        // We need fetchRequest.wrappedValue here because we aren't using @FetchRequest
         List {
-            ForEach(singers, id: \.self) { singer in
-                Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+            ForEach(albums, id: \.self) { album in
+                VStack(alignment: .leading) {
+                    Text("\(album.unwrappedName)")
+                    Text("\(album.unwrappedArtist)")
+                    Text("\(album.unwrappedGenre)")
+                        .foregroundColor(.secondary)
+                }
             }
             .onDelete(perform: delete)
         }
@@ -32,17 +37,30 @@ struct FilteredList: View {
     }
     
     func loadSampleData() {
-        let taylor = Singer(context: self.viewContext)
-        taylor.firstName = "Taylor"
-        taylor.lastName = "Swift"
-
-        let ed = Singer(context: self.viewContext)
-        ed.firstName = "Billie"
-        ed.lastName = "Eilish"
-
-        let adele = Singer(context: self.viewContext)
-        adele.firstName = "Lana"
-        adele.lastName = "Del Rey"
+        let album1 = Album(context: self.viewContext)
+        album1.name = "Reputation"
+        album1.year = 2017
+        album1.genre = "Pop"
+        album1.artist = Singer(context: self.viewContext)
+        album1.artist!.lastName = "Swift"
+        album1.artist!.firstName = "Taylor"
+        
+        
+        let album2 = Album(context: self.viewContext)
+        album2.name = "Norman Fucking Rockwell"
+        album2.year = 2019
+        album2.genre = "Alternative"
+        album1.artist = Singer(context: self.viewContext)
+        album1.artist!.lastName = "Del Rey"
+        album1.artist!.firstName = "Lana"
+        
+        let album3 = Album(context: self.viewContext)
+        album3.name = "Haiku Hands"
+        album2.year = 2020
+        album3.genre = "Electronic"
+        album1.artist = Singer(context: self.viewContext)
+        album1.artist!.lastName = "Hands"
+        album1.artist!.firstName = "Haiku"
 
         try? self.viewContext.save()
     }
@@ -50,7 +68,7 @@ struct FilteredList: View {
     func delete(at locations: IndexSet) {
         for location in locations {
             // Find item in fetch request
-            let item = singers[location]
+            let item = albums[location]
             // Delete it from the viewContext
             viewContext.delete(item)
         }
