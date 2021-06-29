@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject private var habits: Habits
     var body: some View {
         TabView {
             ListView()
@@ -26,6 +25,5 @@ struct MainView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(Habits())
     }
 }

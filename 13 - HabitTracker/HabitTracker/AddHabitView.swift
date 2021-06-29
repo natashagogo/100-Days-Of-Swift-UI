@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddHabitView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var habits: Habits
     
     @State private var name = ""
     @State private var goal = ""
@@ -46,10 +45,7 @@ struct AddHabitView: View {
     }
     
     private func saveAndExit() {
-        if !name.isEmpty {
-            habits.list.append(Habit(name: name, goal: goal, metric: metric, frequency: frequency))
-        }
-        presentationMode.wrappedValue.dismiss()
+    
     }
 }
 

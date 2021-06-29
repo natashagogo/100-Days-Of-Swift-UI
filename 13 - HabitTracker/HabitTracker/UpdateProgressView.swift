@@ -8,30 +8,20 @@
 import SwiftUI
 
 struct UpdateProgressView: View {
-    @State var habit: Habit
-    
-    var range: ClosedRange<Int> {
-        return 0...habit.unwrappedGoal
-    }
-    
+    @State private var progress = 0
     var body: some View {
         VStack {
-            Text("\(habit.progress)/\(habit.goal)")
+            Text("\(progress)% Complete")
                 .font(.largeTitle)
-            Text("\(habit.metric)")
-                .font(.caption)
-                .textCase(.uppercase)
-                .foregroundColor(.gray)
-                
-            Stepper("", value: $habit.progress, in: range, step: habit.unwrappedGoal)
+            Stepper("", value: $progress, in: 0...100, step: 100)
                 .labelsHidden()
         }
-        .navigationBarTitle("\(habit.name)", displayMode: .inline)
+        .navigationBarTitle("Habit Progress", displayMode: .inline)
     }
 }
 
 struct UpdateProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateProgressView(habit: Habit(name: "Reading", goal: "45", metric: "minutes", frequency: "daily"))
+        UpdateProgressView()
     }
 }
