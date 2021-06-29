@@ -7,18 +7,13 @@
 
 import Foundation
 
-/*struct Progress {
-    var date: Date
-    var amount: Int
-}*/
-
-struct Habit: Identifiable {
+struct Habit  {
     let id = UUID()
     var name: String
     var goal: String
     var metric: String
     var frequency: String
-    var progress: Int
+    var progress: Int = 0
     
     var formattedGoal: String {
         return "\(progress)/\(goal) \(metric)"

@@ -16,7 +16,7 @@ struct ListView: View {
             List {
                 ForEach(habits.list) { habit in
                     NavigationLink(destination: UpdateProgressView(habit: habit)) {
-                            Text("\(habit.name)")
+                        Text("\(habit.name)")
                     }
                 }
             }

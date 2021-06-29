@@ -15,7 +15,6 @@ struct AddHabitView: View {
     @State private var goal = ""
     @State private var metric = "count"
     @State private var frequency = "daily"
-    @State private var progress = 0
     
     let metrics = ["minutes", "count"]
     let frequencies = ["daily", "weekly", "monthly"]
@@ -48,7 +47,7 @@ struct AddHabitView: View {
     
     private func saveAndExit() {
         if !name.isEmpty {
-            habits.list.append(Habit(name: name, goal: goal, metric: metric, frequency: frequency, progress: progress))
+            habits.list.append(Habit(name: name, goal: goal, metric: metric, frequency: frequency))
         }
         presentationMode.wrappedValue.dismiss()
     }

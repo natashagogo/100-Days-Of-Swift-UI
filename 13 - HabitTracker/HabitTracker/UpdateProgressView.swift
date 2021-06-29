@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct UpdateProgressView: View {
     @State var habit: Habit
     
@@ -33,6 +32,6 @@ struct UpdateProgressView: View {
 
 struct UpdateProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateProgressView(habit: Habit(name: "Reading", goal: "30", metric: "count", frequency: "daily", progress: 0))
+        UpdateProgressView(habit: Habit(name: "Reading", goal: "45", metric: "minutes", frequency: "daily"))
     }
 }
