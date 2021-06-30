@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct AddHabitView: View {
+    @EnvironmentObject var habits: HabitList
     @Environment(\.presentationMode) var presentationMode
     
     @State private var name = ""
     @State private var goal = ""
     @State private var metric = "count"
     @State private var frequency = "daily"
+    @State private var progress = 0
     
     let metrics = ["minutes", "count"]
     let frequencies = ["daily", "weekly", "monthly"]
@@ -35,6 +37,7 @@ struct AddHabitView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                ProgressBar(value: $progress)
             }
             .navigationTitle("New Habit")
             .navigationBarItems(trailing: Button("Add") {
@@ -45,7 +48,7 @@ struct AddHabitView: View {
     }
     
     private func saveAndExit() {
-    
+        habits.list.append(Habit(name: name, goal: goal, metric: metric, frequency: frequency, progress: progress))
     }
 }
 

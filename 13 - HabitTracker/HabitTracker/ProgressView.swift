@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ProgressView: View {
+    @EnvironmentObject var habits: HabitList
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Progress")
+            List {
+                ForEach(habits.list) { habit in
+                    HStack {
+                        Text(habit.name)
+                        Spacer()
+                        Text("\(habit.progress)")
+                    }
+                }
             }
             .navigationTitle("Progress")
         }
@@ -21,5 +28,6 @@ struct ProgressView: View {
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressView()
+            .environmentObject(HabitList())
     }
 }

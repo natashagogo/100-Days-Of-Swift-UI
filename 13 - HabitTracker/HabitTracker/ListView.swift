@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var habits: HabitList
     @State private var addingNewHabit = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(habits.list, id: \.self) { habit in
-                    NavigationLink(destination: UpdateProgressView()) {
-                        Text("\(habit)")
+                ForEach(habits.list) { habit in
+                    NavigationLink(destination: DetailView()) {
+                        HStack {
+                            Text("\(habit.name)")
+                            Spacer()
+                            Text("\(habit.progress)%")
+                        }
                     }
                 }
             }
@@ -35,5 +40,6 @@ struct ListView: View {
 struct HabitListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()
+            .environmentObject(HabitList())
     }
 }
