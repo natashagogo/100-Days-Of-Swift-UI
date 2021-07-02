@@ -48,7 +48,6 @@ struct DetailView: View {
     let user: User
     var body: some View {
             VStack {
-                NetworkView(user: user)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Interests")
                         .font(.largeTitle)
