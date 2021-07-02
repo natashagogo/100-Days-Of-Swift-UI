@@ -32,12 +32,23 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(users, id: \.id) { user in
-                Text(user.name)
+                HStack(alignment: .top) {
+                    Image(systemName: "person.crop.circle.fill")
+                        .font(.largeTitle)
+                    VStack(alignment: .leading) {
+                        Text(user.name)
+                        Text(user.company)
+                          .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Text("\(user.isActive ? "Active": "Inactive")")
+                        .foregroundColor(user.isActive ? Color.blue: Color.gray)
+                 }
+               }
+                .navigationTitle("Friends")
+                .onAppear(perform: loadData)
             }
-            .navigationTitle("Friends")
-            .onAppear(perform: loadData)
-        }
-    }
+       }
     
     func loadData() {
         // 1. Create the URL
@@ -63,8 +74,6 @@ struct ContentView: View {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
             
         }.resume()
-       
-        
     }
 }
 
