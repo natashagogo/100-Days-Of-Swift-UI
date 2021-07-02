@@ -47,10 +47,17 @@ struct UserView: View {
 struct DetailView: View {
     let user: User
     var body: some View {
-            VStack {
-                VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 30){
+                VStack {
+                    Text("Friends")
+                        .font(.title)
+                    ForEach(user.friends, id: \.name) { friend in
+                        Text(friend.name)
+                    }
+                }
+               VStack(spacing: 10) {
                     Text("Interests")
-                        .font(.largeTitle)
+                        .font(.title)
                     ForEach(user.tags, id: \.self) { tag in
                         Text("#\(tag)")
                           .frame(width: 100)
