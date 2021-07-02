@@ -26,27 +26,79 @@ struct User: Codable {
     var friends: [Friend]
 }
 
+struct UserView: View {
+    let user: User
+    var body: some View {
+        HStack(alignment: .top) {
+            Image(systemName: "person.crop.circle.fill")
+                .font(.largeTitle)
+            VStack(alignment: .leading) {
+                Text(user.name)
+                Text(user.company)
+                  .foregroundColor(.secondary)
+            }
+            Spacer()
+            Text("\(user.isActive ? "Active": "Inactive")")
+                .foregroundColor(user.isActive ? Color.blue: Color.gray)
+         }
+    }
+}
+
+struct DetailView: View {
+    let user: User
+    var body: some View {
+            VStack {
+                NetworkView(user: user)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Interests")
+                        .font(.largeTitle)
+                    ForEach(user.tags, id: \.self) { tag in
+                        Text("#\(tag)")
+                          .frame(width: 100)
+                          .background(Color.blue)
+                          .clipShape(Capsule())
+                     }
+                }
+            }
+            .navigationBarTitle("\(user.name)", displayMode: .inline)
+      }
+  }
+
+struct NetworkView: View {
+    let user: User
+    var body: some View {
+        GeometryReader { geometry in
+            Group {
+                Group {
+                    ForEach(user.friends, id: \.name) { friend in
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.blue)
+                            Text(friend.name)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: geometry.size.width * 0.30)
+                    }
+                }
+                
+            }
+            .frame(width: geometry.size.width)
+        }
+    }
+}
+
 
 struct ContentView: View {
     @State private var users = [User]()
     var body: some View {
         NavigationView {
             List(users, id: \.id) { user in
-                HStack(alignment: .top) {
-                    Image(systemName: "person.crop.circle.fill")
-                        .font(.largeTitle)
-                    VStack(alignment: .leading) {
-                        Text(user.name)
-                        Text(user.company)
-                          .foregroundColor(.secondary)
-                    }
-                    Spacer()
-                    Text("\(user.isActive ? "Active": "Inactive")")
-                        .foregroundColor(user.isActive ? Color.blue: Color.gray)
-                 }
-               }
-                .navigationTitle("Friends")
-                .onAppear(perform: loadData)
+                NavigationLink(destination: DetailView(user: user)) {
+                    UserView(user: user)
+                }
+              }
+             .navigationTitle("Friends")
+             .onAppear(perform: loadData)
             }
        }
     
