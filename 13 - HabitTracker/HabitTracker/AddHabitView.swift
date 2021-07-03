@@ -49,6 +49,7 @@ struct AddHabitView: View {
     
     private func saveAndExit() {
         habits.list.append(Habit(name: name, goal: goal, metric: metric, frequency: frequency, progress: progress))
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

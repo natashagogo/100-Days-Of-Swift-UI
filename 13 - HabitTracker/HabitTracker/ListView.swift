@@ -15,7 +15,7 @@ struct ListView: View {
         NavigationView {
             List {
                 ForEach(habits.list) { habit in
-                    NavigationLink(destination: DetailView()) {
+                    NavigationLink(destination: DetailView(habit: habit)) {
                         HStack {
                             Text("\(habit.name)")
                             Spacer()
