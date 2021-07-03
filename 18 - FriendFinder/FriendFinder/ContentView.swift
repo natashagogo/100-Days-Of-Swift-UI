@@ -26,6 +26,39 @@ struct User: Codable {
     var friends: [Friend]
 }
 
+struct DetailView: View {
+    let user: User
+    let friends: [User]
+
+    var body: some View {
+        ScrollView(.vertical){
+            VStack(alignment: .leading, spacing: 10) {
+                Group {
+                   Text("Interests")
+                       .font(.title)
+                   ForEach(user.tags, id: \.self) { tag in
+                       Text("#\(tag)")
+                         .frame(width: 100)
+                         .background(Color.blue)
+                         .clipShape(Capsule())
+                    }
+                }
+              Group {
+                Text("Friends")
+                    .font(.title)
+                ForEach(user.friends, id: \.id) { friend in
+                    VStack {
+                        Text(friend.name)
+                    }
+                }
+             }         }
+        .frame(maxWidth: .infinity)
+        .navigationBarTitle("\(user.name)", displayMode: .inline)
+    }
+  }
+}
+
+
 struct UserView: View {
     let user: User
     var body: some View {
@@ -44,62 +77,13 @@ struct UserView: View {
     }
 }
 
-struct DetailView: View {
-    let user: User
-    var body: some View {
-        VStack(spacing: 30){
-                VStack {
-                    Text("Friends")
-                        .font(.title)
-                    ForEach(user.friends, id: \.name) { friend in
-                        Text(friend.name)
-                    }
-                }
-               VStack(spacing: 10) {
-                    Text("Interests")
-                        .font(.title)
-                    ForEach(user.tags, id: \.self) { tag in
-                        Text("#\(tag)")
-                          .frame(width: 100)
-                          .background(Color.blue)
-                          .clipShape(Capsule())
-                     }
-                }
-            }
-            .navigationBarTitle("\(user.name)", displayMode: .inline)
-      }
-  }
-
-struct NetworkView: View {
-    let user: User
-    var body: some View {
-        GeometryReader { geometry in
-            Group {
-                Group {
-                    ForEach(user.friends, id: \.name) { friend in
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.blue)
-                            Text(friend.name)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: geometry.size.width * 0.30)
-                    }
-                }
-                
-            }
-            .frame(width: geometry.size.width)
-        }
-    }
-}
-
 
 struct ContentView: View {
     @State private var users = [User]()
     var body: some View {
         NavigationView {
             List(users, id: \.id) { user in
-                NavigationLink(destination: DetailView(user: user)) {
+                NavigationLink(destination: DetailView(user: user, friends: self.users)) {
                     UserView(user: user)
                 }
               }
