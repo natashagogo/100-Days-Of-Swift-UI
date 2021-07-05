@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+extension Binding {
+    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue)
+            }
+        )
+    }
+}
+
 struct DetailView: View {
     @EnvironmentObject var habits: HabitList
     @State var habit: Habit
@@ -14,9 +26,13 @@ struct DetailView: View {
         VStack {
             Text("\(habit.progress)% Complete")
                 .font(.largeTitle)
-            ProgressBar(value: $habit.progress)
+            ProgressBar(value: $habit.progress.onChange(updateProgress))
         }
         .navigationBarTitle("Habit Progress", displayMode: .inline)
+    }
+    
+    func updateProgress(_ newValue: Int) {
+        habit.progress = newValue
     }
 }
 

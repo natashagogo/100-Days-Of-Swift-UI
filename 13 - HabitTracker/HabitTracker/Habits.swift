@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Habit: Identifiable {
+struct Habit: Identifiable, Codable {
     let id = UUID()
     var name: String
     var goal: String
@@ -17,48 +17,30 @@ struct Habit: Identifiable {
 }
 
 class HabitList: ObservableObject {
-    @Published var list = [Habit]()
-}
-
-/*
- Alternative data structures
- 
- 1. Turn habit into a class
- 
- struct HabitInfo: Identifiable {
-     let id = UUID()
-     var name: String
-     var goal: String
-     var metric: String
-     var frequency: String
-     var progress: Int
- }
- 
- class Habit: ObservableObject {
-    @Published var habit = HabitInfo(name: "", goal: "", metric: "count", frequency: "daily", progress: 0)
- }
-
- class HabitList: ObservableObject {
-     @Published var list = [Habit]()
- }
- 
- 2. Create one big class
- 
- class Habit: ObservableObject {
-     let id = UUID()
-     @Published var name: String
-     @Published var goal: String
-     @Published var metric: String
-     @Published var frequency: String
-     @Published var progress: Int
- 
-    init(name: String, goal: String, metric: String, frequency: String, progress: Int) {
-        self.name = name
-        self.goal = goal
-        self.metric = metric
-        self.frequency = frequency
-        self.progress = progress
+    @Published var list = [Habit]() {
+        didSet {
+            // Create an instance of JSONEncoder
+            let encoder = JSONEncoder()
+            // Convert data to JSON
+            if let encoded = try? encoder.encode(list) {
+                // Write the data to UserDefaults
+                UserDefaults.standard.set(encoded, forKey: "List")
+            }
+        }
     }
- }
- 
- */
+    
+    init() {
+        // Read the "Items" key from UserDefaults
+        if let list = UserDefaults.standard.data(forKey: "List") {
+            // Create an instance of JSONDecoder
+            let decoder = JSONDecoder()
+            // Convert JSON to ExpenseItem objects
+            // Note: [ExpenseItem].self is used to refer to the type itself, so the compiler doesn't get confused.
+            if let decoded = try? decoder.decode([Habit].self, from: list) {
+                self.list = decoded
+                return
+            }
+        }
+        self.list = []
+    }
+}

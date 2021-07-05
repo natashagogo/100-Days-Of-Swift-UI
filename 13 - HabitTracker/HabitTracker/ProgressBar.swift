@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ProgressBar: View {
     @Binding var value: Int
     var body: some View {
