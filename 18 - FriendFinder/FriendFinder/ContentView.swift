@@ -26,10 +26,12 @@ struct User: Codable {
     var friends: [Friend]
 }
 
+final class Users: ObservableObject {
+    @Published var list = [User]()
+}
+
 struct DetailView: View {
     let user: User
-    let friends: [User]
-
     var body: some View {
         ScrollView(.vertical){
             VStack(alignment: .leading, spacing: 10) {
@@ -38,7 +40,7 @@ struct DetailView: View {
                        .font(.title)
                    ForEach(user.tags, id: \.self) { tag in
                        Text("#\(tag)")
-                         .frame(width: 100)
+                         .frame(width: 150)
                          .background(Color.blue)
                          .clipShape(Capsule())
                     }
@@ -59,7 +61,7 @@ struct DetailView: View {
 }
 
 
-struct UserView: View {
+struct ListRow: View {
     let user: User
     var body: some View {
         HStack(alignment: .top) {
@@ -79,12 +81,12 @@ struct UserView: View {
 
 
 struct ContentView: View {
-    @State private var users = [User]()
+    @ObservedObject var users = Users()
     var body: some View {
         NavigationView {
-            List(users, id: \.id) { user in
-                NavigationLink(destination: DetailView(user: user, friends: self.users)) {
-                    UserView(user: user)
+            List(users.list, id: \.id ) { user in
+                NavigationLink(destination: DetailView(user: user)) {
+                    ListRow(user: user)
                 }
               }
              .navigationTitle("Friends")
@@ -107,7 +109,7 @@ struct ContentView: View {
                 if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
                     // Return to main thread if the data is good
                     DispatchQueue.main.async {
-                        users = decodedResponse
+                        users.list = decodedResponse
                     }
                     // Exit
                     return
