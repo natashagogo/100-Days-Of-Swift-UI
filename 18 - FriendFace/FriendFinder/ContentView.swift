@@ -7,86 +7,25 @@
 
 import SwiftUI
 
-struct Friend: Codable {
-    var id: String
-    var name: String
-}
-
-struct User: Codable {
-    var id: String
-    var isActive: Bool
-    var name: String
-    var age: Int
-    var company: String
-    var email: String
-    var address: String
-    var about: String
-    var registered: String
-    var tags: [String]
-    var friends: [Friend]
-}
-
-final class Users: ObservableObject {
-    @Published var list = [User]()
-}
-
-struct DetailView: View {
-    let user: User
-    var body: some View {
-        ScrollView(.vertical){
-            VStack(alignment: .leading, spacing: 10) {
-                Group {
-                   Text("Interests")
-                       .font(.title)
-                   ForEach(user.tags, id: \.self) { tag in
-                       Text("#\(tag)")
-                         .frame(width: 150)
-                         .background(Color.blue)
-                         .clipShape(Capsule())
-                    }
-                }
-              Group {
-                Text("Friends")
-                    .font(.title)
-                ForEach(user.friends, id: \.id) { friend in
-                    VStack {
-                        Text(friend.name)
-                    }
-                }
-             }         }
-        .frame(maxWidth: .infinity)
-        .navigationBarTitle("\(user.name)", displayMode: .inline)
-    }
-  }
-}
-
-
-struct ListRow: View {
-    let user: User
-    var body: some View {
-        HStack(alignment: .top) {
-            Image(systemName: "person.crop.circle.fill")
-                .font(.largeTitle)
-            VStack(alignment: .leading) {
-                Text(user.name)
-                Text(user.company)
-                  .foregroundColor(.secondary)
-            }
-            Spacer()
-            Text("\(user.isActive ? "Active": "Inactive")")
-                .foregroundColor(user.isActive ? Color.blue: Color.gray)
-         }
-    }
-}
-
-
 struct ContentView: View {
-    @ObservedObject var users = Users()
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     var body: some View {
         NavigationView {
             List(users.list, id: \.id ) { user in
                 NavigationLink(destination: DetailView(user: user)) {
-                    ListRow(user: user)
+                    HStack(alignment: .top) {
+                        Image(systemName: "person.crop.circle.fill")
+                            .font(.largeTitle)
+                        VStack(alignment: .leading) {
+                            Text(user.unwrappedName)
+                            Text(user.unwrappedCompany)
+                              .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        Text("\(user.unwrappedStatus ? "Active": "Inactive")")
+                            .foregroundColor(user.unwrappedStatus ? Color.blue: Color.gray)
+                     }
                 }
               }
              .navigationTitle("Friends")
@@ -95,30 +34,36 @@ struct ContentView: View {
        }
     
     func loadData() {
-        // 1. Create the URL
-        guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
-            print("Invalid URL")
-            return
-        }
-        // 2. Wrap it in a URLRequest to configure how it should be accessed
-        let request = URLRequest(url: url)
-        // 3. Create and start a networking task from URLRequest
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            // 4. Handle the result
-            if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
-                    // Return to main thread if the data is good
-                    DispatchQueue.main.async {
-                        users.list = decodedResponse
-                    }
-                    // Exit
-                    return
-                }
-            }
-            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-            
-        }.resume()
-    }
+           guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
+               print("Invalid URL")
+               return
+           }
+
+           let request = URLRequest(url: url)
+
+           URLSession.shared.dataTask(with: request) { data, response, error in
+               guard let userData = data else {
+                   print("No data in response: \(error?.localizedDescription ?? "Unknown Error")")
+                   return
+               }
+
+               let userDecoder = JSONDecoder()
+
+               userDecoder.dateDecodingStrategy = .iso8601
+               userDecoder.userInfo[CodingUserInfoKey.managedObjectContext] = viewContext
+
+               do {
+                   let _ = try userDecoder.decode([User].self, from: userData)
+
+                   if viewContext.hasChanges {
+                       try? viewContext.save()
+                   }
+               } catch {
+                   print("Decoding Failed: \(error.localizedDescription)")
+               }
+
+           }.resume()
+       }
 }
 
 struct ContentView_Previews: PreviewProvider {
