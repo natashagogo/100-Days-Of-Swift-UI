@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-/*
- 
- This app needs ...
- 
- - Two views (one for settings, the other for the game)
- - A way to select multiplication tables to practice (buttons, stepper)
- - A way to choose the number of questions (5, 10, 20, or “All”)
- - A randomly generated set of questions, within the parameters set by the user
-
- */
-
-
-
 class Game: ObservableObject {
-    @Published var level = 5
+    @Published var table = 5
+    @Published var numberOfQuestions: Float = 10
+    
+    var questions: [String] {
+        let sessionLength = 1...Int(numberOfQuestions)
+        var question: String
+        var questions = [String]()
+        
+        for _ in sessionLength {
+            let randomNumber = Int.random(in: 1...12)
+            question = "What is \(randomNumber) x \(table)?"
+            questions.append(question)
+        }
+        return questions
+    }
 }
 
 struct ContentView: View {
@@ -29,7 +30,7 @@ struct ContentView: View {
     @State private var isActive = false
     var body: some View {
         NavigationView {
-            VStack {
+            Group {
                 if isActive {
                     PlayGame(game: self.game)
                 } else {
@@ -50,7 +51,13 @@ struct UpdateSettings: View {
     var body: some View {
         Form {
             Section(header: Text("Practice")) {
-                Stepper("\(game.level) tables", value: $game.level, in: 1...12)
+                Stepper("\(game.table) tables", value: $game.table, in: 1...12)
+            }
+            Section(header: Text("Number of Questions")) {
+                Text("\(game.numberOfQuestions, specifier: "%g") questions")
+                Slider(value: $game.numberOfQuestions, in: 5...20, step: 5) {
+                    Text("Number Of Questions")
+                }
             }
         }
     }
@@ -58,10 +65,14 @@ struct UpdateSettings: View {
 
 struct PlayGame: View {
     @ObservedObject var game: Game
+    
     var body: some View {
-        VStack {
-            Text("We're going to practice the \(game.level) tables!")
+        ForEach(game.questions, id: \.self) { question in
+            Text(question)
         }
+    }
+    
+    func nextQuestion() {
     }
 }
 
