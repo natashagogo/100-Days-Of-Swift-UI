@@ -9,7 +9,16 @@
 import SwiftUI
 
 /*
- How to make Published properties in a class conform to Codable
+
+Why do Published properties have to be initialized?
+
+Every @Published property is placed inside a struct called Published, which is written as a generic. In Swift, you can't create an instance of a generic type that doesn't have a value.
+
+Why @Published properties don't conform to Codable
+
+If an array, dictionary, or set contains Codable types, then the whole collection conforms to Codable. That's because Swift has rules in place to make that happen for those types. However, it doesn't provide that functionality for its Published struct.
+
+ How to make @Published properties in a class conform to Codable
 
  1. Tell Swift which properties need to be loaded and saved. Create an enum that conforms to the CodingKey protocol and list the properties that should be archived and unarchived.
 
@@ -21,38 +30,10 @@ What does the required keyword do?
 The required means that values must be overridden with a custom implementation.
 */
 
-class User: ObservableObject {
-	@Published var name = ""
-	
-	// 1.
-	enum CodingKeys: CodingKey {
-		case name
-	}
-	
-	// 2.
-	required init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: CodingKeys.self)
-		name = try container.decode(String.self, forKey: .name)
-	}
-	
-	// 3.
-	func encode(to encoder: Encoder) throws {
-		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(name, forKey: .name)
-	}
-	
-	init() {}
-}
 
 struct ContentView: View {
-	@StateObject private var user = User()
     var body: some View {
-		VStack {
-			Text("Hello, \(user.name)!")
-			TextField("Name", text: $user.name)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-				.padding()
-		}
+		Text("Hello, World!")
     }
 }
 

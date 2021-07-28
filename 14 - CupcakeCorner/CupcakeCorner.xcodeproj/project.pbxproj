@@ -11,6 +11,7 @@
 		BC8F9C6A26764273006EC9FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9C6926764273006EC9FF /* ContentView.swift */; };
 		BC8F9C6C26764275006EC9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9C6B26764275006EC9FF /* Assets.xcassets */; };
 		BC8F9C6F26764275006EC9FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9C6E26764275006EC9FF /* Preview Assets.xcassets */; };
+		BCF80B0726B1AF28009E031E /* CodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0626B1AF28009E031E /* CodableConformance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BC8F9C6B26764275006EC9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC8F9C6E26764275006EC9FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC8F9C7026764275006EC9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF80B0626B1AF28009E031E /* CodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableConformance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				BC8F9C6926764273006EC9FF /* ContentView.swift */,
+				BCF80B0826B1AFBE009E031E /* Examples */,
 				BC8F9C6B26764275006EC9FF /* Assets.xcassets */,
 				BC8F9C7026764275006EC9FF /* Info.plist */,
 				BC8F9C6D26764275006EC9FF /* Preview Content */,
@@ -67,6 +70,14 @@
 				BC8F9C6E26764275006EC9FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCF80B0826B1AFBE009E031E /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BCF80B0626B1AF28009E031E /* CodableConformance.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8F9C6A26764273006EC9FF /* ContentView.swift in Sources */,
+				BCF80B0726B1AF28009E031E /* CodableConformance.swift in Sources */,
 				BC8F9C6826764273006EC9FF /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
