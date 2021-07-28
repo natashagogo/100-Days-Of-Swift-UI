@@ -13,6 +13,7 @@
 		BC8F9C6F26764275006EC9FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9C6E26764275006EC9FF /* Preview Assets.xcassets */; };
 		BCF80B0726B1AF28009E031E /* CodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0626B1AF28009E031E /* CodableConformance.swift */; };
 		BCF80B0A26B1B834009E031E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0926B1B834009E031E /* Networking.swift */; };
+		BCF80B0C26B1B9F3009E031E /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0B26B1B9F3009E031E /* FormValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC8F9C7026764275006EC9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCF80B0626B1AF28009E031E /* CodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableConformance.swift; sourceTree = "<group>"; };
 		BCF80B0926B1B834009E031E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		BCF80B0B26B1B9F3009E031E /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				BCF80B0626B1AF28009E031E /* CodableConformance.swift */,
 				BCF80B0926B1B834009E031E /* Networking.swift */,
+				BCF80B0B26B1B9F3009E031E /* FormValidation.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				BC8F9C6A26764273006EC9FF /* ContentView.swift in Sources */,
 				BCF80B0726B1AF28009E031E /* CodableConformance.swift in Sources */,
+				BCF80B0C26B1B9F3009E031E /* FormValidation.swift in Sources */,
 				BC8F9C6826764273006EC9FF /* CupcakeCornerApp.swift in Sources */,
 				BCF80B0A26B1B834009E031E /* Networking.swift in Sources */,
 			);
