@@ -32,7 +32,7 @@ struct CheckoutView: View {
 		}
 		.navigationBarTitle("Check out", displayMode: .inline)
 		.alert(isPresented: $showingConfirmation) {
-			Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("Welcome!")))
+			Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("Yay!")))
 		}
     }
 	
