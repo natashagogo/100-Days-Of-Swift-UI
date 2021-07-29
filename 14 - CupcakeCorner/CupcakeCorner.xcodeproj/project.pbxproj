@@ -15,6 +15,8 @@
 		BCF80B0A26B1B834009E031E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0926B1B834009E031E /* Networking.swift */; };
 		BCF80B0C26B1B9F3009E031E /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0B26B1B9F3009E031E /* FormValidation.swift */; };
 		BCF80B0E26B2F09E009E031E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0D26B2F09E009E031E /* Order.swift */; };
+		BCF80B1026B2F51F009E031E /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B0F26B2F51F009E031E /* AddressView.swift */; };
+		BCF80B1226B2F67C009E031E /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF80B1126B2F67C009E031E /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BCF80B0926B1B834009E031E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		BCF80B0B26B1B9F3009E031E /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		BCF80B0D26B2F09E009E031E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		BCF80B0F26B2F51F009E031E /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		BCF80B1126B2F67C009E031E /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				BC8F9C6726764273006EC9FF /* CupcakeCornerApp.swift */,
 				BC8F9C6926764273006EC9FF /* ContentView.swift */,
+				BCF80B0F26B2F51F009E031E /* AddressView.swift */,
+				BCF80B1126B2F67C009E031E /* CheckoutView.swift */,
 				BCF80B0D26B2F09E009E031E /* Order.swift */,
 				BCF80B0826B1AFBE009E031E /* Examples */,
 				BC8F9C6B26764275006EC9FF /* Assets.xcassets */,
@@ -158,11 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF80B1026B2F51F009E031E /* AddressView.swift in Sources */,
 				BCF80B0E26B2F09E009E031E /* Order.swift in Sources */,
 				BC8F9C6A26764273006EC9FF /* ContentView.swift in Sources */,
 				BCF80B0726B1AF28009E031E /* CodableConformance.swift in Sources */,
 				BCF80B0C26B1B9F3009E031E /* FormValidation.swift in Sources */,
 				BC8F9C6826764273006EC9FF /* CupcakeCornerApp.swift in Sources */,
+				BCF80B1226B2F67C009E031E /* CheckoutView.swift in Sources */,
 				BCF80B0A26B1B834009E031E /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

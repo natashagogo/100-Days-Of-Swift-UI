@@ -27,4 +27,9 @@ class Order: ObservableObject {
 	@Published var addExtraFrosting = false
 	@Published var addSprinkles = false
 	
+	@Published var name = ""
+	@Published var address = ""
+	@Published var city = ""
+	@Published var zip = ""
+	
 }

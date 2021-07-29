@@ -7,10 +7,6 @@
 
 
 import SwiftUI
-/*
- 
-*/
-
 
 struct ContentView: View {
 	@ObservedObject var order = Order()
@@ -32,6 +28,11 @@ struct ContentView: View {
 					if order.hasSpecialRequest {
 						Toggle("Extra frosting", isOn: $order.addExtraFrosting)
 						Toggle("Extra sprinkles", isOn: $order.addSprinkles)
+					}
+				}
+				Section {
+					NavigationLink(destination: AddressView(order: self.order)) {
+						Text("Delivery Details")
 					}
 				}
 			}
