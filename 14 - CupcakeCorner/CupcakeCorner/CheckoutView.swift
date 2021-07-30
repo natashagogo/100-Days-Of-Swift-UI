@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CheckoutView: View {
 	@ObservedObject var order: Order
-	@State private var confirmationMessage = ""
-	@State private var showingConfirmation = false
+	@State private var alertTitle = ""
+	@State private var alertMessage = ""
+	@State private var showingAlert = false
     var body: some View {
 		GeometryReader { geometry in
 			 ScrollView {
@@ -31,8 +32,8 @@ struct CheckoutView: View {
 			 }
 		}
 		.navigationBarTitle("Check out", displayMode: .inline)
-		.alert(isPresented: $showingConfirmation) {
-			Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("Yay!")))
+		.alert(isPresented: $showingAlert) {
+			Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
 		}
     }
 	
@@ -60,9 +61,14 @@ struct CheckoutView: View {
 			}
 			
 			if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
-				confirmationMessage = "Your order for \(decodedOrder.quantity) \(Order.cupcakes[decodedOrder.selection].lowercased()) cupcakes is on its way!"
-				showingConfirmation = true
+				showingAlert = true
+				alertTitle = "Thank you!"
+				alertMessage = "Your order for \(decodedOrder.quantity) \(Order.cupcakes[decodedOrder.selection].lowercased()) cupcakes is on its way!"
 			} else {
+				// Challenge 2 - If placeOrder() fails, show an informative alert for the user. 
+				showingAlert = true
+				alertTitle = "Oops!"
+				alertMessage = "Something went wrong. Please contact us at hello@cupcakecorner.com."
 				print("Invalid response from the server.")
 			}
 		}.resume()
