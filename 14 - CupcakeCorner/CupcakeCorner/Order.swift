@@ -33,12 +33,16 @@ class Order: ObservableObject, Codable {
 	@Published var city = ""
 	@Published var zip = ""
 	
+	// Challenge 1 - make sure a string of pure whitespace is invalid
 	var hasValidAddress: Bool {
-		if name.isEmpty || address.isEmpty || city.isEmpty || zip.isEmpty {
-			return false
-		} else {
-			return true
+		let fields = [name, address, city, zip]
+		
+		for field in fields {
+			if field.isEmpty || field.contains(" ") || field.contains("\n") {
+				return false
+			}
 		}
+		return true
 	}
 	
 	var cost: Double {
