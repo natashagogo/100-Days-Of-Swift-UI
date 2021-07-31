@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+/*
+  What is Core Data?
+  Core Data is Apple's framework for reading, writing, sorting, and filtering objects in a database.
+
+ @Binding
+ A property wrapper that references and updates a @State property declared elsewhere.
+
+*/
+
 struct ContentView: View {
 	 var body: some View {
-		  Text("Hello, World!")
-	}
+		  BindingExample()
+	 }
 }
 
 struct ContentView_Previews: PreviewProvider {
