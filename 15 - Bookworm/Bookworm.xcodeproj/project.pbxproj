@@ -17,6 +17,7 @@
 		BC4BE93D267A7881000D7C28 /* BookwormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BE93C267A7881000D7C28 /* BookwormApp.swift */; };
 		BCEEFEAC26B5BAB3000A1C67 /* CoreDataExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEAB26B5BAB3000A1C67 /* CoreDataExample.swift */; };
 		BCEEFEB126B88372000A1C67 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB026B88372000A1C67 /* AddBookView.swift */; };
+		BCEEFEB426B89308000A1C67 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB326B89308000A1C67 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BC4BE93C267A7881000D7C28 /* BookwormApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
 		BCEEFEAB26B5BAB3000A1C67 /* CoreDataExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExample.swift; sourceTree = "<group>"; };
 		BCEEFEB026B88372000A1C67 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		BCEEFEB326B89308000A1C67 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				BC4BE926267A6F6B000D7C28 /* ContentView.swift */,
 				BCEEFEB026B88372000A1C67 /* AddBookView.swift */,
+				BCEEFEB326B89308000A1C67 /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				BC126E7926B5AD630002B09D /* TypeErasureExample.swift in Sources */,
 				BCEEFEAC26B5BAB3000A1C67 /* CoreDataExample.swift in Sources */,
 				BC4BE93D267A7881000D7C28 /* BookwormApp.swift in Sources */,
+				BCEEFEB426B89308000A1C67 /* RatingView.swift in Sources */,
 				BCEEFEB126B88372000A1C67 /* AddBookView.swift in Sources */,
 				BC126E7626B5A5F10002B09D /* BindingExample.swift in Sources */,
 				BC126E7E26B5B11F0002B09D /* Persistence.swift in Sources */,

@@ -13,7 +13,7 @@ struct AddBookView: View {
 	@State private var title = ""
 	@State private var author = ""
 	@State private var genre = ""
-	@State private var rating: Double = 3
+	@State private var rating = 3
 	@State private var review = ""
 	
 	let genres = ["Fiction", "Non-Fiction", "Graphic Novel"]
@@ -32,7 +32,7 @@ struct AddBookView: View {
 					.pickerStyle(SegmentedPickerStyle())
 				}
 				Section(header: Text("Review")) {
-					Stepper("\(rating, specifier: "%g") stars", value: $rating, in: 1...5, step: 0.5)
+					RatingView(rating: $rating)
 					TextEditor(text: $review)
 				}
 			}
