@@ -84,8 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4BE93C267A7881000D7C28 /* BookwormApp.swift */,
-				BC4BE926267A6F6B000D7C28 /* ContentView.swift */,
-				BCEEFEB026B88372000A1C67 /* AddBookView.swift */,
+				BCEEFEB226B88BA7000A1C67 /* Views */,
 				BC126E7F26B5B25F0002B09D /* Model */,
 				BC126E7726B5A61D0002B09D /* Examples */,
 				BC4BE928267A6F6C000D7C28 /* Assets.xcassets */,
@@ -101,6 +100,15 @@
 				BC4BE92B267A6F6C000D7C28 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCEEFEB226B88BA7000A1C67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BE926267A6F6B000D7C28 /* ContentView.swift */,
+				BCEEFEB026B88372000A1C67 /* AddBookView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
