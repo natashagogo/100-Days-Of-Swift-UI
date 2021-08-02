@@ -5,17 +5,6 @@
 //  Created by Natasha Godwin on 6/16/21.
 //
 
-/*
-
-@Environment
-A property wrapper that allows you to read values from the environment.
-
-.environment()
-A modifier that allows you to write values in the environment. Takes two parameters: a key to write to and the value that needs to be sent in.
-
-Use Cases:
-- Passing a managed object context from a view's environment to a sheet, so new items can be added
-*/
 
 import SwiftUI
 import CoreData
