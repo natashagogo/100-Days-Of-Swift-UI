@@ -50,6 +50,7 @@ struct AddBookView: View {
 				self.presentationMode.wrappedValue.dismiss()
 				
 			})
+			.disabled(title.isEmpty || author.isEmpty)
 		}
     }
 }
