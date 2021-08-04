@@ -11,7 +11,12 @@ import CoreData
 
 struct ContentView: View {
 	@Environment(\.managedObjectContext) var viewContext
-	@FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
+	@FetchRequest(entity: Book.entity(), sortDescriptors: [
+		// Sort by author, then title
+		NSSortDescriptor(keyPath: \Book.author, ascending: true),
+	   NSSortDescriptor(keyPath: \Book.title, ascending: true),
+
+	]) var books: FetchedResults<Book>
 	@State private var addingBook = false
 	var body: some View {
 		NavigationView {
