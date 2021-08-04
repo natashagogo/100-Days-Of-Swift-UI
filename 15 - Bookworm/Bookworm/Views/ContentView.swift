@@ -34,15 +34,30 @@ struct ContentView: View {
 							}
 					  }
 				 }
+				.onDelete(perform: deleteBooks)
 			}
 			.navigationBarTitle("Bookworm")
-			.navigationBarItems(trailing: Button("Add") {
+			.navigationBarItems(leading: EditButton(), trailing: Button("Add") {
 				self.addingBook.toggle()
 			})
 		}
 		.sheet(isPresented: $addingBook) {
 			AddBookView()
 				.environment(\.managedObjectContext, self.viewContext)
+		}
+	}
+	
+	func deleteBooks(at locations: IndexSet) {
+		for location in locations {
+			// Find the book in the Fetch Request
+			let book = books[location]
+			
+			// Delete it from the context
+			viewContext.delete(book)
+			
+			// Save changes
+			try? viewContext.save()
+			
 		}
 	}
 }
