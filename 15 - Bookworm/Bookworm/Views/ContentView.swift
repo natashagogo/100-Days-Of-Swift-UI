@@ -9,6 +9,9 @@
 import SwiftUI
 import CoreData
 
+// To Do:
+// 1. Add editing functionality 
+
 struct ContentView: View {
 	@Environment(\.managedObjectContext) var viewContext
 	@FetchRequest(entity: Book.entity(), sortDescriptors: [
