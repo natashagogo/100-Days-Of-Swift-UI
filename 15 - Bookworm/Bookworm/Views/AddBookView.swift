@@ -12,11 +12,15 @@ struct AddBookView: View {
 	@Environment(\.presentationMode) var presentationMode
 	@State private var title = ""
 	@State private var author = ""
-	@State private var genre = ""
+	@State private var genre = "Fiction"
 	@State private var rating = 3
 	@State private var review = ""
 	
 	let genres = ["Fiction", "Non-Fiction", "Graphic Novel"]
+	
+	@State private var showingAlert = false
+	@State private var alertTitle = ""
+	@State private var alertMessage = ""
 	
     var body: some View {
 		NavigationView {
@@ -38,20 +42,35 @@ struct AddBookView: View {
 			}
 			.navigationBarTitle(title.isEmpty ? "New Book": "\(title)")
 			.navigationBarItems(trailing: Button("Save") {
-				let newBook = Book(context: self.viewContext)
-				newBook.title = self.title
-				newBook.author = self.author
-				newBook.genre = self.genre
-				newBook.rating = Int16(self.rating)
-				newBook.review = self.review
+				self.validateForm()
 				
-				try? self.viewContext.save() // save changes
-				
-				self.presentationMode.wrappedValue.dismiss()
-				
+				if showingAlert == false {
+					let newBook = Book(context: self.viewContext)
+					newBook.title = self.title
+					newBook.author = self.author
+					newBook.genre = self.genre
+					newBook.rating = Int16(self.rating)
+					newBook.review = self.review
+					
+					try? self.viewContext.save() // save changes
+					
+					self.presentationMode.wrappedValue.dismiss()
+				}
 			})
 		}
-    }
+		.alert(isPresented: $showingAlert) {
+			Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+		}
+	 }
+	
+	func validateForm() {
+		guard !title.isEmpty || !author.isEmpty else {
+			showingAlert = true
+			alertTitle = "Missing Info"
+			alertMessage = "Please add a title and author."
+			return
+		}
+	}
 }
 
 struct AddBookView_Previews: PreviewProvider {
