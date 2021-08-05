@@ -30,13 +30,19 @@ struct DetailView: View {
 						.clipShape(Capsule())
 						.offset(x: -5, y: -5)
 				}
-				Text(book.author ?? "Unknown Author")
-					.font(.title)
-					.foregroundColor(.secondary)
-				Text(book.review ?? "No review")
-					.padding()
-				RatingView(rating: .constant(Int(book.rating)))
-					.font(.largeTitle)
+				Group {
+					Text(book.author ?? "Unknown Author")
+						.font(.title)
+						.foregroundColor(.secondary)
+					VStack(alignment:.leading) {
+						Text("Started: \(book.startDate?.formatted() ?? "No Date Added")")
+						Text("Finished: \(book.endDate?.formatted() ?? "No Date Added")")
+					}.padding()
+					RatingView(rating: .constant(Int(book.rating)))
+						.font(.largeTitle)
+					Text(book.review ?? "No review")
+						.padding()
+				}
 				Spacer()
 			}
 		}

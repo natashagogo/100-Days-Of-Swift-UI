@@ -20,6 +20,7 @@
 		BCEEFEB426B89308000A1C67 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB326B89308000A1C67 /* RatingView.swift */; };
 		BCEEFEB626B8965F000A1C67 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB526B8965F000A1C67 /* EmojiRatingView.swift */; };
 		BCEEFEB826BB1950000A1C67 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB726BB1950000A1C67 /* DetailView.swift */; };
+		BCEEFEBA26BC7AB6000A1C67 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEB926BC7AB6000A1C67 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BCEEFEB326B89308000A1C67 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		BCEEFEB526B8965F000A1C67 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		BCEEFEB726BB1950000A1C67 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BCEEFEB926BC7AB6000A1C67 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4BE93C267A7881000D7C28 /* BookwormApp.swift */,
+				BCEEFEB926BC7AB6000A1C67 /* DateExtension.swift */,
 				BCEEFEB226B88BA7000A1C67 /* Views */,
 				BC126E7F26B5B25F0002B09D /* Model */,
 				BC126E7726B5A61D0002B09D /* Examples */,
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEEFEB626B8965F000A1C67 /* EmojiRatingView.swift in Sources */,
+				BCEEFEBA26BC7AB6000A1C67 /* DateExtension.swift in Sources */,
 				BC126E7926B5AD630002B09D /* TypeErasureExample.swift in Sources */,
 				BCEEFEAC26B5BAB3000A1C67 /* CoreDataExample.swift in Sources */,
 				BC4BE93D267A7881000D7C28 /* BookwormApp.swift in Sources */,
