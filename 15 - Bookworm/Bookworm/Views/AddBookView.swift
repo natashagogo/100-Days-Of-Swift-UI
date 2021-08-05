@@ -42,10 +42,10 @@ struct AddBookView: View {
 			}
 			.navigationBarTitle(title.isEmpty ? "New Book": "\(title)")
 			.navigationBarItems(trailing: Button("Save") {
-				self.validateForm()
+				let newBook = Book(context: self.viewContext)
+				self.validateForm(book: newBook)
 				
 				if showingAlert == false {
-					let newBook = Book(context: self.viewContext)
 					newBook.title = self.title
 					newBook.author = self.author
 					newBook.genre = self.genre
@@ -63,7 +63,7 @@ struct AddBookView: View {
 		}
 	 }
 	
-	func validateForm() {
+	func validateForm(book: Book) {
 		guard !title.isEmpty || !author.isEmpty else {
 			showingAlert = true
 			alertTitle = "Missing Info"
