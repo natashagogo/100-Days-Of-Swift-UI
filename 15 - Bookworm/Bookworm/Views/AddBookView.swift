@@ -13,6 +13,10 @@ struct AddBookView: View {
 	@State private var title = ""
 	@State private var author = ""
 	@State private var genre = "Fiction"
+	
+	@State private var startDate = Date()
+	@State private var endDate = Date().addingTimeInterval(86400)
+	
 	@State private var rating = 3
 	@State private var review = ""
 	
@@ -32,12 +36,22 @@ struct AddBookView: View {
 						ForEach(genres, id: \.self) {
 							Text($0)
 						}
-					}
-					.pickerStyle(SegmentedPickerStyle())
+					}.pickerStyle(SegmentedPickerStyle())
+				}
+				Section(header: Text("Dates Read")) {
+					DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
+					DatePicker("End Date", selection: $endDate, displayedComponents: .date)
 				}
 				Section(header: Text("Review")) {
 					RatingView(rating: $rating)
-					TextEditor(text: $review)
+					ZStack(alignment: .topLeading) {
+						if review.isEmpty {
+							Text("Write a review")
+								.padding(.top, 10)
+								.foregroundColor(.secondary)
+						}
+						TextEditor(text: $review)
+					}
 				}
 			}
 			.navigationBarTitle(title.isEmpty ? "New Book": "\(title)")
