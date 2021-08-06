@@ -12,6 +12,9 @@
 		BCEEFED326BDC909000A1C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEEFED226BDC909000A1C67 /* Assets.xcassets */; };
 		BCEEFED626BDC909000A1C67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEEFED526BDC909000A1C67 /* Preview Assets.xcassets */; };
 		BCEEFEDE26BDC9F4000A1C67 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */; };
+		BCEEFEE126BDD18B000A1C67 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */; };
+		BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */; };
+		BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BCEEFED526BDC909000A1C67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCEEFED726BDC909000A1C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BCEEFEE026BDD18B000A1C67 /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
+		BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,11 @@
 		BCEEFECD26BDC904000A1C67 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */,
+				BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */,
 				BCEEFECE26BDC904000A1C67 /* CoreDataProjectApp.swift */,
 				BCEEFED026BDC904000A1C67 /* ContentView.swift */,
+				BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */,
 				BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */,
 				BCEEFED226BDC909000A1C67 /* Assets.xcassets */,
 				BCEEFED726BDC909000A1C67 /* Info.plist */,
@@ -143,6 +152,9 @@
 			files = (
 				BCEEFEDE26BDC9F4000A1C67 /* Persistence.swift in Sources */,
 				BCEEFED126BDC904000A1C67 /* ContentView.swift in Sources */,
+				BCEEFEE126BDD18B000A1C67 /* CoreDataProject.xcdatamodeld in Sources */,
+				BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */,
+				BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */,
 				BCEEFECF26BDC904000A1C67 /* CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +344,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCEEFEE026BDD18B000A1C67 /* CoreDataProject.xcdatamodel */,
+			);
+			currentVersion = BCEEFEE026BDD18B000A1C67 /* CoreDataProject.xcdatamodel */;
+			path = CoreDataProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCEEFEC326BDC904000A1C67 /* Project object */;
 }
