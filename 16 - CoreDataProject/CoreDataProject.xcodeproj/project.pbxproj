@@ -11,6 +11,7 @@
 		BCEEFED126BDC904000A1C67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFED026BDC904000A1C67 /* ContentView.swift */; };
 		BCEEFED326BDC909000A1C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEEFED226BDC909000A1C67 /* Assets.xcassets */; };
 		BCEEFED626BDC909000A1C67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEEFED526BDC909000A1C67 /* Preview Assets.xcassets */; };
+		BCEEFEDE26BDC9F4000A1C67 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BCEEFED226BDC909000A1C67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCEEFED526BDC909000A1C67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCEEFED726BDC909000A1C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				BCEEFECE26BDC904000A1C67 /* CoreDataProjectApp.swift */,
 				BCEEFED026BDC904000A1C67 /* ContentView.swift */,
+				BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */,
 				BCEEFED226BDC909000A1C67 /* Assets.xcassets */,
 				BCEEFED726BDC909000A1C67 /* Info.plist */,
 				BCEEFED426BDC909000A1C67 /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEEFEDE26BDC9F4000A1C67 /* Persistence.swift in Sources */,
 				BCEEFED126BDC904000A1C67 /* ContentView.swift in Sources */,
 				BCEEFECF26BDC904000A1C67 /* CoreDataProjectApp.swift in Sources */,
 			);
