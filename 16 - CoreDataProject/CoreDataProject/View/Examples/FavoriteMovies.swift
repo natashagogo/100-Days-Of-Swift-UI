@@ -1,13 +1,11 @@
 //
-//  ContentView.swift
+//  FavoriteMovies.swift
 //  CoreDataProject
 //
 //  Created by Natasha Godwin on 8/6/21.
 //
 
 import SwiftUI
-import CoreData
-
 
 struct FavoriteMovies: View {
 	@Environment(\.managedObjectContext) var viewContext
@@ -50,24 +48,9 @@ struct FavoriteMovies: View {
 	}
 }
 
-struct ContentView: View {
-    var body: some View {
-		NavigationView {
-			List {
-				Section(header: Text("Getting Started")) {
-					NavigationLink(destination: FavoriteMovies()) {
-						Text("Basic Example")
-					}
-				}
-			}
-			.navigationBarTitle("Core Data 101")
-			.listStyle(InsetGroupedListStyle())
-		}
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
+struct FavoriteMovies_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FavoriteMovies()
     }
 }

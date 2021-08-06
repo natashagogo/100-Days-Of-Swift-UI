@@ -15,6 +15,7 @@
 		BCEEFEE126BDD18B000A1C67 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */; };
 		BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */; };
 		BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */; };
+		BCEEFEE926BDE2D3000A1C67 /* FavoriteMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BCEEFEE026BDD18B000A1C67 /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,9 @@
 		BCEEFECD26BDC904000A1C67 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
-				BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */,
-				BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */,
 				BCEEFECE26BDC904000A1C67 /* CoreDataProjectApp.swift */,
-				BCEEFED026BDC904000A1C67 /* ContentView.swift */,
-				BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */,
-				BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */,
+				BCEEFEEA26BDE2EF000A1C67 /* View */,
+				BCEEFEE626BDE28E000A1C67 /* Model */,
 				BCEEFED226BDC909000A1C67 /* Assets.xcassets */,
 				BCEEFED726BDC909000A1C67 /* Info.plist */,
 				BCEEFED426BDC909000A1C67 /* Preview Content */,
@@ -79,6 +78,42 @@
 				BCEEFED526BDC909000A1C67 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCEEFEE626BDE28E000A1C67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */,
+				BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */,
+				BCEEFEE726BDE2AB000A1C67 /* Movie */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCEEFEE726BDE2AB000A1C67 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */,
+				BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		BCEEFEEA26BDE2EF000A1C67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEFED026BDC904000A1C67 /* ContentView.swift */,
+				BCEEFEEB26BDE2FA000A1C67 /* Examples */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCEEFEEB26BDE2FA000A1C67 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +191,7 @@
 				BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */,
 				BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */,
 				BCEEFECF26BDC904000A1C67 /* CoreDataProjectApp.swift in Sources */,
+				BCEEFEE926BDE2D3000A1C67 /* FavoriteMovies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
