@@ -2,18 +2,15 @@
 //  ContentView.swift
 //  CoreDataProject
 //
-//  Created by Natasha Godwin on 6/19/21.
+//  Created by Natasha Godwin on 8/6/21.
 //
 
 import SwiftUI
-import CoreData
-
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var viewContext
-
     var body: some View {
-        FilteredListView()
+        Text("Hello, world!")
+            .padding()
     }
 }
 
