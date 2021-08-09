@@ -20,6 +20,9 @@ struct ContentView: View {
 					NavigationLink(destination: Constraints()) {
 						Text("Adding Constraints")
 					}
+					NavigationLink(destination: Notes()) {
+						Text("Filtering results")
+					}
 				}
 			}
 			.navigationBarTitle("Core Data 101")

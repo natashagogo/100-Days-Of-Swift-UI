@@ -5,6 +5,10 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
@@ -16,5 +20,6 @@
     <elements>
         <element name="Movie" positionX="-54" positionY="-9" width="128" height="74"/>
         <element name="Person" positionX="-36" positionY="36" width="128" height="44"/>
+        <element name="Note" positionX="-18" positionY="45" width="128" height="59"/>
     </elements>
 </model>
