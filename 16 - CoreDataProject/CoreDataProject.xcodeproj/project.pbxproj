@@ -16,6 +16,7 @@
 		BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */; };
 		BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */; };
 		BCEEFEE926BDE2D3000A1C67 /* FavoriteMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */; };
+		BCEEFEED26C18008000A1C67 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFEEC26C18008000A1C67 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BCEEFEE226BDD2A8000A1C67 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCEEFEE326BDD2A8000A1C67 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovies.swift; sourceTree = "<group>"; };
+		BCEEFEEC26C18008000A1C67 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				BCEEFEE826BDE2D3000A1C67 /* FavoriteMovies.swift */,
+				BCEEFEEC26C18008000A1C67 /* Constraints.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				BCEEFED126BDC904000A1C67 /* ContentView.swift in Sources */,
 				BCEEFEE126BDD18B000A1C67 /* CoreDataProject.xcdatamodeld in Sources */,
 				BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */,
+				BCEEFEED26C18008000A1C67 /* Constraints.swift in Sources */,
 				BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */,
 				BCEEFECF26BDC904000A1C67 /* CoreDataProjectApp.swift in Sources */,
 				BCEEFEE926BDE2D3000A1C67 /* FavoriteMovies.swift in Sources */,

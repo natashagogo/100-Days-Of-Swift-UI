@@ -35,7 +35,9 @@ struct FavoriteMovies: View {
 			favoriteMovie.director = "Steven Soderbergh"
 			favoriteMovie.year = Int16(2012)
 			
-			try? viewContext.save()
+			if viewContext.hasChanges {
+				try? viewContext.save()
+			}
 		})
 	}
 	
