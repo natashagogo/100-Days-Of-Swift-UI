@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteMovies: View {
+struct SortedList: View {
 	@Environment(\.managedObjectContext) var viewContext
 	@FetchRequest(entity: Movie.entity(), sortDescriptors: [
 		NSSortDescriptor(keyPath: \Movie.director, ascending: true),
@@ -53,6 +53,6 @@ struct FavoriteMovies: View {
 
 struct FavoriteMovies_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteMovies()
+        SortedList()
     }
 }

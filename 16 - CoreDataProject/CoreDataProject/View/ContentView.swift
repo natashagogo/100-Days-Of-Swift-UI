@@ -14,14 +14,17 @@ struct ContentView: View {
 		NavigationView {
 			List {
 				Section(header: Text("Getting Started")) {
-					NavigationLink(destination: FavoriteMovies()) {
-						Text("Basic Example")
+					NavigationLink(destination: SortedList()) {
+						Text("Sorting a List")
 					}
 					NavigationLink(destination: Constraints()) {
 						Text("Adding Constraints")
 					}
 					NavigationLink(destination: Notes()) {
 						Text("Filtering results")
+					}
+					NavigationLink(destination: Relationships()) {
+						Text("Creating relationships")
 					}
 				}
 			}

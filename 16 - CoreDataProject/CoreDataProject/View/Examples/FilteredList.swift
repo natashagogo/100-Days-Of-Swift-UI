@@ -8,38 +8,6 @@
 import SwiftUI
 import CoreData
 
-/*
-
-Imagine you're creating a filtered list with generics and Core Data.
-
-What three things do you need to do?
-
-Will this code work: NSPredicate(format: "%@ BEGINSWITH %@", keyName, filter)?
-
-No. When you use %@, Core Data automatically inserts quote marks around the content.
-Attributes shouldn't have quotes around them.
-
-You should write this instead:
-NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue)
-
-What does %K do?
-%K is a special symbol in NSPredicate that can be used to replace attribute names.
-Unlike %@, %K will insert the provided value without putting quote marks around it.
-
-This is useful when creating generic filters.
-
-Example:
-NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue)
-
-
-Lingering Questions
-What does @ViewBuilder do?
-What does @escaping do?
-
-
-
-*/
-
 struct Notes: View {
 	@Environment(\.managedObjectContext) var viewContext
 	@State private var filter = ""
