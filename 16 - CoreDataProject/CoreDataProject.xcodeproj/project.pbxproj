@@ -23,6 +23,8 @@
 		BCEEFF4626C2DAE1000A1C67 /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFF4226C2DAE1000A1C67 /* Candy+CoreDataProperties.swift */; };
 		BCEEFF4726C2DAE1000A1C67 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFF4326C2DAE1000A1C67 /* Country+CoreDataClass.swift */; };
 		BCEEFF4826C2DAE1000A1C67 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFF4426C2DAE1000A1C67 /* Country+CoreDataProperties.swift */; };
+		BCEEFF6926C45DA8000A1C67 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFF6726C45DA8000A1C67 /* Note+CoreDataClass.swift */; };
+		BCEEFF6A26C45DA8000A1C67 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEFF6826C45DA8000A1C67 /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		BCEEFF4226C2DAE1000A1C67 /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCEEFF4326C2DAE1000A1C67 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCEEFF4426C2DAE1000A1C67 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCEEFF6726C45DA8000A1C67 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCEEFF6826C45DA8000A1C67 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		BCEEFEE626BDE28E000A1C67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCEEFF6B26C45DB4000A1C67 /* Note */,
 				BCEEFEDF26BDD18B000A1C67 /* CoreDataProject.xcdatamodeld */,
 				BCEEFEDD26BDC9F4000A1C67 /* Persistence.swift */,
 				BCEEFEE726BDE2AB000A1C67 /* Movie */,
@@ -143,6 +148,15 @@
 				BCEEFF4426C2DAE1000A1C67 /* Country+CoreDataProperties.swift */,
 			);
 			path = Candy;
+			sourceTree = "<group>";
+		};
+		BCEEFF6B26C45DB4000A1C67 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEFF6726C45DA8000A1C67 /* Note+CoreDataClass.swift */,
+				BCEEFF6826C45DA8000A1C67 /* Note+CoreDataProperties.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,9 +237,11 @@
 				BCEEFF4526C2DAE1000A1C67 /* Candy+CoreDataClass.swift in Sources */,
 				BCEEFF4726C2DAE1000A1C67 /* Country+CoreDataClass.swift in Sources */,
 				BCEEFEE126BDD18B000A1C67 /* CoreDataProject.xcdatamodeld in Sources */,
+				BCEEFF6A26C45DA8000A1C67 /* Note+CoreDataProperties.swift in Sources */,
 				BCEEFEE426BDD2A8000A1C67 /* Movie+CoreDataClass.swift in Sources */,
 				BCEEFEED26C18008000A1C67 /* Constraints.swift in Sources */,
 				BCEEFEE526BDD2A8000A1C67 /* Movie+CoreDataProperties.swift in Sources */,
+				BCEEFF6926C45DA8000A1C67 /* Note+CoreDataClass.swift in Sources */,
 				BCEEFECF26BDC904000A1C67 /* CoreDataProjectApp.swift in Sources */,
 				BCEEFEE926BDE2D3000A1C67 /* SortedList.swift in Sources */,
 			);
