@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC55F27126E5287E0003AFED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55F27026E5287E0003AFED /* User.swift */; };
 		BCC4544626D6D476002E760F /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4544526D6D476002E760F /* FriendFaceApp.swift */; };
 		BCC4544826D6D476002E760F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4544726D6D476002E760F /* ContentView.swift */; };
 		BCC4544A26D6D479002E760F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC4544926D6D479002E760F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC55F27026E5287E0003AFED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCC4544226D6D476002E760F /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC4544526D6D476002E760F /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
 		BCC4544726D6D476002E760F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +35,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC55F27226E528830003AFED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC55F27026E5287E0003AFED /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BCC4543926D6D476002E760F = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 			children = (
 				BCC4544526D6D476002E760F /* FriendFaceApp.swift */,
 				BCC4544726D6D476002E760F /* ContentView.swift */,
+				BC55F27226E528830003AFED /* Model */,
 				BCC4544926D6D479002E760F /* Assets.xcassets */,
 				BCC4544E26D6D479002E760F /* Info.plist */,
 				BCC4544B26D6D479002E760F /* Preview Content */,
@@ -140,6 +151,7 @@
 			files = (
 				BCC4544826D6D476002E760F /* ContentView.swift in Sources */,
 				BCC4544626D6D476002E760F /* FriendFaceApp.swift in Sources */,
+				BC55F27126E5287E0003AFED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
