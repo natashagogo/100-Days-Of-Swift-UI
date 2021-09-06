@@ -6,9 +6,10 @@
 //
 
 /*
-  1. Download data from the Internet
-  2. Convert it to Swift types with Codable
-  3. Display the results in a list, with a DetailView
+  1. Download data from the Internet ✅
+  2. Convert it to Swift types with Codable ✅
+  3. Display the results in a list, with a DetailView ✅
+  4. Show details on each user's friends 
 */
 
 import SwiftUI
