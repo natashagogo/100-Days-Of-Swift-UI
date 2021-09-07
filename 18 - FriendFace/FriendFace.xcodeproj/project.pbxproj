@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC55F27126E5287E0003AFED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55F27026E5287E0003AFED /* User.swift */; };
 		BCAF383426E682F000A1D755 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF383326E682F000A1D755 /* DetailView.swift */; };
+		BCAF383726E7D7E200A1D755 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF383626E7D7E200A1D755 /* StatusView.swift */; };
 		BCC4544626D6D476002E760F /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4544526D6D476002E760F /* FriendFaceApp.swift */; };
 		BCC4544826D6D476002E760F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4544726D6D476002E760F /* ContentView.swift */; };
 		BCC4544A26D6D479002E760F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC4544926D6D479002E760F /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		BC55F27026E5287E0003AFED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCAF383326E682F000A1D755 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BCAF383626E7D7E200A1D755 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		BCC4544226D6D476002E760F /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC4544526D6D476002E760F /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
 		BCC4544726D6D476002E760F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,8 +52,17 @@
 			children = (
 				BCC4544726D6D476002E760F /* ContentView.swift */,
 				BCAF383326E682F000A1D755 /* DetailView.swift */,
+				BCAF383826E7D80100A1D755 /* Components */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BCAF383826E7D80100A1D755 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BCAF383626E7D7E200A1D755 /* StatusView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		BCC4543926D6D476002E760F = {
@@ -164,6 +175,7 @@
 				BCAF383426E682F000A1D755 /* DetailView.swift in Sources */,
 				BCC4544626D6D476002E760F /* FriendFaceApp.swift in Sources */,
 				BC55F27126E5287E0003AFED /* User.swift in Sources */,
+				BCAF383726E7D7E200A1D755 /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

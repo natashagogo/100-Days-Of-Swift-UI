@@ -8,26 +8,16 @@
 import SwiftUI
 
 struct DetailView: View {
+	@EnvironmentObject var users: Users
 	let user: User
+	
     var body: some View {
 		ScrollView {
 			VStack(spacing: 10) {
 				Image(systemName: "person.crop.circle.fill.badge.plus")
 					.font(.system(size: 75))
 					.foregroundColor(.gray)
-				if user.isActive == true {
-					Text("Active")
-						.frame(width: 120, height: 20)
-						.foregroundColor(.white)
-						.background(Color.blue)
-						.clipShape(RoundedRectangle(cornerRadius: 5.0))
-				} else {
-					Text("Inactive")
-						.frame(width: 120, height: 20)
-						.foregroundColor(.white)
-						.background(Color.gray)
-						.clipShape(RoundedRectangle(cornerRadius: 5.0))
-				}
+				user.isActive == true ? StatusView(text: "Active"): StatusView(text: "Inactive")
 			}.padding()
 			VStack(alignment: .leading, spacing: 10) {
 				Group {
@@ -45,7 +35,11 @@ struct DetailView: View {
 							Image(systemName: "person.circle.fill")
 								.font(.largeTitle)
 								.foregroundColor(.gray)
-							Text(friend.name)
+							self.findFriend(friend: friend, in: users.list).map {
+								NavigationLink(destination: DetailView(user: $0)) {
+									Text(friend.name)
+								}
+							}
 						}
 				   }
 				}
@@ -55,10 +49,12 @@ struct DetailView: View {
 			Spacer()
 		}.navigationBarTitle(user.name, displayMode: .inline)
 	}
+	
+	func findFriend(friend: Friend, in list: [User]) -> User? {
+	  if let user = list.first(where: {($0.id == friend.id) && ($0.name == friend.name)}) {
+			return user
+	  }
+	  return nil
+	}
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//		DetailView()
-//    }
-//}
