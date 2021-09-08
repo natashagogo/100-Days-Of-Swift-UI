@@ -10,6 +10,7 @@
   2. Convert it to Swift types with Codable ✅
   3. Display the results in a list, with a DetailView ✅
   4. Show details on each user's friends ✅
+  5. Add Core Data
 */
 
 import SwiftUI
@@ -30,7 +31,7 @@ struct ContentView: View {
 			.onAppear(perform: users.loadData)
 			.navigationTitle("FriendFace")
 		}
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
