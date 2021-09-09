@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
-	@EnvironmentObject var users: Users
+	@Environment(\.managedObjectContext) var viewContext
+	@FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
 	let user: User
 	
     var body: some View {
@@ -24,22 +25,23 @@ struct DetailView: View {
 					Text("Biography")
 						.font(.headline)
 						.foregroundColor(.blue)
-					Text(user.about)
+				 Text(user.wrappedAbout)
 				}
 				Group {
 					Text("Friends")
 						.font(.headline)
 						.foregroundColor(.blue)
-					ForEach(user.friends, id: \.id) { friend in
+					ForEach(user.friendsArray, id: \.id) { friend in
 						HStack {
 							Image(systemName: "person.circle.fill")
 								.font(.largeTitle)
 								.foregroundColor(.gray)
-							self.findFriend(friend: friend, in: users.list).map {
-								NavigationLink(destination: DetailView(user: $0)) {
-									Text(friend.name)
-								}
-							}
+							Text(friend.wrappedName)
+//							self.findFriend(friend: friend, in: users).map {
+//								NavigationLink(destination: DetailView(user: $0, users: users)) {
+//									Text(friend.wrappedName)
+//								}
+//							}
 						}
 				   }
 				}
@@ -47,14 +49,14 @@ struct DetailView: View {
 			.lineSpacing(5.0)
 			.padding()
 			Spacer()
-		}.navigationBarTitle(user.name, displayMode: .inline)
+		}.navigationBarTitle(user.wrappedName, displayMode: .inline)
 	}
 	
-	func findFriend(friend: Friend, in list: [User]) -> User? {
-	  if let user = list.first(where: {($0.id == friend.id) && ($0.name == friend.name)}) {
-			return user
-	  }
-	  return nil
-	}
+//	func findFriend(friend: Friend, in list: [User]) -> User? {
+//	  if let user = list.first(where: {($0.id == friend.id) && ($0.name == friend.name)}) {
+//			return user
+//	  }
+//	  return nil
+//	}
 }
 

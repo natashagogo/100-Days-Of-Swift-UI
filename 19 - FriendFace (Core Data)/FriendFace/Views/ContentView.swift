@@ -16,27 +16,32 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var users: Users
+	@Environment(\.managedObjectContext) var viewContext
+	@FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     var body: some View {
 		NavigationView {
-			List(users.list, id: \.id) { user in
-				NavigationLink(destination: DetailView(user: user)) {
+			List(users, id: \.self) { user in
+				NavigationLink(
+					destination: DetailView(user: user).environment(\.managedObjectContext, self.viewContext)) {
 					VStack(alignment: .leading) {
-						Text(user.name)
-						Text(user.company)
+						Text(user.wrappedName)
+						Text(user.wrappedCompany)
 							.foregroundColor(.secondary)
 					}
 				}
 			}
-			.onAppear(perform: users.loadData)
+			.onAppear(perform: loadData)
 			.navigationTitle("FriendFace")
 		}
+	}
+	
+	func loadData() {
+	
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-			.environmentObject(Users())
     }
 }
