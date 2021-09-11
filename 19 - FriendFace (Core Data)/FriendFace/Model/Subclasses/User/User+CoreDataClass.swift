@@ -12,6 +12,7 @@ import CoreData
 @objc(User)
 public class User: NSManagedObject, Decodable {
 	
+	// Properties to decode
 	enum CodingKeys: CodingKey {
 		case id
 		case isActive
@@ -22,17 +23,17 @@ public class User: NSManagedObject, Decodable {
 		case address
 		case about
 		case registered
-//		case tags
-//		case friends
+		case tags
+		case friends
 	}
 	
 	required convenience public init(from decoder: Decoder) throws {
-		// Get the managed object context from JSONDecoder's userInfo dictionary
+		// Try to extract the managed object context from JSONDecoder's userInfo dictionary
 		guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
-			print("Managed object context not found.")
-			return
+			fatalError("NSManagedObjectContext is missing.")
 		}
-		// Use it for this entity's context
+
+		// Call the original
 		self.init(context: context)
 		
 		// Create a container
@@ -54,8 +55,26 @@ public class User: NSManagedObject, Decodable {
 		let dateFormatter = ISO8601DateFormatter()
 		self.registered = dateFormatter.date(from: dateAsString) ?? Date()
 		
-		// TO DO:
-		// Figure out how to decode tags and friends and attach it to this entity
+		
+		// Decode all the tags
+		let tagsAsStrings = try container.decode([String].self, forKey: .tags)
+		var tags: Set<Tag> = Set()
+		for tag in tagsAsStrings {
+			 let newTag = Tag(context: context)
+			 newTag.name = tag
+			// Associate each tag with this user.
+			 newTag.addToUser(self)
+			 tags.insert(newTag)
+		}
+		self.tags = tags as NSSet
+		
+		// Decode all friends
+		let friends = try container.decode(Set<Friend>.self, forKey: .friends)
+		for friend in friends {
+			// Associate each friend with this user
+			friend.addToUser(self)
+		}
+		self.friends = friends as NSSet
 		
 	}
 }

@@ -61,17 +61,57 @@
 			isa = PBXGroup;
 			children = (
 				BCAF383926E93A4E00A1D755 /* Persistence.swift */,
+				BCA9E33626ED179600C37066 /* Extensions */,
+				BCAF383B26E93B5900A1D755 /* FriendFace.xcdatamodeld */,
+				BCA9E33726ED17AE00C37066 /* Subclasses */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCA9E33626ED179600C37066 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				BCAF384A26EA98B300A1D755 /* CodingUserInfoKey.swift */,
 				BCAF384C26EA99BD00A1D755 /* JSONDecoder.swift */,
-				BCAF383B26E93B5900A1D755 /* FriendFace.xcdatamodeld */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCA9E33726ED17AE00C37066 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				BCA9E33826ED17B800C37066 /* User */,
+				BCA9E33926ED17C100C37066 /* Tag */,
+				BCA9E33A26ED17CB00C37066 /* Friend */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		BCA9E33826ED17B800C37066 /* User */ = {
+			isa = PBXGroup;
+			children = (
 				BCAF383E26EA6A6C00A1D755 /* User+CoreDataClass.swift */,
 				BCAF383F26EA6A6C00A1D755 /* User+CoreDataProperties.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		BCA9E33926ED17C100C37066 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
 				BCAF384026EA6A6C00A1D755 /* Tag+CoreDataClass.swift */,
 				BCAF384126EA6A6C00A1D755 /* Tag+CoreDataProperties.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		BCA9E33A26ED17CB00C37066 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
 				BCAF384226EA6A6C00A1D755 /* Friend+CoreDataClass.swift */,
 				BCAF384326EA6A6C00A1D755 /* Friend+CoreDataProperties.swift */,
 			);
-			path = Model;
+			path = Friend;
 			sourceTree = "<group>";
 		};
 		BCAF383526E682FB00A1D755 /* Views */ = {
