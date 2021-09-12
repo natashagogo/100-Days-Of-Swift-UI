@@ -36,12 +36,11 @@ struct DetailView: View {
 							Image(systemName: "person.circle.fill")
 								.font(.largeTitle)
 								.foregroundColor(.gray)
-							Text(friend.wrappedName)
-//							self.findFriend(friend: friend, in: users).map {
-//								NavigationLink(destination: DetailView(user: $0, users: users)) {
-//									Text(friend.wrappedName)
-//								}
-//							}
+							self.findFriend(friend: friend, in: users).map {
+								NavigationLink(destination: DetailView(users: _users, user: $0)) {
+									Text(friend.wrappedName)
+								}
+							}
 						}
 				   }
 				}
@@ -52,11 +51,11 @@ struct DetailView: View {
 		}.navigationBarTitle(user.wrappedName, displayMode: .inline)
 	}
 	
-//	func findFriend(friend: Friend, in list: [User]) -> User? {
-//	  if let user = list.first(where: {($0.id == friend.id) && ($0.name == friend.name)}) {
-//			return user
-//	  }
-//	  return nil
-//	}
+	func findFriend(friend: Friend, in list: FetchedResults<User>) -> User? {
+	  if let user = list.first(where: {($0.id == friend.id) && ($0.name == friend.name)}) {
+			return user
+	  }
+	  return nil
+	}
 }
 

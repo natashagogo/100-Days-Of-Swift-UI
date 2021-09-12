@@ -9,8 +9,7 @@ import Foundation
 import CoreData
 
 /*
-   This uses the key created in the CodingUserInfoKey extension to get and set a managed object context,
-   so it can be used in the class initializer 
+   This uses the key created in the CodingUserInfoKey extension to get and set a managed object context.
 */
 
 extension JSONDecoder {

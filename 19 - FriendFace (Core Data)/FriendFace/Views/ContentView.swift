@@ -23,13 +23,10 @@ struct ContentView: View {
 					}
 				}
 			}
-			.onAppear(perform: fetchAndSaveUserData)
 			.navigationTitle("FriendFace")
-		}
+		}.onAppear(perform: fetchAndSaveUserData)
 	}
 	
-	// TO DO:
-	// The app builds successfully, but crashes when moving back from the detail view. Why? 
 	func fetchAndSaveUserData() {
 		// Create the URL
 		guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
@@ -40,7 +37,7 @@ struct ContentView: View {
 		// Wrap it in a URLRequest
 		var request = URLRequest(url: url)
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.httpMethod = "Get"
+		request.httpMethod = "GET"
 		
 		// Run the request and process the response
 		URLSession.shared.dataTask(with: request) { data, response, error in
@@ -65,7 +62,9 @@ struct ContentView: View {
 		
 		// Write changes to Core Data
 		do {
-			try viewContext.save()
+			if viewContext.hasChanges {
+				try? viewContext.save()
+			}
 		} catch {
 			fatalError("Couldn't save context: \(error)")
 		}
