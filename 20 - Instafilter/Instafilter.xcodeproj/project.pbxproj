@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BC1F8A1926EFA0DF004B5A7E /* InstafilterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F8A1826EFA0DF004B5A7E /* InstafilterApp.swift */; };
-		BC1F8A1B26EFA0DF004B5A7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F8A1A26EFA0DF004B5A7E /* ContentView.swift */; };
+		BC1F8A1B26EFA0DF004B5A7E /* CoreImageExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F8A1A26EFA0DF004B5A7E /* CoreImageExamples.swift */; };
 		BC1F8A1D26EFA0E4004B5A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1F8A1C26EFA0E4004B5A7E /* Assets.xcassets */; };
 		BC1F8A2026EFA0E4004B5A7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1F8A1F26EFA0E4004B5A7E /* Preview Assets.xcassets */; };
 		BC1F8A2826EFAED5004B5A7E /* BlurredText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F8A2726EFAED5004B5A7E /* BlurredText.swift */; };
 		BC1F8A2B26EFAF4B004B5A7E /* ActionSheetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F8A2A26EFAF4B004B5A7E /* ActionSheetExample.swift */; };
+		BC5B944126F1130E008E8F9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5B944026F1130E008E8F9A /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC1F8A1526EFA0DF004B5A7E /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1F8A1826EFA0DF004B5A7E /* InstafilterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstafilterApp.swift; sourceTree = "<group>"; };
-		BC1F8A1A26EFA0DF004B5A7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BC1F8A1A26EFA0DF004B5A7E /* CoreImageExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageExamples.swift; sourceTree = "<group>"; };
 		BC1F8A1C26EFA0E4004B5A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1F8A1F26EFA0E4004B5A7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC1F8A2126EFA0E4004B5A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC1F8A2726EFAED5004B5A7E /* BlurredText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredText.swift; sourceTree = "<group>"; };
 		BC1F8A2A26EFAF4B004B5A7E /* ActionSheetExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetExample.swift; sourceTree = "<group>"; };
+		BC5B944026F1130E008E8F9A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1F8A1826EFA0DF004B5A7E /* InstafilterApp.swift */,
-				BC1F8A1A26EFA0DF004B5A7E /* ContentView.swift */,
+				BC5B944026F1130E008E8F9A /* ContentView.swift */,
 				BC1F8A2926EFAEEA004B5A7E /* Examples */,
 				BC1F8A1C26EFA0E4004B5A7E /* Assets.xcassets */,
 				BC1F8A2126EFA0E4004B5A7E /* Info.plist */,
@@ -79,6 +81,7 @@
 			children = (
 				BC1F8A2726EFAED5004B5A7E /* BlurredText.swift */,
 				BC1F8A2A26EFAF4B004B5A7E /* ActionSheetExample.swift */,
+				BC1F8A1A26EFA0DF004B5A7E /* CoreImageExamples.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -152,7 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC1F8A1B26EFA0DF004B5A7E /* ContentView.swift in Sources */,
+				BC1F8A1B26EFA0DF004B5A7E /* CoreImageExamples.swift in Sources */,
+				BC5B944126F1130E008E8F9A /* ContentView.swift in Sources */,
 				BC1F8A2826EFAED5004B5A7E /* BlurredText.swift in Sources */,
 				BC1F8A2B26EFAF4B004B5A7E /* ActionSheetExample.swift in Sources */,
 				BC1F8A1926EFA0DF004B5A7E /* InstafilterApp.swift in Sources */,
