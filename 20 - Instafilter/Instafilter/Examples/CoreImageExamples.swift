@@ -36,7 +36,7 @@ import CoreImage.CIFilterBuiltins
  Note that UIImage, CGImage, and CIImage are pure data.
  They can't be presented in a SwiftUI view until they are manipulated and converted into an Image.
   
- How do you get Image and Core Image to work together?
+How do you get Image and Core Image to work together?
  1. Load the image into UIImage(named:)
  2. Convert it into CIImage
  3. Create a Core Image context
