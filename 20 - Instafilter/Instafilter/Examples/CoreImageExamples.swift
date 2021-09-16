@@ -9,47 +9,7 @@ import SwiftUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
 
-/*
-  Notes
 
-  What is CoreImage?
-  Apple's framework for manipulating images.
-  Behind the scenes, it's a stringly typed API.
-
-  When should you use Core Image?
-  1. Create images dynamically
-  2. Apply filters to them
-  3. Save them to the user's photo library
-
-  There are four image types you can work with:
-  1. Image()
-  2. UIImage() - comes from UIKit
-  3. CGImage - comes from Core Graphics, a two-dimensional array of pixels
-  4. CIImage - comes from Core Image, stores all the information required to produce an image, but doesn't turn it into pixels unless asked; it's an "image recipe"
- 
-  There is some interoperability between these types. Examples:
-  UIImage and CGImage have a two-way relationship. You can use one to make the other.
-  UIImage and CGImage can both be used to create a CIImage.
-  A CIImage can be used to make a CGImage
-  CGImage and UIImage can be used to make an Image.
-
- Note that UIImage, CGImage, and CIImage are pure data.
- They can't be presented in a SwiftUI view until they are manipulated and converted into an Image.
-  
-How do you get Image and Core Image to work together?
- 1. Load the image into UIImage(named:)
- 2. Convert it into CIImage
- 3. Create a Core Image context
- 4. Create a Core Image filter
- 5. Convert the output of the filter into an image by ...
-		A. reading the output image from our filter, which will be an optional CIImage.
-      B. asking our context to create a CGImage from that output image (written as an optional)
-      C. Convert that CGImage into a UIImage.
-      D. Convert that UIImage into a SwiftUI Image.
-
-
-  
-*/
 
 struct CoreImageExamples: View {
 	@State private var image: Image?

@@ -8,40 +8,29 @@
 import SwiftUI
 
 /*
- UIKit 101
+Notes
 
- All views inherit from the parent class UIView. In other words, views are classes, not structs.
- Views are controlled with UIViewController, which has many subclasses views can work with.
- UIKit uses a design pattern called delegation to decide where work happens.
+UIKit
 
- How do you get UIKit to work in SwiftUI?
- 1. Create a struct that conforms to the UIViewControllerRepresentable protocol.
- 2. Implement these methods: makeUIViewController() and updateUIViewController()
+What is a delegate?
+An object that responds to an event that occurs elsewhere.
 
- Here is an example:
-	struct ImagePicker: UIViewControllerRepresentable {
-		
-		func makeUIViewController(context: Context) -> UIImagePickerController {
-			let picker = UIImagePickerController()
-			return picker
-		}
-		
-		func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-		
-		}
-		
-		typealias UIViewControllerType = UIImagePickerController
+Examples:
+- In UIKit, you can attach a delegate object to any view, which lets you modify its behavior without creating a separate custom view.
+- In SwiftUI, you can use coordinators to act as delegates to UIKit view controllers. 
 
-	}
+SwiftUI Coordinators
+Delegates for UIKit view controllers.
 
-  Once the controller is wrapped, it can be used like any other SwiftUI view.
 
 
 */
 
+
 struct ContentView: View {
-	 @State private var image: Image?
-	 @State private var showingImagePicker = false
+	@State private var image: Image?
+	@State private var showingImagePicker = false
+	@State private var inputImage: UIImage?
 
 	 var body: some View {
 		  VStack {
@@ -53,10 +42,15 @@ struct ContentView: View {
 					self.showingImagePicker = true
 				}
 		  }
-		  .sheet(isPresented: $showingImagePicker) {
-				ImagePicker()
+		  .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+			ImagePicker(image: self.$inputImage)
 		  }
 	 }
+	
+	func loadImage() {
+		 guard let inputImage = inputImage else { return }
+		 image = Image(uiImage: inputImage)
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
