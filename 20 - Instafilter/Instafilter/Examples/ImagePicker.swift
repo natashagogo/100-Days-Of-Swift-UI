@@ -8,25 +8,6 @@
 import Foundation
 import SwiftUI
 
-/*
-
-What three things do you need to add to any SwiftUI coordinator class?
-
-NSObject
-The parent class for almost everything in UIKit
-Allows Objective-C to check what functionality an object supports at runtime.
-
-UIImagePickerControllerDelegate
-A protocol that provides functionality for detecting when a user does something, like select an image.
-
-UINavigationControllerDelegate
-A protocol that lets you detect when a user moves between screens.
-
-
-
- 
-*/
-
 struct ImagePicker: UIViewControllerRepresentable {
 	@Binding var image: UIImage?
 	@Environment(\.presentationMode) var presentationMode
