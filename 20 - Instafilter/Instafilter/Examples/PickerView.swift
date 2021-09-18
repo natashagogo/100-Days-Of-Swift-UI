@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct PickerView: UIViewControllerRepresentable {
 	@Binding var image: UIImage?
 	@Environment(\.presentationMode) var presentationMode
 	
 	// Create a delegate for the UIKit view controller
 	class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-		var parent: ImagePicker // to get information about the image and presentation mode directly
-		init(_ parent: ImagePicker) {
+		var parent: ImagePickerExample // to get information about the image and presentation mode directly
+		init(_ parent: ImagePickerExample) {
 			self.parent = parent
 		}
 		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -43,7 +43,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 		return picker
 	}
 	
-	func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+	func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePickerExample>) {
 		
 	}
 	

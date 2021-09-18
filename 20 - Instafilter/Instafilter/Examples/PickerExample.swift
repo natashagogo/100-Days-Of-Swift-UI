@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImagePickerExample: View {
+struct PickerExample: View {
 	@State private var image: Image?
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
@@ -23,7 +23,7 @@ struct ImagePickerExample: View {
 				}
 		  }
 		  .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-			ImagePicker(image: self.$inputImage)
+			PickerView(image: self.$inputImage)
 		  }
 	 }
 	
@@ -41,6 +41,6 @@ struct ImagePickerExample: View {
 
 struct ImagePickerExample_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerExample()
+        PickerExample()
     }
 }
