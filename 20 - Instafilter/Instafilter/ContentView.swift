@@ -24,6 +24,8 @@ This is why if let and switch statements don't work. If let creates a constant a
 struct ContentView: View {
 	@State private var image: Image?
 	@State private var filterIntensity = 0.5
+	@State private var showingImagePicker = false
+	@State private var inputImage: UIImage?
 	 var body: some View {
 		NavigationView {
 			VStack {
@@ -42,7 +44,7 @@ struct ContentView: View {
 					}
 				}
 				.onTapGesture {
-					// select an image
+					showingImagePicker = true
 				}
 				
 				HStack {
@@ -64,8 +66,16 @@ struct ContentView: View {
 			}
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Instafilter")
+			.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+				ImagePicker(image: self.$inputImage)
+			}
 		}
 	 }
+	
+	func loadImage() {
+		guard let inputImage = inputImage else { return }
+		image = Image(uiImage: inputImage)
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
