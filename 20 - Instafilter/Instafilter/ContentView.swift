@@ -6,28 +6,30 @@
 //
 
 import SwiftUI
-
-/*
-What types of control flow does SwiftUI support?
-SwiftUI only supports if/else statements inside of the body property.
-You cannot use if let, for, while, or switch.
-
-What happens under the hood when you use an if/else statement inside the body property?
-Swift converts the statement into an internal view type called ConditionalContent, which
-stores the condition and true and false views. Swift checks which one to display at run time.
-
-This is why if let and switch statements don't work. If let creates a constant and switch statements can have a number of cases.
+import CoreImage
+import CoreImage.CIFilterBuiltins
 
 
-*/
 
 struct ContentView: View {
 	@State private var image: Image?
 	@State private var filterIntensity = 0.5
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
+	@State private var currentFilter = CIFilter.sepiaTone()
+	let context = CIContext()
 	 var body: some View {
-		NavigationView {
+		// Monitor filterIntensity for changes and call applyProcessing() when one is made
+		let intensity = Binding<Double>(
+			get: {
+				self.filterIntensity
+			},
+			set: {
+				self.filterIntensity = $0
+				self.applyProcessing()
+			}
+		)
+		return NavigationView {
 			VStack {
 				ZStack {
 					Rectangle()
@@ -49,7 +51,7 @@ struct ContentView: View {
 				
 				HStack {
 					Text("Intensity")
-					Slider(value: $filterIntensity)
+					Slider(value: intensity)
 				}.padding(.vertical)
 				
 				HStack {
@@ -74,8 +76,29 @@ struct ContentView: View {
 	
 	func loadImage() {
 		guard let inputImage = inputImage else { return }
-		image = Image(uiImage: inputImage)
+		// Get the filtered image
+		let beginImage = CIImage(image: inputImage)
+		currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+		applyProcessing()
 	}
+	
+	// Process the image
+	func applyProcessing() {
+		// set the filter's intensity
+		currentFilter.intensity = Float(filterIntensity)
+		
+		// read the output image from the filter
+		guard let outputImage = currentFilter.outputImage else { return }
+		
+		// ask the CIContext to render it
+		if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+			// place the result into the image property
+			let uiImage = UIImage(cgImage: cgimg)
+			image = Image(uiImage: uiImage)
+		}
+		
+	}
+
 }
 
 struct ContentView_Previews: PreviewProvider {
