@@ -9,43 +9,6 @@ import SwiftUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
 
-/*
-Quote of the Day
-
-“Don’t worry if it doesn’t work right – if everything did, you’d be out of a job.” - Mosher’s Law of Software Engineering
-
- What is CIFilter?
- A Core Image class that contains filters.
- Each filter is an object that conforms to a protocol, e.g. CISepiaTone.
- Under the hood, these protocols are calls to setValue(:_forKey:).
-
-How do you get UIImageWriteToSavedPhotosAlbum() to work in SwiftUI?
-Create a new class that ...
-- inherits from NSObject
-- has a method that calls UIImageWriteToSavedPhotosAlbum()
-
-class ImageSaver: NSObject {
-	func writeToPhotoAlbum(image: UIImage) {
-		UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
-	}
-	
-	@objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-		// save complete
-	}
-}
-
-How do you request photo saving permission?
-Open Info.plist
-Right-click in some blank space
-Choose Add Row
-Select “Privacy - Photo Library Additions Usage Description” for the key name.
-Enter “We want to save the filtered photo.” as the value
-
-
-*/
-
-
-
 struct ContentView: View {
 	@State private var image: Image?
 	@State private var processedImage: UIImage?
