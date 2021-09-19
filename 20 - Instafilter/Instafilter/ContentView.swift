@@ -22,8 +22,25 @@ Quote of the Day
 How do you get UIImageWriteToSavedPhotosAlbum() to work in SwiftUI?
 Create a new class that ...
 - inherits from NSObject
-- has a callback method that is marked with @objc
-Then point to that method with the #selector compiler directive.
+- has a method that calls UIImageWriteToSavedPhotosAlbum()
+
+class ImageSaver: NSObject {
+	func writeToPhotoAlbum(image: UIImage) {
+		UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+	}
+	
+	@objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+		// save complete
+	}
+}
+
+How do you request photo saving permission?
+Open Info.plist
+Right-click in some blank space
+Choose Add Row
+Select “Privacy - Photo Library Additions Usage Description” for the key name.
+Enter “We want to save the filtered photo.” as the value
+
 
 */
 
@@ -31,6 +48,7 @@ Then point to that method with the #selector compiler directive.
 
 struct ContentView: View {
 	@State private var image: Image?
+	@State private var processedImage: UIImage?
 	@State private var filterIntensity = 0.5
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
@@ -53,16 +71,20 @@ struct ContentView: View {
 			VStack {
 				ZStack {
 					Rectangle()
-						.fill(Color.secondary)
+						.fill(Color.white)
+						.border(Color.gray, width: 0.5)
 					// display the image
 					if image != nil {
 						image?
 							.resizable()
 							.scaledToFit()
 					} else {
-						Text("Tap to select picture")
-							.foregroundColor(.secondary)
-							.font(.headline)
+						HStack(spacing: 5) {
+							Image(systemName: "photo.fill")
+							Text("Tap to select picture")
+						}
+						.foregroundColor(.secondary)
+						.font(.headline)
 					}
 				}
 				.onTapGesture {
@@ -84,6 +106,16 @@ struct ContentView: View {
 					
 					Button("Save") {
 						// save the picture
+						guard let processedImage = self.processedImage else { return }
+						
+						let imageSaver = ImageSaver()
+						imageSaver.successHandler = {
+							print("Success!")
+						}
+						imageSaver.errorHandler = {
+							print("Oops! \($0.localizedDescription)")
+						}
+						imageSaver.writeToPhotoAlbum(image: processedImage)
 					}
 				}
 			}
@@ -137,6 +169,7 @@ struct ContentView: View {
 			// place the result into the image property
 			let uiImage = UIImage(cgImage: cgimg)
 			image = Image(uiImage: uiImage)
+			processedImage = uiImage
 		}
 		
 	}
