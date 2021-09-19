@@ -9,6 +9,24 @@ import SwiftUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
 
+/*
+Quote of the Day
+
+“Don’t worry if it doesn’t work right – if everything did, you’d be out of a job.” - Mosher’s Law of Software Engineering
+
+ What is CIFilter?
+ A Core Image class that contains filters.
+ Each filter is an object that conforms to a protocol, e.g. CISepiaTone.
+ Under the hood, these protocols are calls to setValue(:_forKey:).
+
+How do you get UIImageWriteToSavedPhotosAlbum() to work in SwiftUI?
+Create a new class that ...
+- inherits from NSObject
+- has a callback method that is marked with @objc
+Then point to that method with the #selector compiler directive.
+
+*/
+
 
 
 struct ContentView: View {
@@ -16,7 +34,9 @@ struct ContentView: View {
 	@State private var filterIntensity = 0.5
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
-	@State private var currentFilter = CIFilter.sepiaTone()
+	@State private var currentFilter: CIFilter = CIFilter.sepiaTone()
+	@State private var showingFilterSheet = false
+	
 	let context = CIContext()
 	 var body: some View {
 		// Monitor filterIntensity for changes and call applyProcessing() when one is made
@@ -41,12 +61,12 @@ struct ContentView: View {
 							.scaledToFit()
 					} else {
 						Text("Tap to select picture")
-							.foregroundColor(.white)
+							.foregroundColor(.secondary)
 							.font(.headline)
 					}
 				}
 				.onTapGesture {
-					showingImagePicker = true
+					self.showingImagePicker = true
 				}
 				
 				HStack {
@@ -57,6 +77,7 @@ struct ContentView: View {
 				HStack {
 					Button("Change Filter") {
 						// change filter
+						self.showingFilterSheet = true
 					}
 					
 					Spacer()
@@ -71,6 +92,18 @@ struct ContentView: View {
 			.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
 				ImagePicker(image: self.$inputImage)
 			}
+			.actionSheet(isPresented: $showingFilterSheet) {
+				ActionSheet(title: Text("Select a filter"), buttons: [
+					.default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
+					 .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
+					 .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
+					 .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
+					 .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
+					 .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
+					 .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+					 .cancel()
+				])
+			}
 		}
 	 }
 	
@@ -82,10 +115,19 @@ struct ContentView: View {
 		applyProcessing()
 	}
 	
+	func setFilter(_ filter: CIFilter) {
+		currentFilter = filter
+		loadImage()
+	}
+	
 	// Process the image
 	func applyProcessing() {
-		// set the filter's intensity
-		currentFilter.intensity = Float(filterIntensity)
+		// update the filter's properties, e.g. intensity, radius, etc.
+		let inputKeys = currentFilter.inputKeys
+		if inputKeys.contains(kCIInputIntensityKey) {currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)}
+		if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
+		if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
+	
 		
 		// read the output image from the filter
 		guard let outputImage = currentFilter.outputImage else { return }
