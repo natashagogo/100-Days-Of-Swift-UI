@@ -7,41 +7,53 @@
 
 import SwiftUI
 
-enum LoadingState {
-	case loading, success, failed
+enum Layouts {
+	case doubleColumn, singleColumn
 }
 
-struct LoadingView: View {
+struct DoubleColumn: View {
 	 var body: some View {
-		  Text("Loading...")
+		HStack {
+			Text("Hello, World!")
+			Text("Hello, World!")
+		}
+		.padding(20)
 	 }
 }
 
-struct SuccessView: View {
+struct SingleColumn: View {
 	 var body: some View {
-		  Text("Success!")
+		VStack {
+			Text("Hello, World!")
+			Text("Hello, World!")
+		}
+		.padding(20)
 	 }
 }
 
-struct FailedView: View {
-	 var body: some View {
-		  Text("Failed.")
-	 }
-}
 
 
 
 struct ViewStates: View {
-	var loadingState = LoadingState.loading
+	@State private var loadingState = Layouts.singleColumn
+	
     var body: some View {
-		Group {
-			 if loadingState == .loading {
-				  LoadingView()
-			 } else if loadingState == .success {
-				  SuccessView()
-			 } else if loadingState == .failed {
-				  FailedView()
-			 }
+		VStack {
+			HStack {
+				Button("Single Column") {
+					loadingState = Layouts.singleColumn
+				}
+				Button("Double Column") {
+					loadingState = Layouts.doubleColumn
+				}
+			}
+			Group {
+				 if loadingState == .doubleColumn {
+					  DoubleColumn()
+				 } else if loadingState == .singleColumn {
+					  SingleColumn()
+				 }
+			}
 		}
     }
 }
