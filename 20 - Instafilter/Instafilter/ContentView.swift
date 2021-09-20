@@ -75,9 +75,11 @@ struct ContentView: View {
 						imageSaver.successHandler = {
 							print("Success!")
 						}
+						
 						imageSaver.errorHandler = {
 							print("Oops! \($0.localizedDescription)")
 						}
+			
 						imageSaver.writeToPhotoAlbum(image: processedImage)
 					}
 				}
