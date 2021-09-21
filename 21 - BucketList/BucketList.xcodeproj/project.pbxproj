@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC47DD6D26FA343500029DFF /* MapViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47DD6C26FA343500029DFF /* MapViewExample.swift */; };
 		BC63706D26F8F19E00879190 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63706C26F8F19E00879190 /* BucketListApp.swift */; };
 		BC63706F26F8F19E00879190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63706E26F8F19E00879190 /* ContentView.swift */; };
 		BC63707126F8F1A200879190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC63707026F8F1A200879190 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC47DD6C26FA343500029DFF /* MapViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExample.swift; sourceTree = "<group>"; };
 		BC63706926F8F19D00879190 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC63706C26F8F19E00879190 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		BC63706E26F8F19E00879190 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				BC63707B26F8FBC600879190 /* ComparableConformance.swift */,
 				BC63708026F9031100879190 /* WritingData.swift */,
 				BC63708226F903E800879190 /* ViewStates.swift */,
+				BC47DD6C26FA343500029DFF /* MapViewExample.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				BC63706F26F8F19E00879190 /* ContentView.swift in Sources */,
 				BC63706D26F8F19E00879190 /* BucketListApp.swift in Sources */,
+				BC47DD6D26FA343500029DFF /* MapViewExample.swift in Sources */,
 				BC63708126F9031100879190 /* WritingData.swift in Sources */,
 				BC63708326F903E800879190 /* ViewStates.swift in Sources */,
 				BC63707C26F8FBC600879190 /* ComparableConformance.swift in Sources */,
