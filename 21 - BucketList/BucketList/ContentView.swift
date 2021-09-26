@@ -28,6 +28,11 @@ From there, you can add an @ObservedObject property of type MKPointAnnotation to
 
 How can you get a list of nearby locations?
 Query Wikipedia using GPS coordinates and it will send back a list of places that are nearby. 
+
+You can mix and match Text views with different styles using the + operator
+Text("Title").italic() + Text("by") + Text("Author").bold()
+
+
 */
 
 
