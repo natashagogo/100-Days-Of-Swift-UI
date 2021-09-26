@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC478D9C2700DABE007BA1B7 /* MKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC478D9B2700DABE007BA1B7 /* MKPointAnnotation.swift */; };
+		BC478D9E2700DC97007BA1B7 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC478D9D2700DC97007BA1B7 /* EditView.swift */; };
+		BC478DA02700E205007BA1B7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC478D9F2700E205007BA1B7 /* Result.swift */; };
 		BC47DD6D26FA343500029DFF /* MapViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47DD6C26FA343500029DFF /* MapViewExample.swift */; };
 		BC47DD6F26FA52DA00029DFF /* AuthenticationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47DD6E26FA52DA00029DFF /* AuthenticationExample.swift */; };
 		BC63706D26F8F19E00879190 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63706C26F8F19E00879190 /* BucketListApp.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC478D9B2700DABE007BA1B7 /* MKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotation.swift; sourceTree = "<group>"; };
+		BC478D9D2700DC97007BA1B7 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		BC478D9F2700E205007BA1B7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BC47DD6C26FA343500029DFF /* MapViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExample.swift; sourceTree = "<group>"; };
 		BC47DD6E26FA52DA00029DFF /* AuthenticationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationExample.swift; sourceTree = "<group>"; };
 		BC63706926F8F19D00879190 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +72,10 @@
 			children = (
 				BC63706C26F8F19E00879190 /* BucketListApp.swift */,
 				BC63706E26F8F19E00879190 /* ContentView.swift */,
+				BC478D9F2700E205007BA1B7 /* Result.swift */,
 				BCF4A63F26FCDEA600E675C8 /* MapView.swift */,
+				BC478D9B2700DABE007BA1B7 /* MKPointAnnotation.swift */,
+				BC478D9D2700DC97007BA1B7 /* EditView.swift */,
 				BC63707D26F8FBCD00879190 /* Examples */,
 				BC63707026F8F1A200879190 /* Assets.xcassets */,
 				BC63707526F8F1A200879190 /* Info.plist */,
@@ -170,8 +179,11 @@
 				BC47DD6F26FA52DA00029DFF /* AuthenticationExample.swift in Sources */,
 				BC47DD6D26FA343500029DFF /* MapViewExample.swift in Sources */,
 				BC63708126F9031100879190 /* WritingData.swift in Sources */,
+				BC478D9E2700DC97007BA1B7 /* EditView.swift in Sources */,
 				BC63708326F903E800879190 /* ViewStates.swift in Sources */,
+				BC478D9C2700DABE007BA1B7 /* MKPointAnnotation.swift in Sources */,
 				BC63707C26F8FBC600879190 /* ComparableConformance.swift in Sources */,
+				BC478DA02700E205007BA1B7 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
