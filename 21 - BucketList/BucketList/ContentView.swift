@@ -50,13 +50,13 @@ struct ContentView: View {
 							self.showingEditScreen = true
 						  }) {
 								Image(systemName: "plus")
+									.padding()
+									.background(Color.orange.opacity(0.90))
+									.foregroundColor(.white)
+									.font(.title)
+									.clipShape(Circle())
+									.padding()
 						  }
-						  .padding()
-						  .background(Color.orange.opacity(0.90))
-						  .foregroundColor(.white)
-						  .font(.title)
-						  .clipShape(Circle())
-						  .padding()
 					 }
 				}
 			} else {

@@ -8,32 +8,6 @@
 import Foundation
 import MapKit
 
-/*
-
-How do you make someone else's class conform to Codable?
-
-Why can't MKPointAnnotation conform to Codable?
-It isn't a final class, which means other classes can inherit from it.
-Even if the class itself conforms to Codable, you can't guarantee its subclasses will.
-
-What are some workarounds for getting MKPointAnnotation to conform to Codable?
-1. Create a class that conforms to the MKAnnotation protocol.
-2. Create a subclass of MKPointAnnotation and implement Codable conformance there.
-3. Create a wrapper struct that conforms to Codable and store MKPointAnnotation internally.
-
-What is behavioral subtyping, i.e. the Liskov Substitution Principle?
-Objects of a superclass and subclass are interchangeable.
-
-
-Things to learn about:
-SOLID design principles
-
-Questions
-If Core Data and the iOS file system both allow you to store as much data as you need, what's the difference?
-
-
-*/
-
 
 /*
 
@@ -46,7 +20,7 @@ There are three ways to make MKPointAnnotation conform to Codable:
 2. Create a subclass of MKPointAnnotation and implement Codable conformance there.
 3. Create a wrapper struct that conforms to Codable and store MKPointAnnotation internally.
 
-This solution takes the second option.
+This solution uses the second option.
 
 */
 
