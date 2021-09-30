@@ -45,6 +45,7 @@ struct ContentView: View {
                             Text("\(coffeeAmount) cups")
                         }
                     }
+						.accessibility(value: Text("\(Int(coffeeAmount)) cups of coffee") )
                 }
                 Section(header: Text("Recommended Bedtime")) {
                     Text("\(calculatedBedtime)")
