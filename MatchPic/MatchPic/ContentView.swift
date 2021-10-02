@@ -14,7 +14,7 @@ This app lets users ...
 - see larger versions of each photo in a DetailView
 
 Checklist
-- Wrap UIImagePickerController so it can be used to select photos.
+✅ Wrap UIImagePickerController so it can be used to select photos.
 - Detect when a new photo is imported, and immediately ask the user to name the photo.
 - Save that name and photo somewhere safe.
 - Show all names and photos in a list, sorted by name.
@@ -31,6 +31,7 @@ import UIKit
 
 struct ContentView: View {
 	@State private var photos = [Photo]()
+	@State private var newPhoto: Image?
 	@State private var showingImagePicker = false
 	@State private var selectedPhoto: UIImage?
     var body: some View {
@@ -39,18 +40,16 @@ struct ContentView: View {
 				if photos.isEmpty {
 					EmptyView()
 				} else {
-					List {
-						ForEach(photos) { photo in
-							Image(photo.name)
-						}
-					}
+					newPhoto?
+						.resizable()
+						.scaledToFit()
 				}
 			}
 			.navigationTitle("MatchPic")
 			.navigationBarItems(trailing: Button("Add") {
 				showingImagePicker.toggle()
 			})
-			.sheet(isPresented: $showingImagePicker) {
+			.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
 				ImagePicker(image: $selectedPhoto)
 			}
 		}
@@ -58,6 +57,7 @@ struct ContentView: View {
 	
 	func loadImage() {
 		guard let selectedPhoto = selectedPhoto else { return }
+		newPhoto = Image(uiImage: selectedPhoto)
 		
 	}
 }
