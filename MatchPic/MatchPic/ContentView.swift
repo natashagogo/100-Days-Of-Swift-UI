@@ -29,9 +29,21 @@ Saving images in Core Data is bad for performance. Instead, generate a new UUID(
 import SwiftUI
 
 struct ContentView: View {
+	@State private var photos = [Photo]()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		NavigationView {
+			Group {
+				if photos.isEmpty {
+					EmptyView()
+				} else {
+					List {
+						ForEach(photos) { photo in
+							Image(photo.name)
+						}
+					}
+				}
+			}.navigationTitle("MatchPic")
+		}
     }
 }
 
@@ -40,3 +52,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
