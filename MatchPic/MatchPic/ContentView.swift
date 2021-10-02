@@ -32,9 +32,10 @@ import UIKit
 struct ContentView: View {
 	@State private var photos = [Photo]()
 	@State private var showingImagePicker = false
+	@State private var selectedPhoto: UIImage?
     var body: some View {
 		NavigationView {
-			Group {
+			VStack {
 				if photos.isEmpty {
 					EmptyView()
 				} else {
@@ -50,10 +51,15 @@ struct ContentView: View {
 				showingImagePicker.toggle()
 			})
 			.sheet(isPresented: $showingImagePicker) {
-				
+				ImagePicker(image: $selectedPhoto)
 			}
 		}
     }
+	
+	func loadImage() {
+		guard let selectedPhoto = selectedPhoto else { return }
+		
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
