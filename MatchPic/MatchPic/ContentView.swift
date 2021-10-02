@@ -27,9 +27,11 @@ Saving images in Core Data is bad for performance. Instead, generate a new UUID(
 */
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
 	@State private var photos = [Photo]()
+	@State private var showingImagePicker = false
     var body: some View {
 		NavigationView {
 			Group {
@@ -42,7 +44,14 @@ struct ContentView: View {
 						}
 					}
 				}
-			}.navigationTitle("MatchPic")
+			}
+			.navigationTitle("MatchPic")
+			.navigationBarItems(trailing: Button("Add") {
+				showingImagePicker.toggle()
+			})
+			.sheet(isPresented: $showingImagePicker) {
+				
+			}
 		}
     }
 }
