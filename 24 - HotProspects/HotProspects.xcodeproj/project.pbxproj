@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC65A12E270B6EBA006B248E /* ResultExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC65A12D270B6EBA006B248E /* ResultExample.swift */; };
+		BC65A130270B70BB006B248E /* ManualPublishingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC65A12F270B70BB006B248E /* ManualPublishingExample.swift */; };
+		BC65A132270B7287006B248E /* ImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC65A131270B7287006B248E /* ImageInterpolation.swift */; };
 		BCFE0A83270A21B500F1DD34 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFE0A82270A21B500F1DD34 /* HotProspectsApp.swift */; };
 		BCFE0A85270A21B500F1DD34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFE0A84270A21B500F1DD34 /* ContentView.swift */; };
 		BCFE0A87270A21B900F1DD34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFE0A86270A21B900F1DD34 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		BC65A12D270B6EBA006B248E /* ResultExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExample.swift; sourceTree = "<group>"; };
+		BC65A12F270B70BB006B248E /* ManualPublishingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualPublishingExample.swift; sourceTree = "<group>"; };
+		BC65A131270B7287006B248E /* ImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolation.swift; sourceTree = "<group>"; };
 		BCFE0A7F270A21B500F1DD34 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFE0A82270A21B500F1DD34 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		BCFE0A84270A21B500F1DD34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				BCFE0A94270A294700F1DD34 /* TabViewExample.swift */,
 				BCFE0A96270A2B7F00F1DD34 /* ManualTabViewExample.swift */,
 				BC65A12D270B6EBA006B248E /* ResultExample.swift */,
+				BC65A12F270B70BB006B248E /* ManualPublishingExample.swift */,
+				BC65A131270B7287006B248E /* ImageInterpolation.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -160,9 +166,11 @@
 			files = (
 				BCFE0A97270A2B7F00F1DD34 /* ManualTabViewExample.swift in Sources */,
 				BC65A12E270B6EBA006B248E /* ResultExample.swift in Sources */,
+				BC65A130270B70BB006B248E /* ManualPublishingExample.swift in Sources */,
 				BCFE0A85270A21B500F1DD34 /* ContentView.swift in Sources */,
 				BCFE0A95270A294700F1DD34 /* TabViewExample.swift in Sources */,
 				BCFE0A83270A21B500F1DD34 /* HotProspectsApp.swift in Sources */,
+				BC65A132270B7287006B248E /* ImageInterpolation.swift in Sources */,
 				BCFE0A92270A25D600F1DD34 /* EnvironmentObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
