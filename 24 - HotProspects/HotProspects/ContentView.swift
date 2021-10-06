@@ -18,10 +18,17 @@ A method that iterates over elements in a sequence, checks whether each meets a 
 
 functional programming
 
+What does the .environmentObject modifier do?
+It posts an ObservableObject into the SwiftUI environment, so all child views can access it. Note that you will have to add this directly to views inside a sheet.
+
+What does @EnvironmentObject do?
+This property wrapper finds an object, attaches it to a property, and keeps it up to date over time.
+
 
 */
 
 struct ContentView: View {
+	var prospects = Prospects()
     var body: some View {
 		TabView {
 			ProspectsView(filter: .none)
@@ -44,7 +51,8 @@ struct ContentView: View {
 					Image(systemName: "person.crop.square")
 					Text("Me")
 				}
-		}
+		 }
+		.environmentObject(prospects)
     }
 }
 

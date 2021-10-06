@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProspectsView: View {
+	@EnvironmentObject var prospects: Prospects
 	enum FilterType {
 		case none
 		case contacted
