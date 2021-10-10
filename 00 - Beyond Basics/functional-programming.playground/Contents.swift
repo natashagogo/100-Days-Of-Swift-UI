@@ -1,8 +1,6 @@
 import SwiftUI
 
 /*
-Lightweight encounters (Andy Matuschak)
-Finding a simple, practical way to apply theory.
 
 Principles of Functional Programming
 1. Action: Use verbs, not nouns. Treat functions as first-class data types.
