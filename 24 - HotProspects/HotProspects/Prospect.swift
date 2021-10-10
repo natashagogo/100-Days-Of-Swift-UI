@@ -15,7 +15,9 @@ class Prospect: Identifiable, Codable {
 	let id = UUID()
 	var name = "Anonymous"
 	var emailAddress = ""
-	var isContacted = false
+	// The fileprivate(set) keyword means this property can be read by any view,
+	// but only written from the current file
+	fileprivate(set) var isContacted = false
 }
 
 class Prospects: ObservableObject {
@@ -23,5 +25,17 @@ class Prospects: ObservableObject {
 	
 	init() {
 		self.people = []
+	}
+	
+	/*
+    Any items in the people array that are changed won't trigger an update.
+	 This method allows users to change the contact status for each person
+	 and sends out a change notification when one is made.
+   */
+	
+	func toggle(_ prospect: Prospect) {
+		// This has to be called before the actual change to ensure SwiftUI gets the animations correct.
+		objectWillChange.send()
+		prospect.isContacted.toggle()
 	}
 }
