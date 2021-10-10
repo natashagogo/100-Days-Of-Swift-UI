@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-/*
-
-What should you use to scan a code?
-You can use Apple's AVFoundation library and find a way to integrate it into a SwiftUI app. Or just use Paul Hudson's Swift package, CodeScanner: https://github.com/twostraws/CodeScanner
-
-
-*/
 
 
 struct ContentView: View {
