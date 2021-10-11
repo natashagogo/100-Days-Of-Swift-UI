@@ -7,7 +7,11 @@
 
 import SwiftUI
 
+/*
+Encapsulation Principle
+Classes and structs should provide methods for reading and writing data. External objects shouldn't read and write data directly. 
 
+*/
 
 struct ContentView: View {
 	var prospects = Prospects()
