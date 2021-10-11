@@ -16,3 +16,32 @@ Pure function
 A function that always returns the same output, given the same input, without affecting other functions, i.e. creating "side-effects).
 
 */
+
+
+/*
+.map()
+A method that loops over a collection, applies the same function to each item, and returns the result in a new collection.
+
+Advantages
+- It's less code than a for loop.
+- It's more efficient. The .map() method tells the compiler what to do, but not how to do it, so it can find more efficient ways to handle the operation.
+- It's easier to read for other developers.
+
+*/
+
+let seasons = [
+	"spring",
+	"summer",
+	"fall",
+	"winter"
+]
+
+let semesters = seasons.map { "\($0.capitalized) 2021"}
+print(semesters)
+
+
+
+
+
+
+
