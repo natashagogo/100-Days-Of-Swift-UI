@@ -12,11 +12,18 @@ import UserNotifications
 struct ProspectsView: View {
 	@EnvironmentObject var prospects: Prospects
 	@State private var isShowingScanner = false
+	@State private var isShowingSortOptions = false
+	@State private var sortSelection: SortType = .none
 	
 	enum FilterType {
 		case none
 		case contacted
 		case uncontacted
+	}
+	
+	enum SortType {
+		case none
+		case name
 	}
 	
 	let filter: FilterType
@@ -46,30 +53,54 @@ struct ProspectsView: View {
 		}
 	}
 	
+	var sortedProspects: [Prospect] {
+		switch sortSelection {
+		   case .none:
+				return filteredProspects
+		   case .name:
+				return filteredProspects.sorted { $0.name < $1.name }
+		}
+	}
+	
     var body: some View {
 		NavigationView {
 			List {
-				 ForEach(filteredProspects) { prospect in
-					  VStack(alignment: .leading) {
-						   Text(prospect.name)
-								 .font(.headline)
-							Text(prospect.emailAddress)
-								 .foregroundColor(.secondary)
-					  }
-						.contextMenu {
-							 Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
-								self.prospects.toggle(prospect)
+				ForEach(filteredProspects) { prospect in
+					HStack {
+						VStack(alignment: .leading) {
+							 Text(prospect.name)
+								  .font(.headline)
+							 Text(prospect.emailAddress)
+								  .foregroundColor(.secondary)
+						}
+						Spacer()
+						 if self.filter == .none {
+							 if prospect.isContacted {
+								 Image(systemName: "checkmark.seal.fill")
+									.foregroundColor(.green)
 							 }
-							if !prospect.isContacted {
-								Button("Remind Me") {
-									self.addNotifications(for: prospect)
-								}
+						 }
+					}
+					.contextMenu {
+						 Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
+							self.prospects.toggle(prospect)
+						 }
+						if !prospect.isContacted {
+							Button("Remind Me") {
+								self.addNotifications(for: prospect)
 							}
 						}
-				 }
+					}
+				}
 			}
 			.navigationBarTitle(title)
-			.navigationBarItems(trailing: Button(action: {
+			.navigationBarItems(leading: Button(action: {
+				self.isShowingSortOptions = true
+			}) {
+				Image(systemName: "arrow.up.arrow.down.circle")
+				Text("Sort")
+		
+			 }, trailing: Button(action: {
 				self.isShowingScanner = true
 			  }) {
 					Image(systemName: "qrcode.viewfinder")
@@ -77,6 +108,13 @@ struct ProspectsView: View {
 			  })
 			.sheet(isPresented: $isShowingScanner) {
 				CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+			}
+			.actionSheet(isPresented: $isShowingSortOptions) {
+				 ActionSheet(title: Text("Sort By"), message: Text("Select your sorting preferences"), buttons: [
+					  .default(Text("None")) { self.sortSelection = .none },
+					  .default(Text("Name")) { self.sortSelection = .name },
+					  .cancel()
+				 ])
 			}
 		}
     }

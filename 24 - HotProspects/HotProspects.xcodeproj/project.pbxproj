@@ -61,6 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC80316D271C8353003E39F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC3097C2270E4C49000B56D3 /* Prospect.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC80316E271C8362003E39F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCFE0A84270A21B500F1DD34 /* ContentView.swift */,
+				BC3097BE270E48D7000B56D3 /* ProspectsView.swift */,
+				BC3097C0270E48EB000B56D3 /* MeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BCFE0A76270A21B500F1DD34 = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				BCFE0A82270A21B500F1DD34 /* HotProspectsApp.swift */,
-				BCFE0A84270A21B500F1DD34 /* ContentView.swift */,
-				BC3097C2270E4C49000B56D3 /* Prospect.swift */,
-				BC3097BE270E48D7000B56D3 /* ProspectsView.swift */,
-				BC3097C0270E48EB000B56D3 /* MeView.swift */,
+				BC80316E271C8362003E39F1 /* Views */,
+				BC80316D271C8353003E39F1 /* Model */,
 				BCCFD927270CD26800D8076B /* PackageManagerExample.swift */,
 				BCFE0A93270A25DD00F1DD34 /* Examples */,
 				BCFE0A86270A21B900F1DD34 /* Assets.xcassets */,

@@ -18,6 +18,7 @@ class Prospect: Identifiable, Codable {
 	// The fileprivate(set) keyword means this property can be read by any view,
 	// but only written from the current file
 	fileprivate(set) var isContacted = false
+	
 }
 
 class Prospects: ObservableObject {
@@ -66,5 +67,5 @@ class Prospects: ObservableObject {
 		save()
 	}
 	
-	
+
 }
