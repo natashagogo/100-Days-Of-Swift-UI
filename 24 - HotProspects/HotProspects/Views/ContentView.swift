@@ -8,23 +8,10 @@
 import SwiftUI
 
 /*
-Encapsulation Principle
-Classes and structs should provide methods for reading and writing data. External objects shouldn't read and write data directly.
 
-Encapsulation
-Encapsulation limits how much external objects can read and write values inside a class or a struct.
-
-What should you use to notify SwiftUI that an observable object is about to change?
-objectWillChange.send()
-
-Does @EnvironmentObject work with structs?
-No. It only works with classes.
-
-What happens when an image is stretched larger than its original size?
-SwiftUI smooths out the pixels in the image, which is called image interpolation. You can control that with the interpolation modifier. 
-
-
-
+TO DO:
+1. Change how data is saved. Used JSON and the documents directory to save and load user data.
+2. Let users delete contacts.
 
 */
 
