@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC267EDA271DD8AB00DB9C0B /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC267ED9271DD8AB00DB9C0B /* FileManagerExtension.swift */; };
 		BC2E2ED92713521B00420440 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = BC2E2ED82713521B00420440 /* CodeScanner */; };
 		BC3097BF270E48D7000B56D3 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3097BE270E48D7000B56D3 /* ProspectsView.swift */; };
 		BC3097C1270E48EB000B56D3 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3097C0270E48EB000B56D3 /* MeView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC267ED9271DD8AB00DB9C0B /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		BC3097BE270E48D7000B56D3 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		BC3097C0270E48EB000B56D3 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		BC3097C2270E4C49000B56D3 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				BC3097C2270E4C49000B56D3 /* Prospect.swift */,
+				BC267ED9271DD8AB00DB9C0B /* FileManagerExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,7 +104,6 @@
 				BCFE0A82270A21B500F1DD34 /* HotProspectsApp.swift */,
 				BC80316E271C8362003E39F1 /* Views */,
 				BC80316D271C8353003E39F1 /* Model */,
-				BCCFD927270CD26800D8076B /* PackageManagerExample.swift */,
 				BCFE0A93270A25DD00F1DD34 /* Examples */,
 				BCFE0A86270A21B900F1DD34 /* Assets.xcassets */,
 				BCFE0A8B270A21B900F1DD34 /* Info.plist */,
@@ -129,6 +131,7 @@
 				BC65A131270B7287006B248E /* ImageInterpolation.swift */,
 				BCCFD920270CC90900D8076B /* ContextMenuExample.swift */,
 				BCCFD922270CCC4900D8076B /* LocalNotificationsExample.swift */,
+				BCCFD927270CD26800D8076B /* PackageManagerExample.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				BCFE0A92270A25D600F1DD34 /* EnvironmentObject.swift in Sources */,
 				BCCFD923270CCC4900D8076B /* LocalNotificationsExample.swift in Sources */,
 				BC3097C1270E48EB000B56D3 /* MeView.swift in Sources */,
+				BC267EDA271DD8AB00DB9C0B /* FileManagerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
