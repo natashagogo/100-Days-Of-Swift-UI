@@ -13,6 +13,7 @@
 		BC1059B42720756B007F0F22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1059B32720756B007F0F22 /* Preview Assets.xcassets */; };
 		BC1059BC27207640007F0F22 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BB27207640007F0F22 /* Haptics.swift */; };
 		BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BD27207D53007F0F22 /* HitTesting.swift */; };
+		BC1059C1272082A4007F0F22 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C0272082A4007F0F22 /* Timers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC1059B52720756B007F0F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC1059BB27207640007F0F22 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		BC1059BD27207D53007F0F22 /* HitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTesting.swift; sourceTree = "<group>"; };
+		BC1059C0272082A4007F0F22 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,7 @@
 			children = (
 				BC1059AC27207568007F0F22 /* FlashzillaApp.swift */,
 				BC1059AE27207568007F0F22 /* ContentView.swift */,
-				BC1059BB27207640007F0F22 /* Haptics.swift */,
-				BC1059BD27207D53007F0F22 /* HitTesting.swift */,
+				BC1059BF2720814A007F0F22 /* Examples */,
 				BC1059B02720756B007F0F22 /* Assets.xcassets */,
 				BC1059B52720756B007F0F22 /* Info.plist */,
 				BC1059B22720756B007F0F22 /* Preview Content */,
@@ -73,6 +74,16 @@
 				BC1059B32720756B007F0F22 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC1059BF2720814A007F0F22 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BC1059BB27207640007F0F22 /* Haptics.swift */,
+				BC1059BD27207D53007F0F22 /* HitTesting.swift */,
+				BC1059C0272082A4007F0F22 /* Timers.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 				BC1059AF27207568007F0F22 /* ContentView.swift in Sources */,
 				BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */,
 				BC1059AD27207568007F0F22 /* FlashzillaApp.swift in Sources */,
+				BC1059C1272082A4007F0F22 /* Timers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
