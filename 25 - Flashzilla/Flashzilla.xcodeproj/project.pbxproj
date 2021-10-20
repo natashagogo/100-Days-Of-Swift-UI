@@ -14,6 +14,7 @@
 		BC1059BC27207640007F0F22 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BB27207640007F0F22 /* Haptics.swift */; };
 		BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BD27207D53007F0F22 /* HitTesting.swift */; };
 		BC1059C1272082A4007F0F22 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C0272082A4007F0F22 /* Timers.swift */; };
+		BC1059C327208550007F0F22 /* UsingNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C227208550007F0F22 /* UsingNotificationCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BC1059BB27207640007F0F22 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		BC1059BD27207D53007F0F22 /* HitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTesting.swift; sourceTree = "<group>"; };
 		BC1059C0272082A4007F0F22 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
+		BC1059C227208550007F0F22 /* UsingNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingNotificationCenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				BC1059BB27207640007F0F22 /* Haptics.swift */,
 				BC1059BD27207D53007F0F22 /* HitTesting.swift */,
 				BC1059C0272082A4007F0F22 /* Timers.swift */,
+				BC1059C227208550007F0F22 /* UsingNotificationCenter.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				BC1059BC27207640007F0F22 /* Haptics.swift in Sources */,
 				BC1059AF27207568007F0F22 /* ContentView.swift in Sources */,
+				BC1059C327208550007F0F22 /* UsingNotificationCenter.swift in Sources */,
 				BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */,
 				BC1059AD27207568007F0F22 /* FlashzillaApp.swift in Sources */,
 				BC1059C1272082A4007F0F22 /* Timers.swift in Sources */,
