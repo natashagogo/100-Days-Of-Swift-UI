@@ -6,17 +6,11 @@
 //
 
 
-/*
-UIKit
-Core Haptics
-Haptics
-
-*/
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Haptics()
+        HitTesting()
     }
 }
 

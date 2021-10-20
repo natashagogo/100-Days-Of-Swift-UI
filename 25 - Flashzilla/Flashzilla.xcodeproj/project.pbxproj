@@ -12,6 +12,7 @@
 		BC1059B12720756B007F0F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1059B02720756B007F0F22 /* Assets.xcassets */; };
 		BC1059B42720756B007F0F22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1059B32720756B007F0F22 /* Preview Assets.xcassets */; };
 		BC1059BC27207640007F0F22 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BB27207640007F0F22 /* Haptics.swift */; };
+		BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059BD27207D53007F0F22 /* HitTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BC1059B32720756B007F0F22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC1059B52720756B007F0F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC1059BB27207640007F0F22 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		BC1059BD27207D53007F0F22 /* HitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				BC1059AC27207568007F0F22 /* FlashzillaApp.swift */,
 				BC1059AE27207568007F0F22 /* ContentView.swift */,
 				BC1059BB27207640007F0F22 /* Haptics.swift */,
+				BC1059BD27207D53007F0F22 /* HitTesting.swift */,
 				BC1059B02720756B007F0F22 /* Assets.xcassets */,
 				BC1059B52720756B007F0F22 /* Info.plist */,
 				BC1059B22720756B007F0F22 /* Preview Content */,
@@ -143,6 +146,7 @@
 			files = (
 				BC1059BC27207640007F0F22 /* Haptics.swift in Sources */,
 				BC1059AF27207568007F0F22 /* ContentView.swift in Sources */,
+				BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */,
 				BC1059AD27207568007F0F22 /* FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
