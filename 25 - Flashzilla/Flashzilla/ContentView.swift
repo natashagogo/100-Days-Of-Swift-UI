@@ -5,10 +5,6 @@
 //  Created by Natasha Godwin on 10/20/21.
 //
 
-/*
-What's a quick way to create a list of sample data?
-Use this initializer for arrays: init(repeating: count:)
-*/
 
 import SwiftUI
 
