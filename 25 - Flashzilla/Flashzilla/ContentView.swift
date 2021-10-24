@@ -37,6 +37,7 @@ struct ContentView: View {
 	@State private var timeRemaining = 100
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	@State private var isActive = true
+	@Environment(\.accessibilityEnabled) var accessibilityEnabled
 	
     var body: some View {
 		ZStack {
@@ -44,7 +45,7 @@ struct ContentView: View {
 			  .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			  .opacity(0.3)
 			VStack {
-				Text("Time: \(timeRemaining) seconds")
+				Text("Time: \(timeRemaining) seconds remaining")
 					.font(.largeTitle)
 					 .foregroundColor(.white)
 					 .padding(.horizontal, 20)
@@ -62,7 +63,8 @@ struct ContentView: View {
 							}
 						}
 						.stacked(at: index, in: self.cards.count)
-						.allowsHitTesting(index == self.cards.count - 1) // only let users drag the first card 
+						.allowsHitTesting(index == self.cards.count - 1) // only let users drag the first card
+						.accessibility(hidden: index < self.cards.count - 1) // prevent VoiceOver from reading all of the cards in the deck, except the first one
 					}
 				}
 				.allowsHitTesting(timeRemaining > 0) // users can swipe cards, if there's time remaining
@@ -78,17 +80,34 @@ struct ContentView: View {
 				 VStack {
 					  Spacer()
 
-					  HStack {
-							Image(systemName: "xmark.circle")
-								 .padding()
-								 .background(Color.black.opacity(0.7))
-								 .clipShape(Circle())
-							Spacer()
-							Image(systemName: "checkmark.circle")
-								 .padding()
-								 .background(Color.black.opacity(0.7))
-								 .clipShape(Circle())
-					  }
+					 HStack {
+						 Button(action: {
+							  withAnimation {
+									self.removeCard(at: self.cards.count - 1)
+							  }
+						 }) {
+							  Image(systemName: "xmark.circle")
+									.padding()
+									.background(Color.black.opacity(0.7))
+									.clipShape(Circle())
+						 }
+						 .accessibility(label: Text("Wrong"))
+						 .accessibility(hint: Text("Mark your answer as being incorrect."))
+						 Spacer()
+
+						 Button(action: {
+							  withAnimation {
+									self.removeCard(at: self.cards.count - 1)
+							  }
+						 }) {
+							  Image(systemName: "checkmark.circle")
+									.padding()
+									.background(Color.black.opacity(0.7))
+									.clipShape(Circle())
+						 }
+						 .accessibility(label: Text("Correct"))
+						 .accessibility(hint: Text("Mark your answer as being correct."))
+					}
 					  .foregroundColor(.white)
 					  .font(.largeTitle)
 					  .padding()
@@ -112,6 +131,7 @@ struct ContentView: View {
     }
 	
 	func removeCard(at index: Int) {
+		guard index >= 0 else { return } // don't remove cards that don't exist
 		cards.remove(at: index)
 		if cards.isEmpty {
 			isActive = false

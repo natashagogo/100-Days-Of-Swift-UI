@@ -14,6 +14,7 @@ struct CardView: View {
 	@State private var isShowingAnswer = false
 	@State private var offset = CGSize.zero
 	@State private var feedback = UINotificationFeedbackGenerator()
+	@Environment(\.accessibilityEnabled) var accessibilityEnabled
     var body: some View {
 		ZStack {
 			RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -32,14 +33,21 @@ struct CardView: View {
 				 )
 				 .shadow(radius: 10)
 			VStack(spacing: 10) {
-				Text(card.prompt)
-					.font(.title)
-					.foregroundColor(.black)
-				if isShowingAnswer {
-					Text(card.answer.uppercased())
-						.font(.title)
-						.foregroundColor(.blue)
-				}
+				 if accessibilityEnabled {
+					  Text(isShowingAnswer ? card.answer : card.prompt)
+							.font(.largeTitle)
+							.foregroundColor(.black)
+				 } else {
+					  Text(card.prompt)
+							.font(.largeTitle)
+							.foregroundColor(.black)
+
+					  if isShowingAnswer {
+							Text(card.answer)
+								 .font(.title)
+								 .foregroundColor(.gray)
+					  }
+				 }
 			}
 			.padding(20)
 			.multilineTextAlignment(.center)
@@ -48,6 +56,7 @@ struct CardView: View {
 		.rotationEffect(.degrees(Double(offset.width / 5)))
 		.offset(x: offset.width * 5, y: 0)
 		.opacity(2 - Double(abs(offset.width / 50)))
+		.accessibility(addTraits: .isButton) // tell VoiceOver this view is tappable
 		.gesture(
 			 DragGesture()
 				.onChanged { offset in
@@ -71,6 +80,7 @@ struct CardView: View {
 		.onTapGesture {
 			isShowingAnswer.toggle()
 		}
+		.animation(.spring())
     }
 }
 
