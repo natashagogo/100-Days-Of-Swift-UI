@@ -8,18 +8,6 @@
 
 import SwiftUI
 
-/*
-
-The more comfortable you are with creating bugs, finding bugs, and fixing bugs, the better a developer you’ll be. - Paul Hudson
-
-When testing an idea, make sure you're on the right scale:
-
-"Years ago PepsiCo challenged mall shoppers to the “Pepsi Challenge”: drink a sip of one cola drink and a sip of another, and see which you prefer. The results found that more Americans preferred Pepsi than Coca Cola, despite Coke having a much bigger market share. However, there was a problem: people seemed to pick Pepsi in the test because Pepsi had a sweeter taste, and while that worked well in sip-size amounts it worked less well in the sizes of cans and bottles, where people actually preferred Coke."
-
-
-
-
-*/
 
 extension View {
 	// Get an item's position in the array and the length of the array
