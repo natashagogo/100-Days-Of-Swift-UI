@@ -8,22 +8,6 @@
 
 import SwiftUI
 
-/*
-
-Ideas without action aren't ideas. They're regrets.
-- Steve Jobs
-
-Things do not happen. Things are made to happen.
-- John F. Kennedy
-
-From Momentum:
-The best way to predict the future is to invent it.
-- Alan Kay
-
-
-
-*/
-
 
 extension View {
 	// Get an item's position in the array and the length of the array
