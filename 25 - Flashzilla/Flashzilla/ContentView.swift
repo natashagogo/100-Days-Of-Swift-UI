@@ -41,6 +41,7 @@ struct ContentView: View {
 	@State private var timeRemaining = 100
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	@State private var isActive = true
+	@State private var isShowingSettings = false
 	@Environment(\.accessibilityEnabled) var accessibilityEnabled
 	
     var body: some View {
@@ -48,6 +49,23 @@ struct ContentView: View {
 			Color.blue
 			  .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			  .opacity(0.3)
+			// TO DO - The layout for this button causes a bug.
+			Button(action: {
+				self.isShowingSettings.toggle()
+			}) {
+				Spacer()
+				VStack {
+					Image(systemName: "gearshape.fill")
+						.font(.largeTitle)
+						.foregroundColor(.black)
+					Text("Settings")
+						.font(.caption)
+						.foregroundColor(.black)
+					Spacer()
+				}
+				.accessibility(label: Text("Settings"))
+				.accessibility(hint: Text("Choose your settings for this app."))
+			}
 			VStack {
 				Text("\(timeRemaining) seconds remaining")
 					.font(.largeTitle)
@@ -72,7 +90,7 @@ struct ContentView: View {
 					}
 				}
 				.allowsHitTesting(timeRemaining > 0) // users can swipe cards, if there's time remaining
-				if cards.isEmpty && timeRemaining == 0 {
+				if cards.isEmpty && timeRemaining > 0 {
 					Text("All done! You finished this deck in \(100 - timeRemaining) seconds.")
 				}
 				if cards.isEmpty || timeRemaining == 0 {
@@ -134,6 +152,9 @@ struct ContentView: View {
 			if self.cards.isEmpty == false {
 				self.isActive = true
 			}
+		}
+		.sheet(isPresented: $isShowingSettings) {
+			Settings()
 		}
     }
 	

@@ -16,6 +16,7 @@
 		BC1059C1272082A4007F0F22 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C0272082A4007F0F22 /* Timers.swift */; };
 		BC1059C327208550007F0F22 /* UsingNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C227208550007F0F22 /* UsingNotificationCenter.swift */; };
 		BC1059C5272088A7007F0F22 /* AccessibilitySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1059C4272088A7007F0F22 /* AccessibilitySettings.swift */; };
+		BC38DAB327271FC500AFC82C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAB227271FC500AFC82C /* Settings.swift */; };
 		BC41E6BC2721C74600A50153 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41E6BB2721C74600A50153 /* Card.swift */; };
 		BC41E6BE2721CA7E00A50153 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41E6BD2721CA7E00A50153 /* CardView.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		BC1059C0272082A4007F0F22 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 		BC1059C227208550007F0F22 /* UsingNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingNotificationCenter.swift; sourceTree = "<group>"; };
 		BC1059C4272088A7007F0F22 /* AccessibilitySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettings.swift; sourceTree = "<group>"; };
+		BC38DAB227271FC500AFC82C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BC41E6BB2721C74600A50153 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BC41E6BD2721CA7E00A50153 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 			children = (
 				BC1059AC27207568007F0F22 /* FlashzillaApp.swift */,
 				BC1059AE27207568007F0F22 /* ContentView.swift */,
+				BC38DAB227271FC500AFC82C /* Settings.swift */,
 				BC41E6BD2721CA7E00A50153 /* CardView.swift */,
 				BC41E6BB2721C74600A50153 /* Card.swift */,
 				BC1059C4272088A7007F0F22 /* AccessibilitySettings.swift */,
@@ -171,6 +174,7 @@
 				BC41E6BE2721CA7E00A50153 /* CardView.swift in Sources */,
 				BC1059AF27207568007F0F22 /* ContentView.swift in Sources */,
 				BC1059C327208550007F0F22 /* UsingNotificationCenter.swift in Sources */,
+				BC38DAB327271FC500AFC82C /* Settings.swift in Sources */,
 				BC1059C5272088A7007F0F22 /* AccessibilitySettings.swift in Sources */,
 				BC1059BE27207D53007F0F22 /* HitTesting.swift in Sources */,
 				BC1059AD27207568007F0F22 /* FlashzillaApp.swift in Sources */,
