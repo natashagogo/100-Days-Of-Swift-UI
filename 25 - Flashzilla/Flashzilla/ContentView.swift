@@ -8,6 +8,22 @@
 
 import SwiftUI
 
+/*
+
+Ideas without action aren't ideas. They're regrets.
+- Steve Jobs
+
+Things do not happen. Things are made to happen.
+- John F. Kennedy
+
+From Momentum:
+The best way to predict the future is to invent it.
+- Alan Kay
+
+
+
+*/
+
 
 extension View {
 	// Get an item's position in the array and the length of the array
@@ -33,7 +49,7 @@ struct ContentView: View {
 			  .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			  .opacity(0.3)
 			VStack {
-				Text("Time: \(timeRemaining) seconds remaining")
+				Text("\(timeRemaining) seconds remaining")
 					.font(.largeTitle)
 					 .foregroundColor(.white)
 					 .padding(.horizontal, 20)
@@ -56,8 +72,11 @@ struct ContentView: View {
 					}
 				}
 				.allowsHitTesting(timeRemaining > 0) // users can swipe cards, if there's time remaining
+				if cards.isEmpty && timeRemaining == 0 {
+					Text("All done! You finished this deck in \(100 - timeRemaining) seconds.")
+				}
 				if cards.isEmpty || timeRemaining == 0 {
-					 Button("Start Again", action: resetCards)
+					 Button("Try Again", action: resetCards)
 						  .padding()
 						  .background(Color.white)
 						  .foregroundColor(.black)
