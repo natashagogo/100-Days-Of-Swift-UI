@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC03A07D27288DD100674D0B /* OffsetText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A07C27288DD100674D0B /* OffsetText.swift */; };
+		BC03A07F27288DE500674D0B /* StaggeredText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A07E27288DE500674D0B /* StaggeredText.swift */; };
+		BC03A08127288DF500674D0B /* SameBaseline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A08027288DF500674D0B /* SameBaseline.swift */; };
+		BC03A08327288E1000674D0B /* OffsetVersusAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */; };
 		BC38DAC1272728D000AFC82C /* LayoutAndGeometryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */; };
 		BC38DAC3272728D000AFC82C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAC2272728D000AFC82C /* ContentView.swift */; };
 		BC38DAC5272728D500AFC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38DAC4272728D400AFC82C /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC03A07C27288DD100674D0B /* OffsetText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetText.swift; sourceTree = "<group>"; };
+		BC03A07E27288DE500674D0B /* StaggeredText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredText.swift; sourceTree = "<group>"; };
+		BC03A08027288DF500674D0B /* SameBaseline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameBaseline.swift; sourceTree = "<group>"; };
+		BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetVersusAlignment.swift; sourceTree = "<group>"; };
 		BC38DABD272728D000AFC82C /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutAndGeometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAndGeometryApp.swift; sourceTree = "<group>"; };
 		BC38DAC2272728D000AFC82C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +41,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC03A08427288E7900674D0B /* Alignment Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */,
+				BC03A08027288DF500674D0B /* SameBaseline.swift */,
+				BC03A07E27288DE500674D0B /* StaggeredText.swift */,
+				BC03A07C27288DD100674D0B /* OffsetText.swift */,
+			);
+			path = "Alignment Examples";
+			sourceTree = "<group>";
+		};
 		BC38DAB4272728CF00AFC82C = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +73,7 @@
 			children = (
 				BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */,
 				BC38DAC2272728D000AFC82C /* ContentView.swift */,
+				BC03A08427288E7900674D0B /* Alignment Examples */,
 				BC38DAC4272728D400AFC82C /* Assets.xcassets */,
 				BC38DAC9272728D500AFC82C /* Info.plist */,
 				BC38DAC6272728D500AFC82C /* Preview Content */,
@@ -139,6 +159,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC38DAC3272728D000AFC82C /* ContentView.swift in Sources */,
+				BC03A08127288DF500674D0B /* SameBaseline.swift in Sources */,
+				BC03A07F27288DE500674D0B /* StaggeredText.swift in Sources */,
+				BC03A07D27288DD100674D0B /* OffsetText.swift in Sources */,
+				BC03A08327288E1000674D0B /* OffsetVersusAlignment.swift in Sources */,
 				BC38DAC1272728D000AFC82C /* LayoutAndGeometryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
