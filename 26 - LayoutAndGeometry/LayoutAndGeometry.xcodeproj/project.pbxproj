@@ -15,6 +15,8 @@
 		BC38DAC3272728D000AFC82C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAC2272728D000AFC82C /* ContentView.swift */; };
 		BC38DAC5272728D500AFC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38DAC4272728D400AFC82C /* Assets.xcassets */; };
 		BC38DAC8272728D500AFC82C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38DAC7272728D500AFC82C /* Preview Assets.xcassets */; };
+		BC46AF1C2729CF530035E90B /* DoubleHelix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46AF1B2729CF530035E90B /* DoubleHelix.swift */; };
+		BC46AF1E2729CF6B0035E90B /* SlidingSquares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46AF1D2729CF6B0035E90B /* SlidingSquares.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BC38DAC4272728D400AFC82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC38DAC7272728D500AFC82C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC38DAC9272728D500AFC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC46AF1B2729CF530035E90B /* DoubleHelix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHelix.swift; sourceTree = "<group>"; };
+		BC46AF1D2729CF6B0035E90B /* SlidingSquares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingSquares.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +45,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC03A08427288E7900674D0B /* Alignment Examples */ = {
+		BC03A08427288E7900674D0B /* Alignment and Position */ = {
 			isa = PBXGroup;
 			children = (
 				BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */,
@@ -49,7 +53,7 @@
 				BC03A07E27288DE500674D0B /* StaggeredText.swift */,
 				BC03A07C27288DD100674D0B /* OffsetText.swift */,
 			);
-			path = "Alignment Examples";
+			path = "Alignment and Position";
 			sourceTree = "<group>";
 		};
 		BC38DAB4272728CF00AFC82C = {
@@ -73,7 +77,8 @@
 			children = (
 				BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */,
 				BC38DAC2272728D000AFC82C /* ContentView.swift */,
-				BC03A08427288E7900674D0B /* Alignment Examples */,
+				BC46AF1F2729CF7A0035E90B /* GeometryReader */,
+				BC03A08427288E7900674D0B /* Alignment and Position */,
 				BC38DAC4272728D400AFC82C /* Assets.xcassets */,
 				BC38DAC9272728D500AFC82C /* Info.plist */,
 				BC38DAC6272728D500AFC82C /* Preview Content */,
@@ -87,6 +92,15 @@
 				BC38DAC7272728D500AFC82C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC46AF1F2729CF7A0035E90B /* GeometryReader */ = {
+			isa = PBXGroup;
+			children = (
+				BC46AF1D2729CF6B0035E90B /* SlidingSquares.swift */,
+				BC46AF1B2729CF530035E90B /* DoubleHelix.swift */,
+			);
+			path = GeometryReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +177,9 @@
 				BC03A07F27288DE500674D0B /* StaggeredText.swift in Sources */,
 				BC03A07D27288DD100674D0B /* OffsetText.swift in Sources */,
 				BC03A08327288E1000674D0B /* OffsetVersusAlignment.swift in Sources */,
+				BC46AF1E2729CF6B0035E90B /* SlidingSquares.swift in Sources */,
 				BC38DAC1272728D000AFC82C /* LayoutAndGeometryApp.swift in Sources */,
+				BC46AF1C2729CF530035E90B /* DoubleHelix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
