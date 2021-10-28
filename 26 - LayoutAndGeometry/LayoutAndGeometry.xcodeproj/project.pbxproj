@@ -11,6 +11,7 @@
 		BC03A07F27288DE500674D0B /* StaggeredText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A07E27288DE500674D0B /* StaggeredText.swift */; };
 		BC03A08127288DF500674D0B /* SameBaseline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A08027288DF500674D0B /* SameBaseline.swift */; };
 		BC03A08327288E1000674D0B /* OffsetVersusAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */; };
+		BC2959C3272B1B8A00C8B7E6 /* ShrinkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2959C2272B1B8A00C8B7E6 /* ShrinkImage.swift */; };
 		BC38DAC1272728D000AFC82C /* LayoutAndGeometryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */; };
 		BC38DAC3272728D000AFC82C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38DAC2272728D000AFC82C /* ContentView.swift */; };
 		BC38DAC5272728D500AFC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38DAC4272728D400AFC82C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		BC03A07E27288DE500674D0B /* StaggeredText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredText.swift; sourceTree = "<group>"; };
 		BC03A08027288DF500674D0B /* SameBaseline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameBaseline.swift; sourceTree = "<group>"; };
 		BC03A08227288E1000674D0B /* OffsetVersusAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetVersusAlignment.swift; sourceTree = "<group>"; };
+		BC2959C2272B1B8A00C8B7E6 /* ShrinkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkImage.swift; sourceTree = "<group>"; };
 		BC38DABD272728D000AFC82C /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutAndGeometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAndGeometryApp.swift; sourceTree = "<group>"; };
 		BC38DAC2272728D000AFC82C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				BC46AF1D2729CF6B0035E90B /* SlidingSquares.swift */,
 				BC46AF202729D3730035E90B /* DoubleHelix.swift */,
+				BC2959C2272B1B8A00C8B7E6 /* ShrinkImage.swift */,
 			);
 			path = GeometryReader;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				BC38DAC3272728D000AFC82C /* ContentView.swift in Sources */,
 				BC46AF212729D3730035E90B /* DoubleHelix.swift in Sources */,
+				BC2959C3272B1B8A00C8B7E6 /* ShrinkImage.swift in Sources */,
 				BC03A08127288DF500674D0B /* SameBaseline.swift in Sources */,
 				BC03A07F27288DE500674D0B /* StaggeredText.swift in Sources */,
 				BC03A07D27288DD100674D0B /* OffsetText.swift in Sources */,

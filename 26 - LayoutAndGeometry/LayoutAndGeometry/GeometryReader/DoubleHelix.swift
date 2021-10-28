@@ -5,6 +5,11 @@
 //  Created by Natasha Godwin on 10/27/21.
 //
 
+/*
+Do child views have to use an amount of space that's less than or equal to the space the parent view offers?
+No. Child views are welcome to request more space; and the parent must respect that.
+
+*/
 import SwiftUI
 
 struct DoubleHelix: View {
