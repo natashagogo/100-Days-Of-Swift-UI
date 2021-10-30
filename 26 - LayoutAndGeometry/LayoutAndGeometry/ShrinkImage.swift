@@ -9,6 +9,7 @@ import SwiftUI
 
 // Make the image get smaller, as the user scrolls down.
 
+
 struct ShrinkImage: View {
     var body: some View {
 		GeometryReader { geometry in

@@ -79,6 +79,7 @@
 			children = (
 				BC38DAC0272728D000AFC82C /* LayoutAndGeometryApp.swift */,
 				BC38DAC2272728D000AFC82C /* ContentView.swift */,
+				BC2959C2272B1B8A00C8B7E6 /* ShrinkImage.swift */,
 				BC46AF1F2729CF7A0035E90B /* GeometryReader */,
 				BC03A08427288E7900674D0B /* Alignment and Position */,
 				BC38DAC4272728D400AFC82C /* Assets.xcassets */,
@@ -101,7 +102,6 @@
 			children = (
 				BC46AF1D2729CF6B0035E90B /* SlidingSquares.swift */,
 				BC46AF202729D3730035E90B /* DoubleHelix.swift */,
-				BC2959C2272B1B8A00C8B7E6 /* ShrinkImage.swift */,
 			);
 			path = GeometryReader;
 			sourceTree = "<group>";
