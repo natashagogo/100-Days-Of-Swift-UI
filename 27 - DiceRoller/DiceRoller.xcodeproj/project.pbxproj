@@ -11,6 +11,9 @@
 		BC1E0CC9272F25F5000AC097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E0CC8272F25F5000AC097 /* ContentView.swift */; };
 		BC1E0CCB272F25F8000AC097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1E0CCA272F25F8000AC097 /* Assets.xcassets */; };
 		BC1E0CCE272F25F8000AC097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1E0CCD272F25F8000AC097 /* Preview Assets.xcassets */; };
+		BC5CF092272F3277004A721E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF091272F3277004A721E /* Game.swift */; };
+		BC5CF094272F3772004A721E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF093272F3772004A721E /* GameView.swift */; };
+		BC5CF096272F37DA004A721E /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5CF095272F37DA004A721E /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		BC1E0CCA272F25F8000AC097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1E0CCD272F25F8000AC097 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC1E0CCF272F25F8000AC097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC5CF091272F3277004A721E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BC5CF093272F3772004A721E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		BC5CF095272F37DA004A721E /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				BC1E0CC6272F25F5000AC097 /* DiceRollerApp.swift */,
 				BC1E0CC8272F25F5000AC097 /* ContentView.swift */,
+				BC5CF095272F37DA004A721E /* ResultsView.swift */,
+				BC5CF093272F3772004A721E /* GameView.swift */,
+				BC5CF091272F3277004A721E /* Game.swift */,
 				BC1E0CCA272F25F8000AC097 /* Assets.xcassets */,
 				BC1E0CCF272F25F8000AC097 /* Info.plist */,
 				BC1E0CCC272F25F8000AC097 /* Preview Content */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1E0CC9272F25F5000AC097 /* ContentView.swift in Sources */,
+				BC5CF092272F3277004A721E /* Game.swift in Sources */,
+				BC5CF094272F3772004A721E /* GameView.swift in Sources */,
+				BC5CF096272F37DA004A721E /* ResultsView.swift in Sources */,
 				BC1E0CC7272F25F5000AC097 /* DiceRollerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
