@@ -9,9 +9,12 @@ import SwiftUI
 
 struct GameView: View {
 	@EnvironmentObject var game: Game
+	@State private var showFeedback = false
 	 var body: some View {
 		VStack(spacing: 50) {
-			Text("You rolled a \(game.total)")
+			if showFeedback {
+				Text("You rolled a \(game.total)")
+			}
 			HStack(spacing: 20) {
 				Text("\(game.firstDice)")
 					.frame(width: 50, height: 50)
@@ -26,6 +29,7 @@ struct GameView: View {
 			}.font(.largeTitle)
 			Button("Roll") {
 				game.rollDice()
+				showFeedback = true
 			}
 		}
 	 }

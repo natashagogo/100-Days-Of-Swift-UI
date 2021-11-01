@@ -10,7 +10,26 @@ import SwiftUI
 struct ResultsView: View {
 	@EnvironmentObject var game: Game
     var body: some View {
-		Text("You rolled a \(game.firstDice) and \(game.secondDice) for a total of \(game.total)")
+		NavigationView {
+			if game.results.isEmpty {
+				VStack{
+					Text("You haven't rolled any dice yet.")
+						.foregroundColor(.secondary)
+						.padding()
+					Spacer()
+				}.navigationTitle("Results")
+			} else {
+				List {
+					ForEach(game.results, id: \.self) { result in
+						VStack(alignment: .leading) {
+							Text("First Dice: \(result[0])")
+							Text("Second Dice: \(result[1])")
+							Text("Total: \(result[0] + result[1])")
+						}
+					}
+				}.navigationTitle("Results")
+			}
+		}
     }
 }
 

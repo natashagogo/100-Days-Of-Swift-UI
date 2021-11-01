@@ -16,13 +16,13 @@ Bare minimum:
 ✅ An app with two tabs: one for rolling, the other for seeing results
 
 Intermediate:
-- Let the user customize the dice that are rolled: how many of them, and what type: 4-sided, 6-sided, 8-sided, 10-sided, 12-sided, 20-sided, and even 100-sided.
 ✅  Show the total rolled on the dice.
 - Store the results using Core Data so they are persistent.
 
 Advanced:
 - Add haptic feedback when dice are rolled.
 - Make the value rolled by the dice flick through various possible values before settling on the final figure.
+- Let the user customize the dice that are rolled: how many of them, and what type: 4-sided, 6-sided, 8-sided, 10-sided, 12-sided, 20-sided, and even 100-sided.
 
 */
 
