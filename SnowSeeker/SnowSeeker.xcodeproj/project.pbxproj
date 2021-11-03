@@ -12,6 +12,9 @@
 		BC3142102731AC0000ADBED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC31420F2731AC0000ADBED3 /* Assets.xcassets */; };
 		BC3142132731AC0000ADBED3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3142122731AC0000ADBED3 /* Preview Assets.xcassets */; };
 		BC31421B2731BB5600ADBED3 /* DynamicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC31421A2731BB5600ADBED3 /* DynamicLayout.swift */; };
+		BC4E3E612732FC7D007A4331 /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = BC4E3E602732FC7C007A4331 /* resorts.json */; };
+		BC4E3E672732FF81007A4331 /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E3E662732FF81007A4331 /* Resort.swift */; };
+		BC4E3E6A273301CA007A4331 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E3E69273301CA007A4331 /* Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BC3142122731AC0000ADBED3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC3142142731AC0000ADBED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC31421A2731BB5600ADBED3 /* DynamicLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLayout.swift; sourceTree = "<group>"; };
+		BC4E3E602732FC7C007A4331 /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = resorts.json; path = ../../../resorts.json; sourceTree = "<group>"; };
+		BC4E3E662732FF81007A4331 /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
+		BC4E3E69273301CA007A4331 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,11 @@
 			children = (
 				BC31420B2731ABFC00ADBED3 /* SnowSeekerApp.swift */,
 				BC31420D2731ABFC00ADBED3 /* ContentView.swift */,
+				BC4E3E602732FC7C007A4331 /* resorts.json */,
 				BC31421C2731BBA700ADBED3 /* Techniques */,
 				BC31420F2731AC0000ADBED3 /* Assets.xcassets */,
+				BC4E3E6B2733030A007A4331 /* Helpers */,
+				BC4E3E682732FF87007A4331 /* Model */,
 				BC3142142731AC0000ADBED3 /* Info.plist */,
 				BC3142112731AC0000ADBED3 /* Preview Content */,
 			);
@@ -78,6 +87,22 @@
 				BC31421A2731BB5600ADBED3 /* DynamicLayout.swift */,
 			);
 			path = Techniques;
+			sourceTree = "<group>";
+		};
+		BC4E3E682732FF87007A4331 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E3E662732FF81007A4331 /* Resort.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC4E3E6B2733030A007A4331 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E3E69273301CA007A4331 /* Bundle-Decodable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4E3E612732FC7D007A4331 /* resorts.json in Resources */,
 				BC3142132731AC0000ADBED3 /* Preview Assets.xcassets in Resources */,
 				BC3142102731AC0000ADBED3 /* Assets.xcassets in Resources */,
 			);
@@ -151,6 +177,8 @@
 			files = (
 				BC31420E2731ABFC00ADBED3 /* ContentView.swift in Sources */,
 				BC31420C2731ABFC00ADBED3 /* SnowSeekerApp.swift in Sources */,
+				BC4E3E6A273301CA007A4331 /* Bundle-Decodable.swift in Sources */,
+				BC4E3E672732FF81007A4331 /* Resort.swift in Sources */,
 				BC31421B2731BB5600ADBED3 /* DynamicLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

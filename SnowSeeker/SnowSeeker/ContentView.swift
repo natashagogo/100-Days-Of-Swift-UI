@@ -7,10 +7,27 @@
 
 import SwiftUI
 
+/*
+Can-Dos
+Load static example data from the bundle
+Control how NavigationView should show primary and secondary views on iPhone
+Format lists of strings neatly.
+
+Anyone who stops learning is old, whether at twenty or eighty; anyone who keeps learning stays young.
+Henry Ford
+
+
+
+
+*/
+
 
 struct ContentView: View {
+	let resorts: [Resort] = Bundle.main.decode("resorts.json")
 	var body: some View {
-		Text("Hello, World!")
+		NavigationView {
+			//NavigationLink(destination: ) {}
+		}
 	}
 		
 }
