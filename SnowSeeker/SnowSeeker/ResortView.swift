@@ -29,7 +29,7 @@ struct ResortView: View {
 						.padding(.vertical)
 					Text("Facilities")
 						.font(.headline)
-					Text(resort.facilities.joined(separator: ", "))
+					Text(ListFormatter.localizedString(byJoining: resort.facilities))
 						.padding(.vertical)
 				}
 				.padding(.horizontal)

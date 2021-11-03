@@ -11,7 +11,7 @@ import SwiftUI
 Can-Dos
 Load static example data from the bundle
 Control how NavigationView should show primary and secondary views on iPhone
-Format lists of strings neatly.
+Turn a list of strings into one line, using both Array's .joined(separator:) method and Foundation's ListFormatter
 Write an extension on view that detects whether an app is running on a phone or a tablet, and if it’s a phone, always shows a Navigation View as a stack
 
 Anyone who stops learning is old, whether at twenty or eighty; anyone who keeps learning stays young.
