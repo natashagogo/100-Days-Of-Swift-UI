@@ -17,8 +17,6 @@ Anyone who stops learning is old, whether at twenty or eighty; anyone who keeps 
 Henry Ford
 
 
-
-
 */
 
 
@@ -26,7 +24,24 @@ struct ContentView: View {
 	let resorts: [Resort] = Bundle.main.decode("resorts.json")
 	var body: some View {
 		NavigationView {
-			//NavigationLink(destination: ) {}
+			List(resorts, id: \.id) { resort in
+				NavigationLink(destination: Text("Details on \(resort.name)")) {
+					HStack {
+						Image(decorative: resort.country)
+							.resizable()
+							.scaledToFill()
+							.frame(width: 30, height: 30)
+							.clipShape(Circle())
+							.overlay(Circle().stroke(Color.black, lineWidth: 1))
+						VStack(alignment: .leading) {
+							Text(resort.name)
+								.font(.headline)
+							Text("\(resort.runs) runs")
+								.foregroundColor(.secondary)
+						}
+					}
+				}
+			}.navigationTitle("Resorts")
 		}
 	}
 		
