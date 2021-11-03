@@ -16,7 +16,7 @@ struct ResortView: View {
 					.resizable()
 					.scaledToFit()
 				Group {
-					HStack {
+					HStack(spacing: 30) {
 						Spacer()
 						ResortDetailsView(resort: resort)
 						SkiDetailsView(resort: resort)
