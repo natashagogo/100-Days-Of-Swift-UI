@@ -26,7 +26,7 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			List(resorts, id: \.id) { resort in
-				NavigationLink(destination: Text("Details on \(resort.name)")) {
+				NavigationLink(destination: ResortView(resort: resort)) {
 					HStack {
 						Image(decorative: resort.country)
 							.resizable()
