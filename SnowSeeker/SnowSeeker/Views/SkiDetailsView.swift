@@ -10,9 +10,10 @@ import SwiftUI
 struct SkiDetailsView: View {
 	let resort: Resort
     var body: some View {
-		VStack(alignment: .leading) {
-			Text("Elevation: \(resort.elevation)m")
-			Text("Snow: \(resort.snowDepth)cm")
+		Group {
+			Text("Elevation: \(resort.elevation)m").layoutPriority(1)
+			Spacer().frame(height: 0) // space will only be added in landscape mode
+			Text("Snow: \(resort.snowDepth)cm").layoutPriority(1)
 		}
     }
 }

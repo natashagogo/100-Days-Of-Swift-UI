@@ -26,9 +26,10 @@ struct ResortDetailsView: View {
 	}
 	
     var body: some View {
-		VStack(alignment: .leading) {
-			Text("Size: \(size)")
-			Text("Price: \(price)")
+		Group {
+			Text("Size: \(size)").layoutPriority(1)
+			Spacer().frame(height: 0) // space will only be added in landscape mode
+			Text("Price: \(price)").layoutPriority(1)
 		}
     }
 }

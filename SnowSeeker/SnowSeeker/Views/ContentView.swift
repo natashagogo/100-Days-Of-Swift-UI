@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/*
+ Can-Dos
+ Change a view's layout in response to size classes
+ 
+ */
+
 
 struct ContentView: View {
 	let resorts: [Resort] = Bundle.main.decode("resorts.json")
