@@ -12,6 +12,7 @@ struct ResortView: View {
 	@Environment(\.horizontalSizeClass) var sizeClass
 	@State private var selectedFacility: Facility?
 	@EnvironmentObject var favorites: Favorites
+	
     var body: some View {
 		ScrollView(.vertical) {
 			VStack(alignment: .leading, spacing: 0) {
