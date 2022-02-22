@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+		 Polygon(sides: 6)
+			  .fill(Color.blue)
+			  .frame(width: 200, height: 200)
     }
 }
 

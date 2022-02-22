@@ -11,6 +11,9 @@
 		BC3F15512671640B008309EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F15502671640B008309EB /* ContentView.swift */; };
 		BC3F15532671640E008309EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3F15522671640E008309EB /* Assets.xcassets */; };
 		BC3F15562671640E008309EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3F15552671640E008309EB /* Preview Assets.xcassets */; };
+		BC5D220927C54DDE0008747C /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D220827C54DDE0008747C /* Polygon.swift */; };
+		BC5D220C27C54E0A0008747C /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D220B27C54E0A0008747C /* Triangle.swift */; };
+		BC5D220E27C54E3D0008747C /* TrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D220D27C54E3D0008747C /* TrianglePath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		BC3F15522671640E008309EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC3F15552671640E008309EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC3F15572671640E008309EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC5D220827C54DDE0008747C /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		BC5D220B27C54E0A0008747C /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		BC5D220D27C54E3D0008747C /* TrianglePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrianglePath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			children = (
 				BC3F154E2671640B008309EB /* DrawingApp.swift */,
 				BC3F15502671640B008309EB /* ContentView.swift */,
+				BC5D220F27C54E4C0008747C /* Paths */,
+				BC5D220A27C54DEE0008747C /* Shapes */,
 				BC3F15522671640E008309EB /* Assets.xcassets */,
 				BC3F15572671640E008309EB /* Info.plist */,
 				BC3F15542671640E008309EB /* Preview Content */,
@@ -67,6 +75,23 @@
 				BC3F15552671640E008309EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC5D220A27C54DEE0008747C /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				BC5D220B27C54E0A0008747C /* Triangle.swift */,
+				BC5D220827C54DDE0008747C /* Polygon.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		BC5D220F27C54E4C0008747C /* Paths */ = {
+			isa = PBXGroup;
+			children = (
+				BC5D220D27C54E3D0008747C /* TrianglePath.swift */,
+			);
+			path = Paths;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +165,9 @@
 			files = (
 				BC3F15512671640B008309EB /* ContentView.swift in Sources */,
 				BC3F154F2671640B008309EB /* DrawingApp.swift in Sources */,
+				BC5D220927C54DDE0008747C /* Polygon.swift in Sources */,
+				BC5D220E27C54E3D0008747C /* TrianglePath.swift in Sources */,
+				BC5D220C27C54E0A0008747C /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
