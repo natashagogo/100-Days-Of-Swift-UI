@@ -13,10 +13,10 @@ import SwiftUI
 
  Customers can ...
  
- enter the bill amount
- enter the number of people who will share the cost
- add a tip
- 
+ ✅ enter the bill amount
+ ✅ enter the number of people who will share the cost
+ ✅ add a tip
+ ✅ get the total
  
  */
 
