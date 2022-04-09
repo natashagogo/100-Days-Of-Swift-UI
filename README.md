@@ -32,7 +32,7 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
       <figure>
         <img 
            src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/01%20-%20WeSplit/Screenshots/phase-1-screenshot.png"
-            width="200"
+            width="220"
        />
       <figcaption>Completed the project and challenges</figcaption>
       </figure>
@@ -41,7 +41,7 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
       <figure>
         <img 
            src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/01%20-%20WeSplit/Screenshots/phase-2-screenshot.png"
-           width="200"
+           width="220"
        />
       <figcaption>Created a data model, built custom views, improved the UX</figcaption>
       </figure>
