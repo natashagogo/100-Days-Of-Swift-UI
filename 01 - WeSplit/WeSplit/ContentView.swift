@@ -20,59 +20,27 @@ import SwiftUI
  
  */
 
-
 struct ContentView: View {
-	@State private var billAmount = 0.0
-	@State private var numberOfPeople = 2
-	@State private var tipPercentage = 15
-	
+	@State private var bill = Bill()
+	@State private var progress = 5.0
 	@FocusState private var isFocused: Bool
 	
-	let tipOptions = [
-		10,
-		15,
-		20,
-		25,
-		0
-	]
-	
-	var total: (amount: Double, amountPerPerson: Double) {
-		let amount = billAmount
-		let tip = billAmount * Double(tipPercentage) / 100
-		let grandTotal = amount + tip
-		let totalPerPerson = grandTotal / Double(numberOfPeople)
-		
-		return (grandTotal, totalPerPerson)
-	}
     var body: some View {
 		 NavigationView {
 			 VStack {
-				 HStack {
-					 VStack {
-						 Text(total.amountPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-							 .font(.largeTitle)
-						 Text("Total Per Person")
-							 .font(.subheadline)
-					 }.padding()
-					 Divider()
-					 VStack {
-						 Text(total.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-							 .font(.largeTitle)
-						 Text("Total")
-							 .font(.subheadline)
-					 }.padding()
-				 }
-				 .frame(height: 100)
+				 TotalView(total: bill.calculateTotal.amount, totalPerPerson: bill.calculateTotal.amountPerPerson,
+					numberOfPeople: bill.numberOfPeople
+				 )
 				 Form {
 					 Section(header: Text("Basics")) {
-						 TextField("Amount", value: $billAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+						 TextField("Amount", value: $bill.total, format: .currency(code: Locale.current.currencyCode ?? "USD"))
 							 .keyboardType(.decimalPad)
 							 .focused($isFocused)
-						 Stepper("\(numberOfPeople) people", value: $numberOfPeople, in: 2...100)
+						 Stepper("\(bill.numberOfPeople) people", value: $bill.numberOfPeople, in: 2...100)
 					 }
 					 Section(header: Text("Tip")) {
-						 Picker("Tip", selection: $tipPercentage) {
-							 ForEach(tipOptions, id: \.self) {
+						 Picker("Tip", selection: $bill.tipPercentage) {
+							 ForEach(Bill.tipOptions, id: \.self) {
 								 Text($0, format: .percent)
 							 }
 						 }

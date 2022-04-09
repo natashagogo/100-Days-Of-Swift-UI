@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC584E4728021BF70083CE2B /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC584E4628021BF70083CE2B /* Bill.swift */; };
+		BC584E4928021C140083CE2B /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC584E4828021C140083CE2B /* TotalView.swift */; };
+		BC584E4B280220700083CE2B /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC584E4A280220700083CE2B /* NumberView.swift */; };
 		BC817E3B26448AB5005E6180 /* WeSplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC817E3A26448AB5005E6180 /* WeSplitApp.swift */; };
 		BC817E3D26448AB5005E6180 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC817E3C26448AB5005E6180 /* ContentView.swift */; };
 		BC817E3F26448AB8005E6180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC817E3E26448AB8005E6180 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC584E4628021BF70083CE2B /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		BC584E4828021C140083CE2B /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
+		BC584E4A280220700083CE2B /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		BC817E3726448AB5005E6180 /* WeSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC817E3A26448AB5005E6180 /* WeSplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitApp.swift; sourceTree = "<group>"; };
 		BC817E3C26448AB5005E6180 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 			children = (
 				BC817E3A26448AB5005E6180 /* WeSplitApp.swift */,
 				BC817E3C26448AB5005E6180 /* ContentView.swift */,
+				BC584E4828021C140083CE2B /* TotalView.swift */,
+				BC584E4A280220700083CE2B /* NumberView.swift */,
+				BC584E4628021BF70083CE2B /* Bill.swift */,
 				BC817E3E26448AB8005E6180 /* Assets.xcassets */,
 				BC817E4326448AB8005E6180 /* Info.plist */,
 				BC817E4026448AB8005E6180 /* Preview Content */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC817E3D26448AB5005E6180 /* ContentView.swift in Sources */,
+				BC584E4928021C140083CE2B /* TotalView.swift in Sources */,
+				BC584E4728021BF70083CE2B /* Bill.swift in Sources */,
+				BC584E4B280220700083CE2B /* NumberView.swift in Sources */,
 				BC817E3B26448AB5005E6180 /* WeSplitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
