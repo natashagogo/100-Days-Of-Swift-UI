@@ -46,36 +46,48 @@ struct ContentView: View {
 	}
     var body: some View {
 		 NavigationView {
-			 Form {
-				 Section(header: Text("Basics")) {
-					 TextField("Amount", value: $billAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-						 .keyboardType(.decimalPad)
-						 .focused($isFocused)
-					 Stepper("\(numberOfPeople) people", value: $numberOfPeople, in: 2...100)
+			 VStack {
+				 HStack {
+					 VStack {
+						 Text(total.amountPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+							 .font(.largeTitle)
+						 Text("Total Per Person")
+							 .font(.subheadline)
+					 }.padding()
+					 Divider()
+					 VStack {
+						 Text(total.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+							 .font(.largeTitle)
+						 Text("Total")
+							 .font(.subheadline)
+					 }.padding()
 				 }
-				 Section(header: Text("Tip")) {
-					 Picker("Tip", selection: $tipPercentage) {
-						 ForEach(tipOptions, id: \.self) {
-							 Text($0, format: .percent)
+				 .frame(height: 100)
+				 Form {
+					 Section(header: Text("Basics")) {
+						 TextField("Amount", value: $billAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+							 .keyboardType(.decimalPad)
+							 .focused($isFocused)
+						 Stepper("\(numberOfPeople) people", value: $numberOfPeople, in: 2...100)
+					 }
+					 Section(header: Text("Tip")) {
+						 Picker("Tip", selection: $tipPercentage) {
+							 ForEach(tipOptions, id: \.self) {
+								 Text($0, format: .percent)
+							 }
+						 }
+						 .pickerStyle(.segmented)
+					 }
+				 }
+				 .navigationTitle("WeSplit")
+				 .toolbar {
+					 ToolbarItemGroup(placement: .keyboard) {
+						 Spacer()
+						 Button("Done") {
+							 isFocused = false
 						 }
 					 }
-					 .pickerStyle(.segmented)
-				 }
-				 Section(header: Text("Total")) {
-					 Text(total.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-				 }
-				 Section(header: Text("Total Per Person")) {
-					 Text(total.amountPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-				 }
 			 }
-			 .navigationTitle("WeSplit")
-			 .toolbar {
-				 ToolbarItemGroup(placement: .keyboard) {
-					 Spacer()
-					 Button("Done") {
-						 isFocused = false
-					 }
-				 }
 			 }
 		 }
 	 }
