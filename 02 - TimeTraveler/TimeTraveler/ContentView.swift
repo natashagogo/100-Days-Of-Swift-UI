@@ -24,7 +24,7 @@ struct ContentView: View {
         let result: Double
         
         let minutesInHour: Double = 60
-        let minutesInDay: Double = 1440
+        let minutesInDay: Double = minutesInHour * 24
         
         let inputSelection = units[inputSelected]
         let outputSelection = units[outputSelected]
@@ -60,12 +60,13 @@ struct ContentView: View {
             Form {
                 Section {
                     TextField("Number", text: $entry)
+							 .keyboardType(.decimalPad)
                 }
                 
                 Section(header: Text("Input Unit")) {
                     Picker("Input Unit", selection: $inputSelected) {
-                        ForEach(0..<units.count) { unit in
-                            Text("\(self.units[unit])")
+							  ForEach(units, id: \.self) { unit in
+                            Text(unit)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -73,20 +74,20 @@ struct ContentView: View {
                 
                 Section(header: Text("Output Unit")) {
                     Picker("Output Unit", selection: $outputSelected) {
-                        ForEach(0..<units.count) { unit in
-                            Text("\(self.units[unit])")
+							  ForEach(units, id: \.self) { unit in
+                            Text(unit)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section(header: Text("Result")) {
-                    Text("There are \(convertNumber, specifier: "%.2f") \(units[outputSelected]) in \(entry) \(units[inputSelected]) ")
+                    Text("There are \(convertNumber, specifier: "%.2f") \(units[outputSelected]) in \(entry) \(units[inputSelected])")
                 }
                 
                 
             }
-            .navigationBarTitle("Time Traveler")
+            .navigationTitle("Time Traveler")
         }
     }
 }
