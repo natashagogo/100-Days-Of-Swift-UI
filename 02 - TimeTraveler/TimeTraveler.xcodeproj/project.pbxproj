@@ -11,6 +11,7 @@
 		BC2FCCF42648854000455086 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FCCF32648854000455086 /* ContentView.swift */; };
 		BC2FCCF62648854300455086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC2FCCF52648854300455086 /* Assets.xcassets */; };
 		BC2FCCF92648854300455086 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC2FCCF82648854300455086 /* Preview Assets.xcassets */; };
+		BCA5EF272803882C0090C41F /* SimpleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA5EF262803882C0090C41F /* SimpleConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BC2FCCF52648854300455086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC2FCCF82648854300455086 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC2FCCFA2648854300455086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA5EF262803882C0090C41F /* SimpleConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				BC2FCCF12648854000455086 /* TimeTravelerApp.swift */,
 				BC2FCCF32648854000455086 /* ContentView.swift */,
+				BCA5EF28280388540090C41F /* Phase 1 */,
 				BC2FCCF52648854300455086 /* Assets.xcassets */,
 				BC2FCCFA2648854300455086 /* Info.plist */,
 				BC2FCCF72648854300455086 /* Preview Content */,
@@ -67,6 +70,14 @@
 				BC2FCCF82648854300455086 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCA5EF28280388540090C41F /* Phase 1 */ = {
+			isa = PBXGroup;
+			children = (
+				BCA5EF262803882C0090C41F /* SimpleConverter.swift */,
+			);
+			path = "Phase 1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC2FCCF42648854000455086 /* ContentView.swift in Sources */,
+				BCA5EF272803882C0090C41F /* SimpleConverter.swift in Sources */,
 				BC2FCCF22648854000455086 /* TimeTravelerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
