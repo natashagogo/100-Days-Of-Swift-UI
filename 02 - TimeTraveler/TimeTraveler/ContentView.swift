@@ -16,63 +16,119 @@ import SwiftUI
  
  ✅ Users can choose units
  
+ Notes
+ 
+ For learning purposes, I'm not using Text(Date, style: .relative) or any other out-of-box solutions from Apple.
+ 
+ TO-DOS
+ 
+ Clean up code. 
+ 
  */
 
 
 struct ContentView: View {
 	@State private var eventName = ""
 	@State private var date = Date()
-	@State private var unit = "all"
+	@State private var unit = Time.days
+	let now = Date()
+	
+	enum Time: String {
+		case minutes = "minutes"
+		case hours = "hours"
+		case days = "days"
+		case weeks = "weeks"
+		case months = "months"
+		case years = "years"
+	}
 	
 	let units = [
-		"days",
-		"weeks",
-		"months",
-		"years",
-		"all",
+		Time.minutes,
+		Time.hours,
+		Time.days,
+		Time.weeks,
+		Time.months,
+		Time.years
 	]
 	
-	/*
-	 TO DO
-	 
-	 1. The label should reflect the units selected.
-	 2. It would also be better to use Calendar.current.date(byAdding: ) than the one below.
-	 */
-	var calculateTime: String {
-		let now = Date()
-		
-		let timeUntil = Calendar.current.dateComponents([.year, .month, .day], from: Date(), to: date)
-		let timeSince = Calendar.current.dateComponents([.year, .month, .day], from: date, to: Date())
-		
-		if date == now {
-			return "Present"
-		} else if date < now {
-			return "\(timeSince.year!) years, \(timeSince.month!) months, \(timeSince.day!) days since"
-		} else {
-			return "\(timeUntil.year!) years, \(timeUntil.month!) months, \(timeUntil.day!) days until"
+	var setUnit: Set<Calendar.Component> {
+		switch unit {
+		 case Time.minutes:
+			  return [.minute]
+		 case Time.hours:
+		  return [.hour]
+		 case Time.weeks:
+		  return [.weekOfYear]
+		 case Time.months:
+		 return [.month]
+		 case Time.years:
+		 return [.year]
+		default:
+		 return [.day]
 		}
 	}
+	
+	var calculateTime: DateComponents {
+		let isPast = date < now
+		let components: DateComponents
+		
+		if isPast {
+			components = Calendar.current.dateComponents(setUnit, from: date, to: now)
+		} else {
+			components = Calendar.current.dateComponents(setUnit, from: now, to: date)
+		}
+		
+		return components
+	}
+	
+	var label: String {
+       let components = calculateTime
+		 var labelUnit: Int?
+		
+		switch unit {
+		  case Time.minutes:
+			labelUnit = components.minute
+		  case Time.hours:
+			labelUnit = components.hour
+		 case Time.weeks:
+			labelUnit = components.weekOfYear
+		 case Time.months:
+			labelUnit = components.month
+		 case Time.years:
+			labelUnit = components.year
+		  default:
+			labelUnit = components.day
+		}
+		
+		let preposition = date < now ? "since" : "until"
+		let unwrappedLabel = "\(labelUnit ?? 0) \(unit) \(preposition)"
+		
+		return unwrappedLabel
+	}
+	
 	
  var body: some View {
 	 NavigationView {
 		 Form {
-			 Section(header: Text("Significant Date")) {
+			 Section(header: Text("Special Event")) {
 				 TextField("Name", text: $eventName)
+					 .autocapitalization(.none)
 				 DatePicker("Date", selection: $date)
 			 }
 			 Section(header: Text("Units")) {
 				 Picker("Units", selection: $unit) {
 					 ForEach(units, id: \.self) { unit in
-						 Text(unit)
+						 Text(unit.rawValue)
 					 }
 				 }
-			 }.pickerStyle(.segmented)
+				 .pickerStyle(.wheel)
+			 }
 		 }
 		 .toolbar {
 			 ToolbarItem(placement: .navigationBarLeading) {
 				 VStack(alignment: .leading, spacing: 10) {
-					 Text(calculateTime)
-						 .font(.subheadline)
+					 Text(label)
+						 .font(.headline)
 						 .foregroundColor(Color.blue)
 					 if eventName == "" {
 						 Text("Special Event")
