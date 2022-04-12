@@ -11,7 +11,7 @@ struct FocusView: View {
 	@State private var focusOnThis = false
 	var body: some View {
 		ZStack {
-			Color.teal
+			Color.indigo
 				.ignoresSafeArea()
 				.background(.ultraThinMaterial)
 			Color.white
