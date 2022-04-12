@@ -47,4 +47,35 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
       </figure>
     </td>
   </tr>
+  <tr>
+    <td>TimeTraveler</td>
+    <td>
+      <h4>Course</h3>
+      <ul>
+        <li>Build an app that converts one unit to another</li>
+      </ul>
+      <h4>Extra Credit</h3>
+      <ul>
+        <li>Explain how dates work in SwiftUI</li>
+        <li>Calculate the difference between two dates</li>
+        <li>Create a relative date</li>
+      </ul>
+    </td>
+    <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/02%20-%20TimeTraveler/Screenshots/phase-1.png"
+            width="220"
+       />
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/02%20-%20TimeTraveler/Screenshots/phase-2.png"
+           width="220"
+       />
+      </figure>
+    </td>
+  </tr>
 </table> 
