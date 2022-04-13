@@ -79,7 +79,8 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
     <td>
       <h4>Course</h3>
       <ul>
-       <li>Generate a random number in a range, using `Int.random(in: )`</li>
+       <li>Generate a random number, using <code>Int.random(in: )</code></li>
+       <li>Shuffle an array</li>
        <li>Check whether two properties match</li>
        <li>Display feedback in an alert</li>
        <li>Create a gradient</li>
