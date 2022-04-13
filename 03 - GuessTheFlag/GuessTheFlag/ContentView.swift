@@ -22,8 +22,8 @@ struct ContentView: View {
 		"Poland",
 		"Russia",
 		"Spain",
-		"UK",
-		"US"
+		"The United Kingdom",
+		"The United States"
 	].shuffled()
 	
 	@State private var correctAnswer = Int.random(in: 0...2)
@@ -51,8 +51,8 @@ struct ContentView: View {
 					 .padding(.vertical)
 				 VStack(spacing: 15) {
 					 VStack {
-						 Text("Tap the flag of")
-							 .font(.subheadline.weight(.heavy))
+						 Text("Tap the flag of:")
+							 .font(.subheadline)
 						 Text(countries[correctAnswer])
 							 .font(.largeTitle.weight(.semibold))
 					 }
@@ -65,7 +65,7 @@ struct ContentView: View {
 							 Image(countries[number])
 								 .renderingMode(.original)
 								 .clipShape(Capsule())
-								 .shadow(radius: 8)
+								 .shadow(radius: 5)
 						 }
 					 }
 			 }
