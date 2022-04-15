@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC7BC09B2809FB890007A5C9 /* Modifier-Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BC09A2809FB890007A5C9 /* Modifier-Example.swift */; };
+		BC7BC09D280A01400007A5C9 /* Custom-Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BC09C280A01400007A5C9 /* Custom-Modifier.swift */; };
 		BCF8C1EF264DD60D0083B9AB /* ViewsAndModifiersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C1EE264DD60D0083B9AB /* ViewsAndModifiersApp.swift */; };
 		BCF8C1F1264DD60D0083B9AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C1F0264DD60D0083B9AB /* ContentView.swift */; };
 		BCF8C1F3264DD6120083B9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C1F2264DD6120083B9AB /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC7BC09A2809FB890007A5C9 /* Modifier-Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifier-Example.swift"; sourceTree = "<group>"; };
+		BC7BC09C280A01400007A5C9 /* Custom-Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom-Modifier.swift"; sourceTree = "<group>"; };
 		BCF8C1EB264DD60D0083B9AB /* ViewsAndModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewsAndModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF8C1EE264DD60D0083B9AB /* ViewsAndModifiersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAndModifiersApp.swift; sourceTree = "<group>"; };
 		BCF8C1F0264DD60D0083B9AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC7BC09E280A01900007A5C9 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BC7BC09C280A01400007A5C9 /* Custom-Modifier.swift */,
+				BC7BC09A2809FB890007A5C9 /* Modifier-Example.swift */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		BCF8C1E2264DD60D0083B9AB = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +67,7 @@
 			children = (
 				BCF8C1EE264DD60D0083B9AB /* ViewsAndModifiersApp.swift */,
 				BCF8C1F0264DD60D0083B9AB /* ContentView.swift */,
+				BC7BC09E280A01900007A5C9 /* Examples */,
 				BCF8C1F2264DD6120083B9AB /* Assets.xcassets */,
 				BCF8C1F7264DD6120083B9AB /* Info.plist */,
 				BCF8C1F4264DD6120083B9AB /* Preview Content */,
@@ -140,6 +154,8 @@
 			files = (
 				BCF8C1F1264DD60D0083B9AB /* ContentView.swift in Sources */,
 				BCF8C1EF264DD60D0083B9AB /* ViewsAndModifiersApp.swift in Sources */,
+				BC7BC09B2809FB890007A5C9 /* Modifier-Example.swift in Sources */,
+				BC7BC09D280A01400007A5C9 /* Custom-Modifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +288,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ViewsAndModifiers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +310,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ViewsAndModifiers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
