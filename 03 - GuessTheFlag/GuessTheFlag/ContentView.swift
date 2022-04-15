@@ -47,15 +47,14 @@ struct ContentView: View {
 			 VStack {
 				 Spacer()
 				 Text("Guess the Flag")
-					 .font(.largeTitle.bold())
-					 .foregroundColor(.white)
-					 .padding(.vertical)
+					 .largeTitleStyle()
 				 VStack(spacing: 15) {
 					 VStack {
 						 Text("Tap the flag of:")
-							 .font(.subheadline)
+							 .subheadlineStyle()
 						 Text(countries[correctAnswer])
-							 .font(.largeTitle.weight(.semibold))
+							 .headingOneStyle()
+							 
 					 }
 					 .foregroundColor(.white)
 					 ForEach(0..<3) { number in
@@ -63,10 +62,7 @@ struct ContentView: View {
 							 showingScore.toggle()
 							 checkAnswer(number: number)
 						 } label: {
-							 Image(countries[number])
-								 .renderingMode(.original)
-								 .clipShape(Capsule())
-								 .shadow(radius: 5)
+							 FlagImage(name: countries[number])
 						 }
 					 }
 			 }
@@ -74,9 +70,9 @@ struct ContentView: View {
 				 Spacer()
 				 VStack {
 					 Text("Points: \(score)")
-						 .font(.title.bold())
+						 .headingTwoStyle()
 					 Text("Round: \(round)")
-						 .font(.title2.bold())
+						 .headingThreeStyle()
 					 Text("Question \(question) out of 5")
 				 }
 				 .foregroundColor(.white)
