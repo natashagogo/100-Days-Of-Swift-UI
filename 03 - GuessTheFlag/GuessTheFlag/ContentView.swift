@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/*
- Create an array from an enum?
- */
-
 struct ContentView: View {
 	@State private var countries = [
 		"Estonia",
@@ -31,6 +27,10 @@ struct ContentView: View {
 	@State private var scoreTitle = ""
 	@State private var scoreMessage = ""
 	@State private var score = 0
+	
+	@State private var round = 1
+	@State private var question = 1
+	@State private var endOfRound = false
 	
     var body: some View {
 		 ZStack {
@@ -71,9 +71,13 @@ struct ContentView: View {
 			 }
 				 Spacer()
 				 Spacer()
-				 Text("Points: \(score)")
-					 .foregroundColor(.white)
-					 .font(.title.bold())
+				 VStack {
+					 Text("Points: \(score)")
+						 .font(.title.bold())
+					 Text("Question \(question) out of 5")
+				 }
+				 .foregroundColor(.white)
+		
 				 Spacer()
 		 }
 			 .padding()
@@ -86,16 +90,28 @@ struct ContentView: View {
 	}
 	
 	func checkAnswer(number: Int) {
-		if number == correctAnswer {
+		if number == correctAnswer && question < 5 {
 			scoreTitle = "Nice job!"
 			scoreMessage = "You've earned one point!"
 			score += 1
-		} else {
+			question += 1
+		} else if number != correctAnswer && question < 5  {
 			scoreTitle = "Nope!"
-			scoreMessage = "Better luck next time!"
+			scoreMessage = "That was \(countries[number])'s flag."
 			score += 0
+			question += 1
+		}
+		
+		if question >= 5 {
+			scoreTitle = "That's the end of the round!"
+			scoreMessage = "You earned \(score) points."
+			round += 1
+			score = 0
+			question = 1
+			resetGame()
 		}
 	}
+	
 	
 	func resetGame() {
 		countries.shuffle()
