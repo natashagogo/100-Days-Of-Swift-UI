@@ -31,6 +31,7 @@ struct ContentView: View {
 				 TotalView(total: bill.calculateTotal.amount, totalPerPerson: bill.calculateTotal.amountPerPerson,
 					numberOfPeople: bill.numberOfPeople
 				 )
+				 .foregroundColor(bill.tipPercentage == 0 ? .red : .primary)
 				 Form {
 					 Section(header: Text("Basics")) {
 						 TextField("Amount", value: $bill.total, format: .currency(code: Locale.current.currencyCode ?? "USD"))
@@ -39,9 +40,9 @@ struct ContentView: View {
 						 Stepper("\(bill.numberOfPeople) people", value: $bill.numberOfPeople, in: 2...100)
 					 }
 					 Section(header: Text("Tip")) {
-						 Picker("Tip", selection: $bill.tipPercentage) {
-							 ForEach(Bill.tipOptions, id: \.self) {
-								 Text($0, format: .percent)
+						 Picker("Tip", selection: $bill.tipPercentage) { 
+							 ForEach(Bill.tipOptions, id: \.self) { tip in
+								 Text(tip, format: .percent)
 							 }
 						 }
 						 .pickerStyle(.segmented)
