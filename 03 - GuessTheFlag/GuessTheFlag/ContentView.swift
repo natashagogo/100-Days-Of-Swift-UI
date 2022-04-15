@@ -30,6 +30,7 @@ struct ContentView: View {
 	
 	@State private var round = 1
 	@State private var question = 1
+	@State private var numberOfQuestions = 5
 	@State private var endOfRound = false
 	
     var body: some View {
@@ -74,6 +75,8 @@ struct ContentView: View {
 				 VStack {
 					 Text("Points: \(score)")
 						 .font(.title.bold())
+					 Text("Round: \(round)")
+						 .font(.title2.bold())
 					 Text("Question \(question) out of 5")
 				 }
 				 .foregroundColor(.white)
@@ -82,9 +85,10 @@ struct ContentView: View {
 		 }
 			 .padding()
 	 }
-		.alert(scoreTitle, isPresented: $showingScore) {
-			Button("Continue", action: resetGame)
-		} message: {
+		 .alert(scoreTitle, isPresented: $showingScore) {
+			 Button("Continue", action: nextQuestion)
+			 Button("Quit", role: .cancel, action: resetGame)
+		 }message: {
 			Text(scoreMessage)
 		}
 	}
@@ -106,16 +110,19 @@ struct ContentView: View {
 			scoreTitle = "That's the end of the round!"
 			scoreMessage = "You earned \(score) points."
 			round += 1
-			score = 0
-			question = 1
 			resetGame()
 		}
 	}
 	
-	
-	func resetGame() {
+	func nextQuestion() {
 		countries.shuffle()
 		correctAnswer = Int.random(in: 0...2)
+	}
+	
+	
+	func resetGame() {
+		score = 0
+		question = 1
 	}
 }
 
