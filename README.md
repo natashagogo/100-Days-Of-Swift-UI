@@ -105,4 +105,20 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
       </figure>
     </td>
   </tr>
+ <tr>
+    <td>Rock, Paper, Scissors</td>
+    <td>
+       Build a game that generates a random move ("rock", "paper", or "scissors") and challenges users to win or lose.
+    </td>
+    <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/05%20-%20RockPaperScissors/Screenshots/phase-1.png"
+            width="220"
+       />
+      </figure>
+    </td>
+    <td>
+    </td>
+  </tr>
 </table> 
