@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC5D68F1280F4CFF0052B4C0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D68F0280F4CFF0052B4C0 /* Game.swift */; };
+		BC5D68F8280F4E440052B4C0 /* GameHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D68F7280F4E440052B4C0 /* GameHistory.swift */; };
 		BCDD608F2651D853001F8CEF /* RockPaperScissorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDD608E2651D853001F8CEF /* RockPaperScissorsApp.swift */; };
 		BCDD60912651D853001F8CEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDD60902651D853001F8CEF /* ContentView.swift */; };
 		BCDD60932651D856001F8CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDD60922651D856001F8CEF /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC5D68F0280F4CFF0052B4C0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BC5D68F7280F4E440052B4C0 /* GameHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistory.swift; sourceTree = "<group>"; };
 		BCDD608B2651D853001F8CEF /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDD608E2651D853001F8CEF /* RockPaperScissorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsApp.swift; sourceTree = "<group>"; };
 		BCDD60902651D853001F8CEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC5D68F2280F4D0D0052B4C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC5D68F0280F4CFF0052B4C0 /* Game.swift */,
+				BC5D68F7280F4E440052B4C0 /* GameHistory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BCDD60822651D853001F8CEF = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +67,7 @@
 			children = (
 				BCDD608E2651D853001F8CEF /* RockPaperScissorsApp.swift */,
 				BCDD60902651D853001F8CEF /* ContentView.swift */,
+				BC5D68F2280F4D0D0052B4C0 /* Model */,
 				BCDD60922651D856001F8CEF /* Assets.xcassets */,
 				BCDD60972651D856001F8CEF /* Info.plist */,
 				BCDD60942651D856001F8CEF /* Preview Content */,
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5D68F8280F4E440052B4C0 /* GameHistory.swift in Sources */,
 				BCDD60912651D853001F8CEF /* ContentView.swift in Sources */,
+				BC5D68F1280F4CFF0052B4C0 /* Game.swift in Sources */,
 				BCDD608F2651D853001F8CEF /* RockPaperScissorsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +288,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +310,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

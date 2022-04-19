@@ -9,15 +9,14 @@ import SwiftUI
 
 /*
  
- TO DO:
- 1. Improve the user experience: (1) Find another way to give feedback for right and wrong answers - save the alert for the end of the round (2) Add styling
+ UX Improvements
  
- 2. Find a cleaner way to handle alert messages.
+ 1. When the user has the right answer, scale the prompt text up and change its color to blue.
  
- 3. Clean up the code: (1) Use an enum instead of an array for the list of moves?
- 
+ 2. When the user has the wrong answer, shake the prompt text from side to side and change its color to red.
  
  */
+
 
 struct ContentView: View {
     @State private var randomMove = Int.random(in: 0...2)
@@ -25,50 +24,68 @@ struct ContentView: View {
   
     @State private var roundNumber = 1
     @State private var points = 0
-    @State private var questionCount = 0
+	 @State private var questionCount = 0.0
+	 @State private var questionTotal = 10.0
     
     @State private var giveFeedback = false
     @State private var feedback = (title: "", message: "")
+	
+	enum Moves: String {
+		case rock = "🪨 rock"
+		case paper = "📃 paper"
+		case scissors = "✂️ scissors"
+	}
     
-    let moves = [
-        "Rock",
-        "Paper",
-        "Scissors"
+	 let moves: [Moves] = [
+		.rock,
+		.paper,
+		.scissors
     ]
-    
     
     var body: some View {
         VStack {
-            Text("Question \(questionCount) of 10")
-            HStack {
-                Text("Round: \(roundNumber)")
-                Text("Score: \(points)")
-            }
-            Text("\(moves[randomMove])")
+			  VStack {
+				  HStack(spacing: 50) {
+					  Text("Round: \(roundNumber)")
+					  Text("Score: \(points)")
+				  }
+				  .font(.title3)
+				  ProgressView(value: questionCount, total: questionTotal)
+			  }
+			  .padding()
+			 
+			  VStack(spacing: 10) {
+				  if shouldWin {
+						  Text("Win the game")
+						  .font(.subheadline)
+					 } else {
+						  Text("Lose the game")
+							 .font(.subheadline)
+					 }
+				  Text(moves[randomMove].rawValue)
+					 .font(.largeTitle)
+					 .padding(.bottom, 20)
+			  }
             
-            if shouldWin {
-                Text("Win the game.")
-            } else {
-                Text("Lose the game.")
-            }
             
             ForEach(moves, id: \.self) { move in
                 Button(action: {
-                    self.checkAnswer(selection: move)
-                    self.giveFeedback.toggle()
+						 self.checkAnswer(selection: move.rawValue)
+						  if questionCount == 10 {
+								self.giveFeedback.toggle()
+							}
                     self.nextQuestion()
                 }) {
-                    Text(move)
+						 Text(move.rawValue)
+							 .frame(width: 150, height: 30)
                 }
+					 .buttonStyle(.bordered)
+					 .tint(.blue)
             }
         }.alert(isPresented: $giveFeedback) {
-            if questionCount == 10 {
-                return Alert(title: Text("That's it!"), message: Text("You earned \(points) points in this round."), dismissButton: .default(Text("OK")) {
-                    self.resetGame()
-              })
-            } else {
-                return Alert(title: Text(feedback.title), message: Text(feedback.message), dismissButton: .default(Text("OK")))
-            }
+			  Alert(title: Text("That's it!"), message: Text("You earned \(points) points in this round."), dismissButton: .default(Text("OK")) {
+					self.resetGame()
+			})
         }
     }
     
@@ -84,24 +101,24 @@ struct ContentView: View {
         if shouldWin {
             switch computerChoice {
               case rock:
-                correctAnswer = paper
+					correctAnswer = paper.rawValue
               case paper:
-                correctAnswer = scissors
+					correctAnswer = scissors.rawValue
               case scissors:
-                correctAnswer = rock
+					correctAnswer = rock.rawValue
               default:
-                correctAnswer = computerChoice
+					correctAnswer = computerChoice.rawValue
             }
         } else {
             switch computerChoice {
               case rock:
-                correctAnswer = scissors
+					correctAnswer = scissors.rawValue
               case paper:
-                correctAnswer = rock
+					correctAnswer = rock.rawValue
               case scissors:
-                correctAnswer = paper
+					correctAnswer = paper.rawValue
               default:
-                correctAnswer = computerChoice
+					correctAnswer = computerChoice.rawValue
             }
         }
         
