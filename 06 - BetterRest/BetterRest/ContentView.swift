@@ -14,18 +14,44 @@ import SwiftUI
 
 
 struct ContentView: View {
-	@State private var sleepAmount = 8.0
 	@State private var wakeUp = Date.now
+	@State private var sleepAmount = 8.0
+	@State private var coffeeAmount = 1.0
+	
+	var coffeeLabel: String {
+		coffeeAmount == 1.0 ? "1 cup" : "\(coffeeAmount.formatted()) cups"
+	}
+	
+	var cupsOfCoffee: [String] {
+		[String](repeating: "☕️", count: Int(coffeeAmount))
+	}
 	
     var body: some View {
-		 Form {
-			 Text(wakeUp.formatted(date: .long, time: .shortened))
-			 Text(wakeUp, format: .dateTime.hour().minute())
-			 DatePicker("Date", selection: $wakeUp, in: Date.now...)
-				 .labelsHidden()
-			 Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 2...20, step: 0.25)
+		 NavigationView {
+			 Form {
+				 Section {
+					 DatePicker("Wake up time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+					 Stepper("\(sleepAmount.formatted()) hours of sleep", value: $sleepAmount, in: 2...12, step: 0.25)
+					 Group {
+						 Stepper(coffeeLabel, value: $coffeeAmount, in: 1...10)
+						 HStack {
+							 ForEach(cupsOfCoffee, id: \.self) { coffee in
+								Text(coffee)
+							 }
+						 }
+					 }
+				 }
+			 }
+			 .navigationTitle("BetterRest")
+			 .toolbar {
+				 Button("Calculate", action: makePrediction)
+			 }
 		 }
     }
+	
+	func makePrediction() {
+		
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
