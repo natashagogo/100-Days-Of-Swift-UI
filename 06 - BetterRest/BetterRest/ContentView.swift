@@ -9,10 +9,9 @@ import CoreML
 import SwiftUI
 
 /*
-    To-Dos
-    It doesn't make sense to set a wake up time for today. Normally, you set your alarm for tomorrow.
+	The core insight of this app - the more coffee you drink, the earlier you have to go to bed - isn't clear.
  
-    This app would be more useful if it told you how many cups of coffee to drink, based on your desired wake-up time.
+   How should you visualize it?
 */
 
 
@@ -20,10 +19,6 @@ struct ContentView: View {
 	@State private var wakeUp = defaultWakeUpTime
 	@State private var sleepAmount = 8.0
 	@State private var coffeeAmount = 1.0
-	
-	@State private var alertTitle = ""
-	@State private var alertMessage = ""
-	@State private var showingAlert = false
 	
 	var coffeeLabel: String {
 		coffeeAmount == 1.0 ? "1 cup" : "\(coffeeAmount.formatted()) cups"
@@ -40,36 +35,11 @@ struct ContentView: View {
 		return Calendar.current.date(from: components) ?? Date()
 	}
 	
-    var body: some View {
-		 NavigationView {
-			 Form {
-				 VStack(alignment: .leading) {
-					 DatePicker("Wake up time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-					 Stepper("\(sleepAmount.formatted()) hours of sleep", value: $sleepAmount, in: 2...12, step: 0.25)
-				 }
-				 VStack(alignment: .leading) {
-					 Stepper(coffeeLabel, value: $coffeeAmount, in: 1...10)
-					 HStack {
-						 ForEach(cupsOfCoffee, id: \.self) { coffee in
-							Text(coffee)
-						 }
-					 }
-				 }
-			 }
-			 .navigationTitle("BetterRest")
-			 .toolbar {
-				 Button("Calculate", action: makePrediction)
-			 }
-			 .alert(alertTitle, isPresented: $showingAlert) {
-				  Button("OK") { }
-			 } message: {
-				  Text(alertMessage)
-			 }
-		}
-			 
-	}
-	
-	func makePrediction() {
+	/*
+	 This can be turned into a method, but it's written as a computed property
+	 because it's better to just show the user the result.
+	 */
+	var prediction: String {
 		do {
 			// Create an instance of the Calculator class
 			let config = MLModelConfiguration()
@@ -89,15 +59,49 @@ struct ContentView: View {
 			let sleepTime = wakeUp - sleepPrediction.actualSleep
 			
 			// Show the bedtime in an alert
-			alertTitle = "You should go to bed at:"
-			alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+			return sleepTime.formatted(date: .omitted, time: .shortened)
 			
 		} catch {
-			alertTitle = "Error"
-			alertMessage = "Sorry, there was a problem figuring out your bedtime."
+			return "Error"
 		}
-		showingAlert = true
 	}
+	
+	init(){
+	  UITableView.appearance().backgroundColor = .clear
+	  UITableViewCell.appearance().backgroundColor = UIColor.clear
+	  UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+	 }
+	
+    var body: some View {
+		 NavigationView {
+			 ZStack {
+				Image("night")
+					.resizable()
+					.scaledToFill()
+					.ignoresSafeArea()
+				 Form {
+					 Section(header: Text("Bedtime").foregroundColor(.white)) {
+						Text(prediction)
+						 .font(.title3)
+					 }
+					Section {
+						DatePicker("Wake up time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+						Stepper("\(sleepAmount.formatted()) hours of sleep", value: $sleepAmount, in: 2...12, step: 0.25) 
+						VStack(alignment: .leading) {
+							Stepper(coffeeLabel, value: $coffeeAmount, in: 0...10)
+							HStack {
+								ForEach(cupsOfCoffee, id: \.self) { coffee in
+								Text(coffee)
+						}
+					}
+				}
+			}
+		  }
+			.navigationTitle("BetterRest")
+			.navigationBarHidden(false)
+		 }
+     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
