@@ -145,6 +145,14 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
        />
       </figure>
     </td>
+  <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/06%20-%20BetterRest/Screenshots/phase-2.png"
+            width="220"
+       />
+      </figure>
+    </td>
     <td>
     </td>
   </tr>
