@@ -15,7 +15,6 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
     <td>
       <h4>Course</h3>
       <ul>
-        <li>Explain the basic structure of a SwiftUI app</li>
         <li>Build a form with sections</li>
         <li>Create a navigation view with a title </li>
         <li>Store program state with the <code>@State</code> and <code>@FocusState</code> property wrappers</li>
@@ -50,9 +49,8 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
   <tr>
     <td>TimeTraveler</td>
     <td>
-      <h4>Course</h3>
       <ul>
-        <li>Build an app that converts one unit to another</li>
+        <li>Convert one unit to another</li>
         <li>Calculate the difference between two dates</li>
         <li>Create a relative date</li>
       </ul>
@@ -108,12 +106,41 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
  <tr>
     <td>Rock, Paper, Scissors</td>
     <td>
-       Build a game that generates a random move ("rock", "paper", or "scissors") and challenges users to win or lose.
+     <ul>
+      <li>Display random values from a list</li>
+      <li>Use enums and raw values to avoid strings</li>
+     </ul>
     </td>
     <td>
       <figure>
         <img 
            src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/05%20-%20RockPaperScissors/Screenshots/phase-1.png"
+            width="220"
+       />
+      </figure>
+    </td>
+    <td>
+    </td>
+  </tr>
+ <tr>
+    <td>BetterRest</td>
+    <td>
+     <ul>
+      <li>Use machine learning in a SwiftUI app</li>
+      <li>Create a machine learning model with CreateML </li>
+      <li>Work with dates 
+       <ul>
+           <li>Convert Dates to DateComponents (and vice versa) </li>
+           <li>Get a new date by adding seconds, hours, and minutes to an existing one</li>
+           <li>Format a date using .formatted(date: time: )</li>
+       </ul>
+      </li>
+     </ul>
+    </td>
+    <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/06%20-%20BetterRest/Screenshots/phase-1.png"
             width="220"
        />
       </figure>
