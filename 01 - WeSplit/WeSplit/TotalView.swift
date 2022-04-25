@@ -26,10 +26,6 @@ struct TotalView: View {
 			.frame(height: 100)
 			if total != 0.00 && totalPerPerson != 0.00 {
 				VStack(alignment: .leading) {
-					/*
-					 To Do: Create a grid.
-					 If there are more than 15 people, you can't see the emojis.
-					 */
 					HStack {
 						ForEach(showPeople, id: \.self) { person in
 							Text(person)
@@ -44,6 +40,6 @@ struct TotalView: View {
 
 struct TotalView_Previews: PreviewProvider {
     static var previews: some View {
-		 TotalView(total: 50.00, totalPerPerson: 25.00, numberOfPeople: 10)
+		 TotalView(total: 5000.00, totalPerPerson: 25.00, numberOfPeople: 10)
     }
 }
