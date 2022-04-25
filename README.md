@@ -135,12 +135,22 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
            <li>Format a date using .formatted(date: time: )</li>
        </ul>
       </li>
+      <li>Add a background image to a form</li>
+      <li>Add a gradient to text</li>
      </ul>
     </td>
     <td>
       <figure>
         <img 
            src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/06%20-%20BetterRest/Screenshots/phase-1.png"
+            width="220"
+       />
+      </figure>
+    </td>
+  <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/06%20-%20BetterRest/Screenshots/phase-2.png"
             width="220"
        />
       </figure>
