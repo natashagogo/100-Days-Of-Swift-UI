@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+/*
+ START HERE
+ 
+ Write an extension on Bundle to load any kind of file into an app
+ Create a data model for the game and add the methods below to it
+ */
+
 
 struct ContentView: View {
 	@State private var usedWords = [String]()
