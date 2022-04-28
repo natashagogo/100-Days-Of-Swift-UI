@@ -14,6 +14,18 @@ import SwiftUI
  Create a data model for the game and add the methods below to it
  */
 
+struct HeaderView: View {
+	let points: Int
+	
+	var body: some View {
+		if points > 0 {
+			Text("Points: \(points)")
+				.textCase(.none)
+				.font(.headline)
+		}
+	}
+}
+
 
 struct ContentView: View {
 	@State private var usedWords = [String]()
@@ -24,6 +36,12 @@ struct ContentView: View {
 	@State private var errorMessage = ""
 	@State private var showingError = false
 	
+	@State private var points = 0
+	@State private var round = 1
+	@State private var questionNumber: Double = 1
+	@State private var totalQuestions: Double = 10.0
+	
+	
     var body: some View {
 		 NavigationView {
 			 List {
@@ -31,13 +49,15 @@ struct ContentView: View {
 					 TextField("Enter your word", text: $newWord, onCommit: addNewWord)
 						 .autocapitalization(.none)
 				 }
-				 Section {
+				 Section(header: HeaderView(points: points)) {
 					 ForEach(usedWords, id: \.self) { word in
 						 HStack {
 							 Image(systemName: "\(word.count).circle.fill")
-								 .foregroundColor(word.count > 5 ? Color.blue: Color.gray)
-	
+								 .foregroundColor(word.count > 5 ? Color.blue : Color.gray)
 							 Text(word)
+							 Spacer()
+							 Text(word.count > 5 ? "+2" : "+1")
+								 .foregroundColor(.blue)
 						 }
 					 }
 				 }
@@ -50,6 +70,16 @@ struct ContentView: View {
 			 } message: {
 				  Text(errorMessage)
 			 }
+			 .toolbar {
+				 ToolbarItem(placement: .navigationBarLeading) {
+					 ProgressView(value: questionNumber, total: totalQuestions)
+						 .frame(width: 300)
+				 }
+				 ToolbarItem(placement: .navigationBarTrailing) {
+					 Button("Next", action: byeNext)
+					  .disabled(usedWords.isEmpty)
+				 }
+			 }
 		 }
     }
 	
@@ -59,27 +89,43 @@ struct ContentView: View {
 		guard word.count > 0 else { return }
 		
 		guard isOriginal(word: word) else {
-			 wordError(title: "Word used already", message: "Try something new!")
+			 giveFeedback(title: "Word used already", message: "Try something new!")
+			 return
+		}
+		
+		guard isSufficient(word: word) else {
+			 giveFeedback(title: "Too short!", message: "Each word needs to be at least three letters long.")
 			 return
 		}
 
 		guard isPossible(word: word) else {
-			 wordError(title: "Word not possible", message: "Only use letters in '\(rootWord)'!")
+			 giveFeedback(title: "Word not possible", message: "Only use letters in '\(rootWord)'!")
 			 return
 		}
 
 		guard isReal(word: word) else {
-			 wordError(title: "Word not recognized", message: "Say what, Shakespeare?")
+			 giveFeedback(title: "Word not recognized", message: "Say what, Shakespeare?")
 			 return
 		}
 		
 		withAnimation {
 			usedWords.insert(word, at: 0)
+			
+			if word.count < 5 {
+				points += 1
+			} else {
+				points += 2
+			}
 		}
+		
 		newWord = ""
 	}
 	
+	
 	func startGame() {
+		points = 0
+		questionNumber = 1
+		
 		// Find the URL for start.txt in our app
 		if let startURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
 			// Load the file into a string
@@ -94,11 +140,17 @@ struct ContentView: View {
 		}
 		// If there was an error, crash the app
 		fatalError("Couldn't load start.txt from bundle.")
+		
 	}
 	
 	// Verifies that the player hasn't already used the word
+	// and that they're not using the word in the prompt
 	func isOriginal(word: String) -> Bool {
-		!usedWords.contains(word)
+		!usedWords.contains(word) && word != rootWord
+	}
+	
+	func isSufficient(word: String) -> Bool {
+		word.count >= 3
 	}
 	
 	// Verifies that the player's word only uses letters from the prompt
@@ -124,11 +176,26 @@ struct ContentView: View {
 		 return misspelledRange.location == NSNotFound
 	}
 	
-	func wordError(title: String, message: String) {
+	func isNextRound() -> Bool {
+		questionNumber >= totalQuestions
+	}
+	
+	func giveFeedback(title: String, message: String) {
 		 errorTitle = title
 		 errorMessage = message
 		 showingError = true
 	}
+	
+	func byeNext() {
+		if isNextRound() == false {
+			questionNumber += 1
+		} else {
+			giveFeedback(title: "That's it!", message: "You scored \(points) points.")
+			usedWords = [String]()
+			startGame()
+		}
+	}
+	
 }
 
 struct ContentView_Previews: PreviewProvider {
