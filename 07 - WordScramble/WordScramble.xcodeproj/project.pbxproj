@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC5B09FD281C5F9E0006A028 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5B09FC281C5F9E0006A028 /* HeaderView.swift */; };
+		BC5B09FF281C63A20006A028 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5B09FE281C63A20006A028 /* Feedback.swift */; };
+		BC5B0A01281C63D00006A028 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5B0A00281C63D00006A028 /* Game.swift */; };
+		BC5B0A03281C63E60006A028 /* GameHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5B0A02281C63E60006A028 /* GameHistory.swift */; };
 		BCC4A298265C32F9004F7000 /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4A297265C32F9004F7000 /* WordScrambleApp.swift */; };
 		BCC4A29A265C32F9004F7000 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4A299265C32F9004F7000 /* ContentView.swift */; };
 		BCC4A29C265C32FE004F7000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC4A29B265C32FE004F7000 /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC5B09FC281C5F9E0006A028 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		BC5B09FE281C63A20006A028 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		BC5B0A00281C63D00006A028 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BC5B0A02281C63E60006A028 /* GameHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistory.swift; sourceTree = "<group>"; };
 		BCC4A294265C32F9004F7000 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC4A297265C32F9004F7000 /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		BCC4A299265C32F9004F7000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC5B0A04281C63F40006A028 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B0A02281C63E60006A028 /* GameHistory.swift */,
+				BC5B0A00281C63D00006A028 /* Game.swift */,
+				BC5B09FE281C63A20006A028 /* Feedback.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BCC4A28B265C32F9004F7000 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +74,8 @@
 			children = (
 				BCC4A297265C32F9004F7000 /* WordScrambleApp.swift */,
 				BCC4A299265C32F9004F7000 /* ContentView.swift */,
+				BC5B0A04281C63F40006A028 /* Model */,
+				BC5B09FC281C5F9E0006A028 /* HeaderView.swift */,
 				BCC4A29B265C32FE004F7000 /* Assets.xcassets */,
 				BCC4A2A0265C32FE004F7000 /* Info.plist */,
 				BCFCFB19265C502F00A9AB83 /* start.txt */,
@@ -143,6 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC4A29A265C32F9004F7000 /* ContentView.swift in Sources */,
+				BC5B0A01281C63D00006A028 /* Game.swift in Sources */,
+				BC5B09FD281C5F9E0006A028 /* HeaderView.swift in Sources */,
+				BC5B09FF281C63A20006A028 /* Feedback.swift in Sources */,
+				BC5B0A03281C63E60006A028 /* GameHistory.swift in Sources */,
 				BCC4A298265C32F9004F7000 /* WordScrambleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

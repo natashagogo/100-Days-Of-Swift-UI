@@ -8,24 +8,11 @@
 import SwiftUI
 
 /*
- START HERE
+ Start Here
  
- Create a data model for the game and add the methods below to it
+ Add the data model to the app
  
  */
-
-struct HeaderView: View {
-	let points: Int
-	
-	var body: some View {
-		if points > 0 {
-			Text("Points: \(points)")
-				.textCase(.none)
-				.font(.headline)
-		}
-	}
-}
-
 
 struct ContentView: View {
 	@State private var usedWords = [String]()
