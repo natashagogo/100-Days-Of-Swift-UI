@@ -3,7 +3,7 @@
 Projects from Hacking With Swift's 100 Days of Swift UI course. 
 
 
-# Projects
+# Summary
 
  <table>
   <tr>
@@ -157,8 +157,6 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
        />
       </figure>
     </td>
-    <td>
-    </td>
   </tr>
  <tr>
     <td>WordScramble</td>
@@ -179,8 +177,8 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
             width="220"
        />
       </figure>
-    </td>
-  <td></td>
-  </td>
+   </td>
+   <td>
+   </td>
   </tr>
 </table> 
