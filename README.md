@@ -1,5 +1,7 @@
 # 100-Days-Of-Swift-UI
-Projects from Hacking With Swift's 100 Days of Swift UI course.
+
+Projects from Hacking With Swift's 100 Days of Swift UI course. 
+
 
 # Projects
 
@@ -157,5 +159,28 @@ Projects from Hacking With Swift's 100 Days of Swift UI course.
     </td>
     <td>
     </td>
+  </tr>
+ <tr>
+    <td>WordScramble</td>
+    <td>
+     <ul>
+      <li>Load a text file into an app, using <code>Bundle</code></li>
+      <li>Remove whitespace, new lines, and other characters from the start and end of a string</li>
+      <li>Validate user input</li>
+      <li>Create a list</li>
+      <li>Explain the difference between <code>List</code> and <code>Form</code></li>
+      <li>Explain when it's necessary to use <code>ForEach</code></li>
+     </ul>
+    </td>
+    <td>
+      <figure>
+        <img 
+           src="https://github.com/biomedicalmuse/100-Days-Of-Swift-UI/blob/master/07%20-%20WordScramble/Screenshots/phase-1.png"
+            width="220"
+       />
+      </figure>
+    </td>
+  <td></td>
+  </td>
   </tr>
 </table> 
