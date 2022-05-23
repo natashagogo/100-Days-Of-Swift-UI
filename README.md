@@ -340,5 +340,3 @@ Built an app to let users browse and save ski resorts for their next vacation
 Done!
 
 ### Link
-
-
