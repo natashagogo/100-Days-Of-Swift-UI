@@ -11,6 +11,10 @@
 		BC24EE13265EEB5F0017F921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24EE12265EEB5F0017F921 /* ContentView.swift */; };
 		BC24EE15265EEB610017F921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC24EE14265EEB610017F921 /* Assets.xcassets */; };
 		BC24EE18265EEB610017F921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC24EE17265EEB610017F921 /* Preview Assets.xcassets */; };
+		BCD1310B284BF71800D24DCF /* ScalingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1310A284BF71700D24DCF /* ScalingButton.swift */; };
+		BCD1310D284BF72B00D24DCF /* PulsatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1310C284BF72B00D24DCF /* PulsatingButton.swift */; };
+		BCD1310F284BF74000D24DCF /* AnimatedBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1310E284BF74000D24DCF /* AnimatedBinding.swift */; };
+		BCD13111284BF75600D24DCF /* SpinningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13110284BF75600D24DCF /* SpinningButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		BC24EE14265EEB610017F921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC24EE17265EEB610017F921 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC24EE19265EEB610017F921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD1310A284BF71700D24DCF /* ScalingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButton.swift; sourceTree = "<group>"; };
+		BCD1310C284BF72B00D24DCF /* PulsatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingButton.swift; sourceTree = "<group>"; };
+		BCD1310E284BF74000D24DCF /* AnimatedBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBinding.swift; sourceTree = "<group>"; };
+		BCD13110284BF75600D24DCF /* SpinningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			children = (
 				BC24EE10265EEB5F0017F921 /* AnimationsApp.swift */,
 				BC24EE12265EEB5F0017F921 /* ContentView.swift */,
+				BCD13112284BF84500D24DCF /* Examples */,
 				BC24EE14265EEB610017F921 /* Assets.xcassets */,
 				BC24EE19265EEB610017F921 /* Info.plist */,
 				BC24EE16265EEB610017F921 /* Preview Content */,
@@ -67,6 +76,17 @@
 				BC24EE17265EEB610017F921 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCD13112284BF84500D24DCF /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				BCD13110284BF75600D24DCF /* SpinningButton.swift */,
+				BCD1310E284BF74000D24DCF /* AnimatedBinding.swift */,
+				BCD1310C284BF72B00D24DCF /* PulsatingButton.swift */,
+				BCD1310A284BF71700D24DCF /* ScalingButton.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC24EE13265EEB5F0017F921 /* ContentView.swift in Sources */,
+				BCD13111284BF75600D24DCF /* SpinningButton.swift in Sources */,
+				BCD1310B284BF71800D24DCF /* ScalingButton.swift in Sources */,
 				BC24EE11265EEB5F0017F921 /* AnimationsApp.swift in Sources */,
+				BCD1310F284BF74000D24DCF /* AnimatedBinding.swift in Sources */,
+				BCD1310D284BF72B00D24DCF /* PulsatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +296,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Animations/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +318,7 @@
 				DEVELOPMENT_TEAM = 68467CPVLE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Animations/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
