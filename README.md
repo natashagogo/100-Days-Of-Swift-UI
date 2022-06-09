@@ -10,7 +10,7 @@ All of the challenges and milestone projects were completed independently. The c
 
 # Goals 
 
-Before starting this project, I decided to ignore design and focus on data.  
+Before starting this project, I decided to ignore design and focus on data. My goal was to build a note-taking app that I designed prior to starting the course. 
 
 # Summary 
 
