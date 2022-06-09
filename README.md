@@ -10,7 +10,12 @@ All of the challenges and milestone projects were completed independently. The c
 
 # Goals 
 
-Before starting this project, I decided to ignore design and focus on data. My goal was to build a note-taking app that I designed prior to starting the course. 
+Before starting this course, I decided to ignore design and focus on data. 
+
+Although my short-term goal was to build a note-taking app, I wanted to learn how to think like an engineer. So, after a year of being immersed in design, I traded one way of thinking for another and focused on software architecture and data flow.   
+
+To my surprise, the leap from information architecture to data structures was quite smooth, as both treat information like a verb.   
+
 
 # Summary 
 
