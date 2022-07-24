@@ -6,15 +6,6 @@
 This course is a hands-on introduction to Swift and iOS development using SwiftUI. Each project is divided into three parts: techniques, tutorial, and challenges. Some projects involve building an app; others are a deep-dive into a particular technique. 
 
 All of the challenges and milestone projects were completed independently. The course didn't provide any solutions. Within 18 days of starting 100 Days of SwiftUI, I was writing my own code; and within 24, I was getting in the habit of re-reading and refactoring old code. 
- 
-
-# Goals 
-
-Before starting this course, I decided to ignore design and focus on data. 
-
-Although my short-term goal was to build a note-taking app, I wanted to learn how to think like an engineer. So, after a year of being immersed in design, I traded one way of thinking for another and focused on software architecture and data flow.   
-
-To my surprise, the leap from information architecture to data structures was quite smooth, as both treat information like a verb.   
 
 
 # Summary 
