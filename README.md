@@ -2,18 +2,18 @@
  
 # Introduction
 
-<a href="https://www.hackingwithswift.com/100/swiftui/">100 Days of SwiftUI</a> is a hands-on introduction to Swift, SwiftUI, and iOS development. I picked this course, not to get a job, but to learn how to make information work for me. Going into it, I decided to ignore design and focus on data, and over time, developed a deep interest in data structures, algorithms, and geometry -- the structure, behavior, and shape of information. 
+<a href="https://www.hackingwithswift.com/100/swiftui/">100 Days of SwiftUI</a> is a hands-on introduction to Swift, SwiftUI, and iOS development. I picked this course, not to get a job, but to learn how to make information work for me. Going into it, I decided to ignore design and focus on data, and over time, developed a deep interest in data structures, algorithms, and geometry -- the structure, behavior, and shape of information. Thank you to the author of the course, <a href="https://github.com/twostraws">Paul Hudson</a>, for making that beautiful accident happen. 
 
 # Takeaways
-This course emphasizes understanding how things work on a fundamental level and building on that knowledge incrementally over time. It involves building projects over short intervals, re-building those projects after long intervals, and building new projects based on the understanding between intervals. The free version doesn't provide solutions to project challenges or milestone projects, so there's no escaping lack of understanding. 
+This course emphasizes understanding how things work on a fundamental level and building on that knowledge incrementally over time. You build projects over short intervals, re-build those projects after long intervals, and build new projects based on the understanding between. The free version doesn't provide solutions to project challenges or milestone projects, so there's no escaping lack of understanding. 
 
 In the long-run, those attributes created several good habits:
  
 1. Networking knowledge (taking good notes)
-2. Re-reading notes before running to StackOverflow or the Hacking With Swift forum for answers (finding solutions independently)
+2. Re-reading notes before running to StackOverflow or the Hacking With Swift forum for answers (finding solutions independently from first principles)
 3. Refactoring old code (reading and re-reading code)
-4. Defining the technologies needed for a project and exploring their capabilities before committing to using them (approaching every project with a sense of adventure)
-5. Getting the most out of existing knowledge before building on it  (not getting stuck in the Learning Zone)
+4. Defining the technologies needed for a project and exploring their capabilities before using them (approaching every project with a sense of adventure)
+5. Getting the most out of existing knowledge before building on it (not getting stuck in <a href="https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about?subtitle=en">the learning zone</a>)
 
 
 # Summary 
