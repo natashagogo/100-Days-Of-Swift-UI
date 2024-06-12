@@ -9,8 +9,8 @@ This course emphasizes understanding how things work on a fundamental level and 
 
 In the long-run, those attributes created several good habits:
  
-1. Networking knowledge (taking good notes)
-2. Re-reading notes before running to StackOverflow or the Hacking With Swift forum for answers (finding solutions independently from first principles)
+1. Networking knowledge (taking <a href="https://www.soenkeahrens.de/en/takesmartnotes">smart notes</a>)
+2. Re-reading notes before running to StackOverflow or the Hacking With Swift forum for answers (finding solutions from first principles)
 3. Refactoring old code (reading and re-reading code)
 4. Defining the technologies needed for a project and exploring their capabilities before using them (approaching every project with a sense of adventure)
 5. Getting the most out of existing knowledge before building on it (not getting stuck in <a href="https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about?subtitle=en">the learning zone</a>)
