@@ -5,14 +5,14 @@
 <a href="https://www.hackingwithswift.com/100/swiftui/">100 Days of SwiftUI</a> is a hands-on introduction to Swift, SwiftUI, and iOS development. I picked this course, not to get a job, but to learn how to make information work for me. Going into it, I decided to ignore design and focus on data, and over time, developed a deep interest in data structures, algorithms, and geometry -- the structure, behavior, and shape of information. Thank you to the author of the course, <a href="https://github.com/twostraws">Paul Hudson</a>, for making that beautiful accident happen. 
 
 # Takeaways
-This course emphasizes understanding how things work on a fundamental level and building on that knowledge incrementally over time. You build projects over short intervals, re-build those projects after long intervals, and build new projects based on the understanding between. The free version doesn't provide solutions to project challenges or milestone projects, so there's no escaping lack of understanding. 
+100 Days of SwiftUI emphasizes understanding how things work on a fundamental level and building on that knowledge over time. You build projects over short intervals, re-build those projects after long intervals, and build new projects based on the understanding that happens between. The free version doesn't provide solutions to project challenges or milestone projects, so there's no escaping lack of understanding. In short, it lives up to what Walt Disney said about magic, my favorite quotation from the course: "There is no magic in magic, it’s all in the details".
 
-In the long-run, those attributes created several good habits:
+So, in the long-run, I formed or practiced habits that transfer to any learning project, technical or otherwise:
  
-1. Networking knowledge (taking <a href="https://www.soenkeahrens.de/en/takesmartnotes">smart notes</a>)
-2. Re-reading notes before running to StackOverflow or the Hacking With Swift forum for answers (finding solutions from first principles)
-3. Refactoring old code (reading and re-reading code)
-4. Defining the technologies needed for a project and exploring their capabilities before using them (approaching every project with a sense of adventure)
+1. Networking knowledge (<a href="https://www.soenkeahrens.de/en/takesmartnotes">taking smart notes</a>)
+2. Re-reading notes before running to a person, forum, or tool for answers (finding solutions independently from first principles)
+3. Refactoring old code (editing ideas)
+4. Defining the technologies needed in a project and exploring their capabilities before using them (approaching every project with a sense of possibility and adventure)
 5. Getting the most out of existing knowledge before building on it (not getting stuck in <a href="https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about?subtitle=en">the learning zone</a>)
 
 
