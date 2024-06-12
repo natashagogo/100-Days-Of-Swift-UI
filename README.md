@@ -7,13 +7,13 @@
 # Takeaways
 100 Days of SwiftUI emphasizes understanding how things work on a fundamental level and building on that knowledge over time. You build projects over short intervals, re-build those projects after long intervals, and build new projects based on the understanding that happens between. The free version doesn't provide solutions to project challenges or milestone projects, so there's no escaping lack of understanding. In short, it lives up to what Walt Disney said about magic, my favorite quotation from the course: "There is no magic in magic, it’s all in the details".
 
-So, in the long-run, I formed or practiced habits that transfer to any learning project, technical or otherwise:
+In the long-run, this meant developing several good habits that transfer to any project, technical or otherwise:
  
 1. Networking knowledge (<a href="https://www.soenkeahrens.de/en/takesmartnotes">taking smart notes</a>)
-2. Re-reading notes before running to a person, forum, or tool for answers (finding solutions independently from first principles)
-3. Refactoring old code (editing ideas)
+2. Re-reading notes before running to a person, forum, or tool for answers (finding solutions from first principles)
+3. Refactoring old code (editing ideas over time)
 4. Defining the technologies needed in a project and exploring their capabilities before using them (approaching every project with a sense of possibility and adventure)
-5. Getting the most out of existing knowledge before building on it (not getting stuck in <a href="https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about?subtitle=en">the learning zone</a>)
+5. Getting the most out of existing knowledge before seeking more (not getting stuck in <a href="https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about?subtitle=en">the learning zone</a>)
 
 
 # Summary 
