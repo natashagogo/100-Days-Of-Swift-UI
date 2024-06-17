@@ -1,6 +1,7 @@
 import UIKit
 
 // Checkpoint: Simple Data Types
+// Convert celsius to fahrenheit.
 
 let celsius = 40.0
 let fahrenheit = ((celsius * 9) / 5) + 32
@@ -8,6 +9,7 @@ print("\(celsius)°C is \(fahrenheit)°F")
 
 
 // Checkpoint: Complex Data Types
+// Count the items and unique items in an array.
 
 extension Date {
     init(month: Int, day: Int, year: Int) {
@@ -37,12 +39,8 @@ print(dates.count)
 // Count unique items
 print(Set(dates).count)
 
-// Convert an array to a dictionary
-let datesByMonth = Dictionary(grouping: dates, by: { Calendar.current.dateComponents([.month], from: $0) })
-
-print(datesByMonth.keys.count)
-
 // Checkpoint 3: Loops (FizzBuzz)
+// Loop over 100 numbers and print out whether they are multiples of 3 and 5, just 3, or 5. 
 
 for number in 1...100 {
     if number.isMultiple(of: 3) && number.isMultiple(of: 5) {
