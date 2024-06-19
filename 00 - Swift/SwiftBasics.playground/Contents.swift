@@ -53,3 +53,40 @@ for number in 1...100 {
         print(number)
     }
 }
+
+// Checkpoint 4: Functions
+// Write a function that returns the square root of an Int between 1 and 10,000.
+// If the number is less than 1 or greater than 10,000 throw an error.
+
+enum BoundsError: Error {
+    case tooLow, tooHigh, notFound
+}
+
+func squareRoot(of number: Int) throws -> Int {
+    // The square root of the highest number, 10_000, is 100.
+    let highestSquare = 100
+    
+    if number < 1 {
+        throw BoundsError.tooLow
+    }
+    
+    if number > 10_000 {
+        throw BoundsError.tooHigh
+    }
+    
+    for i in 1...100 {
+        let squared = i * i
+        
+        if squared == number {
+            return i
+        }
+    }
+    
+    throw BoundsError.notFound
+}
+
+do {
+    try print(squareRoot(of: 25))
+} catch {
+    print("No square root was found.")
+}
