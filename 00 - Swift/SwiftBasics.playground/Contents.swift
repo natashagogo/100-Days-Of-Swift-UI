@@ -90,3 +90,18 @@ do {
 } catch {
     print("No square root was found.")
 }
+
+// Checkpoint 5: Closures
+// Without using temporary variables:
+// 1. Filter out even numbers
+// 2. Sort the array in ascending order
+// 3. Map them to strings
+// 4. Print the result, one item per line
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+let result = luckyNumbers.filter({ $0.isMultiple(of: 2) == false}).sorted().map({ "\($0) is a lucky number." })
+
+for sentence in result {
+    print(sentence)
+}
