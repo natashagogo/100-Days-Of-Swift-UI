@@ -105,3 +105,30 @@ let result = luckyNumbers.filter({ $0.isMultiple(of: 2) == false}).sorted().map(
 for sentence in result {
     print(sentence)
 }
+
+// Checkpoint 6: Access Control
+// Create a struct to store information about a bank account.
+
+struct BankAccount {
+    private(set) var name: String = "New Account"
+    private(set) var funds = 0 // This can't be updated outside the struct.
+    
+    mutating func deposit(amount: Int) {
+        funds += amount
+    }
+    
+    mutating func withdraw(amount: Int) -> Bool {
+        if funds >= amount {
+            funds -= amount
+            return true
+        } else {
+            return false
+        }
+    }
+    
+}
+
+var account = BankAccount()
+
+account.deposit(amount: 100)
+print(account.funds)
